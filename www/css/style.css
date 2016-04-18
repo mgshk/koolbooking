@@ -1,0 +1,22 @@
+.header{background: #4d4d4d;}
+.orange{background: #ed8323;color: #fff !important;max-width: 300px;display: table;margin: auto;}
+.logo{text-align: center;display: table;margin: auto;margin-top: 30px;}
+.logo img{width: 60%;}
+.powered-by{text-align: center;display: table;margin: auto;margin-top: 30px;margin-bottom: 30px;}
+.powered-by h3{color: #fff;}
+.flow-logo img{width: 45%;}
+.watch{width: 100%;float: left;margin:0;padding: 0;}
+.watch li{display: inline-block;color: #20a8e0;font-size: 13px;margin: 0 5px 0 2px;font-weight: 600;}
+.orange span{position: relative;bottom: 1px;font-size: 18px;font-weight: 600;}
+h1{color: #fff;}
+.fullwidth{width: 100%;margin: 0;}
+.loginbtn{width: 270px !important;display: table;margin: auto;margin-top: 10px;}
+.login-container{max-width: 300px;display: table;margin: auto;margin-top: 70px;}
+.signup{padding: 2px 5px 5px;min-height: 24px;font-size: 16px;line-height: 10px;}
+.icon-left{color: #fff;margin-left: 5px;margin-top: 6px;z-index: 100;}
+.login-container h6{color: #ababab;font-size: 24px;margin: 0 0 16px;text-transform: uppercase;}
+.ion-social-facebook{font-size: 24px;}
+.ion-social-googleplus{font-size: 24px;}
+.fb{position: relative;bottom: 2px;margin-left: 5px;}
+.ion-ios-email,.ion-person,.ion-locked{font-size: 24px;}
+.copyright{font-size: 12px;}
