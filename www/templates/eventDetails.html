@@ -14,14 +14,14 @@
       <div class="list card">
 
       <div class="item item-image">
-        <img src="img/300x300.png">
+        <img ng-src="{{event.image_url}}">
       </div>
 
       <div class="item item-text-wrap padding-8 eventsdes">
-        <h2>Power Rumble antigua 2015</h2>
+        <h2 ng-bind="event.post_title"></h2>
         <h3><i class="icon ion-clock loc1"> Activity Time : 6:00 PM</h3>
-        <h3><i class="icon ion-ios-calendar"></i> Availability: <span>2016-05-01</span> <i class="icon ion-arrow-right-c"></i> <span>2016-05-02</span></h3>
-        <h3><i class="icon ion-ios-location loc1"> Venue Facilities : <span>Freeman's Bay,187 st. John's , 00000 St.johns Town, Antigua & Barbuda</span></h3>
+        <h3><i class="icon ion-ios-calendar"></i> Availability: <span ng-bind="{{event.event_date}}"></span> <i class="icon ion-arrow-right-c"></i> <span>2016-05-02</span></h3>
+        <h3><i class="icon ion-ios-location loc1"> Venue Facilities : <span ng-bind="{{event.address}}"></span></h3>
         <h3>Adult: <span class="linethrough">$250.00</span> <span class="price">$187.50</span></h3>
         <p><span>Maximum number of people:</span>100</p>
         <div class="row">
