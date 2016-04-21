@@ -42,15 +42,15 @@ angular.module('eventsApp.config', ['ui.router']).config(function($stateProvider
     controller: 'filterEventsCtrl',
     templateUrl: 'templates/filterEvents.html'
 })
-.state('bookingSubmission', {
-    url: '/bookingSubmission',
-    controller: 'bookingSubmissionCtrl',
-    templateUrl: 'templates/bookingSubmission.html'
-})
 .state('yourBooking', {
     url: '/yourBooking',
     controller: 'yourBookingCtrl',
     templateUrl: 'templates/yourBooking.html'
+})
+.state('bookingSubmission', {
+    url: '/bookingSubmission',
+    controller: 'bookingSubmissionCtrl',
+    templateUrl: 'templates/bookingSubmission.html'
 })
 .state('payment', {
     url: '/payment',

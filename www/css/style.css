@@ -11,10 +11,10 @@
 h1{color: #fff;}
 .fullwidth{width: 100%;margin: 0;}
 .loginbtn{width: 270px !important;display: table;margin: auto;margin-top: 10px;}
-.login-container{max-width: 300px;display: table;margin: auto;margin-top: 70px;}
+.login-container{width: 300px;display: table;margin: auto;margin-top: 70px;}
 .signup{padding: 2px 5px 5px;min-height: 24px;font-size: 16px;line-height: 10px;}
 .icon-left{color: #fff;margin-left: 5px;margin-top: 6px;z-index: 1100;}
-.login-container h6{color: #ababab;font-size: 24px;margin: 0 0 16px;text-transform: uppercase;}
+.or{color: #ababab;font-size: 24px;margin: 0 0 16px;text-transform: uppercase;}
 .ion-social-facebook{font-size: 24px;}
 .ion-social-googleplus{font-size: 24px;}
 .fb{position: relative;bottom: 2px;margin-left: 5px;}
@@ -37,11 +37,29 @@ html,body{overflow: auto !important;}
 .card{margin: 5px !important;}
 .eventsdes h2{margin-bottom: 6px;}
 .eventsdes p{margin-bottom: 6px;}
-.eventsdes h3{margin-bottom: 6px;color: #ed8323;}
+.eventsdes h3{margin-bottom: 6px;color: #ed8323;line-height: 22px;}
 .linethrough{text-decoration: line-through;color: #000;font-size: 12px;font-weight: normal;}
 .price{color: #000;}
 .eventsdes button{background: #ed8323;color: #fff !important;margin-top: 5px;min-height: 35px;line-height: 36px;}
-.loc1{font-size: 20px !important;}
-h4{margin-bottom: 0;margin-left: 3px;}
+.loc1{font-size: 24px !important;}
+.loc2{font-size: 18px !important;}
+h4{margin-bottom: 5px;margin-left: 3px;}
 .events-description{max-width: 320px;display: table;margin: auto;margin-bottom: 5px;}
 .item {border-color: #999;}
+.evelft{margin-left: 10px !important;}
+.black{color: #000;}
+select{width: 100%;}
+
+/* your booking */
+.your-booking{width: 100%;}
+.left{float: left;}
+.right{float: right;}
+.booking h2{margin-bottom: 10px;}
+.booking p{width: 100%;float: left;margin-bottom: 10px;}
+hr{border-bottom: 2px dotted #888;margin: 10px 0;border-top: 0;}
+
+/* booking submission */
+.booking-container{width: 300px;display: table;margin: auto;margin-top: 50px;}
+.paypal{width: 75%;display: table;margin: auto;margin-bottom: 5px;}
+.or1{margin-bottom: 5px !important;}
+.contact{margin-top: 0px !important;margin-bottom: 10px !important;}
