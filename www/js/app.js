@@ -38,12 +38,14 @@ angular.module('eventsApp.controllers', [
 
 // Factories
 angular.module('eventsApp.factories', [
-  'eventsApp.factory.loginFactory'
+  'eventsApp.factory.loginFactory',
+  'eventsApp.factory.eventsFactory'
 ]);
 
 // Services
 angular.module('eventsApp.services', [
-  'eventsApp.service.loginService'
+  'eventsApp.service.loginService',
+  'eventsApp.service.eventsService'
 ]);
 
 
