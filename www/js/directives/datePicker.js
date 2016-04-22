@@ -7,7 +7,7 @@ angular.module('eventsApp.directive.datePicker', [])
                 element.datepicker({
                     dateFormat: 'yy-mm-dd',
                     onSelect: function (date) {
-                        scope.date = date;
+                        scope.start_date = date;
                         scope.$apply();
                     }
                 });

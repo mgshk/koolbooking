@@ -12,8 +12,4 @@ angular.module('eventsApp.controllers.eventsListCtrl', ['eventsApp.directive.dat
     eventsFactory.getTopDealsEvents().then(function (resp) {
         $scope.topDealsEvents = resp.data; 
     });
-    
-    eventsFactory.getFilterEvents($scope.address, $scope.date).then(function (resp) {
-        $scope.eventsList = resp.data; 
-    });
 }]);

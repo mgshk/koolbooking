@@ -30,6 +30,7 @@ angular.module('eventsApp.controllers', [
   'eventsApp.controllers.forgotPasswordCtrl',
   'eventsApp.controllers.eventsListCtrl',
   'eventsApp.controllers.eventDetailsCtrl',
+  'eventsApp.controllers.filterEventsCtrl',
   'eventsApp.controllers.bookingSubmissionCtrl',
   'eventsApp.controllers.yourBookingCtrl',
   'eventsApp.controllers.paymentCtrl'

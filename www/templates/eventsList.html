@@ -20,7 +20,7 @@
     <div class="col">
       <label class="item item-input">
         <i class="icon ion-ios-calendar placeholder-icon"></i>
-        <input type="text" placeholder="Start date" ng-model="date" datePicker class="padding-left-5">
+        <input type="text" placeholder="Start date" ng-model="start_date" datePicker class="padding-left-5">
       </label>
     </div>
     <!--<div class="col">
@@ -32,7 +32,7 @@
   </div>
 
   <div cass="row">
-    <button class="button button-block orange" ui-sref="filterEvents">
+    <button class="button button-block orange" ui-sref="filterEvents({'address':'{{address}}', 'start_date': '{{start_date}}'})">
       <span>Search for events</span>
     </button>
   </div>
