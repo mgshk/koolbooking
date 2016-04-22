@@ -33,15 +33,9 @@ angular.module('eventsApp.config', ['ui.router']).config(function($stateProvider
     templateUrl: 'templates/eventsList.html'
 })
 .state('eventDetails', {
-    url: '/eventDetails',
+    url: '/eventDetails/:event_id',
     controller: 'eventDetailsCtrl',
-    templateUrl: 'templates/eventDetails.html',
-    params: {event_id: null}
-})
-.state('filterEvents', {
-    url: '/filterEvents',
-    controller: 'filterEventsCtrl',
-    templateUrl: 'templates/filterEvents.html'
+    templateUrl: 'templates/eventDetails.html'
 })
 .state('yourBooking', {
     url: '/yourBooking',

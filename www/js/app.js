@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('eventsApp', ['ionic', 'eventsApp.controllers', 'eventsApp.config', 'eventsApp.factories', 'eventsApp.services'])
+angular.module('eventsApp', ['ionic', 'eventsApp.controllers', 'eventsApp.config', 'eventsApp.factories', 'eventsApp.services', 'eventsApp.directives'])
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -30,7 +30,6 @@ angular.module('eventsApp.controllers', [
   'eventsApp.controllers.forgotPasswordCtrl',
   'eventsApp.controllers.eventsListCtrl',
   'eventsApp.controllers.eventDetailsCtrl',
-  'eventsApp.controllers.filterEventsCtrl',
   'eventsApp.controllers.bookingSubmissionCtrl',
   'eventsApp.controllers.yourBookingCtrl',
   'eventsApp.controllers.paymentCtrl'
@@ -46,6 +45,11 @@ angular.module('eventsApp.factories', [
 angular.module('eventsApp.services', [
   'eventsApp.service.loginService',
   'eventsApp.service.eventsService'
+]);
+
+// Directives
+angular.module('eventsApp.directives', [
+  'eventsApp.directive.datePicker'
 ]);
 
 

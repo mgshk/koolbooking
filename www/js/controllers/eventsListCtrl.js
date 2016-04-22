@@ -1,8 +1,19 @@
-angular.module('eventsApp.controllers.eventsListCtrl', [])
-    .controller('eventsListCtrl', ['$scope', '$state', 'eventsFactory', function($scope, $state, eventsFactory) {
+angular.module('eventsApp.controllers.eventsListCtrl', ['eventsApp.directive.datePicker'])
+    .controller('eventsListCtrl', ['$scope', 'eventsFactory', function($scope, eventsFactory) {
 	
     eventsFactory.getEventsList().then(function (resp) {
-        $scope.events = resp.data;
-        console.log(resp);
+        $scope.eventsList = resp.data;
+    });
+    
+    eventsFactory.getFeaturedEvents().then(function (resp) {
+        $scope.featuredEvents = resp.data;
+    });
+    
+    eventsFactory.getTopDealsEvents().then(function (resp) {
+        $scope.topDealsEvents = resp.data; 
+    });
+    
+    eventsFactory.getFilterEvents($scope.address, $scope.date).then(function (resp) {
+        $scope.eventsList = resp.data; 
     });
 }]);
