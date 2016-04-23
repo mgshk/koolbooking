@@ -1,4 +1,4 @@
-angular.module('eventsApp.controllers.eventsListCtrl', ['eventsApp.directive.datePicker'])
+angular.module('eventsApp.controllers.eventsListCtrl', ['720kb.datepicker'])
     .controller('eventsListCtrl', ['$scope', 'eventsFactory', function($scope, eventsFactory) {
 	
     eventsFactory.getEventsList().then(function (resp) {
@@ -11,5 +11,11 @@ angular.module('eventsApp.controllers.eventsListCtrl', ['eventsApp.directive.dat
     
     eventsFactory.getTopDealsEvents().then(function (resp) {
         $scope.topDealsEvents = resp.data; 
+    });
+    
+    $scope.$watch('start_date', function (value) {
+        $scope.startDate = new Date(value);
+        
+        console.log($scope.startDate);
     });
 }]);

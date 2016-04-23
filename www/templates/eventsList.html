@@ -20,7 +20,9 @@
     <div class="col">
       <label class="item item-input">
         <i class="icon ion-ios-calendar placeholder-icon"></i>
-        <input type="text" placeholder="Start date" ng-model="start_date" datePicker class="padding-left-5">
+        <datepicker date-format="yyyy-MM-dd">
+            <input ng-model="start_date" type="text" placeholder="Start date" class="padding-left-5"/>
+        </datepicker>
       </label>
     </div>
     <!--<div class="col">
