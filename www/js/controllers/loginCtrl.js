@@ -22,17 +22,17 @@ angular.module('eventsApp.controllers.loginCtrl', [])
     }
     
     function fbLogin (auth_token) {
-	console.log(auth_token);
-	/*if($facebook.isConnected()){	    
+	if($facebook.isConnected()){	    
 	    loginFactory.fbLogin(auth_token).then(function (resp) {
 		if (resp.status === 0) {
 		    $scope.errorMsg = resp.error;
 		    return;
 		}
 		
-		window.localStorage.setItem('userID', resp.userID);
+		//window.localStorage.setItem('userID', resp.userID);
+		window.localStorage.setItem('userID', 12);
 		$state.go('eventsList');
 	    });
-	}*/
+	}
     }
 }]);

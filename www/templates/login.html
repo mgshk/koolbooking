@@ -4,7 +4,7 @@
 </div>
 
 <div class="login-container">
-
+    
 	<div class="list list-inset fullwidth">
 		<label class="item item-input">
 			<i class="icon ion-ios-email placeholder-icon"></i>
@@ -21,6 +21,7 @@
 	</button>
 	
 	<p ng-bind="errorMsg"></p>
+
 	<p align="right" ui-sref="forgotPassword">Forgot Password?</p>
 
 	<p align="center">Don't have account? 
@@ -29,7 +30,7 @@
 		</button>
 	</p>
 
-	<h6 align="center">or</h6>
+	<h6 align="center" class="or">or</h6>
 
 	<button class="button button-block button-positive loginbtn" ng-click="fbLogin();">
 	  <i class="ion-social-facebook"></i> <span class="fb">Sign in with Facebook</span>

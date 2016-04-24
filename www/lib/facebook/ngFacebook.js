@@ -258,5 +258,5 @@ angular.module('ngFacebook', [])
       $facebook.init();
       if(!$rootScope.$$phase) $rootScope.$apply();
     };
-  }])
-;
+  }]);
+  
