@@ -1,76 +1,24 @@
-<div class="bar bar-header header">
-    <h1 class="title">Event Details</h1>
-    <i class="icon-left ion-chevron-left" ui-sref="eventsList"></i>
-</div>
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<ion-tabs class="tabs-icon-top tabs-color-active-positive">
 
-<div class="content-container">
+  <!-- Dashboard Tab -->
+  <ion-tab title="Status" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/dash">
+    <ion-nav-view name="tab-dash"></ion-nav-view>
+  </ion-tab>
 
-  <div class="row">
-    <h4>Organizer's description</h4>
-  </div>
+  <!-- Chats Tab -->
+  <ion-tab title="Chats" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/chats">
+    <ion-nav-view name="tab-chats"></ion-nav-view>
+  </ion-tab>
 
-  <div class="row">
-
-    <div class="events-description">
-      <div class="list card">
-
-      <div class="item item-image">
-        <img ng-src="{{event.image_url}}">
-      </div>
-
-      <div class="item item-text-wrap padding-8 eventsdes">
-        <h2 ng-bind="event.post_title"></h2>
-        <h3><span class="black"><i class="icon ion-clock loc2"></i> Activity Time :</span> 6:00 PM</h3>
-        <h3><span class="black"><i class="icon ion-ios-calendar"></i> Availability :</span> <span ng-bind="{{event.event_date}}"></span> <i class="icon ion-arrow-right-c"></i> <span>2016-05-02</span></h3>
-        <h3><span class="black"><i class="icon ion-ios-location loc1"></i> Venue Facilities :</span> <span ng-bind="{{event.address}}"></span></h3>
-        <h3><span class="black">Adult :</span> <span class="linethrough">$250.00</span> <span class="price">$187.50</span></h3>
-        <p><span>Maximum number of people:</span>100</p>
-        <div class="row">
-
-          <div class="col">
-            <label>Adult</label>
-            <select class="adult">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-        </div>
-
-        <div class="col">
-            <label>Child</label>
-            <select class="adult">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-        </div>
-
-      </div>
-        <button class="button button-block" ui-sref="yourBooking">
-          Book now
-        </button>
-      </div>
-
-    </div>
-    </div>
-
-  </div>
+  <!-- Account Tab -->
+  <ion-tab title="Account" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
+    <ion-nav-view name="tab-account"></ion-nav-view>
+  </ion-tab>
 
 
-</div>
+</ion-tabs>

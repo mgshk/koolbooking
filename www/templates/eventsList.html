@@ -1,124 +1,24 @@
-<div class="bar bar-header header">
-    <h1 class="title">Events</h1>
-</div>
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<ion-tabs class="tabs-icon-top tabs-color-active-positive">
 
-<div class="content-container">
-  <div class="row">
-    <h4>Search for events</h4>
-  </div>
+  <!-- Dashboard Tab -->
+  <ion-tab title="Status" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/dash">
+    <ion-nav-view name="tab-dash"></ion-nav-view>
+  </ion-tab>
 
-  <div class="row">
-    <div class="col">
-      <label class="item item-input">
-        <i class="icon ion-ios-location placeholder-icon"></i>
-        <input type="text" ng-model="address" placeholder="Address">
-      </label>
-    </div>
-  </div>
+  <!-- Chats Tab -->
+  <ion-tab title="Chats" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/chats">
+    <ion-nav-view name="tab-chats"></ion-nav-view>
+  </ion-tab>
 
-  <div class="row"> 
-    <div class="col">
-      <label class="item item-input">
-        <i class="icon ion-ios-calendar placeholder-icon"></i>
-        <datepicker date-format="yyyy-MM-dd">
-            <input ng-model="start_date" type="text" placeholder="Start date" class="padding-left-5"/>
-        </datepicker>
-      </label>
-    </div>
-    <!--<div class="col">
-      <label class="item item-input">
-        <i class="icon ion-ios-calendar placeholder-icon"></i>
-        <input type="text" placeholder="End date" class="padding-left-5">
-      </label>
-    </div>-->
-  </div>
+  <!-- Account Tab -->
+  <ion-tab title="Account" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
+    <ion-nav-view name="tab-account"></ion-nav-view>
+  </ion-tab>
 
-  <div cass="row">
-    <button class="button button-block orange" ui-sref="filterEvents({'address':'{{address}}', 'start_date': '{{start_date}}'})">
-      <span>Search for events</span>
-    </button>
-  </div>
 
-  <div class="row">
-    <h4 cass="evelft">Events in Popular Destinations</h4>
-  </div>
-
-  <!--Events-->
-  <div class="row tab-50" ng-repeat="event in eventsList">
-    <div class="events">
-      <div class="list card">
-      <div class="item item-image box_sale_off">
-        <img ng-src="{{event.image_url}}">
-        <!--<span class="box_sale"> 25% </span>-->
-      </div>
-
-      <div class="item item-text-wrap padding-8 eventsdes">
-        <h2 ng-bind="event.post_title"></h2>
-        <p><i class="icon ion-ios-location loc1"></i> <span ng-bind="event.address"></span></p>
-        <h3>Adult: <span class="linethrough">$250.00</span> <span class="price">${{event.adult_price}}</span></h3>
-        <!--<h3>Date of Event: <span>2016-05-01</span> <i class="icon ion-arrow-right-c"></i> <span>2016-05-02</span></h3>-->
-        <h3>Date of Event: <span ng-bind="event.event_date"></span></h3>
-        <button class="button button-block" ui-sref="eventDetails({'event_id':{{event.id}}})">
-          Book now
-        </button>
-      </div>
-    </div>
-    </div>
-  </div>
-  
-  <!--Featured Events-->
-  <div class="row">
-    <h4 cass="evelft" id="featuredEvents">Featured Events</h4>
-  </div>
-
-  <div class="row tab-50" ng-repeat="featured in featuredEvents">
-    <div class="events">
-      <div class="list card">
-
-      <div class="item item-image box_sale_off">
-        <img ng-src="{{featured.image_url}}">
-        <!--<span class="box_sale"> 25% </span>-->
-      </div>
-
-      <div class="item item-text-wrap padding-8 eventsdes">
-        <h2 ng-bind="featured.post_title"></h2>
-        <p><i class="icon ion-ios-location loc1"></i> <span ng-bind="featured.address"></span></p>
-        <h3>Adult: <span class="linethrough">$250.00</span> <span class="price">${{featured.adult_price}}</span></h3>
-        <!--<h3>Date of Event: <span>2016-05-01</span> <i class="icon ion-arrow-right-c"></i> <span>2016-05-02</span></h3>-->
-        <h3>Date of Event: <span ng-bind="featured.event_date"></span></h3>
-        <button class="button button-block" ui-sref="eventDetails({'event_id':{{featured.id}}})">
-          Book now
-        </button>
-      </div>
-    </div>
-    </div>
-  </div>
-  
-  <!--Top Deals Events-->
-  <div class="row" ng-if="topDealsEvents">
-    <h4 cass="evelft" id="topDeals">Top Deals</h4>
-  </div>
-
-  <div class="row tab-50" ng-if="topDealsEvents" ng-repeat="topDeals in topDealsEvents">
-    <div class="events">
-      <div class="list card">
-
-      <div class="item item-image box_sale_off">
-        <img ng-src="{{topDeals.image_url}}">
-        <!--<span class="box_sale"> 25% </span>-->
-      </div>
-
-      <div class="item item-text-wrap padding-8 eventsdes">
-        <h2 ng-bind="topDeals.post_title"></h2>
-        <p><i class="icon ion-ios-location loc1"></i> <span ng-bind="topDeals.address"></span></p>
-        <h3>Adult: <span class="linethrough">$250.00</span> <span class="price">${{topDeals.adult_price}}</span></h3>
-        <!--<h3>Date of Event: <span>2016-05-01</span> <i class="icon ion-arrow-right-c"></i> <span>2016-05-02</span></h3>-->
-        <h3>Date of Event: <span ng-bind="topDeals.event_date"></span></h3>
-        <button class="button button-block" ui-sref="eventDetails({'event_id':{{topDeals.id}}})">
-          Book now
-        </button>
-      </div>
-    </div>
-    </div>
-  </div>
-</div>
+</ion-tabs>

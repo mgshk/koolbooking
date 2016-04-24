@@ -1,5 +1,5 @@
 angular.module('eventsApp.controllers.eventsListCtrl', ['720kb.datepicker'])
-    .controller('eventsListCtrl', ['$scope', 'eventsFactory', function($scope, eventsFactory) {
+    .controller('eventsListCtrl', ['$scope', '$state', 'eventsFactory', function($scope, $state, eventsFactory) {
 	
     eventsFactory.getEventsList().then(function (resp) {
         $scope.eventsList = resp.data;
@@ -15,7 +15,9 @@ angular.module('eventsApp.controllers.eventsListCtrl', ['720kb.datepicker'])
     
     $scope.$watch('start_date', function (value) {
         $scope.startDate = new Date(value);
-        
-        console.log($scope.startDate);
-    });
+    }); 
+    
+    $scope.filterEvents = function () {
+        $state.go('filterEvents', {'address': $scope.address, 'start_date': $scope.startDate});
+    }
 }]);

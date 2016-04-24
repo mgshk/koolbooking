@@ -18,4 +18,10 @@ angular.module('eventsApp.service.loginService', [])
 				return resp;
 			});		
 		}
+		
+		this.fbLogin = function(access_token) {
+			return $http.get('http://koolbooking.com/android_app/social_login?access_token='+access_token+'&login_source=facebook').then(function (resp) {
+				return resp;
+			});		
+		}
 }]);

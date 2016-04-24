@@ -1,6 +1,10 @@
-<ion-view view-title="Filtered Events">
-  <ion-content class="padding">
-    <div class="row tab-50" ng-repeat="event in filterEvents">
+<div class="bar bar-header header">
+    <h1 class="title">Filtered Events</h1>
+    <i class="icon-left ion-chevron-left" ui-sref="eventsList"></i>
+</div>
+
+<div class="content-container">
+  <div class="row tab-50" ng-repeat="event in filterEvents">
     <div class="events">
       <div class="list card">
 
@@ -22,5 +26,4 @@
     </div>
     </div>
   </div>
-  </ion-content>
-</ion-view>
+</div>

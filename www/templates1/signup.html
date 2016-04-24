@@ -1,0 +1,35 @@
+<div class="bar bar-header header">
+    <h1 class="title">Register</h1>
+    <i class="icon-left ion-chevron-left" ui-sref="login"></i>
+</div>
+
+<div class="login-container">
+
+  <div class="list list-inset fullwidth">
+    <label class="item item-input">
+      <i class="icon ion-person placeholder-icon"></i>
+        <input type="text" ng-model="user.first_name" autocomplete="off" placeholder="First Name">
+    </label>
+    <label class="item item-input">
+      <i class="icon ion-person placeholder-icon"></i>
+        <input type="text" ng-model="user.last_name" autocomplete="off" placeholder="Last Name">
+    </label>
+    <label class="item item-input">
+       <i class="icon ion-ios-telephone placeholder-icon"></i>
+        <input type="text" ng-model="user.st_phone" autocomplete="off" placeholder="Phone Number">
+    </label>
+    <label class="item item-input">
+      <i class="icon ion-ios-email placeholder-icon"></i>
+        <input type="email" ng-model="user.user_email" autocomplete="off" placeholder="Email">
+    </label>
+    <label class="item item-input">
+      <i class="icon ion-locked placeholder-icon"></i>
+        <input type="password" ng-model="user.user_pass" autocomplete="off" placeholder="Password">
+    </label>
+  </div>
+
+    <button class="button button-block orange loginbtn" autocomplete="off" ng-click="signUp()">
+      <span>Register</span>
+    </button>
+    <p ng-bind="errorMsg"></p>
+</div>

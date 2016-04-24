@@ -4,7 +4,8 @@ angular.module('eventsApp.factory.loginFactory', [])
 	return {
 		userLogin: userLogin,
 		forgotPassword: forgotPassword,
-		signUp: signUp
+		signUp: signUp,
+		fbLogin: fbLogin
 	};
 	
 	function userLogin (user_email, user_pass) {
@@ -30,6 +31,16 @@ angular.module('eventsApp.factory.loginFactory', [])
 	function signUp (user) {
 		var deferred = $q.defer();
 		loginService.signUp(user).then(function (resp) {
+			deferred.resolve(resp.data);
+		}, function(error) {
+			console.log(error);
+		});
+		return deferred.promise;
+	}
+	
+	function fbLogin (auth) {
+		var deferred = $q.defer();
+		loginService.fbLogin(auth).then(function (resp) {
 			deferred.resolve(resp.data);
 		}, function(error) {
 			console.log(error);
