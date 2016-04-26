@@ -5,8 +5,19 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/responive.css" rel="stylesheet">
+    
+    <!-- JS dependencies (order matters!) -->
+    <link href="lib-new/onsen/css/style.css" rel="stylesheet" type="text/css" media="all">
+    <script src="scripts/platformOverrides.js"></script>
+    <script src="lib-new/onsen/js/onsenui.js"></script>
+
+    <!-- CSS dependencies -->
+    <link rel="stylesheet" href="lib-new/onsen/css/onsenui.css" />
+    <link rel="stylesheet" href="lib-new/onsen/css/onsen-css-components-blue-basic-theme.css" />
+
+    <!-- CSP support mode (required for Windows Universal apps) -->
+    <link rel="stylesheet" href="lib-new/angular/angular-csp.css" />
+
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
@@ -24,16 +35,17 @@
     <!-- <script src="js/angular-ui-router.js"></script> -->
 
     <!--Controllers-->
-    <script src="js/controllers/homeCtrl.js"></script>
+    <script src="js/controllers/splashCtrl.js"></script>
     <script src="js/controllers/loginCtrl.js"></script>
     <script src="js/controllers/signupCtrl.js"></script>
     <script src="js/controllers/forgotPasswordCtrl.js"></script>
-    <script src="js/controllers/eventsListCtrl.js"></script>
+    <script src="js/controllers/homeCtrl.js"></script>
     <script src="js/controllers/eventDetailsCtrl.js"></script>
-    <script src="js/controllers/filterEventsCtrl.js"></script>
-    <script src="js/controllers/bookingSubmissionCtrl.js"></script>
-    <script src="js/controllers/yourBookingCtrl.js"></script>
+    <script src="js/controllers/purchaseHistoryCtrl.js"></script>
+    <script src="js/controllers/finalPaymentCtrl.js"></script>
+    <script src="js/controllers/eventBookingCtrl.js"></script>
     <script src="js/controllers/paymentCtrl.js"></script>
+    <script src="js/controllers/settingsCtrl.js"></script>
     
     <!--factories-->
     <script src="js/factories/loginFactory.js"></script>

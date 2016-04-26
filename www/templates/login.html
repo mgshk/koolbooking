@@ -1,45 +1,24 @@
-<div class="bar bar-header header">
-    <h1 class="title">Login</h1>
-    <i class="icon-left ion-chevron-left" ui-sref="home"></i>
-</div>
 
-<div class="login-container">
-    
-	<div class="list list-inset fullwidth">
-		<label class="item item-input">
-			<i class="icon ion-ios-email placeholder-icon"></i>
-		    <input type="email" ng-model="user_email" autocomplete="off" placeholder="Email Address">
-		</label>
-		<label class="item item-input">
-			<i class="icon ion-locked placeholder-icon"></i>
-		    <input type="password" ng-model="user_pass" autocomplete="off" placeholder="Password">
-		</label>
-	</div>
-
-	<button class="button button-block orange loginbtn" ng-click="login();">
-	  <span>Sign in</span>
-	</button>
-	
-	<p ng-bind="errorMsg"></p>
-
-	<p align="right" ui-sref="forgotPassword">Forgot Password?</p>
-
-	<p align="center">Don't have account? 
-		<button class="button button-small button-dark signup" ui-sref="signup">
-		  Sign up
-		</button>
-	</p>
-
-	<h6 align="center" class="or">or</h6>
-
-	<button class="button button-block button-positive loginbtn">
-	  <i class="ion-social-facebook"></i> <span class="fb">Sign in with Facebook</span>
-	</button>
-
-	<button class="button button-block button-assertive loginbtn">
-	  <i class="ion-social-googleplus"></i> <span class="fb">Sign in with Google</span>
-	</button>
-
-	<p align="center" class="copyright">I agree to the Terms & Conditions & Privacy Policy</p>
-
-</div>
+    <ons-page>
+      <ons-toolbar>
+        <div class="left login">
+          <ons-toolbar-button><i class="fa fa-angle-left"></i> </ons-toolbar-button>
+        </div>
+        <div class="center">Log In</div>
+      </ons-toolbar>
+      <div class="login-form">
+        <input type="email" class="email" placeholder="Email Address" value="">
+        <input type="password" class="password" placeholder="Password" value="">
+        <ons-button modifier="large" class="login-button sign-in">sign In</ons-button>
+        <ons-button modifier="quiet" class="forgot-password login" ui-sref="forgotPassword">Forgot password?</ons-button>
+      </div>
+      <div class="dont-have">
+        <p>Don't have an account? <a href="#" ui-sref="signup">Sign up</a> </p>
+        <h6>or</h6>
+      </div>
+      <div class="facebook"> <a href="#"><i class="fa fa-facebook"></i> Login With Facebook</a> </div>
+      <div class="google-plus"><a href="#"><i class="fa fa-google-plus"></i>Login With Google</a> </div>
+      <div class="terms-privacy">
+        <p> I agree to the <a href="#">Terms & Conditions</a> & <a href="#">Privacy Policy</a> </p>
+      </div>
+    </ons-page>

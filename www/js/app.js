@@ -24,16 +24,17 @@ angular.module('eventsApp', ['ionic', 'eventsApp.controllers', 'eventsApp.config
 
 // Controllers
 angular.module('eventsApp.controllers', [
-  'eventsApp.controllers.homeCtrl',
+  'eventsApp.controllers.splashCtrl',
   'eventsApp.controllers.loginCtrl',
   'eventsApp.controllers.signupCtrl',
   'eventsApp.controllers.forgotPasswordCtrl',
-  'eventsApp.controllers.eventsListCtrl',
+  'eventsApp.controllers.homeCtrl',
   'eventsApp.controllers.eventDetailsCtrl',
-  'eventsApp.controllers.filterEventsCtrl',
-  'eventsApp.controllers.bookingSubmissionCtrl',
-  'eventsApp.controllers.yourBookingCtrl',
-  'eventsApp.controllers.paymentCtrl'
+  'eventsApp.controllers.purchaseHistoryCtrl',
+  'eventsApp.controllers.finalPaymentCtrl',
+  'eventsApp.controllers.eventBookingCtrl',
+  'eventsApp.controllers.eventPaymentCtrl',
+  'eventsApp.controllers.settingsCtrl'
 ]);
 
 // Factories

@@ -1,33 +1,434 @@
-<style type="text/css">
-	body{
-		width: 100%;
-		float: left;
-		background: #4d4d4d;
-	}
-</style>
+<!DOCTYPE html>
+<!-- CSP support mode (required for Windows Universal apps): https://docs.angularjs.org/api/ng/directive/ngCsp -->
+<html lang="en" ng-app="app" ng-csp>
+    <head>
+    <meta charset="utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link href="lib/onsen/css/style.css" rel="stylesheet" type="text/css" media="all">
 
-<div class="row">
-    <div class="logo">
-        <img src="img/logo.png" alt="Logo">  
-    </div>
-</div>
+    <!-- JS dependencies (order matters!) -->
+    <script src="scripts/platformOverrides.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/onsen/js/onsenui.js"></script>
 
-<div class="row">
-	<div class="powered-by">
-	    <h3>Powered By</h3>
-	    <div class="flow-logo">
-	    	<img src="img/flow-img.png" alt="Flow">
-	        <ul class="watch">
-	            <li>watch</li>
-	            <li><i class="ion-record"></i> talk</li>
-	            <li><i class="ion-record"></i> click</li>
-	        </ul>
-	    </div>
-	</div>
-</div>
+    <!-- CSS dependencies -->
+    <link rel="stylesheet" href="lib/onsen/css/onsenui.css" />
+    <link rel="stylesheet" href="lib/onsen/css/onsen-css-components-blue-basic-theme.css" />
 
-<div class="row">
-	<button class="button button-block orange" ui-sref="login">
-	  <span>Login</span>
-	</button>
-</div>
+    <!-- CSP support mode (required for Windows Universal apps) -->
+    <link rel="stylesheet" href="lib/angular/angular-csp.css" />
+
+    <!-- --------------- App init --------------- -->
+
+    <title>home</title>
+    <script>
+        angular.module('app', ['onsen']);
+
+        angular.module('app').controller('AppController', function ($scope) {
+            $scope.doSomething = function () {
+                ons.notification.alert({ message: 'tapped' });
+            };
+        });
+    </script>
+    </head>
+
+    <body ng-controller="AppController">
+<!-- Cordova reference --> 
+<script src="cordova.js"></script> 
+<script src="scripts/index.js"></script> 
+<!-- -->
+
+<ons-page class="top-bar-menu">
+      <ons-tabbar position="top" class="demo">
+    <ons-tabbar-item page="h.html" label="Showcase" active="true" class="showcase"> </ons-tabbar-item>
+    <ons-tabbar-item page="c.html" label="Tickets" class="ticket"> </ons-tabbar-item>
+    <ons-tabbar-item page="t.html" label="You" class="you"> </ons-tabbar-item>
+    <ons-tabbar-item page="discover.html" label="Discover" class="discover"> </ons-tabbar-item>
+  </ons-tabbar>
+    </ons-page>
+<ons-template id="h.html">
+      <ons-page>
+    <ons-toolbar>
+          <div class="center">Home</div>
+        </ons-toolbar>
+    <ons-row class="video-home">
+          <iframe src="https://www.youtube.com/embed/mcixldqDIEQ" frameborder="0" allowfullscreen></iframe>
+        </ons-row>
+    <ons-row class="skip-now"> <a href="#">Skip</a> </ons-row>
+    <ons-row class="down-arrow"> <i class="fa fa-angle-down"></i> </ons-row>
+  </ons-page>
+    </ons-template>
+    
+    
+
+    
+  
+<ons-template id="c.html">
+      <ons-page class="tickets">
+    <ons-toolbar>
+          <div class="center">Home</div>
+        </ons-toolbar>
+        
+    <ons-page class="center-bar-menu">
+    <ons-tabbar position="center" class="demo">
+    <ons-tabbar-item page="all.html" label="all" active="true" class="all"> </ons-tabbar-item>
+    <ons-tabbar-item page="event.html" label="event" class="event"> </ons-tabbar-item>
+    <ons-tabbar-item page="activity.html" label="activity" class="activity"> </ons-tabbar-item>
+    </ons-tabbar>
+
+       <!--<ons-row class="activity">
+          <div class="activity-box"> <a href="#"> <span><img src="lib/onsen/images/all-icon.png" alt="#"></span> all </a> </div>
+          <div class="activity-box"> <a href="#"> <span><img src="lib/onsen/images/event-icon.png" alt="#"></span> EVENT </a> </div>
+          <div class="activity-box"> <a href="#"> <span><img src="lib/onsen/images/activity-icon.png" alt="#"></span> ACTIVITY </a> </div>
+        </ons-row>
+        
+         <ons-row class="search-venue">
+          <form>
+          <input type="text" placeholder="Search By Venue">
+          </form>
+        </ons-row>
+        
+         <ons-row class="you-in">
+          <form>
+          <input type="text" placeholder="You ‘re in Chandigarh">
+          </form>
+        </ons-row>
+        
+         <ons-row class="life-beautiful">
+          <div class="beautiful-left"> <img src="lib/onsen/images/ticket-img.png" alt="#"> </div>
+          <div class="beautiful-center">
+        <h1>Life is beautiful</h1>
+        <p>Nassa , New Providence, THe Bahamas</p>
+        <p>Activity Type:<span>Specific Date</span></p>
+        <p>01/01/2016 <i class="fa fa-long-arrow-right"></i> 31/01/2016</p>
+      </div>
+          <div class="beautiful-right">
+            <form>
+            <input type="button" value="Book Now">
+            </form>
+      </div>
+        </ons-row>-->
+        
+  </ons-page>
+    </ons-template>
+    
+    
+<ons-template id="all.html">
+      <ons-page class="profile-main">
+    <ons-toolbar>
+          <div class="center">Home</div>
+          
+           <div class="right">
+          <ons-toolbar-button><a href="setting.html"><i class="ion-ios-settings-strong"></i></a></ons-toolbar-button>
+        </div>
+        </ons-toolbar>
+        
+   <ons-row class="search-venue">
+          <form>
+          <input type="text" placeholder="Search By Venue">
+          </form>
+        </ons-row>
+        
+         <ons-row class="you-in">
+          <form>
+          <input type="text" placeholder="You ‘re in Chandigarh">
+          </form>
+        </ons-row>
+        
+         <ons-row class="life-beautiful">
+          <div class="beautiful-left"> <img src="lib/onsen/images/ticket-img.png" alt="#"> </div>
+          <div class="beautiful-center">
+        <h1>Life is beautiful</h1>
+        <p>Nassa , New Providence, THe Bahamas</p>
+        <p>Activity Type:<span>Specific Date</span></p>
+        <p>01/01/2016 <i class="fa fa-long-arrow-right"></i> 31/01/2016</p>
+      </div>
+          <div class="beautiful-right">
+            <form>
+            <input type="button" value="Book Now">
+            </form>
+      </div>
+        </ons-row>
+  </ons-page>
+    </ons-template>  
+    
+    <ons-template id="event.html">
+      <ons-page class="profile-main">
+    <ons-toolbar>
+          <div class="center">Home</div>
+          
+           <div class="right">
+          <ons-toolbar-button><a href="setting.html"><i class="ion-ios-settings-strong"></i></a></ons-toolbar-button>
+        </div>
+        </ons-toolbar>
+
+ <ons-row class="search-venue">
+          <form>
+          <input type="text" placeholder="Search By Venue">
+          </form>
+        </ons-row>
+        
+         <ons-row class="you-in">
+          <form>
+          <input type="text" placeholder="You ‘re in Chandigarh">
+          </form>
+        </ons-row>    
+       
+  </ons-page>
+    </ons-template> 
+    
+    <ons-template id="activity.html">
+      <ons-page class="profile-main">
+    <ons-toolbar>
+          <div class="center">Home</div>
+          
+           <div class="right">
+          <ons-toolbar-button><a href="setting.html"><i class="ion-ios-settings-strong"></i></a></ons-toolbar-button>
+        </div>
+        </ons-toolbar>
+  
+   <ons-row class="life-beautiful">
+          <div class="beautiful-left"> <img src="lib/onsen/images/ticket-img.png" alt="#"> </div>
+          <div class="beautiful-center">
+        <h1>Life is beautiful</h1>
+        <p>Nassa , New Providence, THe Bahamas</p>
+        <p>Activity Type:<span>Specific Date</span></p>
+        <p>01/01/2016 <i class="fa fa-long-arrow-right"></i> 31/01/2016</p>
+      </div>
+          <div class="beautiful-right">
+            <form>
+            <input type="button" value="Book Now">
+            </form>
+      </div>
+      
+      
+      
+        </ons-row>
+        
+  
+
+  </ons-page>
+    </ons-template>  
+    
+    
+     
+   
+   
+   
+   
+   
+    
+<ons-template id="t.html">
+      <ons-page class="profile-main">
+    <ons-toolbar>
+          <div class="center">Home</div>
+          
+           <div class="right">
+          <ons-toolbar-button><a href="setting.html"><i class="ion-ios-settings-strong"></i></a></ons-toolbar-button>
+        </div>
+        </ons-toolbar>
+    <ons-row class="profile">
+          <div class="profile-circle"> <i class="fa fa-user"></i> </div>
+          <a href="#">James Smith</a> </ons-row>
+    <ons-row class="purchase-history"> <i class="fa fa-history"></i> <a href="#">Purchase History</a> </ons-row>
+  </ons-page>
+    </ons-template>
+    
+    
+    
+<ons-template id="discover.html">
+      <ons-tabbar class="footer-tab">
+    <ons-tab active="true" page="recommended.html">
+          <div class="tab">
+        <div class="tab-label bottom">RECOMMENDED</div>
+      </div>
+        </ons-tab>
+    <ons-tab page="trending.html">
+          <div class="tab">
+        <div class="tab-label bottom">TRENDING</div>
+      </div>
+        </ons-tab>
+    <ons-tab page="coming-soon.html">
+          <div class="tab">
+        <div class="tab-label bottom">COMING SOON</div>
+      </div>
+        </ons-tab>
+  </ons-tabbar>
+    </ons-template>
+<ons-template id="recommended.html">
+      <ons-navigator>
+    <ons-page>
+          <ons-toolbar>
+        <div class="center">Home</div>
+      </ons-toolbar>
+          <ons-row class="main">
+        <ons-row class="list-one">
+              <div class="list-one-inner">
+            <div class="comment-like">
+                  <ul>
+                <li><i class="fa fa-heart"></i> <a href="#">90%</a></li>
+                <!--<li><i class="fa fa-comment"></i> <a href="#">3230</a></li>-->
+              </ul>
+                </div>
+          </div>
+              <div class="activity">
+            <div class="activity-left">
+                  <h2>Life is Beautiful</h2>
+                  <h3>Events</h3>
+                </div>
+            <div class="activity-right">
+                  <form>
+                <input type="button" value="Book">
+              </form>
+                </div>
+          </div>
+            </ons-row>
+        <ons-row class="list-one">
+              <div class="list-one-inner">
+            <div class="comment-like">
+                  <ul>
+                <li><i class="fa fa-heart"></i> <a href="#">85%</a></li>
+                <!--<li><i class="fa fa-comment"></i> <a href="#">2765</a></li>-->
+              </ul>
+                </div>
+          </div>
+              <div class="activity">
+            <div class="activity-left">
+                  <h2>Bahamas</h2>
+                  <h3>Activities</h3>
+                </div>
+            <div class="activity-right">
+                  <form>
+                <input type="button" value="Book">
+              </form>
+                </div>
+          </div>
+            </ons-row>
+      </ons-row>
+        </ons-page>
+  </ons-navigator>
+    </ons-template>
+<ons-template id="trending.html">
+      <ons-navigator>
+    <ons-page>
+          <ons-toolbar>
+        <div class="center">Home</div>
+      </ons-toolbar>
+          <ons-row class="main">
+        <ons-row class="list-one">
+              <div class="list-one-inner">
+            <div class="comment-like">
+                  <ul>
+                <li><i class="fa fa-heart"></i> <a href="#">85%</a></li>
+                <!--<li><i class="fa fa-comment"></i> <a href="#">2765</a></li>-->
+              </ul>
+                </div>
+          </div>
+              <div class="activity">
+            <div class="activity-left">
+                  <h2>Bahamas</h2>
+                  <h3>Activities</h3>
+                </div>
+            <div class="activity-right">
+                  <form>
+                <input type="button" value="Book">
+              </form>
+                </div>
+          </div>
+            </ons-row>
+        <ons-row class="list-one">
+              <div class="list-one-inner">
+            <div class="comment-like">
+                  <ul>
+                <li><i class="fa fa-heart"></i> <a href="#">90%</a></li>
+                <!--<li><i class="fa fa-comment"></i> <a href="#">3230</a></li>-->
+              </ul>
+                </div>
+          </div>
+              <div class="activity">
+            <div class="activity-left">
+                  <h2>Life is Beautiful</h2>
+                  <h3>Events</h3>
+                </div>
+            <div class="activity-right">
+                  <form>
+                <input type="button" value="Book">
+              </form>
+                </div>
+          </div>
+            </ons-row>
+      </ons-row>
+        </ons-page>
+  </ons-navigator>
+    </ons-template>
+<ons-template id="coming-soon.html">
+      <ons-navigator>
+    <ons-page>
+          <ons-toolbar>
+        <div class="center">Home</div>
+        
+   <div class="right">
+          <ons-toolbar-button><i class="fa fa-filter"></i>
+</ons-toolbar-button>
+        </div>       
+        
+      </ons-toolbar>
+      
+          <ons-row class="search-bar"> <a href="#"><i class="fa fa-search"></i></a>
+        <form>
+              <input type="search" placeholder="Search by Activity & Event">
+            </form>
+        <a href="#"><i class="fa fa-times"></i></a>
+        </div>
+      </ons-row>
+          <ons-row class="main">
+        <ons-row class="list-one">
+              <div class="list-one-inner coming-soon">
+            <div class="comment-like">
+                  <ul>
+                <li><i class="fa fa-heart"></i> <a href="#">85%</a></li>
+                <!--<li><i class="fa fa-comment"></i> <a href="#">2765</a></li>-->
+              </ul>
+                </div>
+          </div>
+              <div class="activity">
+            <div class="activity-left">
+                  <h2>Jamaica</h2>
+                  <h3>Activities</h3>
+                </div>
+            <div class="activity-right">
+                  <form>
+                <input type="button" value="Know More">
+              </form>
+                </div>
+          </div>
+            </ons-row>
+        <ons-row class="list-one">
+              <div class="list-one-inner coming-soon-two">
+            <div class="comment-like">
+                  <ul>
+                <li><i class="fa fa-heart"></i> <a href="#">90%</a></li>
+                <!--<li><i class="fa fa-comment"></i> <a href="#">3230</a></li>-->
+              </ul>
+                </div>
+          </div>
+              <div class="activity">
+            <div class="activity-left">
+                  <h2>The Metropolitan Museum of Art</h2>
+                  <h3>Events</h3>
+                </div>
+            <div class="activity-right">
+                  <form>
+                <input type="button" value="Know More">
+              </form>
+                </div>
+          </div>
+            </ons-row>
+      </ons-row>
+      
+        </ons-page>
+  </ons-navigator>
+    </ons-template>
+</body>
+</html>

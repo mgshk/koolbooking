@@ -7,10 +7,10 @@ angular.module('eventsApp.config', ['ui.router']).config(function($stateProvider
   $stateProvider
 
   // setup an abstract state for the tabs directive
-.state('home', {
+.state('splash', {
     url: '/',
-    controller: 'homeCtrl',
-    templateUrl: 'templates/home.html'
+    controller: 'splashCtrl',
+    templateUrl: 'templates/splash.html'
 })
 .state('login', {
     url: '/login',
@@ -20,43 +20,48 @@ angular.module('eventsApp.config', ['ui.router']).config(function($stateProvider
 .state('signup', {
     url: '/signup',
     controller: 'signupCtrl',
-    templateUrl: 'templates/signup.html'
+    templateUrl: 'templates/sign-up.html'
 })
 .state('forgotPassword', {
     url: '/forgotPassword',
     controller: 'forgotPasswordCtrl',
-    templateUrl: 'templates/forgotPassword.html'
+    templateUrl: 'templates/forgot-password.html'
 })    
-.state('eventsList', {
-    url: '/eventsList',
-    controller: 'eventsListCtrl',
-    templateUrl: 'templates/eventsList.html'
+.state('home', {
+    url: '/home',
+    controller: 'homeCtrl',
+    templateUrl: 'templates/home.html'
 })
 .state('eventDetails', {
     url: '/eventDetails',
     controller: 'eventDetailsCtrl',
-    templateUrl: 'templates/eventDetails.html',
+    templateUrl: 'templates/heritage-hotel.html',
     params: {event_id: null}
 })
-.state('filterEvents', {
-    url: '/filterEvents',
-    controller: 'filterEventsCtrl',
-    templateUrl: 'templates/filterEvents.html'
-})
-.state('yourBooking', {
-    url: '/yourBooking',
-    controller: 'yourBookingCtrl',
-    templateUrl: 'templates/yourBooking.html'
-})
-.state('bookingSubmission', {
-    url: '/bookingSubmission',
-    controller: 'bookingSubmissionCtrl',
-    templateUrl: 'templates/bookingSubmission.html'
-})
-.state('payment', {
-    url: '/payment',
-    controller: 'paymentCtrl',
+.state('purchaseHistory', {
+    url: '/purchaseHistory',
+    controller: 'purchaseHistoryCtrl',
     templateUrl: 'templates/payment.html'
+})
+.state('eventBooking', {
+    url: '/eventBooking',
+    controller: 'eventBookingCtrl',
+    templateUrl: 'templates/event-booking.html'
+})
+.state('eventPayment', {
+    url: '/eventPayment',
+    controller: 'eventPaymentCtrl',
+    templateUrl: 'templates/event-payment.html'
+})
+.state('finalPayment', {
+    url: '/finalPayment',
+    controller: 'finalPaymentCtrl',
+    templateUrl: 'templates/payment.html'
+})
+.state('settings', {
+    url: '/settings',
+    controller: 'settingsCtrl',
+    templateUrl: 'templates/setting.html'
 });
 
   // if none of the above states are matched, use this as the fallback
