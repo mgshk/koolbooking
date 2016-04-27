@@ -10,16 +10,6 @@ angular.module('eventsApp', ['ionic', 'ngFacebook', 'eventsApp.controllers', 'ev
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
     
-    $rootScope.$on('$stateChangeStart', function(e, to) {
-      if (to.isRequiredLogin) {
-        if (!window.localStorage.getItem('userID')) {
-          e.preventDefault();
-          $state.go('login');
-          return;
-        }
-      }
-    });
-    
     $rootScope.$on('fb.load', function() {
       $window.dispatchEvent(new Event('fb.load'));
     });

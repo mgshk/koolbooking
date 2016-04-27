@@ -1,8 +1,4 @@
 angular.module('eventsApp.config', ['ui.router']).config(function($stateProvider, $urlRouterProvider, $facebookProvider) {
-
-    /*$authProvider.google({
-      clientId: '517332717749-v9vnp2a4oaglirev9uu34nq3gkhqtan4.apps.googleusercontent.com'
-    });*/
     
     $facebookProvider.setAppId('1677847679144225');
     
@@ -68,5 +64,5 @@ angular.module('eventsApp.config', ['ui.router']).config(function($stateProvider
         isRequiredLogin: true
     });
     
-    $urlRouterProvider.otherwise('/eventsList');
+    $urlRouterProvider.otherwise('/login');
 });

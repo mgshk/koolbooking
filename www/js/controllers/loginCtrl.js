@@ -15,11 +15,25 @@ angular.module('eventsApp.controllers.loginCtrl', ['directive.g+signin'])
     }
     
     $scope.fbLogin = function() {
-	$facebook.login().then(function(response) {
-	    var accessToken = response.authResponse.accessToken;
-	    console.log(accessToken);
-	    fbLogin(accessToken);
+	$facebook.login().then(function() {
+	    $facebook.api("/me?fields=name,first_name,last_name,email,link").then(function(response) {
+		fbLogin(response);
+	    });   
 	});
+    }
+    
+    function fbLogin (user) {
+	if($facebook.isConnected()){	    
+	    loginFactory.fbLogin(user).then(function (resp) {
+		if (resp.status === 0) {
+		    $scope.errorMsg = resp.error;
+		    return;
+		}
+		
+		window.localStorage.setItem('userID', resp.userID);
+		$state.go('eventsList');
+	    });
+	}
     }
     
     $scope.$on('event:google-plus-signin-success', function (event, authResult) {	
@@ -29,30 +43,27 @@ angular.module('eventsApp.controllers.loginCtrl', ['directive.g+signin'])
 	}
 	
 	var access_token = authResult.hg.access_token;
-	loginFactory.googleLogin(access_token).then(function (resp) {
+	loginFactory.googleUserInfo(access_token).then(function (resp) {
+	    $scope.user = {
+		'first_name': resp.given_name,
+		'last_name': resp.family_name,
+		'name': resp.name,
+		'link': resp.link,
+		'email': resp.email
+	    }
+	    googleLogin($scope.user);
+	});
+    });
+    
+    function googleLogin (user) {
+	loginFactory.googleLogin(user).then(function (resp) {
 	    if (resp.status === 0) {
 		$scope.errorMsg = resp.error;
 		return;
 	    }
 	    
-	    //window.localStorage.setItem('userID', resp.userID);
-	    window.localStorage.setItem('userID', 12);
+	    window.localStorage.setItem('userID', resp.userID);
 	    $state.go('eventsList');
 	});
-    });
-    
-    function fbLogin (accessToken) {
-	if($facebook.isConnected()){	    
-	    loginFactory.fbLogin(accessToken).then(function (resp) {
-		if (resp.status === 0) {
-		    $scope.errorMsg = resp.error;
-		    return;
-		}
-		
-		//window.localStorage.setItem('userID', resp.userID);
-		window.localStorage.setItem('userID', 12);
-		$state.go('eventsList');
-	    });
-	}
     }
 }]);

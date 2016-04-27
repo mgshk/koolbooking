@@ -5,7 +5,9 @@ angular.module('eventsApp.factory.loginFactory', [])
 		userLogin: userLogin,
 		forgotPassword: forgotPassword,
 		signUp: signUp,
-		fbLogin: fbLogin
+		fbLogin: fbLogin,
+		googleUserInfo: googleUserInfo,
+		googleLogin: googleLogin
 	};
 	
 	function userLogin (user_email, user_pass) {
@@ -38,9 +40,9 @@ angular.module('eventsApp.factory.loginFactory', [])
 		return deferred.promise;
 	}
 	
-	function fbLogin (access_token) {
+	function fbLogin (user_details) {
 		var deferred = $q.defer();
-		loginService.fbLogin(access_token).then(function (resp) {
+		loginService.fbLogin(user_details).then(function (resp) {
 			deferred.resolve(resp.data);
 		}, function(error) {
 			console.log(error);
@@ -48,9 +50,19 @@ angular.module('eventsApp.factory.loginFactory', [])
 		return deferred.promise;
 	}
 	
-	function googleLogin (access_token) {
+	function googleUserInfo (access_token) {
 		var deferred = $q.defer();
-		loginService.googleLogin(access_token).then(function (resp) {
+		loginService.googleUserInfo(access_token).then(function (resp) {
+			deferred.resolve(resp.data);
+		}, function(error) {
+			console.log(error);
+		});
+		return deferred.promise;
+	}
+	
+	function googleLogin (user_details) {
+		var deferred = $q.defer();
+		loginService.googleLogin(user_details).then(function (resp) {
 			deferred.resolve(resp.data);
 		}, function(error) {
 			console.log(error);
