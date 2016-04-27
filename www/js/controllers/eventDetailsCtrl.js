@@ -6,7 +6,5 @@ angular.module('eventsApp.controllers.eventDetailsCtrl', [])
     }
     eventsFactory.getEventDetails($stateParams.event_id).then(function (resp) {
         $scope.event = resp.data;
-        console.log(resp);
-        console.log($stateParams.event_id);
     });
 }]);
