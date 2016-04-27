@@ -38,9 +38,19 @@ angular.module('eventsApp.factory.loginFactory', [])
 		return deferred.promise;
 	}
 	
-	function fbLogin (auth) {
+	function fbLogin (access_token) {
 		var deferred = $q.defer();
-		loginService.fbLogin(auth).then(function (resp) {
+		loginService.fbLogin(access_token).then(function (resp) {
+			deferred.resolve(resp.data);
+		}, function(error) {
+			console.log(error);
+		});
+		return deferred.promise;
+	}
+	
+	function googleLogin (access_token) {
+		var deferred = $q.defer();
+		loginService.googleLogin(access_token).then(function (resp) {
 			deferred.resolve(resp.data);
 		}, function(error) {
 			console.log(error);

@@ -1,0 +1,3846 @@
+body h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
+	padding: 0;
+}
+@font-face {
+	src: url(../font/RALEWAY-BOLD.OTF);
+	font-family: 'RALEWAY-BOLD';
+}
+@font-face {
+	src: url(../font/RALEWAY-SEMIBOLD.OTF);
+	font-family: 'RALEWAY-SEMIBOLD';
+}
+@font-face {
+	src: url(../font/RALEWAY-REGULAR.OTF);
+	font-family: 'RALEWAY-REGULAR';
+}
+@font-face {
+	src: url(../font/RALEWAY-LIGHT.OTF);
+	font-family: 'RALEWAY-LIGHT';
+}
+@font-face {
+	src: url(../font/Lato-Regular.ttf);
+	font-family: 'Lato-Regular';
+}
+@font-face {
+	src: url(../font/LHANDW.TTF);
+	font-family: 'LHANDW';
+}
+@font-face {
+	src: url(../font/Lato-Light.ttf);
+	font-family: 'Lato-Light';
+}
+.login-form {
+	text-align: center;
+	width: 80%;
+	margin: 60px auto 0;
+}
+input[type=email], input[type=password] {
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+	outline: none;
+	height: 100%;
+	padding-top: 15px;
+	padding-bottom: 16px;
+}
+.login-button {
+	width: 100%;
+	margin: 0 auto;
+}
+.forgot-password {
+	display: block;
+	margin: 8px auto 0 auto;
+	font-size: 14px;
+}
+/*start splash screen CSS*/
+#splash {
+	width: 100%;
+	float: left;
+	text-align: center;
+}
+.logo {
+	float: left;
+	width: 100%;
+	margin: 30px 0 0 0;
+}
+.logo img {
+	width: 60%;
+}
+.powered-by {
+	float: left;
+	width: 100%;
+	text-align: center;
+	margin: 40px 0 0 0;
+}
+.powered-by h3 {
+	font-family: 'RALEWAY-BOLD';
+	color: #fff;
+	margin: 0;
+	font-size: 19px;
+}
+.flow-logo {
+	float: left;
+	width: 100%;
+	margin: 15px 0 0 0;
+}
+.flow-logo img {
+	width: 45%;
+}
+.watch {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+.watch li {
+	display: inline-block;
+	margin: 0;
+}
+.watch li a {
+	color: #01abe8;
+	text-decoration: none;
+	font-size: 17px;
+	transition-duration: 0.8s;
+	font-family: 'RALEWAY-REGULAR';
+}
+.watch li a:hover {
+	color: #fff;
+}
+.watch .fa.fa-circle {
+	color: #20a8e0;
+	font-size: 12px;
+	margin: 0 5px 0 4px;
+}
+..watch .fa.fa-circle {
+ color: #20a8e0;
+ font-size: 12px;
+ margin: 0 5px 0 4px;
+}
+..watch .fa.fa-circle {
+ color: #20a8e0;
+ font-size: 12px;
+ margin: 0 5px 0 4px;
+}
+.login {
+	float: left;
+	margin: 43px 0 24px;
+	width: 100%;
+}
+.forgot-password.login.ng-isolate-scope.button.effeckt-button.button--quiet.slide-left {
+	width: 95%;
+}
+.login a {
+	border: 2px solid #fff;
+	border-radius: 6px;
+	color: #fefefe;
+	display: inline-block;
+	font-family: "RALEWAY-SEMIBOLD";
+	font-size: 25px;
+	margin: 0;
+	transition-duration: 0.8s;
+	padding: 9px 0;
+	text-decoration: none;
+	width: 68%;
+}
+.login a:hover {
+	background: #20a8e0;
+	border: 2px solid #20a8e0;
+}
+.skip a {
+	color: #fefefe;
+	font-family: "RALEWAY-SEMIBOLD";
+	font-size: 28px;
+	text-decoration: none;
+	transition-duration: 0.8s;
+	text-transform: uppercase;
+}
+.skip a:hover {
+	color: #20a8e0;
+}
+/*end splash screen CSS*/
+
+/*start login screen CSS*/
+.fa.fa-angle-left {
+	color: #fff;
+	font-size: 32px;
+	line-height: 0;
+}
+.login .navigation-bar__line-height {
+	line-height: 58px;
+}
+.login-form input {
+	font-family: "RALEWAY-REGULAR";
+	font-size: 16px;
+	padding: 15px 0 15px 15px;
+	width: 93%;
+}
+.login-form .email {
+	border: 2px solid #ababab;
+	border-radius: 7px 7px 0 0;
+}
+.login-form .password {
+	border: 2px solid #ababab;
+	border-radius: 0 0 7px 7px;
+	border-top: none;
+}
+.login-button.sign-in {
+	background: #9899f6 none repeat scroll 0 0;
+	display: inline-block;
+	font-family: "RALEWAY-REGULAR";
+	font-size: 20px;
+	margin: 20px 0 0;
+	text-transform: uppercase;
+	width: 84%;
+}
+.forgot-password.login .ng-scope {
+	float: right;
+	color: #ababab;
+	font-family: "RALEWAY-REGULAR";
+}
+.dont-have {
+	float: left;
+	text-align: center;
+	margin: 0 0 7px 0;
+	width: 100%;
+}
+.dont-have p {
+	font-family: "RALEWAY-REGULAR";
+	color: #010101;
+	font-size: 18px;
+}
+.dont-have p a {
+	border-bottom: 1px solid #010101;
+	color: #010101;
+	font-family: "RALEWAY-SEMIBOLD";
+	transition-duration: 0.8s;
+	padding: 0 0 4px;
+	text-decoration: none;
+}
+.dont-have p a:hover {
+	color: #9899f6;
+	border-bottom: 1px solid #9899f6;
+}
+.dont-have h6 {
+	color: #ababab;
+	font-family: "RALEWAY-REGULAR";
+	font-size: 24px;
+	margin: 0 0 16px;
+	text-transform: uppercase;
+}
+.facebook {
+	background: #3a599d;
+	width: 100%;
+	color: #fff;
+	float: left;
+	text-align: center;
+	padding: 14px 0;
+}
+.facebook a {
+	text-align: center;
+	color: #fff;
+	font-size: 18px;
+	font-family: 'RALEWAY-LIGHT';
+	text-decoration: none;
+}
+.fa.fa-facebook {
+	font-size: 23px;
+	margin: 0 8px 0 0;
+}
+.google-plus {
+	background: #f23f69;
+	width: 100%;
+	color: #fff;
+	padding: 14px 0;
+	float: left;
+	text-align: center;
+}
+.google-plus a {
+	text-align: center;
+	font-size: 18px;
+	text-decoration: none;
+	font-family: 'RALEWAY-LIGHT';
+	color: #fff;
+}
+.fa.fa-google-plus {
+	font-size: 23px;
+	margin: 0 8px 0 0;
+}
+.terms-privacy {
+	float: left;
+	margin: 11px 0;
+	text-align: center;
+	width: 100%;
+}
+.terms-privacy p {
+	font-family: "RALEWAY-REGULAR";
+	color: #8c8c8c;
+	font-size: 13px;
+}
+.terms-privacy p a {
+	border-bottom: 1px solid #010101;
+	color: #8c8c8c;
+	font-family: "RALEWAY-SEMIBOLD";
+	transition-duration: 0.8s;
+	padding: 0 0 4px;
+	text-decoration: none;
+}
+.terms-privacy a:hover {
+	color: #9899f6;
+	border-bottom: 1px solid #9899f6;
+}
+/*end login screen CSS*/
+
+/*start sign-up screen CSS*/
+.sign-up {
+	margin: 23px 0 0 0;
+	text-align: center;
+	width: 100%;
+}
+.sign-up-page .col h5 {
+	color: #01abe8;
+	font-family: "RALEWAY-REGULAR";
+	font-size: 20px;
+	margin: 27px 0 0;
+	text-align: center;
+}
+.form-row {
+	border-bottom: 1px solid #ababab;
+	float: left;
+	width: 100%;
+}
+.text-input--underbar.width-half {
+	border: medium none;
+	width: 45%;
+}
+.form-row input {
+	background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+	border: medium none;
+	font-family: "RALEWAY-REGULAR";
+	font-size: 16px;
+	height: 44px;
+	padding: 0 8px;
+	width: 100%;
+}
+.sign-up .form-row:first-child {
+	border-top: 1px solid #ababab;
+}
+.text-input--underbar.book-des {
+	border: medium none;
+	height: 100px;
+	padding: 17px 13px 0;
+	font-family: "RALEWAY-REGULAR";
+	width: 49%;
+}
+.sign-up .fa.fa-user {
+	color: #48ddc9;
+	float: left;
+	margin: 12px 0 0 7px;
+}
+.text-input--underbar.width-half:last-child {
+	border-left: 1px solid #ababab;
+}
+.text-input-email.width-full {
+	width: 87%;
+}
+.sign-up .fa.fa-envelope {
+	color: #48ddc9;
+	float: left;
+	margin: 12px 0 0 7px;
+}
+.text-input-password.width-full {
+	float: left;
+	width: 76%;
+}
+.sign-up .fa.fa-star {
+	color: #48ddc9;
+	float: left;
+	margin: 12px 0 0 7px;
+}
+.text-input-phone.width-full {
+	width: 87%;
+}
+.fa.fa-mobile {
+	color: #48ddc9;
+	float: left;
+	font-size: 26px;
+	margin: 10px 0 0 7px;
+}
+.vspc.form-row.sign-up-one {
+	border: medium none;
+	display: inline-block;
+	float: none;
+	margin: 36px 0 25px;
+	width: 80%;
+}
+.vspc.form-row.sign-up-one ons-button {
+	background: #9899f6 none repeat scroll 0 0;
+	font-family: "RALEWAY-REGULAR";
+	font-size: 20px;
+	margin: 0;
+	text-transform: uppercase;
+}
+/*end sign-up screen CSS*/
+
+/*start home screen CSS*/
+.tab {
+	line-height: 1;
+}
+.tab-icon {
+	font-size: 24px;
+	padding: 0;
+	margin: 0;
+	vertical-align: top;
+	line-height: 28px;
+}
+.tab.showcase img {
+	float: left;
+	margin: 0 6px 0 0;
+	width: 16px;
+}
+.tab.ticket img {
+	float: left;
+	margin: 0 5px 0 0;
+	width: 28px;
+	text-align: left;
+}
+.tab.you img {
+	float: left;
+	margin: -8px 0 0;
+	width: 23px;
+}
+.tab.discover img {
+	float: left;
+	margin: -6px 3px 0 0;
+	width: 21px;
+}
+.showcase.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/showcase.png") no-repeat scroll 3px 14px / 19px auto;
+	text-indent: 12px;
+}
+.ticket.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/tickets.png") no-repeat scroll 8px 18px / 25px auto;
+	text-indent: 15px;
+}
+.you.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/man.png") no-repeat scroll 14px 12px / 22px auto;
+	text-indent: 11px;
+}
+.discover.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/discover.png") no-repeat scroll 7px 15px / 20px auto;
+	text-indent: 14px;
+}
+.top-bar-menu .tab-bar__label.ng-binding.ng-scope {
+	line-height: 11px;
+	vertical-align: top;
+	font-size: 12px;
+	color: #2a2828;
+	font-family: 'Lato-Regular';
+}
+.home-discover ons-toolbar + .page__background + .page__content {
+	top: 118px;
+}
+.home-discover .tab-bar.ons-tab-bar__footer.ons-tabbar-inner {
+	border-bottom: 2px solid #8c9ef2;
+}
+.ng-scope.tab-bar__item.ng-isolate-scope.active {
+	border-bottom: 4px solid #8c9ef2;
+}
+.tab.showcase.ng-scope {
+	margin: 6px 0 0;
+}
+.tab.ticket.ng-scope {
+	margin: 6px 0 0;
+}
+.tab.you.ng-scope {
+	margin: 6px 0 0;
+}
+.tab.discover.ng-scope {
+	margin: 6px 0 0;
+}
+.video-home.row.ons-row-inner {
+	margin: 16px 0 16px 10px;
+	width: auto;
+}
+.video-home iframe {
+	border-radius: 7px;
+	height: 300px;
+	width: 97%;
+}
+.skip-now.row.ons-row-inner {
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+}
+.skip-now a {
+	border: 2px solid #8c9ef2;
+	border-radius: 7px;
+	color: #8c9ef2;
+	display: inline-block;
+	font-family: "RALEWAY-SEMIBOLD";
+	font-size: 24px;
+	margin: 11px 0 0;
+	padding: 9px 0;
+	text-align: center;
+	text-decoration: none;
+	transition-duration: 0.8s;
+	width: 91%;
+}
+.skip-now a:hover {
+	background: #8c9ef2;
+	color: #fff;
+}
+.down-arrow.row.ons-row-inner {
+	display: inline-block;
+	margin: 8px 0;
+	text-align: center;
+	width: 100%;
+}
+.fa.fa-angle-down {
+	color: #9899f6;
+	font-size: 62px;
+}
+.ion-ios-settings-strong {
+	color: #fff;
+	font-size: 30px;
+}
+/*end home screen CSS*/
+
+
+/*start tickets screen CSS*/
+.tickets.ng-scope .page__content.ons-page-inner {
+	top: 51px;
+}
+.life-beautiful.row {
+	background: #f4f3f6 none repeat scroll 0 0;
+	float: left;
+	margin: 21px 0 0;
+	width: 100%;
+}
+.beautiful-left {
+	float: left;
+	width: 20%;
+}
+.beautiful-left img {
+	height: 100%;
+	width: 100%;
+}
+.beautiful-center {
+	border-right: 1px solid #3a373d;
+	float: left;
+	margin: 0 0 0 9px;
+	padding: 0 6px 0 0;
+	width: 48%;
+}
+.beautiful-center h1 {
+	color: #9499f5;
+	font-family: "Lato-Regular";
+	font-size: 16px;
+	font-weight: normal;
+	margin: 0;
+}
+.beautiful-center p {
+	color: #626267;
+	font-family: "Lato-Regular";
+	font-size: 12px;
+	font-weight: normal;
+	margin: 4px 0 0;
+}
+.beautiful-center p span {
+	color: #8c9ef2;
+}
+.beautiful-center .fa.fa-long-arrow-right {
+	color: #9499f5;
+}
+.beautiful-right {
+	float: right;
+}
+.beautiful-right input {
+	background: #9899f6 none repeat scroll 0 0;
+	border: medium none;
+	border-radius: 5px;
+	cursor: pointer;
+	color: #fff;
+	font-family: "Lato-Regular";
+	font-size: 13px;
+	margin: 28px 0 0 6px;
+	padding: 4px 5px;
+}
+.activity.row.ons-row-inner {
+	border: 1px solid #9a989d;
+	text-align: center;
+}
+.activity-box {
+	width: 33%;
+	border-right: 1px solid #9a989d;
+	padding: 13px 0;
+}
+.activity-box:nth-child(2) a {
+	color: #00c3ff;
+}
+.activity-box:last-child {
+	border: medium none;
+}
+.activity-box:last-child a {
+	color: #e43b62;
+}
+.activity-box span {
+	float: left;
+	height: 76%;
+	margin: 0;
+	width: 100%;
+}
+.activity-box span img {
+	width: 40%;
+}
+.activity-box a {
+	text-decoration: none;
+	font-family: "Lato-Regular";
+	text-transform: uppercase;
+	color: #71f3c3;
+}
+.search-venue.row.ons-row-inner {
+	margin: 20px 0 10px;
+}
+.search-venue form {
+	width: 100%;
+}
+.search-venue input {
+	background: #eae9ec url("../images/search.png") no-repeat scroll 11px 11px / 20px auto;
+	border: medium none;
+	color: #120e0f;
+	font-family: "Lato-Regular";
+	font-size: 18px;
+	padding: 9px 0;
+	text-indent: 51px;
+	width: 100%;
+}
+.you-in form {
+	width: 100%;
+}
+.you-in input {
+	background: #eae9ec url("../images/location-icon.png") no-repeat scroll 10px 11px / 20px auto;
+	border: medium none;
+	color: #120e0f;
+	font-family: "Lato-Regular";
+	font-size: 18px;
+	padding: 9px 0;
+	text-indent: 51px;
+	width: 100%;
+}
+.center-bar-menu.page .tab-bar {
+	position: fixed;
+	top: 97px;
+}
+.center-bar-menu.page .all.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/all-icon.png") no-repeat scroll 50% 13px / 40px auto;
+}
+.center-bar-menu.page .event.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/event-icon.png") no-repeat scroll 50% 13px / 40px auto;
+}
+.center-bar-menu.page .activity.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/activity-icon.png") no-repeat scroll 50% 13px / 40px auto;
+}
+.center-bar-menu.page button.tab-bar__button {
+	height: 60px;
+}
+.center-bar-menu.page .page__content.ons-page-inner {
+	top: 50px !important;
+}
+.center-bar-menu .ng-scope.tab-bar__item.ng-isolate-scope.active {
+	border-bottom: medium none;
+	padding: 19px 0;
+}
+.center-bar-menu .ng-scope.tab-bar__item.ng-isolate-scope {
+	border-right: 1px solid #9a989d;
+	text-transform: uppercase;
+}
+.all .tab-bar__label.ng-binding.ng-scope {
+	color: #71f3c3;
+	font-size: 18px;
+	margin: 31px 0 0;
+}
+.event .tab-bar__label.ng-binding.ng-scope {
+	color: #00c3ff;
+	font-size: 18px;
+	margin: 31px 0 0;
+}
+.activity .tab-bar__label.ng-binding.ng-scope {
+	color: #e43b62;
+	font-size: 18px;
+	margin: 31px 0 0;
+}
+.activity.ng-scope.tab-bar__item.ng-isolate-scope {
+	border-right: none;
+}
+.center-bar-menu.page .ons-tab-bar__content.tab-bar__content {
+	bottom: 0;
+}
+.center-bar-menu.page .tab-bar.ons-tab-bar__footer.ons-tabbar-inner {
+	border-bottom: 1px solid #9a989d;
+}
+/*end tickets screen CSS*/
+
+/*start you screen CSS*/
+.profile-main.ng-scope .page__content.ons-page-inner {
+	top: 51px;
+}
+.profile.row.ons-row-inner {
+	background: #3c3f3e;
+	text-align: center;
+	padding: 20px 0;
+	display: inline-block;
+}
+.profile-circle {
+	border: 4px solid #fff;
+	border-radius: 50%;
+	display: inline-block;
+	height: 60px;
+	width: 60px;
+}
+.profile-circle .fa.fa-user {
+	color: #fff;
+	font-size: 51px;
+	line-height: 75px;
+}
+.profile a {
+	color: #fff;
+	display: inline-block;
+	font-family: "Lato-Regular";
+	margin: 7px 0 0;
+	text-align: center;
+	text-decoration: none;
+	width: 100%;
+}
+.purchase-history.row.ons-row-inner {
+	border-bottom: 1px solid #3c3f3e;
+	margin: 0 0 50px;
+	padding: 27px 0;
+}
+.purchase-history a {
+	color: #3c3f3e;
+	font-family: "Lato-Regular";
+	font-size: 20px;
+	margin: 0 0 0 14px;
+	text-decoration: none;
+}
+.purchase-history .fa.fa-history {
+	color: #f23f69;
+	font-size: 28px;
+	margin: 0 0 0 10px;
+}
+/*end you screen CSS*/
+
+
+/*start discover screen CSS*/
+
+
+
+.main.row.ons-row-inner {
+	margin: 16px 0 13px;
+}
+.circle-img.row.ons-row-inner {
+	display: inline-block;
+	margin: 33px 0 0;
+	text-align: center;
+	width: 100%;
+}
+.circle-img.row.ons-row-inner img {
+	width: 43%;
+}
+.circle-img.row.ons-row-inner p {
+	color: #4150e4;
+ font-size:20px font-family: "Lato-Regular";
+	font-style: italic;
+}
+.bottom-tab {
+	background: #e4eae8 none repeat scroll 0 0;
+	bottom: 0;
+	padding: 20px 0;
+	width: 100%;
+	position: fixed;
+}
+.bottom-tab ul {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	width: 100%;
+}
+.bottom-tab ul li {
+	display: inline-block;
+	list-style: outside none none;
+	text-align: center;
+	width: 31%;
+}
+.bottom-tab .active {
+	border-bottom: 1px solid #e43b62;
+}
+.footer-tab.ng-scope .tab-bar.ons-tab-bar__footer.ons-tabbar-inner {
+	background: #e4eae8;
+	padding: 0 0 8px;
+	width: 100%;
+}
+.footer-tab.ng-scope .ng-scope.tab-bar__item.ng-isolate-scope.active {
+	border-bottom: 3px solid #e43b62;
+}
+.footer-tab.ng-scope .tab-label.bottom {
+	color: #635f5f;
+	font-family: "Lato-Regular";
+	font-size: 12px;
+	margin: 14px 0 0;
+	padding: 0 0 6px;
+	text-decoration: none;
+}
+.bottom-tab li a:hover {
+	border-bottom: 1px solid #e43b62;
+}
+/*end discover screen CSS*/
+
+/*start trending screen CSS*/
+
+.list-one.row.ons-row-inner {
+	background: #e4eae8;
+	padding: 10px;
+	margin: 0 0 23px 0;
+}
+.list-one-inner {
+	background: rgba(0, 0, 0, 0) url("../images/list1-img.jpg") no-repeat scroll 0 0 / cover;
+	float: left;
+	height: 136px;
+	position: relative;
+	width: 100%;
+}
+.list-one.row.ons-row-inner:nth-child(2) .list-one-inner {
+	background: rgba(0, 0, 0, 0) url("../images/list2-img.jpg") no-repeat scroll 0 0 / cover;
+}
+.comment-like {
+	background: url(../images/comment-bg.png) repeat-x;
+	float: left;
+	height: 40px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+.comment-like ul {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+.comment-like ul li {
+	list-style: none;
+}
+.comment-like li a {
+	color: #000;
+	float: left;
+	font-family: "Lato-Regular";
+	font-size: 16px;
+	margin: 12px 0 0 10px;
+	text-decoration: none;
+}
+.comment-like .fa.fa-heart {
+	color: #fb0522;
+	font-size: 23px;
+	float: left;
+	margin: 12px 0 0 9px;
+}
+.comment-like .fa.fa-comment {
+	color: #4849c1;
+	font-size: 23px;
+	float: left;
+	margin: 12px 0 0 9px;
+}
+.activity {
+	width: 100%;
+}
+.activity-left {
+	float: left;
+}
+.activity-left h2 {
+	color: #e43b62;
+	font-family: "Lato-Regular";
+	font-size: 13px;
+	font-weight: normal;
+	margin: 6px 0 2px;
+}
+.activity-left h3 {
+	color: #5b5757;
+	font-size: 13px;
+	font-family: "Lato-Regular";
+	font-weight: normal;
+	margin: 0;
+}
+.activity-right {
+	float: right;
+}
+.activity-right input {
+	background: #9899f6 none repeat scroll 0 0;
+	border: medium none;
+	border-radius: 5px;
+	color: #fff;
+	font-family: "Lato-Regular";
+	font-size: 14px;
+	margin: 13px 0 0 6px;
+	padding: 4px 6px;
+}
+/*end trending screen CSS*/
+
+/*start coming-soon screen CSS*/
+
+.search-bar.row.ons-row-inner {
+	background: #e4eae8 none repeat scroll 0 0;
+	margin: 0 0 15px;
+	padding: 11px 0;
+}
+.search-bar .ng-pristine {
+	width: 77%;
+}
+.search-bar.row.ons-row-inner input {
+	background: #e4eae8;
+	font-family: "Lato-Regular";
+	font-size: 16px;
+	border: none;
+}
+.search-bar a {
+	color: #5b5757;
+}
+.search-bar .fa.fa-search {
+	float: left;
+	margin: 0 15px 0 11px;
+}
+.search-bar .fa.fa-times {
+	float: right;
+}
+.list-one-inner.coming-soon {
+	background: rgba(0, 0, 0, 0) url("../images/list3-img.jpg") no-repeat scroll 0 0 / cover !important;
+}
+.list-one-inner.coming-soon-two {
+	background: rgba(0, 0, 0, 0) url("../images/list4-img.jpg") no-repeat scroll 0 0 / cover;
+}
+.fa.fa-filter.ng-scope {
+	color: #fff;
+	font-size: 21px;
+	line-height: 50px;
+}
+/*end coming-soon screen CSS*/
+
+/*start heritage-hotel CSS*/
+
+.heritage.page .page__content.ons-page-inner {
+	top: 45px;
+}
+.htoel-image {
+	background: #e0e1e1;
+	float: left;
+	padding: 11px 6px 7px;
+	width: 96%;
+}
+.book-button {
+	bottom: -22px;
+	clear: both;
+	position: relative;
+	width: 100%;
+}
+.book-button ons-button {
+	padding: 0;
+	width: 80%;
+	background: #9899f6;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+.htoel-image img {
+	float: left;
+	width: 100%;
+}
+.booking {
+	clear: both;
+	position: relative;
+	top: 17px;
+}
+.booking .button {
+	background: #9899f6;
+	font-family: "RALEWAY-light";
+	font-size: 20px;
+}
+.booking .button--large {
+	padding: 0 0 0 0;
+}
+.details {
+	float: left;
+	margin: 33px 0 auto;
+	width: 99%;
+}
+.details .venue {
+	clear: both;
+	width: 100%;
+	float: left;
+}
+.venue p {
+	font-family: "Lato-Regular";
+	font-size: 13px;
+	left: 4px;
+	position: relative;
+	color: #5b5757;
+	width: 99%;
+}
+.venue span {
+	font-family: "Lato-Regular";
+	font-size: 18px;
+	left: 4px;
+	position: relative;
+	color: #e43b62;
+}
+/*end heritage-hotel CSS*/
+
+/*start pick a region CSS*/
+.right.search.navigation-bar__right ons-icon {
+	color: #5b5757;
+}
+.location {
+	width: 100%;
+	float: left;
+}
+.location h1 {
+	font-family: "Lato-Regular";
+	font-size: 20px;
+	color: #5b5757;
+	font-weight: 500;
+}
+.current-location {
+	border-bottom: 2px solid #5b5757;
+	float: left;
+	text-indent: 14px;
+	padding: 10px 0;
+	width: 100%;
+}
+.near {
+	border-bottom: 2px solid #d5d0d0;
+	display: inline-block;
+	margin: 12px 0 0;
+	width: 100%;
+}
+.near i {
+	border: 2px solid;
+	border-radius: 100%;
+	font-size: 27px;
+	left: 5px;
+	padding: 8px 11px;
+	position: relative;
+	transform: rotate(264deg);
+	color: #e43b62;
+	margin: 0 0 14px auto;
+}
+.near Span {
+	font-size: 20px;
+	left: 5px;
+	bottom: 4px;
+	position: relative;
+	font-family: "Lato-Regular";
+	color: #e43b62;
+}
+.city h2 {
+	bottom: 0;
+	color: #5b5757;
+	float: left;
+	font-family: "Lato-Regular";
+	font-size: 20px;
+	font-weight: 400;
+	left: 7px;
+	position: relative;
+	width: 74%;
+}
+.cities {
+	margin: 71px 0 auto;
+	width: 100%;
+}
+.city {
+	background: #ffffff none repeat scroll 0 0;
+	clear: both;
+	float: left;
+	padding: 10px 0;
+	width: 100%;
+	border-bottom: 2px solid #d5d0d0;
+}
+.top-city.row.ons-row-inner {
+	border-bottom: 1px solid #d5d0d0;
+	display: inline-block;
+	cursor: pointer;
+	margin: 0;
+	padding: 12px 0;
+}
+.top-city.row.ons-row-inner:last-child {
+	margin: 0 0 44px;
+}
+.top-city-left.col {
+	border: 1px solid #5b5757;
+	border-radius: 50%;
+	float: left;
+	height: 70px;
+	margin: 0 0 0 10px;
+	width: 70px;
+}
+.top-city-left.col img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+.top-city-right.col {
+	float: left;
+	margin: 20px 0 0 11px;
+	width: auto;
+}
+.top-city-right.col a {
+	color: #5b5757;
+	font-size: 17px;
+	font-family: "Lato-Regular";
+	text-decoration: none;
+}
+.sb-search {
+	position: relative;
+	margin-top: 10px;
+	width: 0%;
+	min-width: 43px;
+	height: 39px;
+	float: right;
+	overflow: hidden;
+	border-radius: 4px;
+	-webkit-transition: width 0.3s;
+	-moz-transition: width 0.3s;
+	transition: width 0.3s;
+	-webkit-backface-visibility: hidden;
+}
+.sb-search-input {
+	background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+	border: medium none;
+	color: #2c3e50;
+	font-family: "RALEWAY-LIGHT";
+	font-size: 20px;
+	height: 40px;
+	margin: 0;
+	outline: medium none;
+	padding: 0 49px 0 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: auto;
+	z-index: 10;
+}
+ .sb-search-input::-webkit-input-placeholder {
+ color: #efb480;
+}
+.sb-search-input:-moz-placeholder {
+ color: #efb480;
+}
+.sb-search-input:-ms-input-placeholder {
+ color: #efb480;
+}
+.sb-icon-search, .sb-search-submit {
+	cursor: pointer;
+	display: block;
+	height: 43px;
+	line-height: 51px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	top: -5px;
+	width: 43px;
+}
+.sb-search-submit {
+	background: #fff; /* IE needs this */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
+	filter: alpha(opacity=0); /* IE 5-7 */
+	opacity: 0;
+	color: transparent;
+	border: none;
+	outline: none;
+	z-index: -1;
+}
+.sb-icon-search {
+	color: #fff;
+	z-index: 90;
+	font-size: 22px;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+}
+.fa.fa-search {
+	color: #5b5757;
+}
+/* Open state */
+.sb-search.sb-search-open, .no-js .sb-search {
+	background: #fff none repeat scroll 0 0;
+	width: 100%;
+}
+.sb-search.sb-search-open .sb-icon-search, .no-js .sb-search .sb-icon-search {
+	color: #000;
+	z-index: 11;
+}
+.sb-search.sb-search-open .sb-search-submit, .no-js .sb-search .sb-search-submit {
+	z-index: 90;
+}
+.right.search.navigation-bar__right {
+	position: absolute;
+	right: 8px;
+	max-width: 94%;
+	top: -7px;
+	width: 100%;
+}
+/*end pick a region CSS*/
+
+/*start purchase history CSS*/
+.purchase {
+	float: left;
+	width: 100%;
+}
+.purchase h1 {
+	margin: 36px 0 auto;
+	text-align: center;
+	font-family: 'LHANDW';
+}
+.purchase h2 {
+	color: #f23f69;
+	font-family: "LHANDW";
+	font-size: 16px;
+	font-weight: normal;
+	margin: 28px 0 9px;
+	text-align: center;
+	text-transform: uppercase;
+}
+.purchase h3 {
+	bottom: 7px;
+	color: #f23f69;
+	font-size: 16px;
+	margin: 0;
+	font-weight: normal;
+	text-transform: uppercase;
+	font-family: 'LHANDW';
+	position: relative;
+	text-align: center;
+}
+.purchase h4 {
+	font-size: 16px;
+	text-align: center;
+	color: #363233;
+	font-family: "Lato-Regular";
+	font-weight: normal;
+	text-transform: uppercase;
+}
+.find-button button {
+	background: #f23f69 none repeat scroll 0 0;
+	width: 75%;
+}
+.find-button {
+	background: #fff none repeat scroll 0 0;
+	clear: both;
+	float: left;
+	padding: 17px 0;
+	width: 100%;
+}
+.find-button ons-button {
+	background: #f23f69 none repeat scroll 0 0;
+	width: 80%;
+	font-family: "Lato-Regular";
+	font-size: 17px;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+/*end purchase history CSS*/
+
+/*start setting CSS*/
+
+.noti-like .list--inset {
+	border-radius: inherit;
+	margin: 18px 0 0;
+	border: none;
+}
+.noti-like span {
+	color: #444041;
+	font-size: 19px;
+	font-family: "Lato-Regular";
+	margin: 0 0 0 10px;
+}
+.noti-like ons-list-item {
+	background: #f1f1f1 none repeat scroll 0 0;
+	border: medium none !important;
+	padding: 7px 0;
+}
+.noti-like .switch__toggle::before {
+	background: #f1f1f1;
+	height: 19px;
+	width: 19px;
+}
+.noti-like .switch__input:checked + .switch__toggle {
+	background-color: #f23f69;
+}
+.noti-like ons-list-item {
+	margin: 0 0 3px;
+}
+.noti-like .switch {
+	height: 24px;
+	width: 44px;
+}
+.noti-like .fa.fa-envelope {
+	color: #f23f69;
+	float: right;
+	font-size: 28px;
+	margin: 8px 18px 0 0;
+}
+.noti-like .ion-chatbubbles {
+	color: #f23f69;
+	float: right;
+	font-size: 28px;
+	margin: 2px 23px 0 0;
+}
+.noti-like .ion-android-funnel {
+	color: #f23f69;
+	float: right;
+	font-size: 28px;
+	margin: 1px 21px 0 0;
+}
+/*end setting CSS*/
+
+/*Start purchase-history1 CSS*/
+.order-image.row {
+	display: inline-block;
+	margin: 140px 0 0;
+	text-align: center;
+	width: 100%;
+}
+.order-image.row img {
+	width: 42%;
+}
+.order-found.row {
+}
+.order-found.row p {
+	color: #545353;
+	float: left;
+	font-family: "Lato-Regular";
+	font-size: 24px;
+	margin: 20px 0 40px;
+	text-align: center;
+	width: 100%;
+}
+.book-ticket.ons-row-inner {
+	margin: 55px 0 0;
+	padding: 0 7px;
+}
+.book-ticket.ons-row-inner img {
+	height: 100%;
+	width: 100%;
+}
+.qr-code.row.ons-row-inner {
+	padding: 0 7px;
+	margin: 0 0 35px 0;
+}
+.qr-code.row.ons-row-inner p {
+	color: #f23f69;
+	margin: 17px 0 17px 9px;
+	font-family: "Lato-Regular";
+}
+.qr-code-inner.row.ons-row-inner {
+	background: #f23f69 none repeat scroll 0 0;
+	display: inline-block;
+	padding: 30px 37px;
+	text-align: center;
+}
+.qr-code-inner img {
+	width: 70%;
+	height: 100%;
+}
+/*end purchase-history1 CSS*/
+
+/*start booking-description CSS*/
+.sign-up.book .form-row input {
+	background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+	border: medium none;
+	font-family: "RALEWAY-REGULAR";
+	font-size: 16px;
+	height: 44px;
+	padding: 0;
+	text-indent: 13px;
+	width: 100%;
+}
+.text-input--underbar.width-full.book-des {
+	border: medium none;
+	height: 120px;
+	padding: 17px 13px 0 13px;
+	border-bottom: 1px solid #ababab;
+	width: 100%;
+}
+/*end booking-description CSS*/
+
+/*start event CSS*/
+.right.search.navigation-bar__right ons-icon.fillter {
+	color: #fff;
+}
+.fillter.ng-scope.ons-icon {
+	color: #fff;
+	margin: 12px 0 0;
+}
+/*end event CSS*/
+
+/*start event-booking CSS*/
+.buy-ticket.ons-row-inner {
+	background: #555353;
+	padding: 12px 0;
+}
+.buy-ticket.ons-row-inner p {
+	color: #fff;
+	font-family: "Lato-Regular";
+	margin: 0 0 0 9px;
+	font-size: 14px;
+}
+.owner.ons-row-inner h1 {
+	color: #555353;
+	font-size: 20px;
+	font-family: "Lato-Regular";
+	width: 100%;
+	font-weight: normal;
+	margin: 10px 0 0 9px;
+}
+.owner.ons-row-inner p {
+	color: #555353;
+	font-size: 14px;
+	font-family: "Lato-Regular";
+	font-weight: normal;
+	margin: 6px 0 0 9px;
+}
+.event-date.row.ons-row-inner {
+	margin: 40px 0 0;
+	padding: 0 10px;
+}
+.event-date-left {
+	float: left;
+	width: 56%;
+}
+.event-date-left p {
+	color: #555353;
+	font-family: "Lato-Light";
+	font-size: 13px;
+	margin: 11px 0 0;
+}
+.event-date-left p span {
+	font-family: "Lato-Regular";
+	margin: 0 6px 0 0;
+}
+.event-date-left p strong {
+	font-family: "Lato-Regular";
+	color: #f23f69;
+}
+.event-date-right {
+	float: right;
+	width: 44%;
+}
+.event-date-right .date {
+	border: 2px solid #f23f69;
+	border-radius: 4px;
+	float: left;
+	margin: 48px 0 0;
+	width: 100%;
+}
+.date-inner {
+	background: #f23f69 none repeat scroll 0 0;
+	float: left;
+	padding: 8px 0;
+	text-align: center;
+	width: 70%;
+}
+.date-inner p {
+	color: #fff;
+	font-family: "Lato-Regular";
+	font-size: 18px;
+}
+.date h2 {
+	color: #f23f69;
+	float: left;
+	font-family: "RALEWAY-BOLD";
+	font-size: 26px;
+	font-weight: bold;
+	text-align: center;
+	width: 70%;
+}
+.date h3 {
+	color: #f23f69;
+	float: left;
+	font-family: "Lato-Regular";
+	font-weight: normal;
+	padding: 0 0 12px;
+	text-align: center;
+	width: 70%;
+}
+.login-form.event {
+	margin: 60px auto 20px;
+}
+/*end event-booking CSS*/
+
+/*start event-payment CSS*/
+
+.personal-details.ons-row-inner {
+}
+.personal-details.ons-row-inner h1 {
+	color: #555353;
+	font-family: "Lato-Regular";
+	font-size: 16px;
+	font-weight: normal;
+	padding: 19px 0 0;
+	text-indent: 10px;
+}
+.geological.ons-row-inner {
+	border-bottom: 2px solid #555353;
+	border-top: 2px solid #555353;
+	margin: 11px 0 0;
+	padding: 8px 0 8px 9px !important;
+}
+.geological.ons-row-inner h1 {
+	color: #555353;
+	font-family: "Lato-Regular";
+	font-size: 16px;
+	font-weight: normal;
+}
+.geological.ons-row-inner ul {
+	padding: 14px 0 0 0;
+	margin: 0;
+}
+.geological.ons-row-inner ul li {
+	float: left;
+	list-style: outside none none;
+	margin: 0 8px 0 0;
+	width: 22%;
+}
+.geological.ons-row-inner li input {
+	background: none;
+	border: none;
+	color: #070606;
+	font-family: 'Lato-Light';
+	font-size: 12px;
+	width: 100%;
+}
+.geological.ons-row-inner p {
+	color: #555353;
+	font-family: 'Lato-Light';
+	font-size: 14px;
+	line-height: 21px;
+	margin: 18px 0 0;
+}
+.geological.ons-row-inner h2 {
+	font-family: "Lato-Regular";
+	font-size: 16px;
+	font-weight: normal;
+	color: #555353;
+	padding: 9px 0;
+	width: 98%;
+}
+.geological.ons-row-inner h2 span {
+	float: right;
+	font-family: 'Lato-Light';
+	font-size: 14px;
+}
+.geological.ons-row-inner h2 strong {
+	float: right;
+}
+/*end event-payment CSS*/
+
+/*start payment CSS*/
+
+.main-payment .page__content.ons-page-inner {
+	background: #fff none repeat scroll 0 0;
+	padding: 26px 16px;
+}
+.payment-type.page {
+	padding: 10px;
+}
+.card-type.ons-row-inner {
+	background: #f4f3f6;
+	text-align: center;
+	padding: 20px 10px;
+}
+.card-type.ons-row-inner p {
+	color: #8f8f90;
+	font-size: 16px;
+	width: 100%;
+	text-align: left;
+	font-family: 'Lato-Light';
+}
+.checkbox {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	cursor: default;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-weight: 400;
+	font-size: 17px;
+	line-height: 24px;
+	margin: 10px 0;
+}
+.checkbox > .checkbox__checkmark {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	cursor: default;
+	font-weight: 400;
+	font-size: 17px;
+	position: relative;
+	overflow: hidden;
+	height: 24px;
+	pointer-events: none;
+}
+.checkbox > input[type="checkbox"] {
+	position: absolute;
+	overflow: hidden;
+	right: 0px;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	padding: 0;
+	border: 0;
+	opacity: 0.001;
+	z-index: 1;
+	vertical-align: top;
+	outline: none;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	-webkit-appearance: none;
+	appearance: none;
+	height: 0;
+	width: 0;
+}
+.checkbox > input[type="checkbox"]:checked {
+	background: rgba(24,103,194,0.81);
+}
+.checkbox > input[type="checkbox"]:checked + .checkbox:before {
+	background: #292a2c;
+	border: 1px solid rgba(24,103,194,0.81);
+}
+.checkbox > input[type="checkbox"]:checked + .checkbox:after {
+	opacity: 1;
+}
+.checkbox > .checkbox:before {
+	content: '';
+	position: absolute;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	width: 24px;
+	height: 24px;
+	background: transparent;
+	border: 1px solid #292a2c;
+	-webkit-border-radius: 16px;
+	border-radius: 16px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	left: 0;
+}
+.checkbox > .checkbox {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	position: relative;
+	display: inline-block;
+	vertical-align: bottom;
+	cursor: default;
+	font-weight: 400;
+	font-size: 17px;
+	position: relative;
+	overflow: hidden;
+	width: 24px;
+	height: 24px;
+}
+.checkbox > .checkbox:after {
+	content: '';
+	position: absolute;
+	background: transparent;
+}
+.checkbox > input[type="checkbox"]:focus + .checkbox:before {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.checkbox > input[type="checkbox"]:disabled + .checkbox {
+	opacity: 0.3;
+	cursor: default;
+	pointer-events: none;
+}
+.checkbox > input[type="checkbox"]:disabled:active + .checkbox:before {
+	background: transparent;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.payment-type.page .checkbox {
+	font-size: 14px;
+	margin: 8px 5px 0 0;
+}
+.payment-form {
+	margin: 20px 0 0 0;
+}
+.payment-form input {
+	background: #efeef0 none repeat scroll 0 0;
+	border: 1px solid #8c8a8a;
+	border-radius: 3px;
+	color: #8f8f90;
+	font-family: "Lato-Light";
+	font-size: 18px;
+	margin: 0 0 12px;
+	padding: 8px 0;
+	text-indent: 11px;
+	width: 100%;
+}
+.payment-form .cvv {
+	width: 30%;
+	float: left;
+}
+.done-button.sign-in {
+	background: #9899f6 none repeat scroll 0 0;
+	color: #fff;
+	display: inline-block;
+	font-family: "RALEWAY-BOLD";
+	text-transform: uppercase;
+	width: 80%;
+}
+.payment-type.page h3 {
+	color: #9899f6;
+	font-family: "Lato-Regular";
+	font-size: 26px;
+	font-weight: normal;
+	margin: 21px 0 0;
+	text-align: center;
+}
+.card-type.one.row.ons-row-inner {
+	margin: 7px 0 29px 0;
+}
+.payment-form .zip-code {
+	float: left;
+	width: 39%;
+}
+/*end payment CSS*/
+
+/*start forgot-password CSS*/
+.login-form.forgot {
+    margin: 22px auto 0;
+}
+.new-text.ons-row-inner {
+	text-align:center;
+	display:inline-block;
+}
+.new-text.ons-row-inner p{
+	font-family: "RALEWAY-SEMIBOLD";
+	margin:29px 0 0 0;
+}
+.login-form.forgot input {
+    border: 2px solid #ababab;
+    border-radius: 7px;
+	display:inline-block;
+    margin: 0 0 9px;
+    padding: 15px 8px;
+    width: 92%;
+}
+.login-form.forgot .login-button.submit{
+    background: #9899f6 none repeat scroll 0 0;
+    display: inline-block;
+    font-family: "RALEWAY-REGULAR";
+    font-size: 20px;
+    margin: 20px 0 0;
+    text-transform: uppercase;
+    width: 84%;
+}
+
+/*end forgot-password CSS*/
+
+
+/*======================================================================
+
+START RESPONSIVE CSS
+
+===================================================================== */
+
+@media all and (min-width: 991px) and (max-width: 1024px) {
+/* Start Splash Responsive CSS*/
+.logo {
+	margin: 80px 0 0 0;
+}
+.logo img {
+	width: 28%;
+}
+.powered-by {
+	margin: 300px 0 0;
+}
+.flow-logo img {
+	width: 25%;
+}
+.login {
+	margin: 75px 0 34px;
+}
+.login a {
+	width: 40%;
+}
+.skip {
+	margin: 0 0 20px;
+}
+.watch li a {
+	font-size: 22px;
+}
+/* end Splash Responsive CSS*/	 	
+
+/* Start Login Responsive CSS*/
+.login-form {
+	width: 85%;
+	margin: 80px auto 0;
+}
+.login-form input {
+	font-size: 20px;
+	width: 97%;
+	padding: 21px 0 21px 15px;
+}
+.login-button.sign-in.ng-isolate-scope.button.effeckt-button.button--large.slide-left {
+	display: inline-block;
+	padding: 13px 0;
+	width: 78%;
+}
+.forgot-password.login .ng-scope {
+	font-size: 20px;
+	margin: 6px -10px 0 0;
+}
+.forgot-password.login.ng-isolate-scope.button.effeckt-button.button--quiet.slide-left {
+	width: 89%;
+}
+.dont-have {
+	margin: 18px 0;
+}
+.dont-have p {
+	font-size: 24px;
+}
+.facebook {
+	padding: 18px 0;
+}
+.facebook a {
+	font-size: 22px;
+}
+.fa.fa-facebook {
+	font-size: 29px;
+}
+.google-plus a {
+	font-size: 22px;
+}
+.fa.fa-google-plus {
+	font-size: 29px;
+}
+.terms-privacy {
+	margin: 30px 0 35px;
+}
+.terms-privacy p {
+	font-size: 22px;
+}
+/* End Login Responsive CSS*/
+/* Start sign-up Responsive CSS*/
+.sign-up-page .col h5 {
+	font-size: 22px;
+	margin: 34px 0 0;
+}
+.form-row input {
+	font-size: 20px;
+	height: 54px;
+}
+.sign-up i {
+	font-size: 25px;
+}
+.sign-up .fa.fa-user {
+	margin: 17px 0 0 7px;
+}
+.sign-up .fa.fa-envelope {
+	margin: 14px 0 0 7px;
+}
+.sign-up .fa.fa-star {
+	margin: 14px 0 0 7px;
+}
+.fa.fa-mobile {
+	font-size: 35px;
+	margin: 9px -10px 0 13px;
+}
+.sign-up .fa.fa-eye-slash {
+	font-size: 29px;
+	margin: 13px 11px 0 0;
+}
+.vspc.form-row.sign-up-one ons-button {
+	padding: 10px 0;
+}
+/* End sign-up Responsive CSS*/	 
+	
+	
+/* Start Coming Soon Responsive CSS*/
+.navigation-bar {
+	height: 60px !important;
+}
+.navigation-bar__title {
+	line-height: 60px !important;
+}
+ons-toolbar + .page__background + .page__content {
+	top: 61px !important;
+}
+.fa.fa-angle-left {
+	font-size: 50px;
+	line-height: 57px;
+}
+.tab-label {
+	float: left;
+	font-size: 20px;
+}
+.tab-bar__item {
+	text-indent: 61px;
+}
+.tab.showcase img {
+	margin: -5px 22px 0 0;
+	width: 30px;
+}
+.tab.ticket img {
+	float: left;
+	margin: -6px 26px 0 0;
+	width: 45px;
+}
+.tab.discover img {
+	margin: -7px 17px 0 0;
+	width: 30px;
+}
+.tab.you img {
+	margin: -8px 21px 0 0;
+	width: 30px;
+}
+.search-bar .fa.fa-search {
+	font-size: 28px;
+	margin: 2px 15px 0 11px;
+}
+.search-bar .fa.fa-times {
+	font-size: 28px;
+	margin: 2px 0 0;
+}
+.list-one-inner {
+	height: 466px;
+}
+.search-bar.row.ons-row-inner input {
+	font-size: 23px;
+}
+.activity-left h2 {
+	font-size: 24px;
+}
+.activity-left h3 {
+	font-size: 24px;
+}
+.activity-right input {
+	font-size: 20px;
+	margin: 20px 0 0;
+}
+.bottom-tab ul li {
+	width: 32%;
+}
+.bottom-tab li a {
+	font-size: 23px;
+}
+.search-bar .ng-pristine {
+	width: 91%;
+}
+/* end Coming Soon Responsive CSS*/
+
+/* start REOMMENDEO Soon Responsive CSS*/
+.circle-img.row.ons-row-inner {
+	margin: 75px 0 0 0;
+}
+.circle-img.row.ons-row-inner img {
+	width: 30%;
+}
+.circle-img.row.ons-row-inner p {
+	font-size: 26px;
+}
+.tab-bar__item {
+	text-indent: 58px;
+}
+/* end REOMMENDEO Responsive CSS*/
+
+/* start Home Responsive CSS*/
+.skip-now a {
+	font-size: 35px;
+	margin: 33px 0 0;
+	padding: 25px 0;
+	width: 95%;
+}
+.video-home iframe {
+	height: 591px;
+	width: 98%;
+}
+.top-bar-menu .tab-bar__label.ng-binding.ng-scope {
+	font-size: 22px;
+}
+.showcase.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/showcase.png") no-repeat scroll 37px 11px / 27px auto;
+	text-indent: 25px;
+}
+.ticket.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/tickets.png") no-repeat scroll 42px 13px / 43px auto;
+	text-indent: 30px;
+}
+.you.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/man.png") no-repeat scroll 55px 9px / 29px auto;
+	text-indent: 15px;
+}
+.discover.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/discover.png") no-repeat scroll 41px 11px / 29px auto;
+	text-indent: 26px;
+}
+.footer-tab.ng-scope .tab-label.bottom {
+	font-size: 22px;
+	text-align: center;
+	width: 100%;
+}
+.footer-tab.ng-scope .tab-bar__item {
+	text-indent: 0;
+}
+.demo .tab-bar.ons-tab-bar__footer.ons-tabbar-inner.tab-bar--top {
+	top: 60px !important;
+}
+/* End Home Responsive CSS*/
+
+/* Start Tickets Responsive CSS*/
+.beautiful-left {
+	width: 24%;
+}
+.beautiful-center h1 {
+	font-size: 22px;
+}
+.beautiful-center p {
+	font-size: 18px;
+}
+.beautiful-center {
+	padding: 39px 0;
+	text-indent: 20px;
+}
+.beautiful-right input {
+	font-size: 20px;
+	margin: 73px 0 0 81px;
+	padding: 7px;
+}
+.search-venue input {
+	background: #f4f3f6 url("../images/search.png") no-repeat scroll 12px 13px / 40px auto;
+	font-size: 23px;
+	padding: 20px 0;
+	text-indent: 68px;
+}
+.you-in input {
+	background: #f4f3f6 url("../images/location-icon.png") no-repeat scroll 12px 13px / 40px auto;
+	font-size: 23px;
+	padding: 20px 0;
+	text-indent: 68px;
+}
+.you-in.row.ons-row-inner {
+	margin: 0 0 67px;
+}
+.search-venue.row.ons-row-inner {
+	margin: 93px 0 23px;
+}
+.activity-box {
+	padding: 40px 0;
+}
+.activity-box span {
+	margin: 0 0 13px;
+}
+.activity-box span img {
+	width: auto;
+}
+.search-venue input {
+	background: #eae9ec url("../images/search.png") no-repeat scroll 11px 9px / 32px auto;
+	font-size: 23px;
+	padding: 13px 0;
+	text-indent: 68px;
+}
+.you-in input {
+	background: #eae9ec url("../images/location-icon.png") no-repeat scroll 15px 12px / 32px auto;
+	font-size: 23px;
+	padding: 13px 0;
+	text-indent: 68px;
+}
+.center-bar-menu.page button.tab-bar__button {
+	height: 79px;
+}
+.center-bar-menu .tab-bar__label.ng-binding.ng-scope {
+	margin: 59px 0 0;
+}
+.center-bar-menu.page .all.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/all-icon.png") no-repeat scroll 50% 13px / 68px auto;
+}
+.center-bar-menu.page .event.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/event-icon.png") no-repeat scroll 50% 13px / 68px auto;
+}
+.center-bar-menu.page .activity.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/activity-icon.png") no-repeat scroll 50% 13px / 68px auto;
+}
+.center-bar-menu.page .tab-bar__item.ng-isolate-scope {
+	text-indent: inherit;
+}
+.search-venue.row.ons-row-inner {
+	margin: 56px 0 10px;
+}
+.center-bar-menu.page .tab-bar {
+	top: 114px;
+}
+/* End Tickets Responsive CSS*/
+
+/* Start You Responsive CSS*/
+.profile.row.ons-row-inner {
+	padding: 96px 0;
+}
+.profile-circle {
+	height: 110px;
+	width: 110px;
+}
+.profile-circle .fa.fa-user {
+	font-size: 69px;
+	line-height: 102px;
+}
+.profile a {
+	font-size: 25px;
+}
+.purchase-history a {
+	font-size: 23px;
+}
+.history-icon .fa.fa-history {
+	font-size: 40px;
+	margin: 0 0 0 15px;
+}
+/* End You Responsive CSS*/
+
+/* Start heritage-hotel page Responsive CSS*/
+.book-button ons-button {
+	font-size: 23px;
+	padding: 8px 0;
+}
+.venue span {
+	font-size: 22px;
+	left: 10px;
+}
+.venue p span {
+	left: 0;
+}
+.venue p {
+	font-size: 18px;
+	left: 12px;
+	line-height: 30px;
+}
+.details {
+	width: 98%;
+}
+.venue:last-child {
+	margin: 0 0 40px;
+}
+/* End heritage-hotel page Responsive CSS*/
+
+/* Start Purchase-History page Responsive CSS*/
+.purchase h1 {
+	margin: 87px 0 auto;
+}
+.purchase h2 {
+	font-size: 24px;
+	margin: 28px 0 17px;
+}
+.purchase h3 {
+	font-size: 24px;
+}
+.purchase h4 {
+	font-size: 24px;
+}
+.find-button {
+	min-height: 56%;
+}
+.find-button ons-button {
+	font-size: 24px;
+	padding: 21px 0;
+}
+.find-button div {
+	margin: 34px 0 20px;
+}
+.navigation-bar__title {
+	font-size: 30px !important;
+	line-height: 61px !important;
+}
+/* End Purchase-History page Responsive CSS*/
+
+/* Start pick-a-Region page Responsive CSS*/
+.location h1 {
+	font-size: 24px;
+	left: 11px;
+}
+.near Span {
+	font-size: 22px;
+	left: 13px;
+}
+.city h2 {
+	font-size: 22px;
+}
+.city-1 span {
+	font-size: 22px;
+}
+/* End pick-a-Region page Responsive CSS*/
+
+/* Start Setting page Responsive CSS*/
+.noti-like .switch {
+	height: 30px;
+	width: 54px;
+}
+.noti-like .switch__toggle::before {
+	top: 3px;
+	height: 24px;
+	left: 8px;
+	width: 24px;
+}
+.noti-like .fa.fa-envelope {
+	font-size: 34px;
+	margin: 6px 15px 0 0;
+}
+.noti-like .ion-chatbubbles {
+	font-size: 34px;
+	margin: 6px 15px 0 0;
+}
+.noti-like .ion-android-funnel {
+	font-size: 34px;
+	margin: 6px 15px 0 0;
+}
+/* End Seting page Responsive CSS*/
+
+/* Start Pick-a-Region page Responsive CSS*/
+.top-city-right.col {
+	margin: 20px 0 0 18px;
+}
+.top-city-right.col a {
+	font-size: 22px;
+}
+/* End Pick-a-Region page Responsive CSS*/
+
+/* Start Purchase-History1 page Responsive CSS*/
+.order-image.row img {
+	width: 31%;
+}
+.order-found.row p {
+	font-size: 32px;
+	margin: 44px 0 40px;
+}
+/* End Purchase-History1 page Responsive CSS*/
+
+/* start booking-description page Responsive CSS*/
+.sign-up {
+	margin: 57px 0 0;
+}
+.text-input--underbar.book-des {
+	font-size: 20px;
+	height: 129px;
+}
+.sign-up.book .form-row input {
+	font-size: 20px;
+	height: 60px;
+}
+.text-input--underbar.width-full.book-des {
+	height: 129px;
+}
+/* End Pick-a-Region page Responsive CSS*/
+
+/* start purchase-history1 page Responsive CSS*/
+.book-ticket.ons-row-inner {
+	display: inline-block;
+	text-align: center;
+}
+.book-ticket.ons-row-inner img {
+	width: 80%;
+}
+.qr-code-inner img {
+	width: 50%;
+}
+.qr-code.row.ons-row-inner {
+	display: inline-block;
+	text-align: center;
+}
+.qr-code.row.ons-row-inner p {
+	margin: 17px 0 17px 103px;
+}
+.qr-code-inner.row.ons-row-inner {
+	display: inline-block;
+	text-align: center;
+	width: 80%;
+}
+/* End purchase-history1 Responsive CSS*/
+
+/* start event-booking page Responsive CSS*/
+.buy-ticket.ons-row-inner p {
+	font-size: 22px;
+}
+.owner.ons-row-inner h1 {
+	font-size: 22px;
+}
+.owner.ons-row-inner p {
+	font-size: 18px;
+}
+.event-date-left p {
+	font-size: 22px;
+}
+.login-button.sign-in {
+	font-size: 26px;
+	padding: 16px 0;
+}
+.date-inner {
+	padding: 25px 0;
+}
+.date-inner p {
+	font-size: 34px;
+}
+.date h2 {
+	margin: 14px 0;
+}
+.date h3 {
+	padding: 0 0 22px;
+}
+.event-date-right .date {
+	margin: 46px 0 0;
+}
+.login-form.event {
+	margin: 130px auto 20px;
+}
+/* End Pick-a-Region page Responsive CSS*/
+
+/* Start event-payment page Responsive CSS*/
+.personal-details.ons-row-inner h1 {
+	font-size: 22px;
+}
+.geological.ons-row-inner h1 {
+	font-size: 18px;
+}
+.geological.ons-row-inner ul li {
+	width: 23%;
+}
+.geological.ons-row-inner li input {
+	font-size: 19px;
+}
+.geological.ons-row-inner p {
+	font-size: 20px;
+	line-height: 29px;
+}
+.geological.ons-row-inner h2 {
+	font-size: 20px;
+}
+.geological.ons-row-inner h2 span {
+	font-size: 20px;
+}
+.login-button.sign-in {
+	font-size: 24px;
+	padding: 14px 0;
+	margin: 20px 0 0;
+}
+/* End event-payment page Responsive CSS*/
+
+/* start Payment page Responsive CSS*/
+.card-type.ons-row-inner p {
+	font-size: 24px;
+}
+.payment-type.page .checkbox {
+	font-size: 23px;
+	margin: 8px 18px 0 0;
+}
+.payment-form input {
+	font-size: 20px;
+	padding: 11px 0;
+}
+.done-button.sign-in {
+	font-size: 20px;
+	padding: 9px 0;
+}
+.payment-form {
+	width: 100%;
+}
+.card-type.ons-row-inner {
+	padding: 20px 30px;
+}
+.main-payment .page__content.ons-page-inner {
+	background: #fff none repeat scroll 0 0;
+	padding: 26px 43px;
+}
+/* End Payment page Responsive CSS*/
+
+.right.search.navigation-bar__right {
+	top: 1px;
+	width: 25%;
+}
+.sb-search-input {
+	padding: 0;
+}
+}
+ @media only screen and (min-width: 768px) and (max-width: 990px) {
+.demo .tab-bar.ons-tab-bar__footer.ons-tabbar-inner.tab-bar--top {
+	top: 60px !important;
+}
+.video-home.row.ons-row-inner {
+	margin: 27px 0 16px 10px;
+	width: auto;
+}
+/* Start Splash Responsive CSS*/
+.logo {
+	margin: 80px 0 0 0;
+}
+.logo img {
+	width: 28%;
+}
+.powered-by {
+	margin: 300px 0 0;
+}
+.flow-logo img {
+	width: 25%;
+}
+.login {
+	margin: 75px 0 34px;
+}
+.login a {
+	width: 40%;
+}
+.skip {
+	margin: 0 0 20px;
+}
+.watch li a {
+	font-size: 22px;
+}
+/* end Splash Responsive CSS*/	 
+
+/* Start Login Responsive CSS*/
+.login-form {
+	width: 85%;
+	margin: 80px auto 0;
+}
+.login-form input {
+	font-size: 20px;
+	width: 97%;
+	padding: 21px 0 21px 15px;
+}
+.login-button.sign-in.ng-isolate-scope.button.effeckt-button.button--large.slide-left {
+	display: inline-block;
+	padding: 13px 0;
+	width: 78%;
+}
+.forgot-password.login .ng-scope {
+	font-size: 20px;
+	margin: 6px -10px 0 0;
+}
+.forgot-password.login.ng-isolate-scope.button.effeckt-button.button--quiet.slide-left {
+	width: 89%;
+}
+.dont-have {
+	margin: 18px 0;
+}
+.dont-have p {
+	font-size: 24px;
+}
+.facebook {
+	padding: 18px 0;
+}
+.facebook a {
+	font-size: 22px;
+}
+.fa.fa-facebook {
+	font-size: 29px;
+}
+.google-plus a {
+	font-size: 22px;
+}
+.fa.fa-google-plus {
+	font-size: 29px;
+}
+.terms-privacy {
+	margin: 30px 0 35px;
+}
+.terms-privacy p {
+	font-size: 22px;
+}
+/* End Login Responsive CSS*/
+
+/* Start sign-up Responsive CSS*/
+.sign-up-page .col h5 {
+	font-size: 22px;
+	margin: 34px 0 0;
+}
+.form-row input {
+	font-size: 20px;
+	height: 54px;
+}
+.sign-up i {
+	font-size: 25px;
+}
+.sign-up .fa.fa-user {
+	margin: 17px 0 0 7px;
+}
+.sign-up .fa.fa-envelope {
+	margin: 14px 0 0 7px;
+}
+.sign-up .fa.fa-star {
+	margin: 14px 0 0 7px;
+}
+.fa.fa-mobile {
+	font-size: 35px;
+	margin: 9px -10px 0 13px;
+}
+.sign-up .fa.fa-eye-slash {
+	font-size: 29px;
+	margin: 13px 11px 0 0;
+}
+.vspc.form-row.sign-up-one ons-button {
+	padding: 10px 0;
+}
+/* End sign-up Responsive CSS*/	 
+
+/* Start Coming Soon Responsive CSS*/
+.navigation-bar {
+	height: 60px !important;
+}
+.navigation-bar__title {
+	font-size: 28px !important;
+	line-height: 61px !important;
+}
+.fa.fa-angle-left {
+	color: #fff;
+	font-size: 50px;
+	line-height: 58px;
+}
+ons-toolbar + .page__background + .page__content {
+	top: 61px !important;
+}
+.tab-label {
+	float: left;
+	font-size: 20px;
+}
+.tab-bar__item {
+	text-indent: 30px;
+}
+.tab.showcase img {
+	margin: -5px 22px 0 0;
+	width: 30px;
+}
+.tab.ticket img {
+	float: left;
+	margin: -6px 26px 0 0;
+	width: 45px;
+}
+.tab.discover img {
+	margin: -7px 17px 0 0;
+	width: 30px;
+}
+.tab.you img {
+	margin: -8px 21px 0 0;
+	width: 30px;
+}
+.search-bar .fa.fa-search {
+	font-size: 22px;
+	margin: 2px 15px 0 11px;
+}
+.search-bar .fa.fa-times {
+	font-size: 21px;
+	margin: 2px 0 0;
+}
+.list-one-inner {
+	height: 358px;
+}
+.search-bar.row.ons-row-inner input {
+	font-size: 18px;
+}
+.activity-left h2 {
+	font-size: 20px;
+}
+.activity-left h3 {
+	font-size: 20px;
+}
+.activity-right input {
+	font-size: 18px;
+}
+.bottom-tab li a {
+	font-size: 19px;
+}
+.search-bar .ng-pristine {
+	width: 88%;
+}
+/* end Coming Soon Responsive CSS*/
+
+/* start REOMMENDEO Soon Responsive CSS*/
+.circle-img.row.ons-row-inner {
+	margin: 75px 0 0 0;
+}
+.circle-img.row.ons-row-inner img {
+	width: 37%;
+}
+.circle-img.row.ons-row-inner p {
+	font-size: 26px;
+}
+.footer-tab.ng-scope .tab-bar__item {
+	text-indent: 0;
+}
+/* end REOMMENDEO Responsive CSS*/
+
+/* start Home Responsive CSS*/
+.skip-now a {
+	font-size: 27px;
+	width: 93%;
+	padding: 14px 0;
+}
+.video-home iframe {
+	height: 424px;
+	width: 98%;
+}
+.top-bar-menu .tab-bar__label.ng-binding.ng-scope {
+	font-size: 22px;
+}
+.showcase.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/showcase.png") no-repeat scroll 37px 11px / 27px auto;
+	text-indent: 25px;
+}
+.ticket.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/tickets.png") no-repeat scroll 42px 13px / 43px auto;
+	text-indent: 30px;
+}
+.you.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/man.png") no-repeat scroll 55px 9px / 29px auto;
+	text-indent: 15px;
+}
+.discover.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/discover.png") no-repeat scroll 41px 11px / 29px auto;
+	text-indent: 26px;
+}
+.footer-tab.ng-scope .tab-label.bottom {
+	font-size: 22px;
+	text-align: center;
+	width: 100%;
+}
+/* End Home Responsive CSS*/
+
+/* Start Tickets Responsive CSS*/
+.beautiful-left {
+	width: 24%;
+}
+.beautiful-center h1 {
+	font-size: 22px;
+}
+.beautiful-center p {
+	font-size: 18px;
+}
+.beautiful-center {
+	padding: 22px 0;
+}
+.beautiful-right input {
+	font-size: 18px;
+	margin: 56px 0 0 61px;
+	padding: 7px;
+}
+.search-venue input {
+	background: #f4f3f6 url("../images/search.png") no-repeat scroll 12px 13px / 40px auto;
+	font-size: 23px;
+	padding: 20px 0;
+	text-indent: 68px;
+}
+.you-in input {
+	background: #f4f3f6 url("../images/location-icon.png") no-repeat scroll 12px 13px / 40px auto;
+	font-size: 23px;
+	padding: 20px 0;
+	text-indent: 68px;
+}
+.you-in.row.ons-row-inner {
+	margin: 0 0 67px;
+}
+.search-venue.row.ons-row-inner {
+	margin: 93px 0 23px;
+}
+.search-venue input {
+	background: #eae9ec url("../images/search.png") no-repeat scroll 11px 9px / 32px auto;
+	font-size: 23px;
+	padding: 13px 0;
+	text-indent: 68px;
+}
+.you-in input {
+	background: #eae9ec url("../images/location-icon.png") no-repeat scroll 15px 12px / 32px auto;
+	font-size: 23px;
+	padding: 13px 0;
+	text-indent: 68px;
+}
+.center-bar-menu.page button.tab-bar__button {
+	height: 90px;
+}
+.center-bar-menu .tab-bar__label.ng-binding.ng-scope {
+	margin: 68px 0 0;
+}
+.center-bar-menu.page .all.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/all-icon.png") no-repeat scroll 50% 25px / 53px auto;
+}
+.center-bar-menu.page .event.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/event-icon.png") no-repeat scroll 50% 25px / 53px auto;
+}
+.center-bar-menu.page .activity.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/activity-icon.png") no-repeat scroll 50% 25px / 53px auto;
+}
+.center-bar-menu.page .tab-bar__item.ng-isolate-scope {
+	text-indent: inherit;
+}
+.search-venue.row.ons-row-inner {
+	margin: 56px 0 10px;
+}
+.center-bar-menu.page .tab-bar {
+	top: 114px;
+}
+/* End Tickets Responsive CSS*/
+
+/* Start You Responsive CSS*/
+.profile.row.ons-row-inner {
+	padding: 96px 0;
+}
+.profile-circle {
+	height: 110px;
+	width: 110px;
+}
+.profile-circle .fa.fa-user {
+	font-size: 69px;
+	line-height: 102px;
+}
+.profile a {
+	font-size: 25px;
+}
+.purchase-history a {
+	font-size: 23px;
+}
+.history-icon .fa.fa-history {
+	font-size: 40px;
+	margin: 0 0 0 15px;
+}
+/* End You Responsive CSS*/
+
+/* Start heritage-hotel page Responsive CSS*/
+.book-button ons-button {
+	font-size: 23px;
+	padding: 8px 0;
+}
+.venue span {
+	font-size: 22px;
+	left: 10px;
+}
+.venue p span {
+	left: 0;
+}
+.venue p {
+	font-size: 18px;
+	left: 12px;
+	line-height: 30px;
+}
+.details {
+	width: 98%;
+}
+.venue:last-child {
+	margin: 0 0 40px;
+}
+.htoel-image {
+	padding: 17px 11px 11px;
+	width: 97%;
+}
+/* End heritage-hotel page Responsive CSS*/
+
+/* Start Purchase-History page Responsive CSS*/
+.purchase h1 {
+	margin: 87px 0 auto;
+}
+.purchase h2 {
+	font-size: 24px;
+	margin: 28px 0 17px;
+}
+.purchase h3 {
+	font-size: 24px;
+}
+.purchase h4 {
+	font-size: 24px;
+}
+.find-button {
+	min-height: 57%;
+}
+.find-button ons-button {
+	font-size: 24px;
+	padding: 21px 0;
+}
+.find-button div {
+	margin: 34px 0 20px;
+}
+/* End Purchase-History page Responsive CSS*/
+
+/* Start pick-a-Region page Responsive CSS*/
+.location h1 {
+	font-size: 24px;
+	left: 11px;
+}
+.near Span {
+	font-size: 22px;
+	left: 13px;
+}
+.city h2 {
+	font-size: 22px;
+}
+.city-1 span {
+	font-size: 22px;
+}
+/* End pick-a-Region page Responsive CSS*/
+
+
+/* Start Setting page Responsive CSS*/
+.noti-like .switch {
+	height: 30px;
+	width: 54px;
+}
+.noti-like .switch__toggle::before {
+	top: 3px;
+	height: 24px;
+	left: 8px;
+	width: 24px;
+}
+.noti-like .fa.fa-envelope {
+	font-size: 34px;
+	margin: 6px 15px 0 0;
+}
+.noti-like .ion-chatbubbles {
+	font-size: 34px;
+	margin: 6px 15px 0 0;
+}
+.noti-like .ion-android-funnel {
+	font-size: 34px;
+	margin: 6px 15px 0 0;
+}
+/* End Seting page Responsive CSS*/
+
+/* Start Pick-a-Region page Responsive CSS*/
+.top-city-right.col {
+	margin: 20px 0 0 18px;
+}
+.top-city-right.col a {
+	font-size: 22px;
+}
+/* End Pick-a-Region page Responsive CSS*/
+
+/* start booking-description page Responsive CSS*/
+.sign-up {
+	margin: 57px 0 0;
+}
+.text-input--underbar.book-des {
+	font-size: 20px;
+	height: 129px;
+}
+.sign-up.book .form-row input {
+	font-size: 20px;
+	height: 60px;
+}
+.text-input--underbar.width-full.book-des {
+	height: 129px;
+}
+/* End Pick-a-Region page Responsive CSS*/
+
+/* start purchase-history1 page Responsive CSS*/
+.qr-code-inner img {
+	width: 50%;
+}
+/* End purchase-history1 Responsive CSS*/
+
+/* start event-booking page Responsive CSS*/
+.buy-ticket.ons-row-inner p {
+	font-size: 22px;
+}
+.owner.ons-row-inner h1 {
+	font-size: 22px;
+}
+.owner.ons-row-inner p {
+	font-size: 18px;
+}
+.event-date-left p {
+	font-size: 22px;
+}
+.login-button.sign-in {
+	font-size: 26px;
+	padding: 16px 0;
+}
+.date-inner {
+	padding: 25px 0;
+}
+.date-inner p {
+	font-size: 34px;
+}
+.date h2 {
+	margin: 14px 0;
+}
+.date h3 {
+	padding: 0 0 22px;
+}
+.event-date-right .date {
+	margin: 46px 0 0;
+}
+.login-form.event {
+	margin: 130px auto 20px;
+}
+/* End Pick-a-Region page Responsive CSS*/
+
+/* Start event-payment page Responsive CSS*/
+.personal-details.ons-row-inner h1 {
+	font-size: 22px;
+}
+.geological.ons-row-inner h1 {
+	font-size: 18px;
+}
+.geological.ons-row-inner ul li {
+	width: 23%;
+}
+.geological.ons-row-inner li input {
+	font-size: 19px;
+}
+.geological.ons-row-inner p {
+	font-size: 20px;
+	line-height: 29px;
+}
+.geological.ons-row-inner h2 {
+	font-size: 20px;
+}
+.geological.ons-row-inner h2 span {
+	font-size: 20px;
+}
+.login-button.sign-in {
+	font-size: 24px;
+	padding: 14px 0;
+	margin: 20px 0 0;
+}
+/* End event-payment page Responsive CSS*/
+
+/* start Payment page Responsive CSS*/
+.card-type.ons-row-inner p {
+	font-size: 24px;
+}
+.payment-type.page .checkbox {
+	font-size: 23px;
+	margin: 8px 18px 0 0;
+}
+.payment-form input {
+	font-size: 20px;
+	padding: 11px 0;
+}
+.done-button.sign-in {
+	font-size: 20px;
+	padding: 9px 0;
+}
+.payment-form {
+	width: 100%;
+}
+.card-type.ons-row-inner {
+	padding: 20px 30px;
+}
+.main-payment .page__content.ons-page-inner {
+	background: #fff none repeat scroll 0 0;
+	padding: 26px 43px;
+}
+/* End Payment page Responsive CSS*/
+
+.right.search.navigation-bar__right {
+	top: 1px;
+	width: 32%;
+}
+.sb-search-input {
+	padding: 0;
+}
+}
+ @media only screen and (min-width:600px) and (max-width:767px) {
+.navigation-bar {
+	height: 60px !important;
+}
+.fa.fa-angle-left {
+	font-size: 50px;
+	line-height: 58px;
+}
+.navigation-bar__title {
+	font-size: 28px !important;
+	line-height: 61px !important;
+}
+ons-toolbar + .page__background + .page__content {
+	top: 61px !important;
+}
+.demo .tab-bar.ons-tab-bar__footer.ons-tabbar-inner.tab-bar--top {
+	top: 59px !important;
+}
+/* Start Splash Responsive CSS*/
+.logo {
+	margin: 60px 0 0 0;
+}
+.logo img {
+	width: 36%;
+}
+.powered-by {
+	margin: 120px 0 0;
+}
+.flow-logo img {
+	width: 29%;
+}
+.login {
+	margin: 123px 0 34px;
+}
+.skip {
+	margin: 0 0 20px;
+}
+.watch li a {
+	font-size: 22px;
+}
+/* end Splash Responsive CSS*/
+
+/* Start Login Responsive CSS*/
+.login-form {
+	width: 89%;
+}
+.login-form input {
+	font-size: 20px;
+	width: 96%;
+}
+.forgot-password.login .ng-scope {
+	font-size: 20px;
+	margin: 6px -10px 0 0;
+}
+.dont-have p {
+	font-size: 22px;
+}
+.facebook {
+	padding: 18px 0;
+}
+.facebook a {
+	font-size: 22px;
+}
+.fa.fa-facebook {
+	font-size: 29px;
+}
+.google-plus a {
+	font-size: 22px;
+}
+.fa.fa-google-plus {
+	font-size: 29px;
+}
+.terms-privacy {
+	margin: 15px 0 35px;
+}
+.terms-privacy p {
+	font-size: 20px;
+}
+/* End Login Responsive CSS*/
+
+/* Start sign-up Responsive CSS*/
+.sign-up-page .col h5 {
+	font-size: 22px;
+	margin: 34px 0 0;
+}
+.form-row input {
+	font-size: 20px;
+	height: 54px;
+}
+.sign-up i {
+	font-size: 25px;
+}
+.sign-up .fa.fa-user {
+	margin: 17px 0 0 7px;
+}
+.sign-up .fa.fa-envelope {
+	margin: 14px 0 0 7px;
+}
+.sign-up .fa.fa-star {
+	margin: 14px 0 0 7px;
+}
+.fa.fa-mobile {
+	font-size: 35px;
+	margin: 9px -10px 0 13px;
+}
+.sign-up .fa.fa-eye-slash {
+	font-size: 29px;
+	margin: 13px 11px 0 0;
+}
+.vspc.form-row.sign-up-one ons-button {
+	padding: 10px 0;
+}
+/* End sign-up Responsive CSS*/	 
+
+/* Start Coming Soon Responsive CSS*/
+
+.tab-label {
+	font-size: 20px;
+}
+.tab.showcase img {
+	margin: -3px 0 0;
+	width: 19px;
+}
+.tab.ticket img {
+	margin: -2px 0 0;
+	width: 28px;
+}
+.tab.discover img {
+	margin: -4px 3px 0 0;
+}
+.search-bar .fa.fa-search {
+	font-size: 22px;
+	margin: 2px 15px 0 11px;
+}
+.search-bar .fa.fa-times {
+	font-size: 21px;
+	margin: 2px 0 0;
+}
+.list-one-inner {
+	height: 278px;
+}
+.search-bar.row.ons-row-inner input {
+	font-size: 18px;
+}
+.activity-left h2 {
+	font-size: 20px;
+}
+.activity-left h3 {
+	font-size: 20px;
+}
+.activity-right input {
+	font-size: 18px;
+}
+.bottom-tab li a {
+	font-size: 19px;
+}
+.search-bar .ng-pristine {
+	width: 88%;
+}
+/* end Coming Soon Responsive CSS*/
+
+/* start REOMMENDEO Soon Responsive CSS*/
+.circle-img.row.ons-row-inner img {
+	width: 37%;
+}
+.circle-img.row.ons-row-inner p {
+	font-size: 24px;
+}
+.tab-bar__item {
+	text-indent: 10px;
+}
+.footer-tab.ng-scope .tab-bar__item {
+	text-indent: 0;
+}
+/* end REOMMENDEO Responsive CSS*/
+
+/* start Home Responsive CSS*/
+.skip-now a {
+	font-size: 27px;
+	width: 93%;
+	padding: 14px 0;
+}
+.video-home iframe {
+	height: 424px;
+	width: 98%;
+}
+.top-bar-menu .tab-bar__label.ng-binding.ng-scope {
+	font-size: 18px;
+}
+.showcase.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/showcase.png") no-repeat scroll 23px 12px / 25px auto;
+	text-indent: 19px;
+}
+.ticket.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/tickets.png") no-repeat scroll 31px 17px / 36px auto;
+	text-indent: 25px;
+}
+.you.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/man.png") no-repeat scroll 42px 11px / 26px auto;
+	text-indent: 17px;
+}
+.discover.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/discover.png") no-repeat scroll 28px 13px / 27px auto;
+	text-indent: 22px;
+}
+.footer-tab.ng-scope .tab-label.bottom {
+	font-size: 20px;
+}
+/* End Home Responsive CSS*/
+
+/* Start Tickets Responsive CSS*/
+.beautiful-left {
+	width: 24%;
+}
+.beautiful-center h1 {
+	font-size: 20px;
+}
+.beautiful-center p {
+	font-size: 16px;
+}
+.beautiful-center {
+	padding: 15px 0;
+}
+.beautiful-right input {
+	font-size: 16px;
+	margin: 42px 0 0 34px;
+	padding: 7px;
+}
+.search-venue input {
+	background: #f4f3f6 url("../images/search.png") no-repeat scroll 12px 13px / 40px auto;
+	font-size: 23px;
+	padding: 20px 0;
+	text-indent: 68px;
+}
+.you-in input {
+	background: #f4f3f6 url("../images/location-icon.png") no-repeat scroll 12px 13px / 40px auto;
+	font-size: 23px;
+	padding: 20px 0;
+	text-indent: 68px;
+}
+.you-in.row.ons-row-inner {
+	margin: 0 0 67px;
+}
+.center-bar-menu.page .tab-bar {
+	top: 113px;
+}
+.search-venue input {
+	background: #eae9ec url("../images/search.png") no-repeat scroll 11px 9px / 32px auto;
+	font-size: 23px;
+	padding: 13px 0;
+	text-indent: 68px;
+}
+.you-in input {
+	background: #eae9ec url("../images/location-icon.png") no-repeat scroll 15px 12px / 32px auto;
+	font-size: 23px;
+	padding: 13px 0;
+	text-indent: 68px;
+}
+.center-bar-menu.page button.tab-bar__button {
+	height: 79px;
+}
+.center-bar-menu .tab-bar__label.ng-binding.ng-scope {
+	margin: 59px 0 0;
+}
+.center-bar-menu.page .all.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/all-icon.png") no-repeat scroll 50% 13px / 53px auto;
+}
+.center-bar-menu.page .event.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/event-icon.png") no-repeat scroll 50% 13px / 53px auto;
+}
+.center-bar-menu.page .activity.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/activity-icon.png") no-repeat scroll 50% 13px / 53px auto;
+}
+.center-bar-menu.page .tab-bar__item.ng-isolate-scope {
+	text-indent: inherit;
+}
+.search-venue.row.ons-row-inner {
+	margin: 56px 0 10px;
+}
+/* End Tickets Responsive CSS*/
+
+/* Start You Responsive CSS*/
+.profile.row.ons-row-inner {
+	padding: 56px 0;
+}
+.profile-circle {
+	height: 110px;
+	width: 110px;
+}
+.profile-circle .fa.fa-user {
+	font-size: 69px;
+	line-height: 102px;
+}
+.profile a {
+	font-size: 25px;
+}
+.purchase-history a {
+	font-size: 23px;
+}
+.history-icon .fa.fa-history {
+	font-size: 40px;
+	margin: 0 0 0 15px;
+}
+/* End You Responsive CSS*/
+
+/* Start heritage-hotel page Responsive CSS*/
+.book-button ons-button {
+	font-size: 23px;
+	padding: 8px 0;
+}
+.venue span {
+	font-size: 20px;
+	left: 10px;
+}
+.venue p span {
+	left: 0;
+}
+.venue p {
+	font-size: 16px;
+	left: 12px;
+	line-height: 26px;
+}
+.details {
+	width: 98%;
+}
+.venue:last-child {
+	margin: 0 0 40px;
+}
+.htoel-image {
+	padding: 17px 11px 11px;
+	width: 96%;
+}
+/* End heritage-hotel page Responsive CSS*/
+
+/* Start Purchase-History page Responsive CSS*/
+.purchase h1 {
+	margin: 87px 0 auto;
+}
+.purchase h2 {
+	font-size: 20px;
+	margin: 28px 0 17px;
+}
+.purchase h3 {
+	font-size: 20px;
+}
+.purchase h4 {
+	font-size: 18px;
+}
+.find-button {
+	min-height: 45%;
+}
+.find-button ons-button {
+	font-size: 20px;
+	padding: 14px 0;
+}
+/* End Purchase-History page Responsive CSS*/
+
+/* Start Setting page Responsive CSS*/
+.noti-like .switch {
+	height: 30px;
+	width: 54px;
+}
+.noti-like .switch__toggle::before {
+	top: 3px;
+	height: 24px;
+	left: 8px;
+	width: 24px;
+}
+.noti-like .fa.fa-envelope {
+	font-size: 34px;
+	margin: 6px 15px 0 0;
+}
+.noti-like .ion-chatbubbles {
+	font-size: 34px;
+	margin: 6px 15px 0 0;
+}
+.noti-like .ion-android-funnel {
+	font-size: 34px;
+	margin: 6px 15px 0 0;
+}
+/* End Seting page Responsive CSS*/
+
+/* Start Pick-a-Region page Responsive CSS*/
+.top-city-right.col {
+	margin: 20px 0 0 18px;
+}
+.top-city-right.col a {
+	font-size: 22px;
+}
+/* End Pick-a-Region page Responsive CSS*/
+
+/* start booking-description page Responsive CSS*/
+.sign-up {
+	margin: 57px 0 0;
+}
+.text-input--underbar.book-des {
+	font-size: 20px;
+	height: 129px;
+}
+.sign-up.book .form-row input {
+	font-size: 20px;
+	height: 60px;
+}
+.text-input--underbar.width-full.book-des {
+	height: 129px;
+}
+/* End Pick-a-Region page Responsive CSS*/
+
+/* start event-booking page Responsive CSS*/
+.buy-ticket.ons-row-inner p {
+	font-size: 22px;
+}
+.owner.ons-row-inner h1 {
+	font-size: 22px;
+}
+.owner.ons-row-inner p {
+	font-size: 18px;
+}
+.event-date-left p {
+	font-size: 22px;
+}
+.login-button.sign-in {
+	font-size: 26px;
+	padding: 16px 0;
+}
+.date-inner {
+	padding: 15px 0;
+}
+.date-inner p {
+	font-size: 22px;
+}
+/* End Pick-a-Region page Responsive CSS*/
+
+/* Start event-payment page Responsive CSS*/
+.personal-details.ons-row-inner h1 {
+	font-size: 22px;
+}
+.geological.ons-row-inner h1 {
+	font-size: 18px;
+}
+.geological.ons-row-inner ul li {
+	width: 23%;
+}
+.geological.ons-row-inner li input {
+	font-size: 19px;
+}
+.geological.ons-row-inner p {
+	font-size: 20px;
+	line-height: 29px;
+}
+.geological.ons-row-inner h2 {
+	font-size: 20px;
+}
+.geological.ons-row-inner h2 span {
+	font-size: 20px;
+}
+.login-button.sign-in {
+	font-size: 24px;
+	padding: 14px 0;
+	margin: 20px 0 0;
+}
+/* End event-payment page Responsive CSS*/
+
+/* start Payment page Responsive CSS*/
+.card-type.ons-row-inner p {
+	font-size: 20px;
+}
+.payment-type.page .checkbox {
+	font-size: 23px;
+}
+.payment-form input {
+	font-size: 20px;
+	padding: 11px 0;
+}
+.done-button.sign-in {
+	font-size: 20px;
+}
+/* End Payment page Responsive CSS*/
+
+.right.search.navigation-bar__right {
+	top: 1px;
+	width: 42%;
+}
+.sb-search-input {
+	padding: 0;
+}
+}
+
+/*		Wide Mobile Layout: 480px.
+		Gutters: 24px.
+		Outer margins: 22px.
+		Inherits styles from: Default Layout, Mobile Layout.
+------------------------------------------------------------
+cols    1     2      3      4      5
+px      68    160    252    344    436    */
+ @media only screen and (min-width: 320px) and (max-width: 480px) {
+.circle-img.row.ons-row-inner {
+	margin: 33px 0 85px;
+}
+}
+ @media only screen and (min-width: 481px) and (max-width: 599px) {
+/* Start Splash Responsive CSS*/
+.skip {
+	margin: 0 0 20px;
+}
+/* end Splash Responsive CSS*/
+
+/* Start Login Responsive CSS*/
+.login-form {
+	width: 89%;
+}
+.login-form input {
+	font-size: 20px;
+	width: 96%;
+}
+.forgot-password.login .ng-scope {
+	font-size: 20px;
+	margin: 6px -10px 0 0;
+}
+.dont-have p {
+	font-size: 22px;
+}
+.facebook a {
+	font-size: 20px;
+}
+.fa.fa-facebook {
+	font-size: 26px;
+}
+.google-plus a {
+	font-size: 20px;
+}
+.fa.fa-google-plus {
+	font-size: 26px;
+}
+.terms-privacy {
+	margin: 15px 0 35px;
+}
+.terms-privacy p {
+	font-size: 18px;
+}
+/* End Login Responsive CSS*/
+
+/* Start sign-up Responsive CSS*/
+.sign-up-page .col h5 {
+	font-size: 22px;
+	margin: 34px 0 0;
+}
+.form-row input {
+	font-size: 20px;
+	height: 54px;
+}
+.sign-up i {
+	font-size: 25px;
+}
+.sign-up .fa.fa-user {
+	margin: 17px 0 0 7px;
+}
+.sign-up .fa.fa-envelope {
+	margin: 14px 0 0 7px;
+}
+.sign-up .fa.fa-star {
+	margin: 14px 0 0 7px;
+}
+.fa.fa-mobile {
+	font-size: 35px;
+	margin: 9px -10px 0 13px;
+}
+.sign-up .fa.fa-eye-slash {
+	font-size: 29px;
+	margin: 13px 11px 0 0;
+}
+/* End sign-up Responsive CSS*/
+
+/* Start Coming Soon Responsive CSS*/
+
+.tab-label {
+	font-size: 18px;
+}
+.tab.showcase img {
+	margin: -3px 0 0;
+	width: 19px;
+}
+.tab.ticket img {
+	margin: -2px 0 0;
+	width: 28px;
+}
+.tab.discover img {
+	margin: -4px 3px 0 0;
+}
+.search-bar .fa.fa-search {
+	font-size: 22px;
+	margin: 2px 15px 0 11px;
+}
+.search-bar .fa.fa-times {
+	font-size: 21px;
+	margin: 2px 0 0;
+}
+.list-one-inner {
+	height: 221px;
+}
+.search-bar.row.ons-row-inner input {
+	font-size: 18px;
+}
+.activity-left h2 {
+	font-size: 18px;
+}
+.activity-left h3 {
+	font-size: 18px;
+}
+.activity-right input {
+	font-size: 16px;
+}
+.bottom-tab li a {
+	font-size: 16px;
+}
+.search-bar .ng-pristine {
+	width: 85%;
+}
+/* end Coming Soon Responsive CSS*/
+
+/* start REOMMENDEO Soon Responsive CSS*/
+.circle-img.row.ons-row-inner img {
+	width: 32%;
+}
+.circle-img.row.ons-row-inner p {
+	font-size: 22px;
+}
+.tab-bar__item {
+	text-indent: 10px;
+}
+.footer-tab.ng-scope .tab-bar__item {
+	text-indent: 0;
+}
+/* end REOMMENDEO Responsive CSS*/
+
+/* start Home Responsive CSS*/
+.skip-now a {
+	font-size: 27px;
+	width: 93%;
+	padding: 14px 0;
+}
+.top-bar-menu .tab-bar__label.ng-binding.ng-scope {
+	font-size: 15px;
+}
+.showcase.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/showcase.png") no-repeat scroll 13px 14px / 23px auto;
+	text-indent: 18px;
+}
+.ticket.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/tickets.png") no-repeat scroll 20px 18px / 33px auto;
+	text-indent: 27px;
+}
+.you.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/man.png") no-repeat scroll 29px 12px / 24px auto;
+	text-indent: 13px;
+}
+.discover.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/discover.png") no-repeat scroll 16px 14px / 26px auto;
+	text-indent: 22px;
+}
+.footer-tab.ng-scope .tab-label.bottom {
+	font-size: 16px;
+}
+/* End Home Responsive CSS*/
+
+/* Start Tickets Responsive CSS*/
+.beautiful-left {
+	width: 24%;
+}
+.beautiful-center h1 {
+	font-size: 18px;
+}
+.beautiful-center p {
+	font-size: 13px;
+}
+.beautiful-center {
+	padding: 5px 6px 0 0;
+}
+.beautiful-right input {
+	font-size: 14px;
+	margin: 28px 0 0 21px;
+	padding: 7px;
+}
+.search-venue input {
+	background: #eae9ec url("../images/search.png") no-repeat scroll 11px 9px / 32px auto;
+	font-size: 23px;
+	padding: 13px 0;
+	text-indent: 68px;
+}
+.you-in input {
+	background: #eae9ec url("../images/location-icon.png") no-repeat scroll 15px 12px / 32px auto;
+	font-size: 23px;
+	padding: 13px 0;
+	text-indent: 68px;
+}
+.center-bar-menu.page .all.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/all-icon.png") no-repeat scroll 50% 13px / 53px auto;
+}
+.center-bar-menu.page .event.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/event-icon.png") no-repeat scroll 50% 13px / 53px auto;
+}
+.center-bar-menu.page .activity.ng-scope.tab-bar__item.ng-isolate-scope {
+	background: rgba(0, 0, 0, 0) url("../images/activity-icon.png") no-repeat scroll 50% 13px / 53px auto;
+}
+.center-bar-menu.page .tab-bar__label.ng-binding.ng-scope {
+	margin: 59px 0 0;
+}
+.center-bar-menu.page button.tab-bar__button {
+	height: 76px;
+}
+.search-venue.row.ons-row-inner {
+	margin: 44px 0 10px;
+}
+.center-bar-menu.page .tab-bar__item.ng-isolate-scope {
+	text-indent: inherit;
+}
+/* End Tickets Responsive CSS*/
+
+/* Start You Responsive CSS*/
+.profile.row.ons-row-inner {
+	padding: 56px 0;
+}
+.profile-circle {
+	height: 90px;
+	width: 90px;
+}
+.profile-circle .fa.fa-user {
+	font-size: 60px;
+	line-height: 90px;
+}
+.profile a {
+	font-size: 22px;
+}
+.history-icon .fa.fa-history {
+	font-size: 40px;
+	margin: 0 0 0 15px;
+}
+/* End You Responsive CSS*/
+
+/* Start heritage-hotel page Responsive CSS*/
+.book-button ons-button {
+	font-size: 23px;
+	padding: 8px 0;
+}
+.venue span {
+	font-size: 20px;
+	left: 10px;
+}
+.venue p span {
+	left: 0;
+}
+.venue p {
+	font-size: 16px;
+	left: 12px;
+	line-height: 26px;
+}
+.details {
+	width: 98%;
+}
+.venue:last-child {
+	margin: 0 0 40px;
+}
+.htoel-image {
+	padding: 12px 7px 5px;
+	width: 97%;
+}
+/* Start heritage-hotel page Responsive CSS*/
+
+/* Start Purchase-History page Responsive CSS*/
+.purchase h1 {
+	margin: 87px 0 auto;
+}
+.purchase h2 {
+	font-size: 20px;
+	margin: 28px 0 17px;
+}
+.purchase h3 {
+	font-size: 20px;
+}
+.purchase h4 {
+	font-size: 18px;
+}
+.find-button ons-button {
+	font-size: 20px;
+	padding: 14px 0;
+}
+/* End Purchase-History page Responsive CSS*/
+
+/* Start Setting page Responsive CSS*/
+.noti-like .switch {
+	height: 30px;
+	width: 54px;
+}
+.noti-like .switch__toggle::before {
+	top: 3px;
+	height: 24px;
+	left: 8px;
+	width: 24px;
+}
+.noti-like .fa.fa-envelope {
+	font-size: 34px;
+	margin: 6px 15px 0 0;
+}
+.noti-like .ion-chatbubbles {
+	font-size: 34px;
+	margin: 6px 15px 0 0;
+}
+.noti-like .ion-android-funnel {
+	font-size: 34px;
+	margin: 6px 15px 0 0;
+}
+/* End Setting page Responsive CSS*/
+
+/* Start Pick-a-Region page Responsive CSS*/
+.top-city-right.col {
+	margin: 20px 0 0 18px;
+}
+.top-city-right.col a {
+	font-size: 20px;
+}
+/* End Pick-a-Region page Responsive CSS*/
+
+/* start booking-description page Responsive CSS*/
+.sign-up {
+	margin: 57px 0 0;
+}
+.text-input--underbar.book-des {
+	font-size: 18px;
+	height: 109px;
+}
+.sign-up.book .form-row input {
+	font-size: 18px;
+	height: 50px;
+}
+/* End booking-description page Responsive CSS*/
+
+/* start event-booking page Responsive CSS*/
+.buy-ticket.ons-row-inner p {
+	font-size: 16px;
+}
+.owner.ons-row-inner h1 {
+	font-size: 22px;
+}
+.owner.ons-row-inner p {
+	font-size: 16px;
+}
+.event-date-left p {
+	font-size: 17px;
+}
+.date-inner {
+	padding: 15px 0;
+}
+.date-inner p {
+	font-size: 22px;
+}
+/* End Pick-a-Region page Responsive CSS*/
+
+/* Start event-payment page Responsive CSS*/
+.personal-details.ons-row-inner h1 {
+	font-size: 20px;
+}
+.geological.ons-row-inner ul li {
+	width: 23%;
+}
+.geological.ons-row-inner li input {
+	font-size: 17px;
+}
+.geological.ons-row-inner p {
+	font-size: 18px;
+	line-height: 28px;
+}
+.geological.ons-row-inner h2 {
+	font-size: 18px;
+}
+.geological.ons-row-inner h2 span {
+	font-size: 18px;
+}
+.login-button.sign-in {
+	font-size: 24px;
+	padding: 14px 0;
+	margin: 20px 0 0;
+}
+/* End event-payment page Responsive CSS*/
+
+.right.search.navigation-bar__right {
+	width: 62%;
+}
+}
