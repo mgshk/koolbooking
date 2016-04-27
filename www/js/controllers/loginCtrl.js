@@ -16,8 +16,9 @@ angular.module('eventsApp.controllers.loginCtrl', ['directive.g+signin'])
     
     $scope.fbLogin = function() {
 	$facebook.login().then(function(response) {
-	    var auth_token = response.authResponse.accessToken;
-	    fbLogin(auth_token);
+	    var accessToken = response.authResponse.accessToken;
+	    console.log(accessToken);
+	    fbLogin(accessToken);
 	});
     }
     
@@ -40,9 +41,9 @@ angular.module('eventsApp.controllers.loginCtrl', ['directive.g+signin'])
 	});
     });
     
-    function fbLogin (auth_token) {
+    function fbLogin (accessToken) {
 	if($facebook.isConnected()){	    
-	    loginFactory.fbLogin(auth_token).then(function (resp) {
+	    loginFactory.fbLogin(accessToken).then(function (resp) {
 		if (resp.status === 0) {
 		    $scope.errorMsg = resp.error;
 		    return;
