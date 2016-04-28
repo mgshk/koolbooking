@@ -1,44 +1,4 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<!-- CSP support mode (required for Windows Universal apps): https://docs.angularjs.org/api/ng/directive/ngCsp -->
-<html lang="en" ng-app="app" ng-csp>
-    <head>
-    <meta charset="utf-8" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <link href="lib/onsen/css/style.css" rel="stylesheet" type="text/css" media="all">
 
-    <!-- JS dependencies (order matters!) -->
-    <script src="scripts/platformOverrides.js"></script>
-    <script src="lib/angular/angular.js"></script>
-    <script src="lib/onsen/js/onsenui.js"></script>
-
-    <!-- CSS dependencies -->
-    <link rel="stylesheet" href="lib/onsen/css/onsenui.css" />
-    <link rel="stylesheet" href="lib/onsen/css/onsen-css-components-blue-basic-theme.css" />
-
-    <!-- CSP support mode (required for Windows Universal apps) -->
-    <link rel="stylesheet" href="lib/angular/angular-csp.css" />
-
-    <!-- --------------- App init --------------- -->
-
-    <title>home</title>
-    <script>
-        angular.module('app', ['onsen']);
-
-        angular.module('app').controller('AppController', function ($scope) {
-            $scope.doSomething = function () {
-                ons.notification.alert({ message: 'tapped' });
-            };
-        });
-    </script>
-    </head>
-
-    <body ng-controller="AppController">
-<!-- Cordova reference --> 
-<script src="cordova.js"></script> 
-<script src="scripts/index.js"></script> 
-<!-- -->
 
 <ons-page class="top-bar-menu">
       <ons-tabbar position="top" class="demo">
@@ -431,40 +391,3 @@
         </ons-page>
   </ons-navigator>
     </ons-template>
-</body>
-</html>
-=======
-<style type="text/css">
-	body{
-		width: 100%;
-		float: left;
-		background: #4d4d4d;
-	}
-</style>
-
-<div class="row">
-    <div class="logo">
-        <img src="img/logo.png" alt="Logo">  
-    </div>
-</div>
-
-<div class="row">
-	<div class="powered-by">
-	    <h3>Powered By</h3>
-	    <div class="flow-logo">
-	    	<img src="img/flow-img.png" alt="Flow">
-	        <ul class="watch">
-	            <li>watch</li>
-	            <li><i class="ion-record"></i> talk</li>
-	            <li><i class="ion-record"></i> click</li>
-	        </ul>
-	    </div>
-	</div>
-</div>
-
-<div class="row">
-	<button class="button button-block orange" ui-sref="login">
-		<span>Login</span>
-	</button>
-</div>
->>>>>>> babf5e577322d99a5e30c3519ac5c980259eeb37
