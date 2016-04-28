@@ -41,7 +41,7 @@ angular.module('eventsApp.config', ['ui.router']).config(function($stateProvider
 .state('purchaseHistory', {
     url: '/purchaseHistory',
     controller: 'purchaseHistoryCtrl',
-    templateUrl: 'templates/payment.html'
+    templateUrl: 'templates/purchase-history.html'
 })
 .state('eventBooking', {
     url: '/eventBooking',
