@@ -31,7 +31,6 @@ angular.module('eventsApp', ['ionic', 'ngFacebook', 'eventsApp.controllers', 'ev
 
 // Controllers
 angular.module('eventsApp.controllers', [
-  'eventsApp.controllers.splashCtrl',
   'eventsApp.controllers.loginCtrl',
   'eventsApp.controllers.signupCtrl',
   'eventsApp.controllers.forgotPasswordCtrl',

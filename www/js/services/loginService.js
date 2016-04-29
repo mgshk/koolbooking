@@ -7,8 +7,8 @@ angular.module('eventsApp.service.loginService', [])
 			});		
 		}
 		
-		this.forgotPassword = function(user_email) {
-			return $http.get('http://koolbooking.com/android_app/forgot_password?user_email='+user_email).then(function (resp) {
+		this.forgotPassword = function(user_email, new_password, confirm_password) {
+			return $http.get('http://koolbooking.com/android_app/forgot_password?user_email='+user_email+'&new_password='+new_password+'&confirm_password='+confirm_password).then(function (resp) {
 				return resp;
 			});		
 		}

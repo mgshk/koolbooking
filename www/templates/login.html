@@ -1,25 +1,30 @@
-
-    <ons-page>
-      <ons-toolbar>
-        <div class="left login">
-          <ons-toolbar-button><i class="fa fa-angle-left"></i> </ons-toolbar-button>
-        </div>
-        <div class="center">Log In</div>
-      </ons-toolbar>
-      <div class="login-form">
-        <input type="email" class="email" placeholder="Email Address" value="">
-        <input type="password" class="password" placeholder="Password" value="">
-        <ons-button modifier="large" class="login-button sign-in">sign In</ons-button>
-        <ons-button modifier="quiet" class="forgot-password login" ui-sref="forgotPassword">Forgot password?</ons-button>
-      </div>
-      <div class="dont-have">
-        <p>Don't have an account? <a href="#" ui-sref="signup">Sign up</a> </p>
-        <h6>or</h6>
-      </div>
-      <div class="facebook"> <a href="#"><i class="fa fa-facebook"></i> Login With Facebook</a> </div>
-      <div class="google-plus"><a href="#"><i class="fa fa-google-plus"></i>Login With Google</a> </div>
-      <div class="terms-privacy">
-        <p> I agree to the <a href="#">Terms & Conditions</a> & <a href="#">Privacy Policy</a> </p>
-      </div>
-    </ons-page>
-
+<ons-page>
+    <ons-toolbar>
+	<div class="left login">
+	    <ons-toolbar-button><i class="fa fa-angle-left"></i></ons-toolbar-button>
+	</div>
+	<div class="center">Log In</div>
+	<p ng-bind="errorMsg"></p>
+    </ons-toolbar>
+    <div class="login-form">
+		<input type="email" class="email" placeholder="Email Address" autocomplete="off" ng-model="user_email">
+		<input type="password" class="password" placeholder="Password" autocomplete="off" ng-model="user_pass">
+		<ons-button modifier="large" class="login-button sign-in" ng-click="login();">sign In</ons-button>
+		<ons-button modifier="quiet" class="forgot-password login" ui-sref="forgotPassword">Forgot password?</ons-button>
+    </div>
+    <div class="dont-have">
+		<p>Don't have an account? <a href="#" ui-sref="signup">Sign up</a> </p>
+		<h6>or</h6>
+    </div>
+    <div class="facebook"> <a ng-click="fbLogin();"><i class="fa fa-facebook"></i> Login With Facebook</a> </div>
+  
+    <google-plus-signin clientid="517332717749-v9vnp2a4oaglirev9uu34nq3gkhqtan4.apps.googleusercontent.com"
+			autorender="false" customtargetid="my-custom-element">
+	<div id="my-custom-element" class="google-plus">
+	    <a href="#"><i class="fa fa-google-plus"></i>Login With Google</a>
+	</div>
+    </google-plus-signin>
+    <div class="terms-privacy">
+		<p> I agree to the <a href="#">Terms & Conditions</a> & <a href="#">Privacy Policy</a> </p>
+    </div>
+</ons-page>
