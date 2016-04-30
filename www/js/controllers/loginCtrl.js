@@ -1,5 +1,9 @@
 angular.module('eventsApp.controllers.loginCtrl', ['directive.g+signin'])
     .controller('loginCtrl', ['$scope', '$state', '$facebook', 'loginFactory', function($scope, $state, $facebook, loginFactory) {
+
+    if (window.localStorage.getItem('userID')) {
+    	$state.go('home');
+    }
     
     $scope.login = function() {	
 		loginFactory.userLogin ($scope.user_email, $scope.user_pass).then(function (resp) {

@@ -1,0 +1,38 @@
+<ons-page class="heritage">
+  <ons-toolbar>
+    <div class="left login">
+     <!-- <ons-toolbar-button><i class="fa fa-angle-left"></i> </ons-toolbar-button>-->
+    </div>
+   <div class="center">Heritage Hotel</div>
+  </ons-toolbar>
+  <div class="htoel-image">
+    <img ng-src="{{event.image_url}}"/>
+  </div>
+  <div class="book-button">
+    <div style="padding: 10px 9px">
+      <ons-button modifier="large" style="margin: 0 auto;" ui-sref="eventBooking({event_id: event.id})">
+        Book
+      </ons-button>
+    </div>
+  </div>
+      
+  <div class="details">
+    <div class="venue">
+      <span>{{event.post_title}}</span>
+      <p>{{event.post_content}}</p>
+    </div>
+    
+    <div class="venue">
+      <p><span>Activity Type :</span>&nbsp;&nbsp;Specific Date</p>
+    </div>
+     <div class="venue">
+      <p><span>Activity Time :</span>&nbsp;&nbsp;{{event.event_time}}</p>
+    </div>
+     <div class="venue">
+      <p><span>Maximum number of people :</span>&nbsp;&nbsp;{{event.max_people}}</p>
+    </div>
+    <div class="venue">
+      <p><span>Venue Facilities :</span>&nbsp;&nbsp; {{event.venue_facilities}}</p>
+    </div>
+  </div>
+</ons-page>

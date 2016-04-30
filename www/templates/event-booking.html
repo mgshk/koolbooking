@@ -1,59 +1,44 @@
-
-    <ons-page>
-      <ons-toolbar>
-        <div class="left login">
-          <ons-toolbar-button><i class="fa fa-angle-left"></i> </ons-toolbar-button>
-        </div>
-        <div class="center">UP <span>3</span> DJ JIME</div>
-      </ons-toolbar>
+<ons-page>
+  <ons-toolbar>
+    <div class="left login">
+      <ons-toolbar-button><i class="fa fa-angle-left"></i> </ons-toolbar-button>
+    </div>
+    <!--<div class="center">UP <span>3</span> DJ JIME</div>-->
+  </ons-toolbar>
       
-      <ons-page>
-      <ons-row class="buy-ticket">
+  <ons-page>
+    <ons-row class="buy-ticket">
       <p>Buy Tickets</p>
-      </ons-row>
-      
-      <ons-row class="owner">
-      <h1>Owner description</h1>
-      <p>DJ JIME PRESENTS: #UP3- THE DAY FETE ON WATER</p>
-      </ons-row>
-      
-      <ons-row class="event-date">
-      
+    </ons-row>
+    
+    <ons-row class="owner">
+      <h1 ng-bind="{{event.post_title}}"></h1>
+      <p ng-bind="{{event.post_content}}"></p>
+    </ons-row>
+    
+    <ons-row class="event-date">
       <div class="event-date-left">
-      <p><span>Event Type:</span>Specific Date</p>
+        <p><span>Event Type:</span>Specific Date</p>
+        <p><span>Event Date:</span>{{event.event_date}}</p>    
+        <p><span>Activity Time:</span>{{event.event_time}}</p> 
+        <p><span>Maximum number of people:</span>{{event.max_people}}</p>   
+        <p><span>Venue Facilities:</span>{{event.venue_facilities}}</p>    
+        <!--<p><span>PRICE:</span><strong>{{event.event_date}}</strong></p>-->
+      </div>
       
-      <p><span>Event Date:</span>05-01-2016</p>
-      
-      <p><span>Activity Time:</span>2:00PM</p>
-      
-      <p><span>Maximum number of people:</span>100</p>
-      
-      <p><span>Venue Facilities:</span>Parking</p>
-      
-      <p><span>PRICE:</span><strong>34000</strong></p>
+      <div class="event-date-right">  
+       <div class="date">       
+         <div class="date-inner">
+            <p>{{event.event_date | date: 'MMMM' }}</p>
+         </div>  
+         <h2>{{event.event_date | date: 'dd' }}</h2>
+         <h3>{{event.event_date | date: 'EEEE' }}</h3>    
+       </div> 
+      </div>
+    </ons-row>
      
-      </div>
-      
-       <div class="event-date-right">
-       
-       <div class="date">
-       
-       <div class="date-inner">
-       <p>April</p>
-       </div>
-       
-       <h2>02</h2>
-       <h3>Sat</h3>
-       
-       </div>
-       
-      </div>
-      
-      </ons-row>
-       
-      <div class="login-form event">
-        <ons-button modifier="large" class="login-button sign-in">Book Now</ons-button>
-      </div>
-      </ons-page>
-      
-    </ons-page>
+    <div class="login-form event">
+      <ons-button modifier="large" class="login-button sign-in" ui-sref="eventPayment({event_id: event.id})">Book Now</ons-button>
+    </div>
+  </ons-page>
+</ons-page>

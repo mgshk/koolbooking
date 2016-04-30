@@ -20,7 +20,7 @@ angular.module('eventsApp.service.loginService', [])
 		}
 		
 		this.fbLogin = function(user_details) {
-			return $http.get('http://koolbooking.com/android_app/social_login?first_name='+user_details.first_name+'&last_name='+user_details.last_name+'&email='+user_details.email+'&name='+user_details.name+'&link='+user_details.link).then(function (resp) {
+			return $http.get('http://koolbooking.com/android_app/social_login?first_name='+user_details.first_name+'&last_name='+user_details.last_name+'&user_email='+user_details.email+'&name='+user_details.name+'&link='+user_details.link).then(function (resp) {
 				return resp;
 			});		
 		}
@@ -32,7 +32,7 @@ angular.module('eventsApp.service.loginService', [])
 		}
 		
 		this.googleLogin = function(user_details) {
-			return $http.get('http://koolbooking.com/android_app/social_login?first_name='+user_details.first_name+'&last_name='+user_details.last_name+'&email='+user_details.email+'&name='+user_details.name+'&link='+user_details.link).then(function (resp) {
+			return $http.get('http://koolbooking.com/android_app/social_login?first_name='+user_details.first_name+'&last_name='+user_details.last_name+'&user_email='+user_details.email+'&name='+user_details.name+'&link='+user_details.link).then(function (resp) {
 				return resp;
 			});		
 		}

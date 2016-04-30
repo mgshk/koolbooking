@@ -12,16 +12,16 @@
     <script src="lib/ionic/js/ionic.bundle.js"></script>
     
     <!-- JS dependencies (order matters!) -->
-    <link href="lib-new/onsen/css/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="lib/onsen/css/style.css" rel="stylesheet" type="text/css" media="all">
     <script src="scripts/platformOverrides.js"></script>
-    <script src="lib-new/onsen/js/onsenui.js"></script>
-
+    <script src="lib/onsen/js/onsenui.js"></script>
+    
     <!-- CSS dependencies -->
-    <link rel="stylesheet" href="lib-new/onsen/css/onsenui.css" />
-    <link rel="stylesheet" href="lib-new/onsen/css/onsen-css-components-blue-basic-theme.css" />
+    <link rel="stylesheet" href="lib/onsen/css/onsenui.css" />
+    <link rel="stylesheet" href="lib/onsen/css/onsen-css-components-blue-basic-theme.css" />
 
     <!-- CSP support mode (required for Windows Universal apps) -->
-    <link rel="stylesheet" href="lib-new/angular/angular-csp.css" />
+    <link rel="stylesheet" href="lib/angular/angular-csp.css" />
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -42,16 +42,18 @@
     <script src="js/controllers/purchaseHistoryCtrl.js"></script>
     <script src="js/controllers/finalPaymentCtrl.js"></script>
     <script src="js/controllers/eventBookingCtrl.js"></script>
-    <script src="js/controllers/paymentCtrl.js"></script>
+    <script src="js/controllers/eventPaymentCtrl.js"></script>
     <script src="js/controllers/settingsCtrl.js"></script>
     
     <!--factories-->
     <script src="js/factories/loginFactory.js"></script>
     <script src="js/factories/eventsFactory.js"></script>
+    <script src="js/factories/userFactory.js"></script>
     
     <!--Services-->
     <script src="js/services/loginService.js"></script>
     <script src="js/services/eventsService.js"></script>
+    <script src="js/services/userService.js"></script>
   </head>
   <body ng-app="eventsApp">
     <div id="fb-root"></div>

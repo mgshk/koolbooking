@@ -28,28 +28,27 @@ angular.module('eventsApp.config', ['ui.router']).config(function($stateProvider
         templateUrl: 'templates/home.html'
     })
     .state('eventDetails', {
-        url: '/eventDetails',
+        url: '/eventDetails/:event_id',
         controller: 'eventDetailsCtrl',
-        templateUrl: 'templates/heritage-hotel.html',
-        params: {event_id: null}
+        templateUrl: 'templates/event-details.html'
     })
     .state('purchaseHistory', {
-        url: '/purchaseHistory',
+        url: '/purchaseHistory/:user_id',
         controller: 'purchaseHistoryCtrl',
         templateUrl: 'templates/purchase-history.html'
     })
     .state('eventBooking', {
-        url: '/eventBooking',
+        url: '/eventBooking/:event_id',
         controller: 'eventBookingCtrl',
         templateUrl: 'templates/event-booking.html'
     })
     .state('eventPayment', {
-        url: '/eventPayment',
+        url: '/eventPayment/:event_id',
         controller: 'eventPaymentCtrl',
         templateUrl: 'templates/event-payment.html'
     })
     .state('finalPayment', {
-        url: '/finalPayment',
+        url: '/finalPayment/:event_id',
         controller: 'finalPaymentCtrl',
         templateUrl: 'templates/payment.html'
     })

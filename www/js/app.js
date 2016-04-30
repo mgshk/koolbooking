@@ -46,13 +46,15 @@ angular.module('eventsApp.controllers', [
 // Factories
 angular.module('eventsApp.factories', [
   'eventsApp.factory.loginFactory',
-  'eventsApp.factory.eventsFactory'
+  'eventsApp.factory.eventsFactory',
+  'eventsApp.factory.userFactory'
 ]);
 
 // Services
 angular.module('eventsApp.services', [
   'eventsApp.service.loginService',
-  'eventsApp.service.eventsService'
+  'eventsApp.service.eventsService',
+  'eventsApp.service.userService'
 ]);
 
 

@@ -1,73 +1,49 @@
-
-    <ons-page class="main-payment">
-      <ons-toolbar>
-        <div class="left login">
-          <ons-toolbar-button><i class="fa fa-angle-left"></i> </ons-toolbar-button>
-        </div>
-        <div class="center">Payment</div>
-      </ons-toolbar>
-      <ons-page class="payment-type">
-        <ons-row class="card-type">
-          <p> Card type</p>
-      
-        <label class="checkbox">
-        
-        <input type="checkbox">
-        
+<ons-page class="main-payment">
+  <ons-toolbar>
+    <div class="left login">
+      <ons-toolbar-button><i class="fa fa-angle-left"></i> </ons-toolbar-button>
+    </div>
+    <div class="center">Payment</div>
+  </ons-toolbar>
+  <ons-page class="payment-type">
+    <ons-row class="card-type">
+      <p> Card type</p>  
+      <label class="checkbox">      
+        <input type="checkbox">     
         <div class="checkbox"></div>
         Visa
-        </label>
-        <label class="checkbox">
-       
+      </label>
+      <label class="checkbox">    
         <input type="checkbox" checked="checked">
         <div class="checkbox"></div>
          Master Card
-        </label>
-        <label class="checkbox">
-       
+      </label>
+      <label class="checkbox">  
         <input type="checkbox">
         <div class="checkbox"></div>
          Discover
-        </label>
-        
-         <div class="payment-form">
-        <input type="text" class="card-number" placeholder="Card Number" value="">
-        
-        <input type="text" class="name-card" placeholder="Name in card" value="">
-        
-        <input type="text" class="cvv" placeholder="CVV" value="">
-        
-        <ons-button modifier="large" class="done-button sign-in">Done</ons-button>
-        </div>
-        
-        </ons-row>
-        
-        <h3>Paypal</h3>
-        
-        <ons-row class="card-type one">
-            
-         <div class="payment-form">
-        <input type="text" class="paypal-address" placeholder="Paypal email address" value="">
-        
-        <input type="text" class="name" placeholder="Name" value="">
-        
-        <input type="text" class="address" placeholder="Address" value="">
-        
-        <input type="text" class="city-input" placeholder="City" value="">
-        
-        <input type="text" class="state" placeholder="State" value="">
-        
-        <input type="text" class="zip-code" placeholder="Zip Code" value="">
-        
-        <input type="text" class="country" placeholder="Country" value="">
-        
-        
-        
-        <ons-button modifier="large" class="done-button sign-in">Done</ons-button>
-        </div>
-        
-        </ons-row>
-        
-      </ons-page>
+      </label>
       
-    </ons-page>
+      <div class="payment-form">
+        <input type="number" class="card-number" placeholder="Card Number" ng-model="card.card_no" autocomplete="off">   
+        <input type="text" class="name-card" placeholder="Name in card" ng-model="card.card_name" autocomplete="off">      
+        <input type="number" class="cvv" placeholder="CVV" ng-model="card.card_cvv" autocomplete="off">     
+        <ons-button modifier="large" class="done-button sign-in" ng-click="cardPayment();">Done</ons-button>
+      </div>
+    </ons-row>
+    
+    <h3>Paypal</h3>
+    <ons-row class="card-type one">        
+      <div class="payment-form">
+        <input type="email" class="paypal-address" placeholder="Paypal email address" ng-model="user.email" autocomplete="off">
+        <input type="text" class="name" placeholder="Name" ng-model="user.name" autocomplete="off">
+        <input type="text" class="address" placeholder="Address" ng-model="user.address" autocomplete="off"> 
+        <input type="text" class="city-input" placeholder="City" ng-model="user.city" autocomplete="off">
+        <input type="text" class="state" placeholder="State" ng-model="user.state" autocomplete="off">
+        <input type="number" class="zip-code" placeholder="Zip Code" ng-model="user.zip" autocomplete="off">
+        <input type="text" class="country" placeholder="Country" ng-model="user.country" autocomplete="off">
+        <ons-button modifier="large" class="done-button sign-in" ng-click="paypalPayment();">Done</ons-button>
+      </div>
+    </ons-row>
+  </ons-page>   
+</ons-page>

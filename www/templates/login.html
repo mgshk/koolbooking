@@ -1,15 +1,28 @@
 <ons-page>
     <ons-toolbar>
-	<div class="left login">
-	    <ons-toolbar-button><i class="fa fa-angle-left"></i></ons-toolbar-button>
-	</div>
-	<div class="center">Log In</div>
-	<p ng-bind="errorMsg"></p>
+		<div class="left login">
+		    <ons-toolbar-button><i class="fa fa-angle-left"></i></ons-toolbar-button>
+		</div>
+		<div class="center">Log In</div>
+		<p ng-bind="errorMsg"></p>
     </ons-toolbar>
     <div class="login-form">
-		<input type="email" class="email" placeholder="Email Address" autocomplete="off" ng-model="user_email">
-		<input type="password" class="password" placeholder="Password" autocomplete="off" ng-model="user_pass">
-		<ons-button modifier="large" class="login-button sign-in" ng-click="login();">sign In</ons-button>
+    	<form role="form" name="loginForm" novalidate>
+    		<div class="form-group">
+				<input type="email" class="email" name="user_email" placeholder="Email Address" autocomplete="off" ng-model="user_email" required>
+				<span style="color:red" ng-show="loginForm.user_email.$dirty && loginForm.user_email.$invalid">
+	                <span ng-show="loginForm.user_email.$invalid">Invalid email address.</span>
+	            </span>
+	        </div>
+	        <div class="form-group">
+				<input type="password" name="user_pass" class="password" placeholder="Password" autocomplete="off" ng-model="user_pass" required>
+				<span style="color:red" ng-show="loginForm.user_pass.$dirty && loginForm.user_pass.$invalid">
+	                <span ng-show="loginForm.user_pass.$error.required">Password is required.</span>
+	            </span>
+	        </div>
+
+			<ons-button ng-disabled="!loginForm.$valid" modifier="large" class="login-button sign-in" ng-click="login();">sign In</ons-button>
+		</form>
 		<ons-button modifier="quiet" class="forgot-password login" ui-sref="forgotPassword">Forgot password?</ons-button>
     </div>
     <div class="dont-have">
@@ -20,11 +33,11 @@
   
     <google-plus-signin clientid="517332717749-v9vnp2a4oaglirev9uu34nq3gkhqtan4.apps.googleusercontent.com"
 			autorender="false" customtargetid="my-custom-element">
-	<div id="my-custom-element" class="google-plus">
-	    <a href="#"><i class="fa fa-google-plus"></i>Login With Google</a>
-	</div>
+		<div id="my-custom-element" class="google-plus">
+		    <a href="#"><i class="fa fa-google-plus"></i>Login With Google</a>
+		</div>
     </google-plus-signin>
     <div class="terms-privacy">
-		<p> I agree to the <a href="#">Terms & Conditions</a> & <a href="#">Privacy Policy</a> </p>
+		<p> I agree to the <a>Terms & Conditions</a> & <a>Privacy Policy</a> </p>
     </div>
 </ons-page>
