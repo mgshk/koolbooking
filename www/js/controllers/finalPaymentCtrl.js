@@ -12,11 +12,4 @@ angular.module('eventsApp.controllers.finalPaymentCtrl', [])
     $scope.cardPayment = function() {
     	userFactory.cardPayment($scope.card);
 	}
-
-	$scope.paypalPayment = function() {
-    	//userFactory.paypalPayment($scope.user);
-    	return $http.post('/paypal/form.php', {'user_details' : user_details}).success(function (data) {
-    		console.log(data);
-    	});
-	}
 }]);

@@ -35,14 +35,4 @@ angular.module('eventsApp.factory.userFactory', [])
         });
         return deferred.promise;
 	}
-
-	function paypalPayment (user_details) {
-        var deferred = $q.defer();
-        userService.paypalPayment(user_details).then(function (resp) {
-            deferred.resolve(resp.data);
-        }, function(error) {
-            console.log(error);
-        });
-        return deferred.promise;
-	}
 }]);

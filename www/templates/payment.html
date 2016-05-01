@@ -25,9 +25,9 @@
       </label>
       
       <div class="payment-form">
-        <input type="number" class="card-number" placeholder="Card Number" ng-model="card.card_no" autocomplete="off">   
+        <input type="text" class="card-number" placeholder="Card Number" ng-model="card.card_no" autocomplete="off">   
         <input type="text" class="name-card" placeholder="Name in card" ng-model="card.card_name" autocomplete="off">      
-        <input type="number" class="cvv" placeholder="CVV" ng-model="card.card_cvv" autocomplete="off">     
+        <input type="text" class="cvv" placeholder="CVV" ng-model="card.card_cvv" autocomplete="off">     
         <ons-button modifier="large" class="done-button sign-in" ng-click="cardPayment();">Done</ons-button>
       </div>
     </ons-row>
@@ -35,14 +35,26 @@
     <h3>Paypal</h3>
     <ons-row class="card-type one">        
       <div class="payment-form">
-        <input type="email" class="paypal-address" placeholder="Paypal email address" ng-model="user.email" autocomplete="off">
-        <input type="text" class="name" placeholder="Name" ng-model="user.name" autocomplete="off">
-        <input type="text" class="address" placeholder="Address" ng-model="user.address" autocomplete="off"> 
-        <input type="text" class="city-input" placeholder="City" ng-model="user.city" autocomplete="off">
-        <input type="text" class="state" placeholder="State" ng-model="user.state" autocomplete="off">
-        <input type="number" class="zip-code" placeholder="Zip Code" ng-model="user.zip" autocomplete="off">
-        <input type="text" class="country" placeholder="Country" ng-model="user.country" autocomplete="off">
-        <ons-button modifier="large" class="done-button sign-in" ng-click="paypalPayment();">Done</ons-button>
+        <form method="post" action="https://www.paypal.com/cgi-bin/webscr">
+          <input type="hidden" name="business" value="info@codexworld.com">   
+          <!-- Specify a Buy Now button. -->
+          <input type="hidden" name="cmd" value="_xclick">
+          
+          <!-- Specify details about the item that buyers will purchase. -->
+          <input type="hidden" name="item_name" value="test">
+          <input type="hidden" name="item_number" value="254">
+          <input type="hidden" name="amount" value="1500">
+          <input type="hidden" name="currency_code" value="USD">
+
+          <input type="email" name="email" class="paypal-address" placeholder="Paypal email address" ng-model="user.email" autocomplete="off">
+          <input type="text" name="name" class="name" placeholder="Name" ng-model="user.name" autocomplete="off">
+          <input type="text" name="address" class="address" placeholder="Address" ng-model="user.address" autocomplete="off"> 
+          <input type="text" name="city" class="city-input" placeholder="City" ng-model="user.city" autocomplete="off">
+          <input type="text" name="state" class="state" placeholder="State" ng-model="user.state" autocomplete="off">
+          <input type="text" name="zip" class="zip-code" placeholder="Zip Code" ng-model="user.zip" autocomplete="off">
+          <input type="text" name="country" class="country" placeholder="Country" ng-model="user.country" autocomplete="off">
+          <input modifier="large" class="done-button sign-in" type="submit" name="submit" value="Done">
+        </form>
       </div>
     </ons-row>
   </ons-page>   

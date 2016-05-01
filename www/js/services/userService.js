@@ -18,8 +18,4 @@ angular.module('eventsApp.service.userService', [])
 			return resp;
 	    });		
 	}
-
-	this.paypalPayment = function(user_details) {
-	    return $http.get('/paypal/form.php?user_details='+user_details);		
-	}
 }]);
