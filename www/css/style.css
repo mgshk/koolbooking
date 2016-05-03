@@ -1,0 +1,37 @@
+body{background-color: #F4F3F6;}
+.header{background: url('../img/nav-bg.png') repeat;background-size: cover;font-size: 18px;}
+.orange{background: none;border:2px solid #fff;color: #fff !important;max-width: 250px;display: table;margin: auto;transition-duration: 0.8s;
+line-height: 42px;height: 52px;}
+.logo{text-align: center;display: table;margin: auto;margin-top: 30px;}
+.logo img{width: 60%;}
+.powered-by{text-align: center;display: table;margin: auto;margin-top: 40px;margin-bottom: 40px;}
+.powered-by h3{color: #fff;}
+.flow-logo img{width: 45%;}
+.watch{width: 100%;float: left;margin:0;padding: 0;}
+.watch li{display: inline-block;color: #20a8e0;font-size: 13px;margin: 0 5px 0 2px;font-weight: 600;}
+.orange span{position: relative;bottom: 1px;font-size: 24px;font-weight: 600;}
+h1{color: #fff;}
+.fullwidth{width: 100%;margin: 0;}
+.loginbtn{width: 230px !important;display: table;margin: auto;margin-top: 10px;}
+.lgbtn{background: #9899f6;font-size: 20px;color: #fff !important;text-transform: uppercase;margin-top: 15px !important;}
+.login-container{max-width: 300px;display: table;margin: auto;margin-top: 70px;}
+.signup{padding: 2px 5px 5px;min-height: 24px;font-size: 20px;line-height: 10px;border-bottom: 1px solid #000;
+font-weight: 600;}
+.icon-left{color: #fff;margin-left: 8px;margin-top: 6px;z-index: 1000;position: relative;}
+.login-container h6{color: #ababab;font-size: 24px;margin: 20px 0 20px 0px;text-transform: uppercase;}
+.ion-social-facebook{font-size: 24px;}
+.ion-social-googleplus{font-size: 24px;}
+.fb{position: relative;bottom: 2px;margin-left: 5px;}
+.ion-ios-email,.ion-person,.ion-ios-telephone{font-size: 24px;color: #48DDC9;}
+.ion-locked{font-size: 22px;color: #48DDC9;}
+.copyright{font-size: 12px;}
+.skip{text-align: center;width: 100%;float: left;}
+.skip a{text-decoration: none;color: #fefefe;font-size: 24px;transition-duration: 0.8s;
+    text-transform: uppercase;font-weight: 600;}
+.facebk{background: #3a599d !important;color: #fff;font-size: 20px;margin-bottom: 0 !important;border-radius: 0 !important;}
+.gogle{background: #f23f69 !important;color: #fff;font-size: 20px;margin-top: 0 !important;border-radius: 0 !important;}
+.fw{font-size: 17px;margin: 12px 0 12px 0;}
+.signup-container{margin-top: 70px;}
+.signup-container .col{padding: 0 !important;}
+.signup-container .row{padding: 0 !important;}
+.ipn{padding-right: 5px !important;padding-left: 8px !important;}

@@ -1,18 +1,15 @@
-angular.module('eventsApp.factory.loginFactory', [])
+angular.module('app.factory.loginFactory', [])
 	.factory('loginFactory', ['$q', 'loginService', function($q, loginService) {
 	
 	return {
 		userLogin: userLogin,
 		forgotPassword: forgotPassword,
-		signUp: signUp,
-		fbLogin: fbLogin,
-		googleUserInfo: googleUserInfo,
-		googleLogin: googleLogin
+		signUp: signUp
 	};
 	
-	function userLogin (user_email, user_pass) {
+	function userLogin (user) {
 		var deferred = $q.defer();
-		loginService.userLogin(user_email, user_pass).then(function (resp) {
+		loginService.userLogin(user).then(function (resp) {
 			deferred.resolve(resp.data);
 		}, function(error) {
 			console.log(error);
@@ -20,10 +17,10 @@ angular.module('eventsApp.factory.loginFactory', [])
 		return deferred.promise;
 	}
 	
-	function forgotPassword (user_email, new_password, confirm_password) {
+	function forgotPassword (user) {
 		var deferred = $q.defer();
-		loginService.forgotPassword(new_password, confirm_password).then(function (resp) {
-			deferred.resolve(resp.data);
+		loginService.forgotPassword(user).then(function (resp) {
+			deferred.resolve(resp);
 		}, function(error) {
 			console.log(error);
 		});
@@ -33,37 +30,7 @@ angular.module('eventsApp.factory.loginFactory', [])
 	function signUp (user) {
 		var deferred = $q.defer();
 		loginService.signUp(user).then(function (resp) {
-			deferred.resolve(resp.data);
-		}, function(error) {
-			console.log(error);
-		});
-		return deferred.promise;
-	}
-	
-	function fbLogin (user_details) {
-		var deferred = $q.defer();
-		loginService.fbLogin(user_details).then(function (resp) {
-			deferred.resolve(resp.data);
-		}, function(error) {
-			console.log(error);
-		});
-		return deferred.promise;
-	}
-	
-	function googleUserInfo (access_token) {
-		var deferred = $q.defer();
-		loginService.googleUserInfo(access_token).then(function (resp) {
-			deferred.resolve(resp.data);
-		}, function(error) {
-			console.log(error);
-		});
-		return deferred.promise;
-	}
-	
-	function googleLogin (user_details) {
-		var deferred = $q.defer();
-		loginService.googleLogin(user_details).then(function (resp) {
-			deferred.resolve(resp.data);
+			deferred.resolve(resp);
 		}, function(error) {
 			console.log(error);
 		});

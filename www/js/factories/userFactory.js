@@ -1,38 +1,17 @@
-angular.module('eventsApp.factory.userFactory', [])
+angular.module('app.factory.userFactory', [])
 	.factory('userFactory', ['$q', 'userService', function($q, userService) {
 	
 	return {
-	    getUserPurchaseHistory: getUserPurchaseHistory,
-        getUserDetails: getUserDetails
+		getUserDetail: getUserDetail
 	};
 	
-	function getUserPurchaseHistory (post_author) {
-        var deferred = $q.defer();
-        userService.getUserPurchaseHistory(post_author).then(function (resp) {
-            deferred.resolve(resp.data);
-        }, function(error) {
-            console.log(error);
-        });
-        return deferred.promise;
-	}
-
-    function getUserDetails (user_id) {
-        var deferred = $q.defer();
-        userService.getUserDetails(user_id).then(function (resp) {
-            deferred.resolve(resp.data);
-        }, function(error) {
-            console.log(error);
-        });
-        return deferred.promise;
-    }
-
-	function cardPayment (card_details) {
-        var deferred = $q.defer();
-        userService.cardPayment(card_details).then(function (resp) {
-            deferred.resolve(resp.data);
-        }, function(error) {
-            console.log(error);
-        });
-        return deferred.promise;
+	function getUserDetail (userId) {
+		var deferred = $q.defer();
+		userService.userDetail(userId).then(function (resp) {
+			deferred.resolve(resp.data);
+		}, function(error) {
+			console.log(error);
+		});
+		return deferred.promise;
 	}
 }]);

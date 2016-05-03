@@ -1,43 +1,43 @@
-<ons-page>
-    <ons-toolbar>
-		<div class="left login">
-		    <ons-toolbar-button><i class="fa fa-angle-left"></i></ons-toolbar-button>
-		</div>
-		<div class="center">Log In</div>
-		<p ng-bind="errorMsg"></p>
-    </ons-toolbar>
-    <div class="login-form">
-    	<form role="form" name="loginForm" novalidate>
-    		<div class="form-group">
-				<input type="email" class="email" name="user_email" placeholder="Email Address" autocomplete="off" ng-model="user_email" required>
-				<span style="color:red" ng-show="loginForm.user_email.$dirty && loginForm.user_email.$invalid">
-	                <span ng-show="loginForm.user_email.$invalid">Invalid email address.</span>
-	            </span>
-	        </div>
-	        <div class="form-group">
-				<input type="password" name="user_pass" class="password" placeholder="Password" autocomplete="off" ng-model="user_pass" required>
-				<span style="color:red" ng-show="loginForm.user_pass.$dirty && loginForm.user_pass.$invalid">
-	                <span ng-show="loginForm.user_pass.$error.required">Password is required.</span>
-	            </span>
-	        </div>
+<div class="bar bar-header header">
+    <h1 class="title">Login</h1>
+    <i class="icon-left ion-chevron-left" ui-sref="home"></i>
+</div>
 
-			<ons-button ng-disabled="!loginForm.$valid" modifier="large" class="login-button sign-in" ng-click="login();">sign In</ons-button>
-		</form>
-		<ons-button modifier="quiet" class="forgot-password login" ui-sref="forgotPassword">Forgot password?</ons-button>
-    </div>
-    <div class="dont-have">
-		<p>Don't have an account? <a href="#" ui-sref="signup">Sign up</a> </p>
-		<h6>or</h6>
-    </div>
-    <div class="facebook"> <a ng-click="fbLogin();"><i class="fa fa-facebook"></i> Login With Facebook</a> </div>
-  
-    <google-plus-signin clientid="517332717749-v9vnp2a4oaglirev9uu34nq3gkhqtan4.apps.googleusercontent.com"
-			autorender="false" customtargetid="my-custom-element">
-		<div id="my-custom-element" class="google-plus">
-		    <a href="#"><i class="fa fa-google-plus"></i>Login With Google</a>
-		</div>
-    </google-plus-signin>
-    <div class="terms-privacy">
-		<p> I agree to the <a>Terms & Conditions</a> & <a>Privacy Policy</a> </p>
-    </div>
-</ons-page>
+<div class="login-container">
+
+	<div class="list list-inset fullwidth">
+		<label class="item item-input">
+			<i class="icon ion-ios-email placeholder-icon"></i>
+		    <input type="email" placeholder="Email Address">
+		</label>
+		<label class="item item-input">
+			<i class="icon ion-locked placeholder-icon"></i>
+		    <input type="password" placeholder="Password">
+		</label>
+	</div>
+
+	<button class="button button-block loginbtn lgbtn">
+	  <span>Sign in</span>
+	</button>
+
+	<p align="right" ui-sref="forgotPassword" class="fw">Forgot Password?</p>
+
+	<p align="center" class="fw">Don't have account? 
+		<span class="signup" ui-sref="signup">
+		  Sign up
+		</span>
+	</p>
+
+	<h6 align="center">or</h6>
+
+</div>
+
+	<button class="button button-block facebk">
+	  <i class="ion-social-facebook"></i> <span class="fb">Sign in with Facebook</span>
+	</button>
+
+	<button class="button button-block gogle">
+	  <i class="ion-social-googleplus"></i> <span class="fb">Sign in with Google</span>
+	</button>
+
+	<p align="center" class="copyright">I agree to the Terms & Conditions & Privacy Policy</p>

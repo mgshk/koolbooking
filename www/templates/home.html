@@ -1,300 +1,37 @@
-<ons-page class="top-bar-menu">
-  <ons-tabbar position="top" class="demo">
-    <ons-tabbar-item page="home.html" label="Showcase" active="true" class="showcase"></ons-tabbar-item>
-    <ons-tabbar-item page="tickets.html" label="Tickets" class="ticket"></ons-tabbar-item>
-    <ons-tabbar-item ng-if="showYouTab" page="you.html" label="You" class="you"></ons-tabbar-item>
-    <ons-tabbar-item page="discover.html" label="Discover" class="discover"></ons-tabbar-item>
-  </ons-tabbar>
-</ons-page>
+<style type="text/css">
+	body{
+		width: 100%;
+		float: left;
+		background: #60ddcd;
+	}
+</style>
 
-<ons-template id="home.html">
-  <ons-page>
-    <ons-toolbar>
-      <div class="center">Home</div>
-    </ons-toolbar>
-    <ons-row class="video-home">
-      <iframe src="https://www.youtube.com/embed/mcixldqDIEQ" frameborder="0" allowfullscreen></iframe>
-    </ons-row>
-    <ons-row class="skip-now"> <a href="#">Skip</a> </ons-row>
-    <ons-row class="down-arrow"> <i class="fa fa-angle-down"></i> </ons-row>
-  </ons-page>
-</ons-template>
-    
-<ons-template id="tickets.html">
-  <ons-page class="tickets">
-  <ons-toolbar>
-    <div class="center">Home</div>
-  </ons-toolbar>
-        
-  <ons-page class="center-bar-menu">
-    <ons-tabbar position="center" class="demo">
-      <ons-tabbar-item page="all.html" label="all" active="true" class="all"> </ons-tabbar-item>
-      <ons-tabbar-item page="event.html" label="event" class="event"> </ons-tabbar-item>
-      <!--<ons-tabbar-item page="activity.html" label="activity" class="activity"> </ons-tabbar-item>-->
-    </ons-tabbar>
-  </ons-page>
-</ons-template>
-        
-<ons-template id="all.html">
-  <ons-page class="profile-main">
-    <ons-toolbar>
-      <div class="center">Home</div>
-      <div class="right">
-        <ons-toolbar-button><a href="setting.html"><i class="ion-ios-settings-strong"></i></a></ons-toolbar-button>
-      </div>
-    </ons-toolbar>
-        
-   <ons-row class="search-venue">
-      <form>
-        <input type="text" placeholder="Search By Venue">
-      </form>
-    </ons-row>
-        
-    <!--<ons-row class="you-in">
-      <form>
-        <input type="text" placeholder="You ‘re in Chandigarh">
-      </form>
-    </ons-row>-->
-        
-    <ons-row class="life-beautiful" ng-repeat="event in eventsList">
-      <div class="beautiful-left"> <img ng-src="{{event.image_url}}" alt="#"> </div>
-        <div class="beautiful-center">
-          <h1 ng-bind="event.post_title"></h1>
-          <p ng-bind="event.address"></p>
-          <p>Activity Type:<span>Specific Date</span></p>
-          <p ng-bind="event.event_date"></p>
-        </div>
-        <div class="beautiful-right">
-          <form>
-            <input type="button" value="Book Now" ui-sref="eventDetails({'event_id': {{event.id}}})">
-          </form>
-        </div>
-    </ons-row>
-  </ons-page>
-</ons-template>  
-    
-<ons-template id="event.html">
-  <ons-page class="profile-main">
-    <ons-toolbar>
-      <div class="center">Home</div>
-      <div class="right">
-        <ons-toolbar-button><a href="setting.html"><i class="ion-ios-settings-strong"></i></a></ons-toolbar-button>
-      </div>
-    </ons-toolbar>
-  <ons-row class="search-venue">
-    <form>
-      <input type="text" placeholder="Search By Venue">
-    </form>
-  </ons-row>
-        
-  <ons-row class="you-in">
-    <form>
-      <input type="text" placeholder="You ‘re in Chandigarh">
-    </form>
-  </ons-row>    
-  </ons-page>
-</ons-template> 
-    
-    <!--<ons-template id="activity.html">
-      <ons-page class="profile-main">
-    <ons-toolbar>
-          <div class="center">Home</div>
-          
-           <div class="right">
-          <ons-toolbar-button><a href="setting.html"><i class="ion-ios-settings-strong"></i></a></ons-toolbar-button>
-        </div>
-        </ons-toolbar>
-  
-   <ons-row class="life-beautiful">
-          <div class="beautiful-left"> <img src="lib/onsen/images/ticket-img.png" alt="#"> </div>
-          <div class="beautiful-center">
-        <h1>Life is beautiful</h1>
-        <p>Nassa , New Providence, THe Bahamas</p>
-        <p>Activity Type:<span>Specific Date</span></p>
-        <p>01/01/2016 <i class="fa fa-long-arrow-right"></i> 31/01/2016</p>
-      </div>
-          <div class="beautiful-right">
-            <form>
-            <input type="button" value="Book Now">
-            </form>
-      </div>
-      
-      
-      
-        </ons-row>
-        
-  
+<div class="row">
+    <div class="logo">
+        <img src="img/logo.png" alt="Logo">  
+    </div>
+</div>
 
-  </ons-page>
-    </ons-template> -->
-      
-<ons-template id="you.html">
-  <ons-page class="profile-main">
-    <ons-toolbar>
-      <div class="center">Home</div>    
-      <div class="right">
-        <ons-toolbar-button><a href="setting.html"><i class="ion-ios-settings-strong"></i></a></ons-toolbar-button>
-      </div>
-    </ons-toolbar>
-    <ons-row class="profile">
-      <div class="profile-circle"> <i class="fa fa-user"></i> </div>
-      <a ng-bind="userDetails.display_name"></a>
-    </ons-row>
-    <ons-row class="purchase-history"> <i class="fa fa-history"></i> <a ui-sref="purchaseHistory({user_id: userDetails.id})">Purchase History</a> </ons-row>
-  </ons-page>
-</ons-template>
-       
-<ons-template id="discover.html">
-  <ons-tabbar class="footer-tab">
-    <ons-tab active="true" page="recommended.html">
-      <div class="tab">
-        <div class="tab-label bottom">RECOMMENDED</div>
-      </div>
-    </ons-tab>
-    <ons-tab page="trending.html">
-      <div class="tab">
-        <div class="tab-label bottom">TRENDING</div>
-      </div>
-    </ons-tab>
-    <ons-tab page="coming-soon.html">
-      <div class="tab">
-        <div class="tab-label bottom">COMING SOON</div>
-      </div>
-    </ons-tab>
-  </ons-tabbar>
-</ons-template>
+<div class="row">
+	<div class="powered-by">
+	    <h3>Powered By</h3>
+	    <div class="flow-logo">
+	    	<img src="img/flow-img.png" alt="Flow">
+	        <ul class="watch">
+	            <li>watch</li>
+	            <li><i class="ion-record"></i> talk</li>
+	            <li><i class="ion-record"></i> click</li>
+	        </ul>
+	    </div>
+	</div>
+</div>
 
-<ons-template id="recommended.html">
-  <ons-navigator>
-    <ons-page>
-      <ons-toolbar>
-        <div class="center">Home</div>
-      </ons-toolbar>
-        <ons-row class="main">
-          <ons-row class="list-one" ng-repeat="featuredEvent in featuredEvents">
-            <div class="list-one-inner">
-              <div class="comment-like">
-                <ul>
-                  <li><i class="fa fa-heart"></i> <a href="#">90%</a></li>
-                <!--<li><i class="fa fa-comment"></i> <a href="#">3230</a></li>-->
-                </ul>
-              </div>
-          </div>
-          <div class="activity">
-            <div class="activity-left">
-              <h2 ng-bind="featuredEvent.post_title"></h2>
-              <h3>Events</h3>
-            </div>
-            <div class="activity-right">
-              <form>
-                <input type="button" value="Book" ui-sref="eventDetails({event_id: featuredEvent.id})">
-              </form>
-            </div>
-          </div>
-        </ons-row>
-      </ons-row>
-    </ons-page>
-  </ons-navigator>
-</ons-template>
+<div class="row">
+	<button class="button button-block orange" ui-sref="login">
+	  <span>Login</span>
+	</button>
+</div>
 
-<ons-template id="trending.html">
-  <ons-navigator>
-    <ons-page>
-      <ons-toolbar>
-        <div class="center">Home</div>
-      </ons-toolbar>
-      <ons-row class="main">
-        <ons-row class="list-one" ng-repeat="topDealsEvent in topDealsEvents">
-          <div class="list-one-inner">
-            <div class="comment-like">
-              <ul>
-                <li><i class="fa fa-heart"></i> <a href="#">85%</a></li>
-                <!--<li><i class="fa fa-comment"></i> <a href="#">2765</a></li>-->
-              </ul>
-            </div>
-          </div>
-          <div class="activity">
-            <div class="activity-left">
-              <h2 ng-bind="topDealsEvent.post_title"></h2>
-              <h3>Events</h3>
-            </div>
-            <div class="activity-right">
-              <form>
-                <input type="button" value="Book" ui-sref="eventDetails({event_id: topDealsEvent.id})">
-              </form>
-            </div>
-          </div>
-        </ons-row>
-      </ons-row>
-    </ons-page>
-  </ons-navigator>
-</ons-template>
-
-<ons-template id="coming-soon.html">
-      <ons-navigator>
-    <ons-page>
-          <ons-toolbar>
-        <div class="center">Home</div>
-        
-   <div class="right">
-          <ons-toolbar-button><i class="fa fa-filter"></i>
-</ons-toolbar-button>
-        </div>       
-        
-      </ons-toolbar>
-      
-          <ons-row class="search-bar"> <a href="#"><i class="fa fa-search"></i></a>
-        <form>
-              <input type="search" placeholder="Search by Activity & Event">
-            </form>
-        <a href="#"><i class="fa fa-times"></i></a>
-        </div>
-      </ons-row>
-          <ons-row class="main">
-        <ons-row class="list-one">
-              <div class="list-one-inner coming-soon">
-            <div class="comment-like">
-                  <ul>
-                <li><i class="fa fa-heart"></i> <a href="#">85%</a></li>
-                <!--<li><i class="fa fa-comment"></i> <a href="#">2765</a></li>-->
-              </ul>
-                </div>
-          </div>
-              <div class="activity">
-            <div class="activity-left">
-                  <h2>Jamaica</h2>
-                  <h3>Activities</h3>
-                </div>
-            <div class="activity-right">
-                  <form>
-                <input type="button" value="Know More">
-              </form>
-                </div>
-          </div>
-            </ons-row>
-        <ons-row class="list-one">
-              <div class="list-one-inner coming-soon-two">
-            <div class="comment-like">
-                  <ul>
-                <li><i class="fa fa-heart"></i> <a href="#">90%</a></li>
-                <!--<li><i class="fa fa-comment"></i> <a href="#">3230</a></li>-->
-              </ul>
-                </div>
-          </div>
-              <div class="activity">
-            <div class="activity-left">
-                  <h2>The Metropolitan Museum of Art</h2>
-                  <h3>Events</h3>
-                </div>
-            <div class="activity-right">
-                  <form>
-                <input type="button" value="Know More">
-              </form>
-                </div>
-          </div>
-            </ons-row>
-      </ons-row>
-      
-        </ons-page>
-  </ons-navigator>
-    </ons-template>
+<div class="skip">
+      <a href="#" ui-sref="eventsList">i'll skip</a>
+</div>

@@ -1,62 +1,64 @@
-angular.module('eventsApp.config', ['ui.router']).config(function($stateProvider, $urlRouterProvider, $facebookProvider) {
-    
-    $facebookProvider.setAppId('1677847679144225');
-    
-    $stateProvider
-    .state('splash', {
-        url: '/',
-        templateUrl: 'templates/splash.html'
-    })
-    .state('login', {
-        url: '/login',
-        controller: 'loginCtrl',
-        templateUrl: 'templates/login.html'
-    })
-    .state('signup', {
-        url: '/signup',
-        controller: 'signupCtrl',
-        templateUrl: 'templates/sign-up.html'
-    })
-    .state('forgotPassword', {
-        url: '/forgotPassword',
-        controller: 'forgotPasswordCtrl',
-        templateUrl: 'templates/forgot-password.html'
-    })    
-    .state('home', {
-        url: '/home',
-        controller: 'homeCtrl',
-        templateUrl: 'templates/home.html'
-    })
-    .state('eventDetails', {
-        url: '/eventDetails/:event_id',
-        controller: 'eventDetailsCtrl',
-        templateUrl: 'templates/event-details.html'
-    })
-    .state('purchaseHistory', {
-        url: '/purchaseHistory/:user_id',
-        controller: 'purchaseHistoryCtrl',
-        templateUrl: 'templates/purchase-history.html'
-    })
-    .state('eventBooking', {
-        url: '/eventBooking/:event_id',
-        controller: 'eventBookingCtrl',
-        templateUrl: 'templates/event-booking.html'
-    })
-    .state('eventPayment', {
-        url: '/eventPayment/:event_id',
-        controller: 'eventPaymentCtrl',
-        templateUrl: 'templates/event-payment.html'
-    })
-    .state('finalPayment', {
-        url: '/finalPayment/:event_id',
-        controller: 'finalPaymentCtrl',
-        templateUrl: 'templates/payment.html'
-    })
-    .state('settings', {
-        url: '/settings',
-        controller: 'settingsCtrl',
-        templateUrl: 'templates/setting.html'
-    });
+angular.module('eventsApp.config', ['ui.router']).config(function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/');
+  // Ionic uses AngularUI Router which uses the concept of states
+  // Learn more here: https://github.com/angular-ui/ui-router
+  // Set up the various states which the app can be in.
+  // Each state's controller can be found in controllers.js
+  $stateProvider
+
+  // setup an abstract state for the tabs directive
+.state('home', {
+    url: '/',
+    controller: 'homeCtrl',
+    templateUrl: 'templates/home.html'
+})
+.state('login', {
+    url: '/login',
+    controller: 'loginCtrl',
+    templateUrl: 'templates/login.html'
+})
+.state('signup', {
+    url: '/signup',
+    controller: 'signupCtrl',
+    templateUrl: 'templates/signup.html'
+})
+.state('forgotPassword', {
+    url: '/forgotPassword',
+    controller: 'forgotPasswordCtrl',
+    templateUrl: 'templates/forgotPassword.html'
+})    
+.state('eventsList', {
+    url: '/eventsList',
+    controller: 'eventsListCtrl',
+    templateUrl: 'templates/eventsList.html'
+})
+.state('eventDetails', {
+    url: '/eventDetails',
+    controller: 'eventDetailsCtrl',
+    templateUrl: 'templates/eventDetails.html'
+})
+.state('filterEvents', {
+    url: '/filterEvents',
+    controller: 'filterEventsCtrl',
+    templateUrl: 'templates/filterEvents.html'
+})
+.state('bookingSubmission', {
+    url: '/bookingSubmission',
+    controller: 'bookingSubmissionCtrl',
+    templateUrl: 'templates/bookingSubmission.html'
+})
+.state('yourBooking', {
+    url: '/yourBooking',
+    controller: 'yourBookingCtrl',
+    templateUrl: 'templates/yourBooking.html'
+})
+.state('payment', {
+    url: '/payment',
+    controller: 'paymentCtrl',
+    templateUrl: 'templates/payment.html'
+});
+
+  // if none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/');
+
 });

@@ -3,62 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <link href="lib/onsen/css/style.css" rel="stylesheet" type="text/css" media="all">
-    <title>Koolbooking</title>
-    
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
+
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-    
-    <!-- JS dependencies (order matters!) -->
-    <link href="lib/onsen/css/style.css" rel="stylesheet" type="text/css" media="all">
-    <script src="lib/onsen/js/onsenui_all.js"></script>
-    
-    <!-- CSS dependencies -->
-    <link rel="stylesheet" href="lib/onsen/css/onsenui.css" />
-    <link rel="stylesheet" href="lib/onsen/css/onsen-css-components-blue-basic-theme.css" />
-
-    <!-- CSP support mode (required for Windows Universal apps) -->
-    <link rel="stylesheet" href="lib/angular/angular-csp.css" />
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
-    <script src="js/config.js"></script>
     <script src="js/app.js"></script>
-
-    <script src="lib/facebook/ngFacebook.js"></script>
-    <script src="lib/facebook/google-plus-signin.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/angular-ui-router.js"></script>
 
     <!--Controllers-->
+    <script src="js/controllers/homeCtrl.js"></script>
     <script src="js/controllers/loginCtrl.js"></script>
     <script src="js/controllers/signupCtrl.js"></script>
     <script src="js/controllers/forgotPasswordCtrl.js"></script>
-    <script src="js/controllers/homeCtrl.js"></script>
+    <script src="js/controllers/eventsListCtrl.js"></script>
     <script src="js/controllers/eventDetailsCtrl.js"></script>
-    <script src="js/controllers/purchaseHistoryCtrl.js"></script>
-    <script src="js/controllers/finalPaymentCtrl.js"></script>
-    <script src="js/controllers/eventBookingCtrl.js"></script>
-    <script src="js/controllers/eventPaymentCtrl.js"></script>
-    <script src="js/controllers/settingsCtrl.js"></script>
-    
-    <!--factories-->
-    <script src="js/factories/loginFactory.js"></script>
-    <script src="js/factories/eventsFactory.js"></script>
-    <script src="js/factories/userFactory.js"></script>
-    
-    <!--Services-->
-    <script src="js/services/loginService.js"></script>
-    <script src="js/services/eventsService.js"></script>
-    <script src="js/services/userService.js"></script>
+    <script src="js/controllers/filterEventsCtrl.js"></script>
+    <script src="js/controllers/bookingSubmissionCtrl.js"></script>
+    <script src="js/controllers/yourBookingCtrl.js"></script>
+    <script src="js/controllers/paymentCtrl.js"></script>
+
   </head>
   <body ng-app="eventsApp">
-    <div id="fb-root"></div>
-    <div ui-view></div>
+   
+   <div ui-view></div>
+
   </body>
 </html>
