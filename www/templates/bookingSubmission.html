@@ -1,14 +1,23 @@
-<!--
-  This template loads for the 'tab.friend-detail' state (app.js)
-  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
-  The FriendsCtrl pulls data from the Friends service (service.js)
-  The Friends service returns an array of friend data
--->
-<ion-view view-title="{{chat.name}}">
-  <ion-content class="padding">
-    <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
-    <p>
-      {{chat.lastText}}
-    </p>
-  </ion-content>
-</ion-view>
+    <div class="bar bar-header header">
+      <h1 class="title">Booking</h1>
+      <i class="icon-left ion-chevron-left" ui-sref="eventsList"></i>
+    </div>
+
+    <div class="detailscontent">
+
+        <img class="full-image" src="lib/onsen/images/hotel.png">
+        <p>
+          <button class="button button-block loginbtn lgbtn1">
+            <span>Book</span>
+          </button>
+      </p>
+        <div class="venue">
+            <p><span>Owner description :</span>&nbsp;&nbsp;Take advantage of some of the islands main attractions on this Snorkeling Island Adventure in Antigua! Enjoy a day of snorkeling, kayaking and sightseeing on this family-friendly excursion. </p>
+            <p><span>Activity Type :</span>&nbsp;&nbsp;Specific Date</p>
+            <p><span>Activity Time :</span>&nbsp;&nbsp;8:00 AM </p>
+            <p><span>Maximum number of people :</span>&nbsp;&nbsp;50 </p>
+            <p><span>Venue Facilities :</span>&nbsp;&nbsp;The majority of our rooms enjoy  breathtaking views over the racecourse, providing a 
+            dramatic,unforgettable backdrop for your meeting or conference </p>
+        </div>
+
+    </div>

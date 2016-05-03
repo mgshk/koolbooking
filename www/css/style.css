@@ -60,3 +60,44 @@ font-weight: 600;}
 .eventslst h5{margin: 0;}
 .eventslst p{margin: 5px 0 0 0;}
 .btneve{width: 100%;font-size: 16px;background: #9899f6;color: #fff;}
+.buy-ticket{background: #555353;padding: 12px 0;color: #fff;margin-top: 44px;text-align: center;font-size: 16px;}
+
+/* your booking */
+.yourbookingcontent{width: 100%;float: left;padding: 10px;}
+.yourbookingcontent h1{font-size: 20px !important;font-weight: normalv;margin: 0;color: #000;margin-bottom: 10px;}
+.event-date-right .date {
+    border: 2px solid #f23f69;
+    border-radius: 4px;
+    float: left;
+    margin: 30px 0 0;
+    width: 100%;
+}
+.date-inner {
+    background: #f23f69 none repeat scroll 0 0;
+    float: left;
+    padding: 8px 0;
+    text-align: center;
+    width: 80%;
+}
+.date-inner p {
+    color: #fff;
+    font-size: 18px;
+}
+.date h2 {
+    color: #f23f69;
+    float: left;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    width: 70%;margin: 0;
+}
+.date h3 {
+    color: #f23f69;
+    float: left;
+    font-weight: normal;
+    padding: 0 0 12px;
+    text-align: center;
+    width: 70%;margin: 0;
+}
+.event-date-right {float: right;width: 42%;margin-left: 2%;}
+.event-date-left {float: left;width: 56%;}
