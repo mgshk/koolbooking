@@ -1,24 +1,23 @@
-<!--
-Create tabs with an icon and label, using the tabs-positive style.
-Each tab's child <ion-nav-view> directive will have its own
-navigation history that also transitions its views in and out.
--->
-<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+    <div class="bar bar-header header">
+      <h1 class="title">Event Details</h1>
+      <i class="icon-left ion-chevron-left" ui-sref="eventsList"></i>
+    </div>
 
-  <!-- Dashboard Tab -->
-  <ion-tab title="Status" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/dash">
-    <ion-nav-view name="tab-dash"></ion-nav-view>
-  </ion-tab>
+    <div class="detailscontent">
 
-  <!-- Chats Tab -->
-  <ion-tab title="Chats" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/chats">
-    <ion-nav-view name="tab-chats"></ion-nav-view>
-  </ion-tab>
+        <img class="full-image" src="lib/onsen/images/hotel.png">
+        <p>
+          <button class="button button-block loginbtn lgbtn1">
+            <span>Book</span>
+          </button>
+      </p>
+        <div class="venue">
+            <p><span>Owner description :</span>&nbsp;&nbsp;Take advantage of some of the islands main attractions on this Snorkeling Island Adventure in Antigua! Enjoy a day of snorkeling, kayaking and sightseeing on this family-friendly excursion. </p>
+            <p><span>Activity Type :</span>&nbsp;&nbsp;Specific Date</p>
+            <p><span>Activity Time :</span>&nbsp;&nbsp;8:00 AM </p>
+            <p><span>Maximum number of people :</span>&nbsp;&nbsp;50 </p>
+            <p><span>Venue Facilities :</span>&nbsp;&nbsp;The majority of our rooms enjoy  breathtaking views over the racecourse, providing a 
+            dramatic,unforgettable backdrop for your meeting or conference </p>
+        </div>
 
-  <!-- Account Tab -->
-  <ion-tab title="Account" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
-    <ion-nav-view name="tab-account"></ion-nav-view>
-  </ion-tab>
-
-
-</ion-tabs>
+    </div>

@@ -33,7 +33,11 @@ angular.module('eventsApp.controllers', [
   'eventsApp.controllers.filterEventsCtrl',
   'eventsApp.controllers.bookingSubmissionCtrl',
   'eventsApp.controllers.yourBookingCtrl',
-  'eventsApp.controllers.paymentCtrl'
+  'eventsApp.controllers.paymentCtrl',
+  'eventsApp.controllers.showcaseTabCtrl',
+  'eventsApp.controllers.ticketsTabCtrl',
+  'eventsApp.controllers.youTabCtrl',
+  'eventsApp.controllers.discoverTabCtrl'
 ]);
 
 // Factories
