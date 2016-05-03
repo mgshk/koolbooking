@@ -228,11 +228,12 @@
 		}	
 		//forgot password ends
 		
-		public function geteventlist() {
+			public function geteventlist() {
 			
 			$result=array();	
 			$result1=array();		
-			$res_events=mysql_query("SELECT * FROM `wp_kbposts` as a INNER JOIN `wp_kbst_activity` as b on a.id=b.post_id WHERE a.post_type='st_activity' and a.post_status='publish' ORDER BY RAND() LIMIT 10");	
+			$res_events=mysql_query("SELECT * FROM `wp_kbposts` as a INNER JOIN `wp_kbst_activity` as b on a.id=b.post_id WHERE a.post_type='st_activity' and a.post_status='publish' ORDER BY RAND()");	
+			//$res_events=mysql_query("SELECT * FROM `wp_kbposts` as a INNER JOIN `wp_kbst_activity` as b on a.id=b.post_id INNER JOIN `wp_kbcomments` as c on a.id=c.comment_post_ID WHERE a.post_type='st_activity' and a.post_status='publish' ORDER BY rand() LIMIT 10");
 			if (mysql_num_rows($res_events)>0) {
 				while ($rs_event=mysql_fetch_array($res_events)) {		
 					$result1['id']=$rs_event['ID'];	
@@ -287,7 +288,8 @@ AND pm.meta_key = '_thumbnail_id'");
 								
 			$result=array();	
 			$result1=array();		
-			$res_events=mysql_query("SELECT * FROM `wp_kbposts` as a INNER JOIN `wp_kbst_activity` as b on a.id=b.post_id WHERE a.post_type='st_activity' and a.post_status='publish' ORDER BY RAND() LIMIT 10");	
+			//$res_events=mysql_query("SELECT * FROM `wp_kbposts` as a INNER JOIN `wp_kbst_activity` as b on a.id=b.post_id WHERE a.post_type='st_activity' and a.post_status='publish' ORDER BY RAND() LIMIT 10");	
+			$res_events=mysql_query("SELECT a.ID,a.post_title,c.comment_ID FROM `wp_kbposts` as a LEFT JOIN `wp_kbst_activity` as b on a.id=b.post_id LEFT JOIN `wp_kbcomments` as c on a.id=c.comment_post_ID WHERE a.post_type='st_activity' and a.post_status='publish' ORDER BY rand()");	
 			if (mysql_num_rows($res_events)>0) {
 				while ($rs_event=mysql_fetch_array($res_events)) {
 					//check featured option is on from post meta table
@@ -296,7 +298,7 @@ AND pm.meta_key = '_thumbnail_id'");
 						$result1['id']=$rs_event['ID'];	
 						$result1['post_title']=$rs_event['post_title'];
 						$result1['address']= $this->get_field_value('wp_kbpostmeta','post_id',$rs_event['ID'],'address');						
-						//$result1['rate_review']= $this->get_field_value($rs_event['ID'],'rate_review','wp_kbpostmeta');	
+						$result1['comment_rate']= $this->get_field_value('wp_kbcommentmeta','comment_id',$rs_event['comment_ID'],'comment_rate');	
 						$result1['event_date']=$rs_event['check_in'];
 						//get image url
 						$event_img_query=mysql_query("SELECT p.guid FROM wp_kbpostmeta AS pm INNER JOIN wp_kbposts AS p ON pm.meta_value=p.ID
@@ -342,13 +344,13 @@ AND pm.meta_key = '_thumbnail_id'");
 			
 			$result=array();	
 			$result1=array();		
-			$res_events=mysql_query("SELECT * FROM `wp_kbposts` as a INNER JOIN `wp_kbst_activity` as b on a.id=b.post_id INNER JOIN `wp_kbcomments` as c on a.id=c.comment_post_ID WHERE a.post_type='st_activity' and a.post_status='publish' and c.comment_approved = 1 and c.comment_type='st_reviews' ORDER BY rand() LIMIT 10");	
+			$res_events=mysql_query("SELECT a.ID,a.post_title,c.comment_ID FROM `wp_kbposts` as a INNER JOIN `wp_kbst_activity` as b on a.id=b.post_id INNER JOIN `wp_kbcomments` as c on a.id=c.comment_post_ID WHERE a.post_type='st_activity' and a.post_status='publish' and c.comment_approved = 1 and c.comment_type='st_reviews' ORDER BY rand() LIMIT 10");	
 			if (mysql_num_rows($res_events)>0) {
 				while ($rs_event=mysql_fetch_array($res_events)) {
 					//check top deals option (rate_review) from post meta table
 					//$result1['rate_review']= $this->get_field_value($rs_event['ID'],'rate_review','wp_kbpostmeta');
 					$result1['comment_rate']= $this->get_field_value('wp_kbcommentmeta','comment_id',$rs_event['comment_ID'],'comment_rate');
-					//if($result1['comment_rate'] > 0){
+					if($result1['comment_rate'] > 0 && $result1['comment_rate'] != "" && $result1['comment_rate'] != NULL){
 						$result1['id']=$rs_event['ID'];	
 						$result1['post_title']=$rs_event['post_title'];
 						$result1['is_featured']= $this->get_field_value('wp_kbpostmeta','post_id',$rs_event['ID'],'is_featured');	
@@ -379,7 +381,7 @@ AND pm.meta_key = '_thumbnail_id'");
 							
 						}		
 						array_push($result,$result1);
-					//}
+					}
 					
 				}
 			}				
@@ -400,20 +402,16 @@ AND pm.meta_key = '_thumbnail_id'");
 			$result=array();	
 			$result1=array();	
 			$address= $this->_request['address'];
-			$start_date = $this->_request['start_date'];
-			$end_date = $this->_request['end_date'];	 
-			//$address = 'Antigua and Barbuda';
-			//$start_date = '2016-03-01';
-			//$end_date = '2016-08-17';
 			
-			$res_events=mysql_query("SELECT a.ID,a.post_title FROM `wp_kbposts` as a INNER JOIN `wp_kbst_activity` as b on a.id=b.post_id WHERE a.post_type='st_activity' and a.post_status='publish' and b.check_in >= '$start_date' and b.address LIKE '%$address%'");	
+			//$res_events=mysql_query("SELECT a.ID,a.post_title FROM `wp_kbposts` as a INNER JOIN `wp_kbst_activity` as b on a.id=b.post_id WHERE a.post_type='st_activity' and a.post_status='publish' and b.address LIKE '%$address%'");	
+			$res_events=mysql_query("SELECT a.ID,a.post_title,c.comment_ID FROM `wp_kbposts` as a LEFT JOIN `wp_kbst_activity` as b on a.id=b.post_id LEFT JOIN `wp_kbcomments` as c on a.id=c.comment_post_ID WHERE a.post_type='st_activity' and a.post_status='publish' and b.address LIKE '%$address%' ORDER BY rand()");
 			if (mysql_num_rows($res_events)>0) {
 				while ($rs_event=mysql_fetch_array($res_events)) {		
 					$result1['id']=$rs_event['ID'];	
 					$result1['post_title']=$rs_event['post_title'];
 					$result1['address']= $this->get_field_value('wp_kbpostmeta','post_id',$rs_event['ID'],'address');	
-					$result1['is_featured']= $this->get_field_value('wp_kbpostmeta','post_id',$rs_event['ID'],$rs_event['ID'],'is_featured');	
-					//$result1['rate_review']= $this->get_field_value('wp_kbpostmeta','post_id',$rs_event['ID'],'rate_review');	
+					$result1['is_featured']= $this->get_field_value('wp_kbpostmeta','post_id',$rs_event['ID'],'is_featured');	
+					$result1['comment_rate']= $this->get_field_value('wp_kbcommentmeta','comment_id',$rs_event['comment_ID'],'comment_rate');
 					//get image url
 						$event_img_query=mysql_query("SELECT p.guid FROM wp_kbpostmeta AS pm INNER JOIN wp_kbposts AS p ON pm.meta_value=p.ID
 WHERE pm.post_id = '".$rs_event['ID']."'
@@ -478,12 +476,10 @@ AND pm.meta_key = '_thumbnail_id'");
 					$result['post_content']=$rs_event['post_content'];
 										
 					//get image url
-						$event_img_query=mysql_query("SELECT p.guid FROM wp_kbpostmeta AS pm INNER JOIN wp_kbposts AS p ON pm.meta_value=p.ID
-WHERE pm.post_id = '".$rs_event['ID']."'
-AND pm.meta_key = '_thumbnail_id'");
-						while ($event_img=mysql_fetch_array($event_img_query)) {
-							$result['image_url'] = $event_img['guid'];
-						}
+					$event_img_query=mysql_query("SELECT p.guid FROM wp_kbpostmeta AS pm INNER JOIN wp_kbposts AS p ON pm.meta_value=p.ID WHERE pm.post_id = '".$rs_event['ID']."' AND pm.meta_key = '_thumbnail_id'");
+					while ($event_img=mysql_fetch_array($event_img_query)) {
+						$result['image_url'] = $event_img['guid'];
+					}
 							
 					//array_push($result,$result1);
 					
@@ -541,10 +537,10 @@ AND pm.meta_key = '_thumbnail_id'");
 		//getevent_details ends
 	
 	
-	public function addbooking() {
+	public function addbooking_checkout() {
 			
-			//$post_author = $this->_request['post_author'];
-			$user_login = $this->_request['user_login'];
+			$user_id = $this->_request['user_id'];
+			
 			$post_date = date('Y-m-d H:i:s');
 			$post_status = 'publish';
 			$comment_status = 'closed';
@@ -552,57 +548,293 @@ AND pm.meta_key = '_thumbnail_id'");
 			$post_type = 'st_order';
 
 			$token=rand(1000,9999);					
-			$user_result = mysql_query("INSERT INTO wp_kbposts(post_author,post_date,post_status,comment_status,ping_status,post_type) VALUES('$user_login','$post_date','$comment_status','$ping_status','$post_type')") ;
+			$user_result = mysql_query("INSERT INTO wp_kbposts(post_author,post_date,post_status,comment_status,ping_status,post_type) VALUES('$user_id','$post_date','$post_status','$comment_status','$ping_status','$post_type')") ;
 			$id=mysql_insert_id();
 			
 			//insert values into wp_kbpostmeta table
-			$booking_via = 'app';
+			$booking_via = 'app';			
+			$status = 'pending';
+			$type_activity = 'specific_date';
+			$st_booking_post_type =  'st_activity';			
+			$order_token_code = substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 8)), 0, 8);
+			$item_post_type = 'st_activity';			
+						
+			$item_id = $this->_request['item_id']; // event ID 
+			$st_booking_id = $this->_request['item_id']; 		
 			
-			$status = $this->_request['status'];			
-			$total_price = $this->_request['total_price'];
-			$order_token_code = $this->_request['order_token_code'];			
-			$item_id = $this->_request['item_id'];
-			$item_price = $this->_request['item_price'];
-			$item_number = $this->_request['item_number'];
-			
-			$rate_review = $this->_request['rate_review'];
-			$item_post_type = $this->_request['item_post_type'];
-			$type_price = $this->_request['type_price'];
+			$type_price = $this->_request['type_price'];  
 			$adult_price = $this->_request['adult_price'];
+			$item_price = $this->_request['adult_price'];
 			$child_price = $this->_request['child_price'];
 			$infant_price = $this->_request['infant_price'];
-			$adult_number = $this->_request['adult_number'];
-			
+			$adult_number = $this->_request['adult_number'];			
 			$child_number = $this->_request['child_number'];
 			$infant_number = $this->_request['infant_number'];
-			$type_activity = 'specific_date';
-			$check_in = $this->_request['check_in'];
-			$check_out = $this->_request['check_out'];
-			$ori_price = $this->_request['ori_price'];
-			$st_booking_post_type =  'st_activity';
 			
-			$st_booking_id = $this->_request['st_booking_id'];
-			$user_id = $this->_request['user_id'];
-			$payment_method = $this->_request['payment_method'];
+			$item_number = $adult_number + $child_number + $infant_number;
+			
+			$check_in = $this->_request['check_in']; //may be the same date of event
+			$check_out = $this->_request['check_in']; //may be the same date of event
+			$ori_price = $this->_request['ori_price']; // without discount and tax --- origin price
+			$total_price = $this->_request['total_price']; // final price
+			
+			$payment_method = $this->_request['payment_method'];  // like paypal 
 			//$order_confirm_hash = $this->_request['order_confirm_hash'];
 			
-			$user_result_meta = mysql_query("INSERT INTO wp_kbpostmeta(post_id,meta_key,meta_value) VALUES('$id','booking_via','$booking_via'),('$id','status','$status'),('$id','total_price','$total_price'),('$id','order_token_code','$order_token_code'),('$id','item_id','$item_id'),('$id','item_price','$item_price'),('$id','item_number','$item_number'),'$id','rate_review','$rate_review'),('$id','item_post_type','$item_post_type'),('$id','type_price','$type_price'),('$id','adult_price','$adult_price'),('$id','child_price','$child_price'),'$id','infant_price','$infant_price'),('$id','adult_number','$adult_number'),('$id','child_number','$child_number'),('$id','infant_number','$infant_number'),'$id','check_in','$check_in'),('$id','check_out','$check_out'),('$id','ori_price','$ori_price'),('$id','st_booking_id','$st_booking_id'),('$id','payment_method','$payment_method')") ;
+			$user_result_meta = mysql_query("INSERT INTO wp_kbpostmeta(post_id,meta_key,meta_value) VALUES('$id','booking_via','$booking_via'),('$id','status','$status'),('$id','total_price','$total_price'),('$id','order_token_code','$order_token_code'),('$id','item_id','$item_id'),('$id','item_price','$item_price'),('$id','item_number','$item_number'),('$id','item_post_type','$item_post_type'),('$id','type_price','$type_price'),('$id','adult_price','$adult_price'),('$id','child_price','$child_price'),'$id','infant_price','$infant_price'),('$id','adult_number','$adult_number'),('$id','child_number','$child_number'),('$id','infant_number','$infant_number'),'$id','check_in','$check_in'),('$id','check_out','$check_out'),('$id','ori_price','$ori_price'),('$id','st_booking_id','$st_booking_id'),('$id','payment_method','$payment_method')");
+						
+			if ($id) {					                    	
+				$result_ret = array('status' => 1,'orderID'=>$id);		
+				$this->response($this->json($result_ret), 200);
+			} else {
+				$error = array('status' => 0, "error" => "Record Not Added");
+				$this->response($this->json($error), 200);
+			}
+					
+		}	
+		//booking checkout ends
+		
+		public function addbooking_payment_success() {
+			
+			$orderID = $this->_request['orderID']; // send again the ID which got the response from addbooking_checkout() function 
+			$payment_reference_id = $this->_request['payment_reference_id']; // reference code received from paypal or some other payment gateway
+						 
+			$user_result_meta = mysql_query("UPDATE wp_kbpostmeta SET meta_value='completed' where post_id=$orderID and meta_key='status'");
+			$user_result_meta = mysql_query("INSERT INTO wp_kbpostmeta(post_id,meta_key,meta_value) VALUES('$orderID','payment_reference_id','$payment_reference_id')");
+			
+			//get user details 
+			$first_name= $this->get_field_value('wp_kbpostmeta','post_id',$orderID,'st_first_name');
+			$last_name= $this->get_field_value('wp_kbpostmeta','post_id',$orderID,'st_last_name');
+			$user_email= $this->get_field_value('wp_kbpostmeta','post_id',$orderID,'st_email');
+			$user_phone= $this->get_field_value('wp_kbpostmeta','post_id',$orderID,'st_phone');
+			
+			//get event details
+			$item_id= $this->get_field_value('wp_kbpostmeta','post_id',$orderID,'item_id');
+			$st_booking_id= $item_id;
+			//get event details from item_id
+			$event_title= $this->get_field_value('wp_kbposts','ID',$item_id,'post_content'); 
+			$address= $this->get_field_value('wp_kbpostmeta','post_id',$item_id,'address'); 
+			$contact_email= $this->get_field_value('wp_kbpostmeta','post_id',$item_id,'contact_email');
+			$contact_phone= $this->get_field_value('wp_kbpostmeta','post_id',$item_id,'contact_phone');
+			$check_in= $this->get_field_value('wp_kbpostmeta','post_id',$item_id,'check_in');
+						
+			//get booking details
+			$payment_method= $this->get_field_value('wp_kbpostmeta','post_id',$orderID,'payment_method');
+			$ori_price= $this->get_field_value('wp_kbpostmeta','post_id',$orderID,'ori_price');
+			$total_price= $this->get_field_value('wp_kbpostmeta','post_id',$orderID,'total_price');
+			$item_price= $this->get_field_value('wp_kbpostmeta','post_id',$orderID,'item_price');
+			$adult_price= $this->get_field_value('wp_kbpostmeta','post_id',$orderID,'adult_price');
+			$child_price= $this->get_field_value('wp_kbpostmeta','post_id',$orderID,'child_price');
+			$infant_price= $this->get_field_value('wp_kbpostmeta','post_id',$orderID,'infant_price');
+			$adult_number= $this->get_field_value('wp_kbpostmeta','post_id',$orderID,'adult_number');
+			$child_number= $this->get_field_value('wp_kbpostmeta','post_id',$orderID,'child_number');
+			$infant_number= $this->get_field_value('wp_kbpostmeta','post_id',$orderID,'infant_number');
+			
+			
+			
+			//get image url
+			$event_img_query=mysql_query("SELECT p.guid FROM wp_kbpostmeta AS pm INNER JOIN wp_kbposts AS p ON pm.meta_value=p.ID WHERE pm.post_id = '".$item_id."' AND pm.meta_key = '_thumbnail_id'");
+			while ($event_img=mysql_fetch_array($event_img_query)) {
+				$event_image = $event_img['guid'];
+			}
+			
+			//
+			$payment_method = $this->get_field_value('wp_kbpostmeta','post_id',$orderID,'payment_method');
 			
 			$content='
-			Hi '.$user_login.',<br /><br />
+			<table id="booking-infomation" class="wrapper" style="width: 1000px;" width="90%" cellspacing="0" align="center">
+<tbody>
+<tr>
+<td style="padding: 20px 10px; background: #ED8323;" width="20%"><a href="http://koolbooking.com"> <img class="alignnone wp-image-7442 size-full" src="http://koolbooking.com/wp-content/themes/traveler/img/logo.png" alt="logo" width="110" height="40" /> </a></td>
+<td style="background: #ed8323 none repeat scroll 0 0; color: #fff; font-size: 17px; padding: 21px 45px; text-align: right;" width="80%"><a style="color: #fff; padding-left: 12px; text-decoration: none;" href="http://koolbooking.com/hotels/">Hotel</a> <a style="color: #fff; padding-left: 20px; text-decoration: none;" href="http://koolbooking.com/activities/">Activity</a> <a style="color: #fff; padding-left: 20px; text-decoration: none;" href="http://koolbooking.com/events/">Event</a></td>
+</tr>
+</tbody>
+</table>
+<table id="" class="wrapper" style="padding-top: 70px; width: 1000px; color: #666;" width="90%" cellspacing="0" align="center">
+<tbody>
+<tr>
+<td style="padding-bottom: 20px; font-size: 20px;"><strong style="font-size: 30px;">Hello '.$first_name.' '.$last_name.'</strong>,</td>
+</tr>
+<tr>
+<td>Thank you for booking with us. Below are your booking details:</td>
+</tr>
+</tbody>
+</table>
+<table id="" class="wrapper" style="width: 1000px; color: #666; border: 1px solid #666; margin-top: 70px;" width="90%" cellspacing="0" align="center">
+<tbody>
+<tr>
+<td width="65%"><img src='.$event_image.' width="250"/></td>
+<td width="35%">
+<table style="width: 100%; text-align: left; padding-left: 19px; top: 20px; color: #666;">
+<tbody>
+<tr>
+<td style="font-size: 22px; font-weight: bold;" colspan="2">'.$event_title.'</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;"><strong>Date: </strong></td>
+<td style="padding-top: 10px;"><span style="text-decoration: underline;">'.$check_in.'</span></td>
+</tr>
+<tr>
+<td style="padding-top: 20px;"><strong>Address: </strong></td>
+<td style="padding-top: 20px;">'.$address.'</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;"><strong>Email: </strong></td>
+<td style="padding-top: 10px;"><span style="text-decoration: underline;">'.$contact_email.'</span></td>
+</tr>
+<tr>
+<td style="padding-top: 10px;"><strong>Phone: </strong></td>
+<td style="padding-top: 10px;"><span style="text-decoration: underline;">'.$contact_phone.'</span></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table id="" class="wrapper" style="padding-top: 40px; width: 1000px; color: #666;" width="90%" cellspacing="0" align="center">
+<tbody>
+<tr>
+<td style="padding-bottom: 20px; text-align: center; font-size: 30px; font-weight: bold;">Client Informations</td>
+</tr>
+<tr>
+<td>
+<table style="color: #666; border-collapse: collapse;" border="1px" width="100%">
+<tbody>
+<tr>
+<td style="text-align: center; padding: 10px; font-weight: bold;" colspan="2" width="50%">Booking Code: <span style="background-color: #ccffcc; color: #339933; padding: 3px 10px;"> '.$st_booking_id.' </span></td>
+<td style="text-align: center; padding: 10px; font-weight: bold;" colspan="2" width="50%">Status: <span style="background-color: #ccffcc; color: #339933; padding: 3px 10px;"> Completed </span></td>
+</tr>
+<tr>
+<td style="padding: 10px 20px;"><strong>First Name:</strong></td>
+<td style="padding: 10px 20px; ; color: #cc3333; border-color: #666;"><strong>'.$first_name.'</strong></td>
+<td style="padding: 10px 20px;"><strong>Last Name:</strong></td>
+<td style="padding: 10px 20px; ; color: #cc3333; border-color: #666;"><strong>'.$last_name.'</strong></td>
+</tr>
+<tr>
+<td style="padding: 10px 20px;"><strong>Phone:</strong></td>
+<td style="padding: 10px 20px; ; color: #cc3333; border-color: #666;">'.$user_phone.'</td>
+<td style="padding: 10px 20px;"><strong>Email:</strong></td>
+<td style="padding: 10px 20px;">'.$user_email.'</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table id="" class="wrapper" style="padding-top: 40px; width: 1000px; color: #666;" width="90%" cellspacing="0" align="center">
+<tbody>
+<tr>
+<td style="padding-bottom: 20px; text-align: center; font-size: 30px; font-weight: bold;">Booking Details</td>
+</tr>
+<tr>
+<td>
+<div style="text-align: center; padding: 10px 0px; font-weight: bold; border: solid 1px #666;">Payment Method: '.$payment_method.'</div>
+<div style="padding: 10px 0px; border-left: solid 1px #666; border-right: solid 1px #666; border-bottom: solid 1px #666;">
+<table style="padding: 15px; color: #666;" width="100%">
+<tbody>
+<tr>
+<td width="25%"> </td>
+<td width="25%"> </td>
+<td style="padding-bottom: 20px;" width="25%">Adult Price:</td>
+<td style="text-align: right;" width="25%"><strong>'.$adult_price.'</strong></td>
+</tr>
+<tr>
+<td width="25%"> </td>
+<td width="25%"> </td>
+<td style="padding-bottom: 20px;" width="25%">Child Price:</td>
+<td style="text-align: right;" width="25%"><strong>'.$child_price.'</strong></td>
+</tr>
+<tr>
+<td width="25%"> </td>
+<td width="25%"> </td>
+<td style="padding-bottom: 20px;" width="25%">Infant Price:</td>
+<td style="text-align: right;" width="25%"><strong>'.$infant_price.'</strong></td>
+</tr>
+
+<tr>
+<td width="25%"> </td>
+<td width="25%"> </td>
+<td style="padding-bottom: 20px;" width="25%">Number of Adult:</td>
+<td style="text-align: right;" width="25%"><strong>'.$adult_number.'</strong></td>
+</tr>
+<tr>
+<td width="25%"> </td>
+<td width="25%"> </td>
+<td style="padding-bottom: 20px;" width="25%">Number of Child:</td>
+<td style="text-align: right;" width="25%"><strong>'.$child_number.'</strong></td>
+</tr>
+<tr>
+<td width="25%"> </td>
+<td width="25%"> </td>
+<td style="padding-bottom: 20px;" width="25%">Number of Infant:</td>
+<td style="text-align: right;" width="25%"><strong>'.$infant_number.'</strong></td>
+</tr>
+
+<tr>
+<td width="25%"> </td>
+<td width="25%"> </td>
+<td style="padding-bottom: 20px;" width="25%">Origin Price:</td>
+<td style="text-align: right;" width="25%"><strong>'.$ori_price.'</strong></td>
+</tr>
+<tr>
+<td width="25%"> </td>
+<td width="25%"> </td>
+<td style="padding-bottom: 20px;" width="25%"><strong>Pay Amount:</strong></td>
+<td style="text-align: right;" width="25%"><strong style="font-size: 30px; color: #cc3333;">'.$total_price.'</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table id="" class="wrapper" style="padding-top: 40px; width: 1000px; color: #666;" width="90%" cellspacing="0" align="center">
+<tbody>
+<tr>
+<td style="padding-bottom: 20px; font-size: 20px; text-align: center;"><strong style="font-size: 25px;">Cancellation/ Amendment policy</strong></td>
+</tr>
+<tr>
+<td><strong> Individual reservations: </strong> <br /> <span style="padding-left: 20px;"> + For Cancellations/ amendments made after 12 noon, 3 days prior to check-in date, One night’s room rate is charged to the credit card </span> <br /> <span style="padding-left: 20px;"> + For No shows and early check outs, One night’s room rate is charged to the credit card. </span></td>
+</tr>
+<tr>
+<td><strong> Groups / Conference bookings: </strong> <br /> <span style="padding-left: 20px;"> + In case there is any no-show or cancellation/amendment of the conference/group (in part or full), within 15 days or less from the date of check in, a retention charge will be levied. </span> <br /> <span style="padding-left: 20px;"> + The retention charge will be calculated as follows - Number of rooms being canceled/no-shows X 1 night X applicable daily rate per room for the conference/group. </span> <br /> <span style="padding-left: 20px;"> + In case of Early check out retention will be charged for those nights booked, now being released due to the early check out. </span></td>
+</tr>
+</tbody>
+</table>
+<table id="" class="wrapper" style="padding-top: 65px; width: 1000px; color: #666;" width="90%" cellspacing="0" align="center">
+<tbody>
+<tr>
+<td style="padding-bottom: 20px; text-align: center;"><a style="background-color: #ed8323; border-radius: 5px; color: #fff; font-family: tahoma; font-size: 14px; font-weight: bold; margin-left: 10px; padding: 10px 30px; text-decoration: none;" href="[st_email_booking_url_booking_history]" target="_blank"> BOOKING HISTORY </a></td>
+</tr>
+</tbody>
+</table>
+<table style="color: #818181; width: 1000px;" width="100%" cellspacing="0" align="center">
+<tbody>
+<tr>
+<td style="padding-top: 30px; padding-bottom: 20px;" align="center"><hr style="color: #ddd;" /></td>
+</tr>
+<tr>
+<td align="center"><a href="http://koolbooking.com"><img class="alignnone wp-image-6292" src="http://koolbooking.com/wp-content/themes/traveler/img/email/fa.png" alt="eb_face" width="35" height="35" /></a> <a style="margin: 5px;" href="http://koolbooking.com"><img class="alignnone wp-image-6296" src="http://koolbooking.com/wp-content/themes/traveler/img/email/tw.png" alt="" width="35" height="35" /></a> <a style="margin: 5px;" href="http://koolbooking.com"><img class="alignnone wp-image-6295" src="http://koolbooking.com/wp-content/themes/traveler/img/email/gg.png" alt="" width="35" height="35" /></a></td>
+</tr>
+<tr>
+<td style="padding-top: 20px;" align="center">
+<p>Booking, reviews and advices on hotels, resorts, flights, vacation rentals, travel packages, and lots more!</p>
+<ul style="list-style: none; text-align: center;">
+<li style="display: inline-block;"><a style="color: #818181; text-decoration: none;" href="#">About us</a> |</li>
+<li style="display: inline-block;"><a style="color: #818181; text-decoration: none;" href="#">Contact us</a> |</li>
+<li style="display: inline-block;"><a style="color: #818181; text-decoration: none;" href="#">News</a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>';
 			
-			Thank you for registering with us.<br /><br />
+			$to=$user_email;
 			
-			Your Token is : '.$token.'<br />
-			Please enter this token in the KoolBooking app to confirm verification.<br /><br />
-			
-			Regards,<br />
-			Koolbooking.in
-			';
-			
-			$to=$email;
-			
-			if ($id) {
+			if ($orderID) {
 				include "htmlMimeMail.php";
 				$mail = new htmlMimeMail();
 				$mail->setHTML($content);		
@@ -615,20 +847,35 @@ AND pm.meta_key = '_thumbnail_id'");
 				$mail->setSMTPParams('smtp.gmail.com', 587, 'smtp.gmail.com', 1, 'web@koolbooking.com', 'Pay2Kool300');		
 				
 				if ($mail->send(array($to))) {
-
-				}
-				//send_mail($to,"Billing cancellation",$content,"From: v@inka.in\r\n"."Reply-To: v@inka.in\r\n");						                    	
-				$result_ret = array('status' => 1,'postID'=>$id);		
+					//send_mail($to,"Billing cancellation",$content,"From: v@inka.in\r\n"."Reply-To: v@inka.in\r\n");	
+					$result_ret = array('status' => 1,'orderID'=>$orderID);		
+					$this->response($this->json($result_ret), 200);
+				} else {
+					$error = array('status' => 0, "error" => "Record Not Added");
+					$this->response($this->json($error), 200);
+			}
+					
+		}	
+	}
+		//booking payment success ends
+		
+		public function addbooking_payment_failed() {
+			$orderID = $this->_request['orderID']; // send again the ID which got the response from addbooking_checkout() function 
+			$payment_reference_id = $this->_request['payment_reference_id']; // reference code received from paypal or some other payment gateway
+						 
+			$user_result_meta = mysql_query("UPDATE wp_kbpostmeta SET meta_value='failed' where post_id=$orderID and meta_key='status'");
+			$user_result_meta = mysql_query("INSERT INTO wp_kbpostmeta(post_id,meta_key,meta_value) VALUES('$orderID','payment_reference_id','$payment_reference_id')");
+			$id=mysql_insert_id();
+			if($id){
+				$result_ret = array('status' => 1,'orderID'=>$orderID);		
 				$this->response($this->json($result_ret), 200);
 			} else {
 				$error = array('status' => 0, "error" => "Record Not Added");
 				$this->response($this->json($error), 200);
 			}
-					
-		}	
-		//booking ends
+		}
 		
-		
+		//booking payment failed ends
 		public function purchase_history() {
 			
 			$post_author = $this->_request['post_author'];

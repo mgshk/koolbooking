@@ -1,5 +1,5 @@
 angular.module('eventsApp.controllers.eventsListCtrl', [])
-	.controller('eventsListCtrl', ['$scope', function($scope) {
+	.controller('eventsListCtrl', ['$scope', '$state', 'eventsFactory', function($scope, $state, eventsFactory) {
 
 	$scope.showcase = true;
 	$scope.tickets = false;
@@ -53,5 +53,30 @@ angular.module('eventsApp.controllers.eventsListCtrl', [])
 		$('.tab3').css('border-bottom', 'solid 0px #8c9ef2');
 		$('.tab4').css('border-bottom', 'solid 4px #8c9ef2');
 	}
+
+    eventsFactory.getEventsList().then(function (resp) {
+        $scope.eventsList = resp.data;
+    });
+    
+    eventsFactory.getFeaturedEvents().then(function (resp) {
+        $scope.featuredEvents = resp.data;
+    });
+    
+    eventsFactory.getTopDealsEvents().then(function (resp) {
+        $scope.topDealsEvents = resp.data; 
+    });
 	
+    $scope.filterEvents = function(searchTxt) {
+
+    	if ($scope.address !== '') {
+    		eventsFactory.getFilterEvents(searchTxt).then(function (resp) {
+    			$scope.eventsList = resp.data; 
+		    });
+    	} else {
+    		eventsFactory.getEventsList().then(function (resp) {
+		        $scope.eventsList = resp.data;
+		    });
+    	}
+    	
+    }	
 }]);

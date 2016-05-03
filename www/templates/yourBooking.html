@@ -1,6 +1,6 @@
     <div class="bar bar-header header">
       <h1 class="title">Your Booking</h1>
-      <i class="icon-left ion-chevron-left" ui-sref="eventsDetails"></i>
+      <i class="icon-left ion-chevron-left" ui-sref="eventDetails"></i>
     </div>
 
     <div class="buy-ticket full-width">
@@ -16,15 +16,15 @@
 	      <div class="event-date-left">
 		      <p><span>Event Type : </span>Specific Date</p>
 		      
-		      <p><span>Event Date : </span>05-01-2016</p>
+		      <p><span>Event Date : </span>{{event.event_date | date: 'dd-MM-yyyy'}}</p>
 		      
-		      <p><span>Activity Time : </span>2:00PM</p>
+		      <p><span>Activity Time : </span>{{event.event_time}}</p>
 		      
-		      <p><span>Maximum number of people : </span>100</p>
+		      <p><span>Maximum number of people : </span>{{event.max_people}}</p>
 		      
-		      <p><span>Venue Facilities : </span>Parking</p>
+		      <p><span>Venue Facilities : </span>{{event.venue_facilities}}</p>
 		      
-		      <p><span>PRICE : </span><strong>$150</strong></p>	
+		      <p><span>PRICE : </span><strong>$250</strong></p>	
 	     
 	      </div>
       
@@ -33,11 +33,11 @@
 	       <div class="date">
 	       
 	       <div class="date-inner">
-	       <p>April</p>
+	       <p>{{event.event_date | date: 'MMMM' }}</p>
 	       </div>
 	       
-	       <h2>02</h2>
-	       <h3>Sat</h3>
+	       <h2>{{event.event_date | date: 'dd' }}</h2>
+	       <h3>{{event.event_date | date: 'EEEE' }}</h3>
 	       
 	       </div>
 	       

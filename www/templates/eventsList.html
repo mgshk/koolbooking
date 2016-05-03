@@ -29,12 +29,6 @@
   <ion-slide>
     <iframe src="https://www.youtube.com/embed/mcixldqDIEQ" frameborder="0" allowfullscreen></iframe>
   </ion-slide>
-  <ion-slide>
-    <iframe src="https://www.youtube.com/embed/mcixldqDIEQ" frameborder="0" allowfullscreen></iframe>
-  </ion-slide>
-  <ion-slide>
-    <iframe src="https://www.youtube.com/embed/mcixldqDIEQ" frameborder="0" allowfullscreen></iframe>
-  </ion-slide>
 </ion-slide-box>
 
 </div>
@@ -44,11 +38,26 @@
   <div class="bar bar-header item-input-inset">
     <label class="item-input-wrapper">
       <i class="icon ion-ios-location placeholder-icon lc1"></i>
-      <input type="search" placeholder="Search by location">
+      <input type="text" name="searchTxt" placeholder="Search by location" autocomplete="off" ng-model="searchTxt">
     </label>
-    <button class="button button-positive">
+    <button class="button button-positive" ng-click="filterEvents(searchTxt);">
       Search
     </button>
+  </div>
+
+  <div class="list card eventslst" ng-repeat="event in eventsList">
+      <div class="item item-image">
+        <img class="full-image" ng-src="{{event.image_url}}">
+      </div>
+      <div class="row">
+        <div class="col col-75">
+          <h5 class="assertive" ng-bind="event.post_title"></h5>
+          <p>Events</p>
+        </div>
+        <div class="col">
+          <button class="button button-small btneve" ui-sref="eventDetails({event_id: event.id})">Book</button>
+        </div>
+      </div>
   </div>
 
 </div>
@@ -73,53 +82,21 @@
 
 </div>
 
-<div id="discover" ng-show="discover" ng-controller="discoverTabCtrl">
-  
-    <div class="list card eventslst">
+<div id="discover" ng-show="discover">
+  <div class="list card eventslst" ng-repeat="featuredEvent in featuredEvents">
       <div class="item item-image">
-        <img class="full-image" src="lib/onsen/images/hotel.png">
+        <img class="full-image" ng-src="{{featuredEvent.image_url}}">
       </div>
       <div class="row">
         <div class="col col-75">
-          <h5 class="assertive">Life is Beautiful</h5>
+          <h5 class="assertive" ng-bind="featuredEvent.post_title"></h5>
           <p>Events</p>
         </div>
         <div class="col">
-          <button class="button button-small btneve">Book</button>
+          <button class="button button-small btneve" ui-sref="eventDetails({event_id: featuredEvent.id})">Book</button>
         </div>
       </div>
     </div>
-
-    <div class="list card eventslst">
-      <div class="item item-image">
-        <img class="full-image" src="lib/onsen/images/hotel.png">
-      </div>
-      <div class="row">
-        <div class="col col-75">
-          <h5 class="assertive">Life is Beautiful</h5>
-          <p>Events</p>
-        </div>
-        <div class="col">
-          <button class="button button-small btneve">Book</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="list card eventslst">
-      <div class="item item-image">
-        <img class="full-image" src="lib/onsen/images/hotel.png">
-      </div>
-      <div class="row">
-        <div class="col col-75">
-          <h5 class="assertive">Life is Beautiful</h5>
-          <p>Events</p>
-        </div>
-        <div class="col">
-          <button class="button button-small btneve">Book</button>
-        </div>
-      </div>
-    </div>
-
 </div>
 
 </div>
