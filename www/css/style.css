@@ -131,4 +131,12 @@ font-weight: 600;}
     margin: 10px 0 10px 0;
     text-indent: 11px;
     width: 50%;padding: 6px !important;}
-    .thrd button{height: 40px;}
+.thrd button{height: 40px;}
+
+.phistory{margin-top: 60px;}
+.phist .item{background: #F4F3F6;padding: 10px;border-color: rgb(140, 158, 242);border-width: 1px;}
+.setem{float: right;font-size: 35px !important;position: relative;bottom: 6px;}
+.setlist .item{background: none;border-top: none;border-left: none;border-right: none;}
+.setng{margin-top: 50px;}
+.pad-bot{padding-bottom: 0 !important;}
+.ion-gear-b{z-index: 1000;color: #fff;font-size: 26px;right: 10px;position: absolute;top: 8px;}

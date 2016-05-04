@@ -52,6 +52,16 @@ angular.module('eventsApp.config', ['ui.router']).config(function($stateProvider
       url: '/payment',
       controller: 'paymentCtrl',
       templateUrl: 'templates/payment.html'
+  })
+  .state('purchasehistory', {
+      url: '/purchasehistory',
+      controller: 'purchaseHistoryCtrl',
+      templateUrl: 'templates/purchasehistory.html'
+  })
+  .state('setting', {
+      url: '/setting',
+      controller: 'settingCtrl',
+      templateUrl: 'templates/setting.html'
   });
 
   // if none of the above states are matched, use this as the fallback
