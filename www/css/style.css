@@ -116,3 +116,19 @@ font-weight: 600;}
 .tab13{bottom: 0px !important;padding: 2px;position: fixed;left: 0;}
 .tab13 a{color: #000;font-size: 13px !important;font-weight: 700;}
 .adlt select{width: 100%;height: 26px;}
+#thirdpayment{margin-top: 60px;}
+.thrd{padding: 10px;}
+.thrd label{margin-right: 10px;}
+.payinput{    background: #efeef0 none repeat scroll 0 0;
+    border: 1px solid #8c8a8a !important;
+    border-radius: 3px;
+    margin: 10px 0 10px 0;
+    text-indent: 11px;
+    width: 100%;padding: 6px !important;}
+    .payinputcvv{    background: #efeef0 none repeat scroll 0 0;
+    border: 1px solid #8c8a8a !important;
+    border-radius: 3px;
+    margin: 10px 0 10px 0;
+    text-indent: 11px;
+    width: 50%;padding: 6px !important;}
+    .thrd button{height: 40px;}

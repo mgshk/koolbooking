@@ -1,16 +1,40 @@
-<ion-view view-title="Chats">
-  <ion-content>
-    <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
-        <img ng-src="{{chat.face}}">
-        <h2>{{chat.name}}</h2>
-        <p>{{chat.lastText}}</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
+    <div class="bar bar-header header">
+      <h1 class="title">Payment</h1>
+      <i class="icon-left ion-chevron-left" ui-sref="bookingSubmission"></i>
+    </div>
 
-        <ion-option-button class="button-assertive" ng-click="remove(chat)">
-          Delete
-        </ion-option-button>
-      </ion-item>
-    </ion-list>
-  </ion-content>
-</ion-view>
+    <div id="thirdpayment">
+
+      <div class="list card eventslst thrd">
+
+          <h4>Card Type</h4>
+
+          <label><input type="radio"> Visa</label>
+          <label><input type="radio"> Master card</label>
+          <label><input type="radio"> Discover</label>
+
+          <input type="text" placeholder="Card number" class="payinput">
+          <input type="text" placeholder="Name in card" class="payinput">
+          <input type="text" placeholder="CVV" class="payinputcvv">
+
+          <button class="button button-small btneve">DONE</button>
+
+      </div>
+
+      <div class="list card eventslst thrd">
+
+          <h4>PAYPAL</h4>
+
+          <input type="text" placeholder="Paypal emailaddress" class="payinput">
+          <input type="text" placeholder="Name" class="payinput">
+          <input type="text" placeholder="Address" class="payinput">
+          <input type="text" placeholder="City" class="payinput">
+          <input type="text" placeholder="State" class="payinput">
+          <input type="text" placeholder="Country" class="payinput">
+          <input type="text" placeholder="Zipcode" class="payinputcvv">
+
+          <button class="button button-small btneve">DONE</button>
+
+      </div>
+
+  </div>
