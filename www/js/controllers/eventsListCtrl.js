@@ -117,7 +117,7 @@ angular.module('eventsApp.controllers.eventsListCtrl', [])
 	}
 
     eventsFactory.getEventsList().then(function (resp) {
-        $scope.eventsList = resp.data;
+        $scope.eventsList = resp.data; console.log($scope.eventsList);
     });
     
     eventsFactory.getFeaturedEvents().then(function (resp) {

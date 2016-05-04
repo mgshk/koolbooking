@@ -49,8 +49,7 @@
 
 		  <div class="col col-50">
 		      Adult
-		    <select>
-		      <option value="0">0</option>
+		    <select ng-model="no_adult">
 		      <option value="1">1</option>
 		      <option value="2">2</option>
 		      <option value="3">3</option>
@@ -62,10 +61,9 @@
 		    </select>
 		  </div>
 
-		  <div class="col col-50">
+		  <div class="col col-50" ng-if="showChild">
 		      Child
-		    <select>
-		      <option value="0">0</option>
+		    <select ng-model="no_child">
 		      <option value="1">1</option>
 		      <option value="2">2</option>
 		      <option value="3">3</option>
@@ -82,7 +80,7 @@
 
 
        	<p>
-          <button class="button button-block loginbtn lgbtn1" ui-sref="bookingSubmission({event_id: id})">
+          <button class="button button-block loginbtn lgbtn1" ui-sref="bookingSubmission({event_id: id, adult: no_adult, child: no_child})">
             <span>Book now</span>
           </button>
       	</p>
