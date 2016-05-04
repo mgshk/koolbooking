@@ -1,5 +1,5 @@
 angular.module('eventsApp.controllers.eventsListCtrl', [])
-	.controller('eventsListCtrl', ['$scope', '$state', 'eventsFactory', function($scope, $state, eventsFactory) {
+	.controller('eventsListCtrl', ['$scope', '$state', 'eventsFactory', 'userFactory', function($scope, $state, eventsFactory, userFactory) {
 
 	$scope.showcase = true;
 	$scope.tickets = false;
@@ -127,6 +127,12 @@ angular.module('eventsApp.controllers.eventsListCtrl', [])
     eventsFactory.getTopDealsEvents().then(function (resp) {
         $scope.topDealsEvents = resp.data; 
     });
+	
+	if (window.localStorage.getItem('userID')) {
+		userFactory.getUserDetails(window.localStorage.getItem('userID')).then(function (resp) {
+			$scope.userInfo = resp.data;
+		});
+    }
 	
     $scope.filterEvents = function(searchTxt) {
 

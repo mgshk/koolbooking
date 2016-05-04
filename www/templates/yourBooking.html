@@ -1,6 +1,6 @@
     <div class="bar bar-header header">
       <h1 class="title">Your Booking</h1>
-      <i class="icon-left ion-chevron-left" ui-sref="eventDetails"></i>
+      <i class="icon-left ion-chevron-left" ui-sref="eventDetails({event_id: id})"></i>
     </div>
 
     <div class="buy-ticket full-width">
@@ -82,7 +82,7 @@
 
 
        	<p>
-          <button class="button button-block loginbtn lgbtn1" ui-sref="bookingSubmission">
+          <button class="button button-block loginbtn lgbtn1" ui-sref="bookingSubmission({event_id: id})">
             <span>Book now</span>
           </button>
       	</p>

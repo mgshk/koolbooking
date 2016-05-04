@@ -11,7 +11,7 @@
     <img src="img/tickets.png" class="tick">
     Tickets
   </a>
-  <a class="tab-item tab3" ng-click="showYou()">
+  <a class="tab-item tab3" ng-if="userInfo" ng-click="showYou()">
     <img src="img/man.png" class="yu">
     You
   </a>
@@ -157,7 +157,7 @@
       <h1>
         <i class="icon ion-person-stalker"></i>
       </h1>
-      <p>James Smith</p>
+      <p ng-bind="userInfo.display_name"></p>
   </div>
 
   <div class="list">
@@ -194,17 +194,17 @@
 
   <div id="trending" ng-show="trending">
 
-    <div class="list card eventslst" ng-repeat="featuredEvent in featuredEvents">
+    <div class="list card eventslst" ng-repeat="topDealsEvent in topDealsEvents">
       <div class="item item-image">
-        <img class="full-image" ng-src="{{featuredEvent.image_url}}">
+        <img class="full-image" ng-src="{{topDealsEvent.image_url}}">
       </div>
       <div class="row">
         <div class="col col-75">
-          <h5 class="assertive" ng-bind="featuredEvent.post_title"></h5>
+          <h5 class="assertive" ng-bind="topDealsEvent.post_title"></h5>
           <p>Events</p>
         </div>
         <div class="col">
-          <button class="button button-small btneve" ui-sref="eventDetails({event_id: featuredEvent.id})">Book</button>
+          <button class="button button-small btneve" ui-sref="eventDetails({event_id: topDealsEvent.id})">Book</button>
         </div>
       </div>
     </div>
