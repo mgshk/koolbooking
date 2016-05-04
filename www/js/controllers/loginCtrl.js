@@ -1,9 +1,9 @@
 angular.module('eventsApp.controllers.loginCtrl', ['directive.g+signin'])
     .controller('loginCtrl', ['$scope', '$state', '$timeout', '$facebook', 'loginFactory', function($scope, $state, $timeout, $facebook, loginFactory) {
 
-    // if (window.localStorage.getItem('userID')) {
-    // 	$state.go('eventsList');
-    // }
+    if (window.localStorage.getItem('userID')) {
+     $state.go('eventsList');
+    }
     
     $scope.login = function() {	
 		loginFactory.userLogin ($scope.user_email, $scope.user_pass).then(function (resp) {
