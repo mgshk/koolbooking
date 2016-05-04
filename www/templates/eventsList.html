@@ -29,6 +29,12 @@
   <ion-slide>
     <iframe src="https://www.youtube.com/embed/mcixldqDIEQ" frameborder="0" allowfullscreen></iframe>
   </ion-slide>
+  <ion-slide>
+    <iframe src="https://www.youtube.com/embed/mcixldqDIEQ" frameborder="0" allowfullscreen></iframe>
+  </ion-slide>
+  <ion-slide>
+    <iframe src="https://www.youtube.com/embed/mcixldqDIEQ" frameborder="0" allowfullscreen></iframe>
+  </ion-slide>
 </ion-slide-box>
 
 </div>
@@ -83,7 +89,10 @@
 </div>
 
 <div id="discover" ng-show="discover">
-  <div class="list card eventslst" ng-repeat="featuredEvent in featuredEvents">
+
+  <div id="recommended" ng-show="recommended">
+
+    <div class="list card eventslst" ng-repeat="featuredEvent in featuredEvents">
       <div class="item item-image">
         <img class="full-image" ng-src="{{featuredEvent.image_url}}">
       </div>
@@ -97,6 +106,46 @@
         </div>
       </div>
     </div>
+
+  </div>
+
+  <div id="trending" ng-show="trending">
+
+    <div class="list card eventslst" ng-repeat="featuredEvent in featuredEvents">
+      <div class="item item-image">
+        <img class="full-image" ng-src="{{featuredEvent.image_url}}">
+      </div>
+      <div class="row">
+        <div class="col col-75">
+          <h5 class="assertive" ng-bind="featuredEvent.post_title"></h5>
+          <p>Events</p>
+        </div>
+        <div class="col">
+          <button class="button button-small btneve" ui-sref="eventDetails({event_id: featuredEvent.id})">Book</button>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div id="comingsoon" ng-show="comingsoon">
+
+    <h4>Coming soon...</h4>
+    
+  </div>
+
+    <div class="tabs tabs-icon-left tab12">
+      <a class="tab-item tab5" ng-click="showRecommened()">
+        Recommened
+      </a>
+      <a class="tab-item tab6" ng-click="showTrending()">
+        Trending
+      </a>
+      <a class="tab-item tab7" ng-click="showComingsoon()">
+        Coming soon
+      </a>
+    </div>
+
 </div>
 
 </div>

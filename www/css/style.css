@@ -97,7 +97,16 @@ font-weight: 600;}
     font-weight: normal;
     padding: 0 0 12px;
     text-align: center;
-    width: 70%;margin: 0;
+    width: 70%;margin: 0;font-size: 20px;
 }
 .event-date-right {float: right;width: 42%;margin-left: 2%;}
 .event-date-left {float: left;width: 56%;}
+.ermsg{color: red;font-size: 16px;}
+
+.tab12{bottom: 0px !important;padding: 2px;position: fixed;left: 0;}
+.tab12 a{color: #000;font-size: 14px !important;font-weight: 700;}
+#comingsoon h4{text-align: center;}
+#booksub{margin-top: 55px;}
+#booksub h4{padding: 0 10px 10px 10px;border-bottom: 1px solid #000;}
+#booksub p{padding: 0 10px 10px 10px;border-bottom: 1px solid #000;}
+.pull-right{float: right;}
