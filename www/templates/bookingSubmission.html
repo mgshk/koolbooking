@@ -11,11 +11,11 @@
      
       <h4>Payment Details</h4>
       
-      <p>Adult price <span class="pull-right">$120.00</span></p>
+      <p>Adult price <span class="pull-right">${{adult * adult_price}}</span></p>
       
-      <p>Child price<span class="pull-right">$0.00</span></p>
+      <p ng-if="child_price > 0">Child price<span class="pull-right">${{child * child_price}}</span></p>
       
-      <p><strong>Total</strong> <strong class="pull-right">$120.00</strong></p>
+      <p><strong>Total</strong> <strong class="pull-right">${{adult * adult_price + child * child_price}}</strong></p>
 
           <button class="button button-block loginbtn lgbtn1" ui-sref="payment">
             <span>Payment now</span>
