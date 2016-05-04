@@ -41,29 +41,112 @@
 
 <div id="tickets" ng-show="tickets" ng-controller="ticketsTabCtrl">
   
-  <div class="bar bar-header item-input-inset">
-    <label class="item-input-wrapper">
-      <i class="icon ion-ios-location placeholder-icon lc1"></i>
-      <input type="text" name="searchTxt" placeholder="Search by location" autocomplete="off" ng-model="searchTxt">
-    </label>
-    <button class="button button-positive" ng-click="filterEvents(searchTxt);">
-      Search
-    </button>
+  <div class="tabs tabs-icon-left tab13">
+    <a class="tab-item tab8" ng-click="showAll()">
+      <img src="img/all-icon.png" class="scase">
+      All
+    </a>
+    <a class="tab-item tab9" ng-click="showEvents()">
+      <img src="img/event-icon.png" class="tick">
+      Events
+    </a>
+    <a class="tab-item tab10" ng-click="showActivity()">
+      <img src="img/activity-icon.png" class="yu">
+      Activity
+    </a>
+</div>
+
+  <div id="all" ng-show="all">
+
+    <div class="bar bar-header item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios-location placeholder-icon lc1"></i>
+        <input type="text" name="searchTxt" placeholder="Search by location" autocomplete="off" ng-model="searchTxt">
+      </label>
+      <button class="button button-positive" ng-click="filterEvents(searchTxt);">
+        Search
+      </button>
+    </div>
+
+    <div class="list card eventslst" ng-repeat="event in eventsList">
+        <div class="item item-image">
+          <img class="full-image" ng-src="{{event.image_url}}">
+        </div>
+        <div class="row">
+          <div class="col col-75">
+            <h5 class="assertive" ng-bind="event.post_title"></h5>
+            <p>Events</p>
+          </div>
+          <div class="col">
+            <button class="button button-small btneve" ui-sref="eventDetails({event_id: event.id})">Book</button>
+          </div>
+        </div>
+    </div>
+
   </div>
 
-  <div class="list card eventslst" ng-repeat="event in eventsList">
-      <div class="item item-image">
-        <img class="full-image" ng-src="{{event.image_url}}">
-      </div>
-      <div class="row">
-        <div class="col col-75">
-          <h5 class="assertive" ng-bind="event.post_title"></h5>
-          <p>Events</p>
+  <div id="event" ng-show="event">
+
+    <div class="bar bar-header item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios-location placeholder-icon lc1"></i>
+        <input type="text" name="searchTxt" placeholder="Search by location" autocomplete="off" ng-model="searchTxt">
+      </label>
+      <button class="button button-positive" ng-click="filterEvents(searchTxt);">
+        Search
+      </button>
+    </div>
+
+    <div class="list card eventslst">
+        <div class="item item-image">
+          <img class="full-image" ng-src="img/ticket-img.png">
         </div>
-        <div class="col">
-          <button class="button button-small btneve" ui-sref="eventDetails({event_id: event.id})">Book</button>
+        <div class="row">
+          <div class="col col-75">
+            <h5 class="assertive">Life is beautiful</h5>
+            <p>Events</p>
+            <p>Nassa , New Providence, THe Bahamas</p>
+            <p>Events type : Speific date</p>
+            <p>Events date : 01/01/2016</p>
+          </div>
+          <div class="col">
+            <button class="button button-small btneve" ui-sref="eventDetails({event_id: event.id})">Book</button>
+          </div>
         </div>
-      </div>
+    </div>
+
+  </div>
+
+  <div id="activity" ng-show="activity">
+
+    <div class="bar bar-header item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios-location placeholder-icon lc1"></i>
+        <input type="text" name="searchTxt" placeholder="Search by location" autocomplete="off" ng-model="searchTxt">
+      </label>
+      <button class="button button-positive" ng-click="filterEvents(searchTxt);">
+        Search
+      </button>
+    </div>
+
+    <div class="list card eventslst">
+        <div class="item item-image">
+          <img class="full-image" ng-src="img/ticket-img.png">
+        </div>
+        <div class="row">
+          <div class="col col-75">
+            <h5 class="assertive">Life is trends</h5>
+            <p>Activity</p>
+            <p>Nassa , New Providence, THe Bahamas</p>
+            <p>Activity type : Speific date</p>
+            <p>Activity date : 01/01/2016</p>
+          </div>
+          <div class="col">
+            <button class="button button-small btneve" ui-sref="eventDetails({event_id: event.id})">Book</button>
+          </div>
+        </div>
+    </div>
+
   </div>
 
 </div>

@@ -28,10 +28,12 @@ angular.module('eventsApp.controllers.eventsListCtrl', [])
 		$scope.tickets = true;
 		$scope.you = false;
 		$scope.discover = false;
+		$scope.all = true;
 		$('.tab1').css('border-bottom', 'solid 0px #8c9ef2');
 		$('.tab2').css('border-bottom', 'solid 4px #8c9ef2');
 		$('.tab3').css('border-bottom', 'solid 0px #8c9ef2');
 		$('.tab4').css('border-bottom', 'solid 0px #8c9ef2');
+		$('.tab8').css('border-bottom', 'solid 4px #8c9ef2');
 	}
 
 	$scope.showYou = function(){
@@ -85,6 +87,33 @@ angular.module('eventsApp.controllers.eventsListCtrl', [])
 		$('.tab5').css('border-top', 'solid 0px #8c9ef2');
 		$('.tab6').css('border-top', 'solid 0px #8c9ef2');
 		$('.tab7').css('border-top', 'solid 4px #8c9ef2');
+	}
+
+	$scope.showAll = function(){
+		$scope.all = true;
+		$scope.event = false;
+		$scope.activity = false;
+		$('.tab8').css('border-bottom', 'solid 4px #8c9ef2');
+		$('.tab9').css('border-bottom', 'solid 0px #8c9ef2');
+		$('.tab10').css('border-bottom', 'solid 0px #8c9ef2');
+	}
+
+	$scope.showEvents = function(){
+		$scope.all = false;
+		$scope.event = true;
+		$scope.activity = false;
+		$('.tab8').css('border-bottom', 'solid 0px #8c9ef2');
+		$('.tab9').css('border-bottom', 'solid 4px #8c9ef2');
+		$('.tab10').css('border-bottom', 'solid 0px #8c9ef2');
+	}
+
+	$scope.showActivity = function(){
+		$scope.all = false;
+		$scope.event = false;
+		$scope.activity = true;
+		$('.tab8').css('border-bottom', 'solid 0px #8c9ef2');
+		$('.tab9').css('border-bottom', 'solid 0px #8c9ef2');
+		$('.tab10').css('border-bottom', 'solid 4px #8c9ef2');
 	}
 
     eventsFactory.getEventsList().then(function (resp) {
