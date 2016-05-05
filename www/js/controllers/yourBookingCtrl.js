@@ -4,6 +4,7 @@ angular.module('eventsApp.controllers.yourBookingCtrl', [])
         $state.go('home');
     }
 	
+	$scope.showChild = false;
 	$scope.id = $stateParams.event_id;
     
     eventsFactory.getEventDetails($stateParams.event_id).then(function (resp) {

@@ -5,39 +5,18 @@
     </div>
 
     <div class="phistory">
-
-        <div class="list list-inset phist">
-
+        <div class="list list-inset phist" ng-repeat="userHistory in userHistories">
             <div class="item">
-              Event : <span class="pull-right">Life is beautiful</span>
+              Event : <span class="pull-right" ng-bind="userHistory.post_title"></span>
             </div>
             <div class="item">
-              Event Date : <span class="pull-right">01/01/2016</span>
+              Event Date : <span class="pull-right" ng-bind="userHistory.event_date"></span>
             </div>
             <div class="item">
-              Event Venue : <span class="pull-right">THe Bahamas</span>
+              Event Venue : <span class="pull-right" ng-bind="userHistory.address"></span>
             </div>
             <div class="item">
-              Total : <span class="pull-right">$120</span>
+              Total : <span class="pull-right">${{userHistory.total_price}}</span>
             </div>
-
         </div>
-
-        <div class="list list-inset phist">
-
-            <div class="item">
-              Event : <span class="pull-right">Life is Trends</span>
-            </div>
-            <div class="item">
-              Event Date : <span class="pull-right">25/03/2015</span>
-            </div>
-            <div class="item">
-              Event Venue : <span class="pull-right">Antigua</span>
-            </div>
-            <div class="item">
-              Total : <span class="pull-right">$250</span>
-            </div>
-
-        </div>
-
     </div>
