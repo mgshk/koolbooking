@@ -17,8 +17,8 @@ angular.module('eventsApp.controllers.loginCtrl', ['directive.g+signin'])
     $scope.login = function() {	
     	$scope.showLoder();
 		loginFactory.userLogin ($scope.user_email, $scope.user_pass).then(function (resp) {
+			$scope.hideLoder();
 		    if (resp.status === 0) {
-		    	$scope.hideLoder();
 				$scope.errorMsg = resp.error;
 				$scope.user_email = '';
 				$scope.user_pass = '';
@@ -27,7 +27,6 @@ angular.module('eventsApp.controllers.loginCtrl', ['directive.g+signin'])
 				timeout(); 
 				return;
 		    }
-		    $scope.hideLoder();
 		    window.localStorage.setItem('userID', resp.data.ID);
 		    $state.go('eventsList');
 		});

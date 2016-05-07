@@ -15,17 +15,12 @@
       
 	      <div class="event-date-left">
 		      <p><span>Event Type : </span>Specific Date</p>
-		      
 		      <p><span>Event Date : </span>{{event.event_date | date: 'dd-MM-yyyy'}}</p>
-		      
-		      <p><span>Activity Time : </span>{{event.event_time}}</p>
-		      
-		      <p><span>Maximum number of people : </span>{{event.max_people}}</p>
-		      
-		      <p><span>Venue Facilities : </span>{{event.venue_facilities}}</p>
-		      
-		      <p><span>PRICE : </span><strong>$250</strong></p>	
-	     
+		      <p><span>Activity Time : </span>{{event.event_time}}</p>	      
+		      <p><span>Maximum number of people : </span>{{event.max_people}}</p>      
+		      <p><span>Venue Facilities : </span>{{event.venue_facilities}}</p>	      
+		      <p><span>Adult Price : </span><strong>${{event.adult_price}}</strong></p>	
+	     	  <p><span>Child Price : </span><strong>${{event.child_price}}</strong></p>	
 	      </div>
       
 	       <div class="event-date-right">

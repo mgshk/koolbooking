@@ -33,8 +33,4 @@ angular.module('eventsApp.controllers.bookingSubmissionCtrl', [])
 			}
 		});
     });
-	
-	/*eventsFactory.getEventDetails($stateParams.event_id).then(function (resp) {
-        $scope.event = resp.data;
-    });*/
 }]);

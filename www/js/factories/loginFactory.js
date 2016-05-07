@@ -22,7 +22,7 @@ angular.module('eventsApp.factory.loginFactory', [])
 	
 	function forgotPassword (user_email, new_password, confirm_password) {
 		var deferred = $q.defer();
-		loginService.forgotPassword(new_password, confirm_password).then(function (resp) {
+		loginService.forgotPassword(user_email, new_password, confirm_password).then(function (resp) {
 			deferred.resolve(resp.data);
 		}, function(error) {
 			console.log(error);
