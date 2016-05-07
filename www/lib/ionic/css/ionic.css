@@ -5631,8 +5631,8 @@ ion-tabs.tabs-color-active-dark .tab-item {
   .loading-container .loading {
     padding: 20px;
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
+/*    background-color: rgba(0, 0, 0, 0.7);
+*/    color: #fff;
     text-align: center;
     text-overflow: ellipsis;
     font-size: 15px; }
@@ -7384,11 +7384,11 @@ ion-slides {
  * --------------------------------------------------
  */
 .spinner {
-  stroke: #444;
-  fill: #444; }
+  /*stroke: #444;*/
+  fill: #60ddcd; }
   .spinner svg {
-    width: 28px;
-    height: 28px; }
+    width: 70px;
+    height: 70px; }
   .spinner.spinner-light {
     stroke: #fff;
     fill: #fff; }

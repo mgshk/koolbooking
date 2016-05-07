@@ -59,34 +59,34 @@ angular.module('eventsApp.controllers.eventsListCtrl', [])
 		$('.tab2').css('border-bottom', 'solid 0px #8c9ef2');
 		$('.tab3').css('border-bottom', 'solid 0px #8c9ef2');
 		$('.tab4').css('border-bottom', 'solid 4px #8c9ef2');
-		$('.tab5').css('border-top', 'solid 4px #8c9ef2');
+		$('.tab5').css('color', '#8c9ef2');
 	}
 
 	$scope.showRecommened = function(){
 		$scope.recommended = true;
 		$scope.trending = false;
 		$scope.comingsoon = false;
-		$('.tab5').css('border-top', 'solid 4px #8c9ef2');
-		$('.tab6').css('border-top', 'solid 0px #8c9ef2');
-		$('.tab7').css('border-top', 'solid 0px #8c9ef2');
+		$('.tab5').css('color', '#8c9ef2');
+		$('.tab6').css('color', '#000000');
+		$('.tab7').css('color', '#000000');
 	}
 
 	$scope.showTrending = function(){
 		$scope.recommended = false;
 		$scope.trending = true;
 		$scope.comingsoon = false;
-		$('.tab5').css('border-top', 'solid 0px #8c9ef2');
-		$('.tab6').css('border-top', 'solid 4px #8c9ef2');
-		$('.tab7').css('border-top', 'solid 0px #8c9ef2');
+		$('.tab5').css('color', '#000000');
+		$('.tab6').css('color', '#8c9ef2');
+		$('.tab7').css('color', '#000000');
 	}
 
 	$scope.showComingsoon = function(){
 		$scope.recommended = false;
 		$scope.trending = false;
 		$scope.comingsoon = true;
-		$('.tab5').css('border-top', 'solid 0px #8c9ef2');
-		$('.tab6').css('border-top', 'solid 0px #8c9ef2');
-		$('.tab7').css('border-top', 'solid 4px #8c9ef2');
+		$('.tab5').css('color', '#000000');
+		$('.tab6').css('color', '#000000');
+		$('.tab7').css('color', '#8c9ef2');
 	}
 
 	$scope.showAll = function(){

@@ -2,8 +2,11 @@ angular.module('eventsApp.service.loginService', [])
 	.service('loginService', ['$http', function($http) {
 		
 		this.userLogin = function(user_email, user_pass) {
-			return $http.get('http://koolbooking.com/android_app/login?user_login='+user_email+'&user_pass='+user_pass).then(function (resp) {
+			return $http.get('https://koolbooking.com/android_app/login?user_login='+user_email+'&user_pass='+user_pass)
+			.success(function (resp) {
 				return resp;
+			}).error(function(data, status){
+				//alert(data+' '+status);
 			});		
 		}
 		

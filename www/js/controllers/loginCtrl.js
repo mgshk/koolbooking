@@ -1,18 +1,33 @@
 angular.module('eventsApp.controllers.loginCtrl', ['directive.g+signin'])
-    .controller('loginCtrl', ['$scope', '$state', '$timeout', '$facebook', 'loginFactory', function($scope, $state, $timeout, $facebook, loginFactory) {
+    .controller('loginCtrl', ['$scope', '$state', '$timeout', '$facebook', 'loginFactory', '$ionicLoading', function($scope, $state, $timeout, $facebook, loginFactory, $ionicLoading) {
 
     if (window.localStorage.getItem('userID')) {
      $state.go('eventsList');
     }
+
+    $scope.showLoder = function() {
+	    $ionicLoading.show({
+	      template: '<ion-spinner icon="bubbles"></ion-spinner>'
+	    });
+	 };
+	$scope.hideLoder = function(){
+	    $ionicLoading.hide();
+	};
     
     $scope.login = function() {	
+    	$scope.showLoder();
 		loginFactory.userLogin ($scope.user_email, $scope.user_pass).then(function (resp) {
 		    if (resp.status === 0) {
+		    	$scope.hideLoder();
 				$scope.errorMsg = resp.error;
+				$scope.user_email = '';
+				$scope.user_pass = '';
+				$scope.loginForm.$setPristine();
+				$scope.loginForm.$setUntouched();
 				timeout(); 
 				return;
 		    }
-		    
+		    $scope.hideLoder();
 		    window.localStorage.setItem('userID', resp.data.ID);
 		    $state.go('eventsList');
 		});
