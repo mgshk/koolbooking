@@ -17,6 +17,9 @@ angular.module('eventsApp.controllers.signupCtrl', [])
         	$scope.hideLoder();
             if (resp.status === 0) {
                 $scope.errorMsg = resp.error;
+                $scope.user = {};
+				$scope.signupForm.$setPristine();
+				$scope.signupForm.$setUntouched();
                 timeout();
                 return;
             }

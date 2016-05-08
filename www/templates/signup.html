@@ -4,7 +4,7 @@
 </div>
 
 <div class="signup-container">
-  <p ng-bind="errorMsg"></p>
+  <p ng-if="errorMsg" ng-bind="errorMsg" class="ermsg"></p>
   <form role="form" name="signupForm" novalidate>
     <div class="list">
       <div class="row">
