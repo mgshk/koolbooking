@@ -17,8 +17,11 @@ angular.module('eventsApp.controllers.forgotPasswordCtrl', [])
     	if($scope.new_password !== $scope.confirm_password) {
             $scope.hideLoder();
     		$scope.errorMsg = 'New and Confirm password are mismatch';
+            $scope.user_email = '';
             $scope.new_password = '';
             $scope.confirm_password = '';
+            $scope.forgotPasswordForm.$setPristine();
+            $scope.forgotPasswordForm.$setUntouched();
     		timeout();
             return;
     	}
@@ -31,8 +34,8 @@ angular.module('eventsApp.controllers.forgotPasswordCtrl', [])
                 $scope.user_email = '';
                 $scope.new_password = '';
                 $scope.confirm_password = '';
-                $scope.loginForm.$setPristine();
-                $scope.loginForm.$setUntouched();
+                $scope.forgotPasswordForm.$setPristine();
+                $scope.forgotPasswordForm.$setUntouched();
                 timeout();
                 return;
             }
