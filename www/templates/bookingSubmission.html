@@ -14,10 +14,13 @@
       <p>Adult price <span class="pull-right">${{adult * adult_price}}</span></p>
       
       <p ng-if="child_price > 0">Child price<span class="pull-right">${{child * child_price}}</span></p>
+      <p ng-if="infant_price > 0">Infant price<span class="pull-right">${{infant * infant_price}}</span></p>
       
-      <p><strong>Total</strong> <strong class="pull-right">${{adult * adult_price + child * child_price}}</strong></p>
+      <p><strong>Total</strong> 
+        <strong class="pull-right">${{amount}}</strong>
+      </p>
 
-          <button class="button button-block loginbtn lgbtn1" ui-sref="payment">
+          <button class="button button-block loginbtn lgbtn1" ui-sref="payment({event_id: id})">
             <span>Payment now</span>
           </button>
 
