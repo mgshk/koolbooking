@@ -34,9 +34,15 @@ angular.module('eventsApp.controllers.bookingSubmissionCtrl', [])
 	if($stateParams.child) {
 		$scope.child = $stateParams.child;
 	} else {
-		$scope.child = 1;
+		$scope.child = 0;
 	}
-	
+
+	if($stateParams.infant) {
+		$scope.infant = $stateParams.infant;
+	} else {
+		$scope.infant = 0;
+	}
+
 	eventsFactory.getEventsList().then(function (resp) {
 
 		$scope.hideLoder();
@@ -51,6 +57,21 @@ angular.module('eventsApp.controllers.bookingSubmissionCtrl', [])
 					$scope.child_price = value.child_price;
 				else
 					$scope.child_price = 0;
+
+				if (angular.isDefined(value.infant_price))
+					$scope.infant_price = value.infant_price;
+				else
+					$scope.infant_price = 0;
+
+
+				$scope.amount = ($scope.adult * $scope.adult_price) + ($scope.child * $scope.child_price) + 
+					($scope.infant * $scope.infant_price);
+
+				window.localStorage.setItem('eventID', $scope.id);
+				window.localStorage.setItem('adult', $scope.adult);
+				window.localStorage.setItem('child', $scope.child);
+				window.localStorage.setItem('infant', $scope.infant);
+				window.localStorage.setItem('amount', $scope.amount);
 			}
 		});
     });

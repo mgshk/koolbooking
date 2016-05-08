@@ -21,7 +21,8 @@
 		      <p><span>Maximum number of people : </span>{{event.max_people}}</p>      
 		      <p><span>Venue Facilities : </span>{{event.venue_facilities}}</p>	      
 		      <p><span>Adult Price : </span><strong>${{event.adult_price}}</strong></p>	
-	     	  <p><span>Child Price : </span><strong>${{event.child_price}}</strong></p>	
+	     	  <p ng-show="event.child_price != 0"><span>Child Price : </span><strong>${{event.child_price}}</strong></p>
+	     	  <p ng-show="event.infant_price != 0"><span>Infant Price : </span><strong>${{event.infant_price}}</strong></p>	
 	      </div>
       
 	       <div class="event-date-right">
@@ -58,9 +59,24 @@
 		    </select>
 		  </div>
 
-		  <div class="col col-50">
+		  <div class="col col-50" ng-show="event.child_price != 0">
 		      Child
 		    <select ng-model="no_child">
+			  <option value="0">0</option>
+		      <option value="1">1</option>
+		      <option value="2">2</option>
+		      <option value="3">3</option>
+		      <option value="4">4</option>
+		      <option value="5">5</option>
+		      <option value="6">6</option>
+		      <option value="7">7</option>
+		      <option value="8">8</option>
+		    </select>
+		  </div>
+
+		  <div class="col col-50" ng-show="event.infant_price != 0">
+		      Infant
+		    <select ng-model="no_infant">
 			  <option value="0">0</option>
 		      <option value="1">1</option>
 		      <option value="2">2</option>
@@ -78,7 +94,7 @@
 
 
        	<p>
-          <button class="button button-block loginbtn lgbtn1" ui-sref="bookingSubmission({event_id: id, adult: no_adult, child: no_child})">
+          <button class="button button-block loginbtn lgbtn1" ui-sref="bookingSubmission({event_id: id, adult: no_adult, child: no_child, infant: no_infant})">
             <span>Book now</span>
           </button>
       	</p>

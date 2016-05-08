@@ -36,16 +36,51 @@
       <div class="list card eventslst thrd" ng-if="paypalpayment">
 
           <h4>PAYPAL</h4>
+          <form role="form" action="https://www.paypal.com/cgi-bin/webscr" name="paymentForm" novalidate>
+            <input type="hidden" name="business" value="managingdirector@silverstarcaribbean.com">   
+            <!-- Specify a Buy Now button. -->
+            <input type="hidden" name="cmd" value="_xclick">
+            
+            <!-- Specify details about the item that buyers will purchase. -->
+            <input type="hidden" name="item_name" value="Event">
+            <input type="hidden" name="item_number" value="{{id}}">
+            <input type="hidden" name="no_adult" value="{{adult}}">
+            <input type="hidden" name="no_child" value="{{child}}">
+            <input type="hidden" name="no_infant" value="{{infant}}">
+            <input type="hidden" name="amount" value="{{amount}}">
+            <input type="hidden" name="currency_code" value="USD">
 
-          <input type="text" placeholder="Paypal emailaddress" class="payinput">
-          <input type="text" placeholder="Name" class="payinput">
-          <input type="text" placeholder="Address" class="payinput">
-          <input type="text" placeholder="City" class="payinput">
-          <input type="text" placeholder="State" class="payinput">
-          <input type="text" placeholder="Country" class="payinput">
-          <input type="text" placeholder="Zipcode" class="payinputcvv">
+            <input type="text" name="paypal_email" placeholder="Paypal emailaddress" class="payinput" autocomplete="off" required>
+            <span style="color:red" ng-show="paymentForm.paypal_email.$dirty && paymentForm.paypal_email.$invalid">
+                <span ng-show="paymentForm.paypal_email.$invalid">Invalid email address.</span>
+            </span>
+            <input type="text" name="paypal_name" placeholder="Name" class="payinput" autocomplete="off" required>
+            <span style="color:red" ng-show="paymentForm.paypal_name.$dirty && paymentForm.paypal_name.$invalid">
+                <span ng-show="paymentForm.paypal_name.$invalid">Invalid email address.</span>
+            </span>
+            <input type="text" name="paypal_address" placeholder="Address" class="payinput" autocomplete="off" required>
+            <span style="color:red" ng-show="paymentForm.paypal_address.$dirty && paymentForm.paypal_address.$invalid">
+                <span ng-show="paymentForm.paypal_address.$invalid">Invalid email address.</span>
+            </span>
+            <input type="text" name="paypal_city" placeholder="City" class="payinput" autocomplete="off" required>
+            <span style="color:red" ng-show="paymentForm.paypal_city.$dirty && paymentForm.City.$invalid">
+                <span ng-show="paymentForm.paypal_city.$invalid">Invalid email address.</span>
+            </span>
+            <input type="text" name="paypal_state" placeholder="State" class="payinput" autocomplete="off" required>
+            <span style="color:red" ng-show="paymentForm.paypal_state.$dirty && paymentForm.paypal_state.$invalid">
+                <span ng-show="paymentForm.paypal_state.$invalid">Invalid email address.</span>
+            </span>
+            <input type="text" name="paypal_country" placeholder="Country" class="payinput" autocomplete="off" required>
+            <span style="color:red" ng-show="paymentForm.paypal_country.$dirty && paymentForm.paypal_country.$invalid">
+                <span ng-show="paymentForm.paypal_country.$invalid">Invalid email address.</span>
+            </span>
+            <input type="text" name="paypal_zip" placeholder="Zipcode" class="payinputcvv" autocomplete="off" required>
+            <span style="color:red" ng-show="paymentForm.paypal_zip.$dirty && paymentForm.paypal_zip.$invalid">
+                <span ng-show="paymentForm.paypal_zip.$invalid">Invalid email address.</span>
+            </span>
 
-          <button class="button button-small btneve">DONE</button>
+            <button type="submit" ng-disabled="!paymentForm.$valid" class="button button-small btneve">DONE</button>
+          </form>
 
       </div>
 
