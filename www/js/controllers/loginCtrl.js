@@ -1,5 +1,7 @@
 angular.module('eventsApp.controllers.loginCtrl', ['directive.g+signin'])
-    .controller('loginCtrl', ['$scope', '$state', '$timeout', '$facebook', 'loginFactory', '$ionicLoading', function($scope, $state, $timeout, $facebook, loginFactory, $ionicLoading) {
+    .controller('loginCtrl', ['$scope', '$state', '$facebook', 'loginFactory', '$ionicLoading', '$ionicPopup', function($scope, $state, $facebook, loginFactory, $ionicLoading, $ionicPopup) {
+
+    var errorMsg;
 
     if (window.localStorage.getItem('userID')) {
        $state.go('eventsList');
@@ -13,18 +15,28 @@ angular.module('eventsApp.controllers.loginCtrl', ['directive.g+signin'])
 	$scope.hideLoder = function(){
 	    $ionicLoading.hide();
 	};
+
+	// An alert dialog
+ 	$scope.showAlert = function() {
+	    $ionicPopup.alert({
+	      title: 'Login',
+	      content: errorMsg
+	    }).then(function(res) {
+	      console.log('Login Failed');
+	    });
+    };
     
     $scope.login = function() {	
     	$scope.showLoder();
 		loginFactory.userLogin ($scope.user_email, $scope.user_pass).then(function (resp) {
 			$scope.hideLoder();
 		    if (resp.status === 0) {
-				$scope.errorMsg = resp.error;
+				errorMsg = resp.error;
+				$scope.showAlert();
 				$scope.user_email = '';
 				$scope.user_pass = '';
 				$scope.loginForm.$setPristine();
 				$scope.loginForm.$setUntouched();
-				timeout(); 
 				return;
 		    }
 		    window.localStorage.setItem('userID', resp.data.ID);
@@ -44,8 +56,8 @@ angular.module('eventsApp.controllers.loginCtrl', ['directive.g+signin'])
 		if($facebook.isConnected()){	    
 		    loginFactory.fbLogin(user).then(function (resp) {
 				if (resp.status === 0) {
-				    $scope.errorMsg = resp.error;
-				    timeout();
+				    errorMsg = resp.error;
+				    $scope.showAlert();
 				    return;
 				}
 				
@@ -57,8 +69,8 @@ angular.module('eventsApp.controllers.loginCtrl', ['directive.g+signin'])
     
     $scope.$on('event:google-plus-signin-success', function (event, authResult) {	
 		if (angular.isUndefined(authResult.hg.access_token)) {
-		    $scope.errorMsg = 'Please check your login credentials';
-		    timeout();
+		    errorMsg = 'Please check your login credentials';
+		    $scope.showAlert();
 		    return;
 		}
 		
@@ -79,8 +91,8 @@ angular.module('eventsApp.controllers.loginCtrl', ['directive.g+signin'])
     function googleLogin (user) {
 		loginFactory.googleLogin(user).then(function (resp) {
 		    if (resp.status === 0) {
-				$scope.errorMsg = resp.error;
-				timeout();
+				errorMsg = resp.error;
+				$scope.showAlert();
 				return;
 		    }
 		    
@@ -89,9 +101,4 @@ angular.module('eventsApp.controllers.loginCtrl', ['directive.g+signin'])
 		});
     }
 
-    function timeout() {
-    	$timeout(function() {
-	        $scope.errorMsg = '';
-	    }, 3000);
-    }
 }]);

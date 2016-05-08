@@ -1,6 +1,7 @@
 <div class="bar bar-header header">
     <h1 class="title">Events</h1>
-    <i class="icon ion-power" ng-click="logout()"></i>
+    <i class="icon-left ion-chevron-left" ui-sref="login" ng-if="isLogin"></i>
+    <i class="icon ion-power" ng-click="logout()" ng-if="isUserID"></i>
 </div>
 
 <div class="tabs tabs-icon-left tab11">
@@ -28,13 +29,13 @@
   
   <ion-slide-box does-continue="true" auto-play="true" show-pager="false">
   <ion-slide>
-    <iframe src="https://www.youtube.com/embed/mcixldqDIEQ" frameborder="0" allowfullscreen></iframe>
+    <iframe width="100%" class="iframe" src="https://www.youtube.com/embed/mcixldqDIEQ" frameborder="0" allowfullscreen></iframe>
   </ion-slide>
   <ion-slide>
-    <iframe src="https://www.youtube.com/embed/mcixldqDIEQ" frameborder="0" allowfullscreen></iframe>
+    <iframe width="100%" class="iframe" src="https://www.youtube.com/embed/mcixldqDIEQ" frameborder="0" allowfullscreen></iframe>
   </ion-slide>
   <ion-slide>
-    <iframe src="https://www.youtube.com/embed/mcixldqDIEQ" frameborder="0" allowfullscreen></iframe>
+    <iframe width="100%" class="iframe" src="https://www.youtube.com/embed/mcixldqDIEQ" frameborder="0" allowfullscreen></iframe>
   </ion-slide>
 </ion-slide-box>
 
@@ -62,7 +63,7 @@
     <div class="bar bar-header item-input-inset">
       <label class="item-input-wrapper">
         <i class="icon ion-ios-location placeholder-icon lc1"></i>
-        <input type="text" name="searchTxt" placeholder="Search by location" autocomplete="off" ng-model="searchTxt">
+        <input type="text" name="searchTxt" placeholder="Search by location" autocomplete="off" ng-model="searchTxt" class="searchinput">
       </label>
       <button class="button button-positive" ng-click="filterEvents(searchTxt);">
         Search
@@ -166,6 +167,11 @@
   <a class="item item-icon-left pur" ui-sref="purchasehistory">
     <i class="icon ion-refresh"></i>
     Purhase history
+  </a>
+
+  <a class="item item-icon-left pur" ui-sref="setting">
+    <i class="icon ion-gear-b setngicn"></i>
+    Settings
   </a>
 
 </div>

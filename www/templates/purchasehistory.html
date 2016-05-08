@@ -1,22 +1,25 @@
     <div class="bar bar-header header">
       <h1 class="title">Purchase History</h1>
       <i class="icon-left ion-chevron-left" ui-sref="eventsList"></i>
-      <i class="icon-right ion-gear-b" ui-sref="setting"></i>
+      <i class="icon ion-power" ng-click="logout()" ng-if="isUserID"></i>
     </div>
 
     <div class="phistory">
+
+      <h4 ng-if="noRecords">No Records found</h4>
+
         <div class="list list-inset phist" ng-repeat="userHistory in userHistories">
             <div class="item">
-              Event : <span class="pull-right" ng-bind="userHistory.post_title"></span>
+              <b>Event</b> : <span class="pull-right" ng-bind="userHistory.post_title"></span>
             </div>
             <div class="item">
-              Event Date : <span class="pull-right" ng-bind="userHistory.event_date"></span>
+              <b>Event Date</b> : <span class="pull-right" ng-bind="userHistory.event_date"></span>
             </div>
             <div class="item">
-              Event Venue : <span class="pull-right" ng-bind="userHistory.address"></span>
+              <b>Event Venue</b> : <span class="pull-right" ng-bind="userHistory.address"></span>
             </div>
             <div class="item">
-              Total : <span class="pull-right">${{userHistory.total_price}}</span>
+              <b>Total</b> : <span class="pull-right">${{userHistory.total_price}}</span>
             </div>
         </div>
     </div>

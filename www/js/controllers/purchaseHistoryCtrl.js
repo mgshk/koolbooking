@@ -1,9 +1,11 @@
 angular.module('eventsApp.controllers.purchaseHistoryCtrl', [])
-	.controller('purchaseHistoryCtrl', ['$scope', '$state', 'userFactory', '$ionicLoading', function($scope, $state, userFactory, $ionicLoading) {
+	.controller('purchaseHistoryCtrl', ['$scope', '$state', 'userFactory', '$ionicLoading', '$ionicHistory', function($scope, $state, userFactory, $ionicLoading, $ionicHistory) {
 	
 	if (!window.localStorage.getItem('userID')) {
-     $state.go('eventsList');
+        $state.go('eventsList');
     }
+
+    $scope.noRecords = false;
 
 	$scope.showLoder = function() {
 	    $ionicLoading.show({
@@ -14,10 +16,26 @@ angular.module('eventsApp.controllers.purchaseHistoryCtrl', [])
 	    $ionicLoading.hide();
 	};
 
+	$scope.logout = function(){
+        window.localStorage.removeItem('userID');
+        $ionicHistory.clearCache();
+        $ionicHistory.clearHistory();
+        $state.go('login');
+    }
+
+	if(window.localStorage.getItem('userID') == null){
+    	$scope.isUserID = false;
+    }else{
+        $scope.isUserID = true;
+    }
+
 	$scope.showLoder();
 
 	userFactory.getUserPurchaseHistory(window.localStorage.getItem('userID')).then(function (resp) {
 		$scope.hideLoder();
 		$scope.userHistories = resp.data;
+		if($scope.userHistories == null){
+			$scope.noRecords = true;
+		}
 	});
 }]);

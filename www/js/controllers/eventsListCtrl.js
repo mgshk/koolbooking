@@ -19,6 +19,14 @@ angular.module('eventsApp.controllers.eventsListCtrl', [])
 	    $state.go('login');
 	}
 
+	if(window.localStorage.getItem('userID') == null){
+        $scope.isUserID = false;
+        $scope.isLogin = true;
+    }else{
+        $scope.isUserID = true;
+        $scope.isLogin = false;
+    }
+
 	$scope.showCase = function(){
 		$scope.showcase = true;
 		$scope.tickets = false;
@@ -154,4 +162,5 @@ angular.module('eventsApp.controllers.eventsListCtrl', [])
     	}
     	
     }	
+
 }]);

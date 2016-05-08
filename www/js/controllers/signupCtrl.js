@@ -1,5 +1,7 @@
 angular.module('eventsApp.controllers.signupCtrl', [])
-	.controller('signupCtrl', ['$scope', '$state', '$timeout', 'loginFactory', '$ionicLoading', function($scope, $state, $timeout, loginFactory, $ionicLoading) {
+	.controller('signupCtrl', ['$scope', '$state', 'loginFactory', '$ionicLoading', '$ionicPopup', function($scope, $state, loginFactory, $ionicLoading, $ionicPopup) {
+
+	var errorMsg;
 
 	$scope.showLoder = function() {
 	    $ionicLoading.show({
@@ -10,17 +12,27 @@ angular.module('eventsApp.controllers.signupCtrl', [])
 	$scope.hideLoder = function(){
 	    $ionicLoading.hide();
 	};
+
+	// An alert dialog
+ 	$scope.showAlert = function() {
+	    $ionicPopup.alert({
+	      title: 'Signup',
+	      content: errorMsg
+	    }).then(function(res) {
+	      console.log('Login Failed');
+	    });
+    };
      
     $scope.signUp = function() {
     	$scope.showLoder();
         loginFactory.signUp($scope.user).then(function (resp) {
         	$scope.hideLoder();
             if (resp.status === 0) {
-                $scope.errorMsg = resp.error;
+                errorMsg = resp.error;
+                $scope.showAlert();
                 $scope.user = {};
 				$scope.signupForm.$setPristine();
 				$scope.signupForm.$setUntouched();
-                timeout();
                 return;
             }
 
@@ -28,11 +40,5 @@ angular.module('eventsApp.controllers.signupCtrl', [])
 	   		$state.go('eventsList');
         });
 	}
-
-	function timeout() {
-    	$timeout(function() {
-	        $scope.errorMsg = '';
-	    }, 3000);
-    }
 
 }]);

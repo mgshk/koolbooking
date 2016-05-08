@@ -38,6 +38,12 @@ angular.module('eventsApp.controllers.paymentCtrl', [])
 	        $state.go('login');
     	}
 
+    	if(window.localStorage.getItem('userID') == null){
+        	$scope.isUserID = false;
+	    }else{
+	        $scope.isUserID = true;
+	    }
+
 		$scope.paypalpayment = false;
 		$scope.cardspayment = false;
 

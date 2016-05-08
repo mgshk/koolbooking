@@ -41,7 +41,7 @@ font-weight: 600;}
 .ipn{padding-right: 5px !important;padding-left: 8px !important;}
 
 /* events list tab*/
-.tab11{top: 44px !important;padding: 2px;}
+.tab11{top: 44px !important;padding: 0px;border-bottom: 1px solid #387ef5 !important;}
 .tab11 a{color: #000;font-size: 12px !important;font-weight: 700;}
 .scase{width: 20px;height: 20px;position: relative;top: 4px;}
 .tick{width: 20px;height: 20px;position: relative;top: 4px;}
@@ -107,7 +107,7 @@ font-weight: 600;}
 .ermsg{color: #a94442;background-color: #f2dede;border-color: #ebccd1;font-size: 16px;padding: 10px;}
 
 .tab12{bottom: 0px !important;padding: 2px;position: fixed;left: 0;}
-.tab12 a{color: #000;font-size: 15px !important;font-weight: 700;}
+.tab12 a{color: #000;font-size: 14px !important;font-weight: 700;}
 #comingsoon h4{text-align: center;}
 #booksub{margin-top: 55px;}
 #booksub h4{padding: 0 10px 10px 10px;border-bottom: 1px solid #000;}
@@ -135,7 +135,8 @@ font-weight: 600;}
 .thrd button{height: 40px;}
 
 .phistory{margin-top: 60px;}
-.phist .item{background: #F4F3F6;padding: 10px;border-color: rgb(140, 158, 242);border-width: 1px;}
+.phistory h4{text-align: center;}
+.phist .item{background: #F4F3F6;padding: 10px;border-color: rgb(140, 158, 242);border-width: 2px;}
 .setem{float: right;font-size: 35px !important;position: relative;bottom: 6px;}
 .setlist .item{background: none;border-top: none;border-left: none;border-right: none;}
 .setng{margin-top: 50px;}
@@ -152,3 +153,8 @@ font-weight: 600;}
     top: 11px;
 }
 .checkpayment .list .item{background: #666666;color: #fff;}
+#tickets{padding-bottom: 30px;}
+.searchinput{height: 34px !important;}
+.lgout{color: rgb(72, 221, 201);font-size: 26px;right: 17px;}
+.ion-refresh{color: #387ef5 !important;}
+.setngicn{color: #387ef5 !important;font-size: 34px !important;}

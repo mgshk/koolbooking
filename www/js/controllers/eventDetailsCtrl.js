@@ -12,6 +12,12 @@ angular.module('eventsApp.controllers.eventDetailsCtrl', [])
         $state.go('login');
     }
 
+    if(window.localStorage.getItem('userID') == null){
+        $scope.isUserID = false;
+    }else{
+        $scope.isUserID = true;
+    }
+
     $scope.showLoder = function() {
 	    $ionicLoading.show({
 	      template: '<ion-spinner icon="bubbles"></ion-spinner>'

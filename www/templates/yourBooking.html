@@ -1,7 +1,7 @@
     <div class="bar bar-header header">
       <h1 class="title">Your Booking</h1>
       <i class="icon-left ion-chevron-left" ui-sref="eventDetails({event_id: id})"></i>
-      <i class="icon ion-power" ng-click="logout()"></i>
+      <i class="icon ion-power" ng-click="logout()" ng-if="isUserID"></i>
     </div>
 
     <div class="buy-ticket full-width">

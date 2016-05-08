@@ -11,6 +11,12 @@ angular.module('eventsApp.controllers.bookingSubmissionCtrl', [])
         $ionicHistory.clearHistory();
         $state.go('login');
     }
+
+    if(window.localStorage.getItem('userID') == null){
+        $scope.isUserID = false;
+    }else{
+        $scope.isUserID = true;
+    }
 	
 	$scope.id = $stateParams.event_id;
 
