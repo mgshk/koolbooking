@@ -1,5 +1,6 @@
 <div class="bar bar-header header">
     <h1 class="title">Events</h1>
+    <i class="icon ion-power" ng-click="logout()"></i>
 </div>
 
 <div class="tabs tabs-icon-left tab11">
@@ -41,17 +42,17 @@
 
 <div id="tickets" ng-show="tickets" ng-controller="ticketsTabCtrl">
   
-  <div class="tabs tabs-icon-left tab13">
+  <div class="tabs tabs-icon-top tab13">
     <a class="tab-item tab8" ng-click="showAll()">
-      <img src="img/all-icon.png" class="scase">
+      <img src="img/all-icon.png" class="scase icon">
       All
     </a>
     <a class="tab-item tab9" ng-click="showEvents()">
-      <img src="img/event-icon.png" class="tick">
+      <img src="img/event-icon.png" class="tick icon">
       Events
     </a>
     <a class="tab-item tab10" ng-click="showActivity()">
-      <img src="img/activity-icon.png" class="yu">
+      <img src="img/activity-icon.png" class="yu icon">
       Activity
     </a>
 </div>

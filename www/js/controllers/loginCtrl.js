@@ -2,7 +2,7 @@ angular.module('eventsApp.controllers.loginCtrl', ['directive.g+signin'])
     .controller('loginCtrl', ['$scope', '$state', '$timeout', '$facebook', 'loginFactory', '$ionicLoading', function($scope, $state, $timeout, $facebook, loginFactory, $ionicLoading) {
 
     if (window.localStorage.getItem('userID')) {
-     $state.go('eventsList');
+       $state.go('eventsList');
     }
 
     $scope.showLoder = function() {

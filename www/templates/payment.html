@@ -1,11 +1,23 @@
     <div class="bar bar-header header">
       <h1 class="title">Payment</h1>
-      <i class="icon-left ion-chevron-left" ui-sref="bookingSubmission"></i>
+      <i class="icon-left ion-chevron-left" ui-sref="eventsList"></i>
+      <i class="icon ion-power" ng-click="logout()"></i>
     </div>
 
     <div id="thirdpayment">
 
       <div class="list card eventslst thrd">
+
+          <h4>Choose Payment Type</h4>
+
+          <ion-list class="checkpayment">
+            <ion-checkbox ng-model="paypalpayment" ng-click="checkPaypal()">PAYPAL</ion-checkbox>
+            <ion-checkbox ng-model="cardspayment" ng-click="checkCards()">CARDS PAYMENT</ion-checkbox>
+          </ion-list>
+        
+      </div>
+
+      <div class="list card eventslst thrd" ng-if="cardspayment">
 
           <h4>Card Type</h4>
 
@@ -21,7 +33,7 @@
 
       </div>
 
-      <div class="list card eventslst thrd">
+      <div class="list card eventslst thrd" ng-if="paypalpayment">
 
           <h4>PAYPAL</h4>
 

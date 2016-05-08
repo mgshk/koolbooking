@@ -1,10 +1,29 @@
 angular.module('eventsApp.controllers.bookingSubmissionCtrl', [])
-	.controller('bookingSubmissionCtrl', ['$scope', '$stateParams', 'eventsFactory', function($scope, $stateParams, eventsFactory) {
+	.controller('bookingSubmissionCtrl', ['$scope','$state', '$stateParams', 'eventsFactory','$ionicLoading','$ionicHistory', function($scope, $state, $stateParams, eventsFactory, $ionicLoading, $ionicHistory) {
+	
 	if ($stateParams.event_id === "") {
         $state.go('home');
     }
+
+    $scope.logout = function(){
+        window.localStorage.removeItem('userID');
+        $ionicHistory.clearCache();
+        $ionicHistory.clearHistory();
+        $state.go('login');
+    }
 	
 	$scope.id = $stateParams.event_id;
+
+	$scope.showLoder = function() {
+	    $ionicLoading.show({
+	      template: '<ion-spinner icon="bubbles"></ion-spinner>'
+	    });
+	 };
+	$scope.hideLoder = function(){
+	    $ionicLoading.hide();
+	};
+
+	$scope.showLoder();
 	
 	if($stateParams.adult) {
 		$scope.adult = $stateParams.adult;
@@ -19,6 +38,8 @@ angular.module('eventsApp.controllers.bookingSubmissionCtrl', [])
 	}
 	
 	eventsFactory.getEventsList().then(function (resp) {
+
+		$scope.hideLoder();
         $scope.eventsList = resp.data;
 		
 		angular.forEach($scope.eventsList, function(value, key) {
