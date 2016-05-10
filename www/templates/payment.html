@@ -1,10 +1,12 @@
     <div class="bar bar-header header">
-      <h1 class="title">Payment</h1>
-      <i class="icon-left ion-chevron-left" ui-sref="eventsList"></i>
-      <i class="icon ion-power" ng-click="logout()" ng-if="isUserID"></i>
+      <h1 class="title text-left"><span><i class="icon icon-left ion-chevron-left" ui-sref="eventsList"></i>
+        <img src="img/logo1.png" alt="Logo" class="head-logo">
+        <span>Review Order</span></span>
+      </h1>
     </div>
 
     <div id="thirdpayment">
+      <h5>Payment</h5>
 
       <div class="list card eventslst thrd">
 
@@ -12,7 +14,7 @@
 
           <ion-list class="checkpayment">
             <ion-checkbox ng-model="paypalpayment" ng-click="checkPaypal()">PAYPAL</ion-checkbox>
-            <ion-checkbox ng-model="cardspayment" ng-click="checkCards()">CARDS PAYMENT</ion-checkbox>
+            <ion-checkbox ng-model="cardspayment" ng-click="checkCards()">CARD PAYMENT</ion-checkbox>
           </ion-list>
         
       </div>
@@ -29,7 +31,7 @@
           <input type="text" placeholder="Name in card" class="payinput">
           <input type="text" placeholder="CVV" class="payinputcvv">
 
-          <button class="button button-small btneve">DONE</button>
+          <button class="button button-small btneve">COMPLETE PAYMENT</button>
 
       </div>
 
@@ -79,7 +81,7 @@
                 <span ng-show="paymentForm.paypal_zip.$invalid">Invalid email address.</span>
             </span>
 
-            <button type="submit" ng-disabled="!paymentForm.$valid" class="button button-small btneve">DONE</button>
+            <button type="submit" ng-disabled="!paymentForm.$valid" class="button button-small btneve">COMPLETE PAYMENT</button>
           </form>
 
       </div>

@@ -1,6 +1,5 @@
 <div class="bar bar-header header">
-    <h1 class="title">Login</h1>
-    <i class="icon-left ion-chevron-left" ui-sref="home"></i>
+    <h1 class="title"><img src="img/logo1.png" alt="Logo" class="head-logo"> <span>Koolbooking</span></h1>
 </div>
 
 <div class="login-container">
@@ -28,7 +27,7 @@
 		</button>
 	</form>
 
-	<p align="right" ui-sref="forgotPassword" class="fw">Forgot Password?</p>
+	<p align="center" ui-sref="forgotPassword" class="fw">Forgot Password?</p>
 
 	<p align="center" class="fw">Don't have account? 
 		<span class="signup" ui-sref="signup">
@@ -51,4 +50,19 @@
 	</button>
 </google-plus-signin>
 
-<p align="center" class="copyright">I agree to the Terms & Conditions & Privacy Policy</p>
+<p align="center" class="copyright" ng-click="openModal()">I agree to the Terms & Conditions & Privacy Policy<i class="icon ion-help-circled"></i></p>
+
+<button class="button button-block gogle" id="skipbtn" ui-sref="eventsList">
+	<span class="fb">Skip Login</span>
+</button>
+
+<script id="terms.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">Terms & Conditions & Privacy Policy <i class="icon ion-close-circled" ng-click="closeModal()"></i></h1>
+    </ion-header-bar>
+    <ion-content>
+      <p>Hello! sample terms and conditions<p>
+    </ion-content>
+  </ion-modal-view>
+</script>

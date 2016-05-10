@@ -5276,7 +5276,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 100000;
   width: 100%;
   height: 100%; }
 
@@ -5331,7 +5331,8 @@ ion-tabs.tabs-color-active-dark .tab-item {
   pointer-events: none; }
   .modal-open .modal,
   .modal-open .modal-backdrop {
-    pointer-events: auto; }
+    pointer-events: auto;background-color: #F4F3F6;
+    overflow: auto; }
   .modal-open.loading-active .modal,
   .modal-open.loading-active .modal-backdrop {
     pointer-events: none; }

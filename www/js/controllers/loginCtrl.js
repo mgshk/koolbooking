@@ -1,5 +1,5 @@
 angular.module('eventsApp.controllers.loginCtrl', ['directive.g+signin'])
-    .controller('loginCtrl', ['$scope', '$state', '$facebook', 'loginFactory', '$ionicLoading', '$ionicPopup', function($scope, $state, $facebook, loginFactory, $ionicLoading, $ionicPopup) {
+    .controller('loginCtrl', ['$scope', '$state', '$facebook', 'loginFactory', '$ionicLoading', '$ionicPopup', '$ionicModal', function($scope, $state, $facebook, loginFactory, $ionicLoading, $ionicPopup, $ionicModal) {
 
     var errorMsg;
 
@@ -100,5 +100,20 @@ angular.module('eventsApp.controllers.loginCtrl', ['directive.g+signin'])
 		    $state.go('eventsList');
 		});
     }
+
+    $ionicModal.fromTemplateUrl('terms.html', {
+	    scope: $scope,
+	    animation: 'slide-in-up'
+	}).then(function(modal) {
+	    $scope.modal = modal;
+	});
+
+	$scope.openModal = function() {
+	    $scope.modal.show();
+	};
+
+	$scope.closeModal = function() {
+	    $scope.modal.hide();
+	};
 
 }]);

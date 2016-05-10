@@ -1,7 +1,8 @@
     <div class="bar bar-header header">
-      <h1 class="title">Your Booking</h1>
-      <i class="icon-left ion-chevron-left" ui-sref="eventDetails({event_id: id})"></i>
-      <i class="icon ion-power" ng-click="logout()" ng-if="isUserID"></i>
+      <h1 class="title text-left"><span><i class="icon icon-left ion-chevron-left" ui-sref="eventsList"></i>
+        <img src="img/logo1.png" alt="Logo" class="head-logo">
+        <span>Your booking</span></span>
+      </h1>
     </div>
 
     <div class="buy-ticket full-width">
@@ -9,13 +10,12 @@
     </div>
 
     <div class="yourbookingcontent">
-    	<h1>Owner description</h1>
+    	<h1>SYNOPSIS</h1>
     	<p>Take advantage of some of the islands main attractions on this Snorkeling Island Adventure in Antigua! Enjoy a day of snorkeling, kayaking and sightseeing on this family-friendly excursion.</p>
 
     	<div class="event-date row">
       
 	      <div class="event-date-left">
-		      <p><span>Event Type : </span>Specific Date</p>
 		      <p><span>Event Date : </span>{{event.event_date | date: 'dd-MM-yyyy'}}</p>
 		      <p><span>Activity Time : </span>{{event.event_time}}</p>	      
 		      <p><span>Maximum number of people : </span>{{event.max_people}}</p>      
@@ -74,28 +74,30 @@
 		    </select>
 		  </div>
 
-		  <div class="col col-50" ng-show="event.infant_price != 0">
-		      Infant
-		    <select ng-model="no_infant">
-			  <option value="0">0</option>
-		      <option value="1">1</option>
-		      <option value="2">2</option>
-		      <option value="3">3</option>
-		      <option value="4">4</option>
-		      <option value="5">5</option>
-		      <option value="6">6</option>
-		      <option value="7">7</option>
-		      <option value="8">8</option>
-		    </select>
-		  </div>
+		</div>
+
+		<div class="row full-width adlt">
+
+			<div class="col col-50" ng-show="event.infant_price != 0">
+			      Infant
+			    <select ng-model="no_infant">
+				  <option value="0">0</option>
+			      <option value="1">1</option>
+			      <option value="2">2</option>
+			      <option value="3">3</option>
+			      <option value="4">4</option>
+			      <option value="5">5</option>
+			      <option value="6">6</option>
+			      <option value="7">7</option>
+			      <option value="8">8</option>
+			    </select>
+		    </div>
 
 		</div>
 
-
-
        	<p>
           <button class="button button-block loginbtn lgbtn1" ui-sref="bookingSubmission({event_id: id, adult: no_adult, child: no_child, infant: no_infant})">
-            <span>Book now</span>
+            <span>Review Order</span>
           </button>
       	</p>
 

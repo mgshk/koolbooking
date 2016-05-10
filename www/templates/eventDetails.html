@@ -1,23 +1,30 @@
     <div class="bar bar-header header">
-      <h1 class="title">Event Details</h1>
-      <i class="icon-left ion-chevron-left" ui-sref="eventsList"></i>
-      <i class="icon ion-power" ng-click="logout()" ng-if="isUserID"></i>
+      <h1 class="title text-left"><span><i class="icon icon-left ion-chevron-left" ui-sref="eventsList"></i>
+        <img src="img/logo1.png" alt="Logo" class="head-logo">
+        <span>Event name</span></span>
+        <i class="icon icon-right ion-android-share-alt"></i>
+      </h1>
+      
     </div>
 
     <div class="detailscontent">
 
         <img class="full-image" ng-src="{{event.image_url}}">
-        <p>
-          <button class="button button-block loginbtn lgbtn1" ui-sref="yourBooking({event_id: event.id})">
+        <p class="padright">
+          <span><b>Events Name</b></span>, <br>
+          Event address
+          <i class="icon ion-ios-location loction"></i>
+        </p>
+        <p class="pad-bot-20">
+          <span class="dte">10 May - Tuesday 9:00 AM</span>
+          <button class="button button-small bkbtn" ui-sref="yourBooking({event_id: event.id})">
             <span>Book</span>
           </button>
-      </p>
+        </p>
         <div class="venue">
-            <p><span>Owner description :</span>&nbsp;&nbsp;Take advantage of some of the islands main attractions on this Snorkeling Island Adventure in Antigua! Enjoy a day of snorkeling, kayaking and sightseeing on this family-friendly excursion. </p>
-            <p><span>Activity Type :</span>&nbsp;&nbsp;Specific Date</p>
-            <p><span>Activity Time :</span>&nbsp;&nbsp;{{event.event_time}}</p>
-            <p><span>Maximum number of people :</span>&nbsp;&nbsp;{{event.max_people}}</p>
-            <p><span>Venue Facilities :</span>&nbsp;&nbsp;{{event.venue_facilities}} </p>
+            <p><span><b>SYNOPSIS</b></span><br>
+            Take advantage of some of the islands main attractions on this Snorkeling Island Adventure in Antigua! Enjoy a day of snorkeling, kayaking and sightseeing on this family-friendly excursion.
+            </p>
         </div>
 
     </div>
