@@ -1,5 +1,5 @@
 angular.module('eventsApp.controllers.loginCtrl', ['directive.g+signin'])
-    .controller('loginCtrl', ['$scope', '$state', '$facebook', 'loginFactory', '$ionicLoading', '$ionicPopup', '$ionicModal', function($scope, $state, $facebook, loginFactory, $ionicLoading, $ionicPopup, $ionicModal) {
+    .controller('loginCtrl', ['$scope', '$state', '$cordovaOauth', 'loginFactory', '$ionicLoading', '$ionicPopup', '$http', '$ionicModal' , function($scope, $state, $cordovaOauth, loginFactory, $ionicLoading, $ionicPopup, $http, $ionicModal) {
 
     var errorMsg;
 
@@ -45,26 +45,36 @@ angular.module('eventsApp.controllers.loginCtrl', ['directive.g+signin'])
 	}
     
     $scope.fbLogin = function() {
-		$facebook.login().then(function() {
-		    $facebook.api("/me?fields=name,first_name,last_name,email,link").then(function(response) {
-				fbLogin(response);
-		    });   
-		});
+		$cordovaOauth.facebook("1677847679144225", ['email']).then(function(result) {
+            $http.get("https://graph.facebook.com/v2.2/me", { params: { access_token: result.access_token, fields: "name,first_name,last_name,email,link", format: "json" }}).then(function(result) {
+                var user = {
+                	name: result.data.name,
+                	first_name: result.data.first_name,
+                	last_name: result.data.last_name,
+                	email: result.data.email,
+                	link: result.data.link
+                };
+
+                fbLogin(user);
+            }, function(error) {
+                alert("There was a problem getting your profile.");
+            });
+        }, function(error) {
+            alert("There was a problem signing in!");
+        });
     }
     
     function fbLogin (user) {
-		if($facebook.isConnected()){	    
-		    loginFactory.fbLogin(user).then(function (resp) {
-				if (resp.status === 0) {
-				    errorMsg = resp.error;
-				    $scope.showAlert();
-				    return;
-				}
-				
-				window.localStorage.setItem('userID', resp.userID);
-				$state.go('eventsList');
-		    });
-		}
+		loginFactory.fbLogin(user).then(function (resp) {
+			if (resp.status === 0) {
+			    errorMsg = resp.error;
+			    $scope.showAlert();
+			    return;
+			}
+			
+			window.localStorage.setItem('userID', resp.userID);
+			$state.go('eventsList');
+	    });
     }
     
     $scope.$on('event:google-plus-signin-success', function (event, authResult) {	

@@ -1,6 +1,4 @@
-angular.module('eventsApp.config', ['ui.router']).config(function($stateProvider, $urlRouterProvider, $facebookProvider) {
-    
-  $facebookProvider.setAppId('1677847679144225');
+angular.module('eventsApp.config', ['ui.router']).config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
   .state('home', {
