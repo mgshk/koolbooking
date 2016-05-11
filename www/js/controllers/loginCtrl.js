@@ -1,4 +1,4 @@
-angular.module('eventsApp.controllers.loginCtrl', ['directive.g+signin'])
+angular.module('eventsApp.controllers.loginCtrl', [])
     .controller('loginCtrl', ['$scope', '$state', '$cordovaOauth', 'loginFactory', '$ionicLoading', '$ionicPopup', '$http', '$ionicModal' , function($scope, $state, $cordovaOauth, loginFactory, $ionicLoading, $ionicPopup, $http, $ionicModal) {
 
     var errorMsg;
@@ -63,6 +63,26 @@ angular.module('eventsApp.controllers.loginCtrl', ['directive.g+signin'])
             alert("There was a problem signing in!");
         });
     }
+
+    $scope.googleLogin = function() {
+    	$cordovaOauth.google("517332717749-v9vnp2a4oaglirev9uu34nq3gkhqtan4.apps.googleusercontent.com", ["email"]).then(function(result) {
+		    var access_token = result.access_token;
+
+		    loginFactory.googleUserInfo(access_token).then(function (resp) {
+			    var user = {
+					'first_name': resp.given_name,
+					'last_name': resp.family_name,
+					'name': resp.name,
+					'link': resp.link,
+					'email': resp.email
+			    };
+			    
+			    googleLogin(user);
+			});
+		}, function(error) {
+		    alert("There was a problem signing in!");
+		});
+    } 
     
     function fbLogin (user) {
 		loginFactory.fbLogin(user).then(function (resp) {
@@ -77,7 +97,7 @@ angular.module('eventsApp.controllers.loginCtrl', ['directive.g+signin'])
 	    });
     }
     
-    $scope.$on('event:google-plus-signin-success', function (event, authResult) {	
+    /*$scope.$on('event:google-plus-signin-success', function (event, authResult) {	
 		if (angular.isUndefined(authResult.hg.access_token)) {
 		    errorMsg = 'Please check your login credentials';
 		    $scope.showAlert();
@@ -96,7 +116,7 @@ angular.module('eventsApp.controllers.loginCtrl', ['directive.g+signin'])
 
 		    googleLogin($scope.user);
 		});
-    });
+    });*/
     
     function googleLogin (user) {
 		loginFactory.googleLogin(user).then(function (resp) {
