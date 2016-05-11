@@ -19,10 +19,10 @@ angular.module('eventsApp.controllers.eventsListCtrl', [])
 	    $state.go('login');
 	}
 
-	if(window.localStorage.getItem('userID') == null){
+	if (window.localStorage.getItem('userID') == null){
         $scope.isUserID = false;
         $scope.isLogin = true;
-    }else{
+    } else {
         $scope.isUserID = true;
         $scope.isLogin = false;
     }
@@ -102,8 +102,8 @@ angular.module('eventsApp.controllers.eventsListCtrl', [])
 		$('.tab7').css('color', '#387ef5');
 	}
 
-    eventsFactory.getEventsList().then(function (resp) {
-        $scope.eventsList = resp.data;
+	eventsFactory.getVideoUrl().then(function (resp) {
+        $scope.videoUrls = resp.app_youtube_url;
     });
     
     eventsFactory.getFeaturedEvents().then(function (resp) {
@@ -119,19 +119,5 @@ angular.module('eventsApp.controllers.eventsListCtrl', [])
 			$scope.userInfo = resp.data;
 		});
     }
-	
-    $scope.filterEvents = function(searchTxt) {
-
-    	if ($scope.address !== '') {
-    		eventsFactory.getFilterEvents(searchTxt).then(function (resp) {
-    			$scope.eventsList = resp.data; 
-		    });
-    	} else {
-    		eventsFactory.getEventsList().then(function (resp) {
-		        $scope.eventsList = resp.data;
-		    });
-    	}
-    	
-    }	
 
 }]);

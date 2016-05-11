@@ -31,6 +31,6 @@ angular.module('eventsApp.controllers.eventDetailsCtrl', [])
 
     eventsFactory.getEventDetails($stateParams.event_id).then(function (resp) {
     	$scope.hideLoder();
-        $scope.event = resp.data;
+        $scope.event = resp.data[0];
     });
 }]);

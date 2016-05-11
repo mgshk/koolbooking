@@ -3,7 +3,10 @@ angular.module('eventsApp.controllers.bookingSubmissionCtrl', [])
 	
 	if ($stateParams.event_id === "") {
         $state.go('home');
+        return;
     }
+
+    $scope.id = $stateParams.event_id;
 
     $scope.logout = function(){
         window.localStorage.removeItem('userID');

@@ -1,5 +1,5 @@
     <div class="bar bar-header header">
-      <h1 class="title text-left"><span><i class="icon icon-left ion-chevron-left" ui-sref="eventsList"></i>
+      <h1 class="title text-left"><span><i class="icon icon-left ion-chevron-left" ui-sref="eventDetails({event_id: event.id})"></i>
         <img src="img/logo1.png" alt="Logo" class="head-logo">
         <span>Your booking</span></span>
       </h1>
@@ -11,8 +11,7 @@
 
     <div class="yourbookingcontent">
     	<h1>SYNOPSIS</h1>
-    	<p>Take advantage of some of the islands main attractions on this Snorkeling Island Adventure in Antigua! Enjoy a day of snorkeling, kayaking and sightseeing on this family-friendly excursion.</p>
-
+    	<p>{{event.post_content}}
     	<div class="event-date row">
       
 	      <div class="event-date-left">

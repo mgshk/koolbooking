@@ -1,7 +1,7 @@
     <div class="bar bar-header header">
       <h1 class="title text-left"><span><i class="icon icon-left ion-chevron-left" ui-sref="eventsList"></i>
         <img src="img/logo1.png" alt="Logo" class="head-logo">
-        <span>Event name</span></span>
+        <span>{{event.post_title}}</span></span>
         <i class="icon icon-right ion-android-share-alt"></i>
       </h1>
       
@@ -11,19 +11,19 @@
 
         <img class="full-image" ng-src="{{event.image_url}}">
         <p class="padright">
-          <span><b>Events Name</b></span>, <br>
-          Event address
+          <span><b>{{event.post_title}}</b></span>, <br>
+          {{event.address}}
           <i class="icon ion-ios-location loction"></i>
         </p>
         <p class="pad-bot-20">
-          <span class="dte">10 May - Tuesday 9:00 AM</span>
+          <span class="dte">{{event.event_date | date: 'dd' }} {{event.event_date | date: 'MMMM' }} - {{event.event_date | date: 'EEEE' }} {{event.event_time}}</span>
           <button class="button button-small bkbtn" ui-sref="yourBooking({event_id: event.id})">
             <span>Book</span>
           </button>
         </p>
         <div class="venue">
             <p><span><b>SYNOPSIS</b></span><br>
-            Take advantage of some of the islands main attractions on this Snorkeling Island Adventure in Antigua! Enjoy a day of snorkeling, kayaking and sightseeing on this family-friendly excursion.
+            {{event.post_content}}
             </p>
         </div>
 
