@@ -60,6 +60,21 @@ angular.module('eventsApp.config', ['ui.router']).config(function($stateProvider
       url: '/setting',
       controller: 'settingCtrl',
       templateUrl: 'templates/setting.html'
+  })
+  .state('all', {
+      url: '/all',
+      controller: 'allCtrl',
+      templateUrl: 'templates/all.html'
+  })
+  .state('eventTab', {
+      url: '/eventTab',
+      controller: 'eventTabCtrl',
+      templateUrl: 'templates/eventtab.html'
+  })
+  .state('activity', {
+      url: '/activity',
+      controller: 'activityCtrl',
+      templateUrl: 'templates/activity.html'
   });
 
   // if none of the above states are matched, use this as the fallback

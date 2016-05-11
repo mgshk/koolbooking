@@ -1,14 +1,17 @@
     <div class="bar bar-header header">
-      <h1 class="title">Purchase History</h1>
-      <i class="icon-left ion-chevron-left" ui-sref="eventsList"></i>
-      <i class="icon ion-power" ng-click="logout()" ng-if="isUserID"></i>
+      <h1 class="title text-left" ui-sref="eventsList"><span><i class="icon icon-left ion-chevron-left"></i>
+        <img src="img/logo1.png" alt="Logo" class="head-logo">
+        <span>Koolbooking Events</span></span>
+      </h1>
     </div>
 
     <div class="phistory">
 
+      <h4>Purchase History</h4>
+
       <h4 ng-if="noRecords">No Records found</h4>
 
-        <div class="list list-inset phist" ng-repeat="userHistory in userHistories">
+        <!-- <div class="list list-inset phist" ng-repeat="userHistory in userHistories">
             <div class="item">
               <b>Event</b> : <span class="pull-right" ng-bind="userHistory.post_title"></span>
             </div>
@@ -21,5 +24,50 @@
             <div class="item">
               <b>Total</b> : <span class="pull-right">${{userHistory.total_price}}</span>
             </div>
+        </div> -->
+
+        <div class="card phist">
+            <div class="item item-divider">
+              Event Name
+            </div>
+            <div class="item item-text-wrap">
+              Purchase date : 21/1/2015
+            </div>
+            <div class="item item-text-wrap">
+              Event date : 26/1/2015
+            </div>
+            <div class="item item-text-wrap">
+              Tickets : <span>Adult -</span> 2 <span>Child -</span> 2
+              <span>Infant -</span> 0
+            </div>
+            <div class="item item-text-wrap">
+              Amount paid : $800
+            </div>
+            <div class="item item-divider">
+              <button class="button button-small btneve">USE NOW</button>
+            </div>
         </div>
+
+        <div class="card phist">
+            <div class="item item-divider">
+              Event Name
+            </div>
+            <div class="item item-text-wrap">
+              Purchase date : 21/1/2015
+            </div>
+            <div class="item item-text-wrap">
+              Event date : 26/1/2015
+            </div>
+            <div class="item item-text-wrap">
+              Tickets : <span>Adult -</span> 2 <span>Child -</span> 2
+              <span>Infant -</span> 0
+            </div>
+            <div class="item item-text-wrap">
+              Amount paid : $800
+            </div>
+            <div class="item item-divider">
+              <button class="button button-small btneve">USE NOW</button>
+            </div>
+        </div>
+
     </div>

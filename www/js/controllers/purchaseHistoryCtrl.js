@@ -16,26 +16,19 @@ angular.module('eventsApp.controllers.purchaseHistoryCtrl', [])
 	    $ionicLoading.hide();
 	};
 
-	$scope.logout = function(){
-        window.localStorage.removeItem('userID');
-        $ionicHistory.clearCache();
-        $ionicHistory.clearHistory();
-        $state.go('login');
-    }
-
 	if(window.localStorage.getItem('userID') == null){
     	$scope.isUserID = false;
     }else{
         $scope.isUserID = true;
     }
 
-	$scope.showLoder();
+	//$scope.showLoder();
 
-	userFactory.getUserPurchaseHistory(window.localStorage.getItem('userID')).then(function (resp) {
-		$scope.hideLoder();
-		$scope.userHistories = resp.data;
-		if($scope.userHistories == null){
-			$scope.noRecords = true;
-		}
-	});
+	// userFactory.getUserPurchaseHistory(window.localStorage.getItem('userID')).then(function (resp) {
+	// 	$scope.hideLoder();
+	// 	$scope.userHistories = resp.data;
+	// 	if($scope.userHistories == null){
+	// 		$scope.noRecords = true;
+	// 	}
+	// });
 }]);

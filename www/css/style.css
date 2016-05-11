@@ -48,7 +48,7 @@ font-weight: 600;}
 .tick{width: 20px;height: 20px;position: relative;top: 4px;}
 .yu{width: 20px;height: 20px;position: relative;top: 4px;}
 .dis{width: 20px;height: 20px;position: relative;top: 4px;}
-#tabcontent{width: 100%;float: left;margin-top: 100px;}
+#tabcontent{width: 100%;float: left;margin-top: 93px;}
 #showcase{text-align: center;}
 .lc1{font-size: 20px !important;}
 .profile-circle{width: 100%;float: left;}
@@ -107,16 +107,19 @@ font-weight: 600;}
 .event-date-left {float: left;width: 56%;}
 .ermsg{color: #a94442;background-color: #f2dede;border-color: #ebccd1;font-size: 16px;padding: 10px;}
 
-.tab12{bottom: 0px !important;padding: 2px;position: fixed;left: 0;}
+.tab12{bottom: 0px !important;padding: 0px;position: fixed;left: 0;}
 .tab12 a{color: #000;font-size: 14px !important;font-weight: 700;}
 #comingsoon h4{text-align: center;}
 #booksub{margin-top: 55px;}
 #booksub h4{padding: 0 10px 10px 10px;border-bottom: 1px solid #999999;}
 #booksub p{padding: 0 10px 10px 10px;border-bottom: 1px solid #999999;}
 .pull-right{float: right;}
-.tab13{bottom: 0px !important;padding: 2px;position: fixed;left: 0;height: 60px;}
+.tab13{position: relative;height: 60px;padding:0;bottom: 5px;}
 .tab13 a{color: #000;font-size: 13px !important;font-weight: 700;}
 .tab13 .icon{margin-bottom: 7px;}
+.tab14{position: relative;height: 60px;padding:0;bottom: 5px;}
+.tab14 a{color: #000;font-size: 13px !important;font-weight: 700;opacity: 0.3;border-bottom: 2px solid #b2b2b2;}
+.tab14 .icon{margin-bottom: 7px;}
 .adlt select{width: 100%;height: 26px;}
 #thirdpayment{margin-top: 50px;}
 .thrd{padding: 10px;}
@@ -137,8 +140,8 @@ font-weight: 600;}
 
 .phistory{margin-top: 60px;}
 .phistory h4{text-align: center;}
-.phist .item{background: #F4F3F6;padding: 10px;border-color: rgb(140, 158, 242);border-width: 2px;}
-.setem{float: right;font-size: 35px !important;position: relative;bottom: 6px;}
+.phist .item{padding: 10px;border-width: 1px;}
+.setem{float: right;font-size: 33px !important;position: relative;bottom: 6px;}
 .setlist .item{background: none;border-top: none;border-left: none;border-right: none;}
 .setng{margin-top: 50px;}
 .pad-bot{padding-bottom: 0 !important;}
@@ -156,16 +159,17 @@ font-weight: 600;}
 .checkpayment .list .item{background: #666666;color: #fff;}
 #tickets{padding-bottom: 30px;}
 .searchinput{height: 34px !important;}
-.lgout{color: rgb(72, 221, 201);font-size: 26px;right: 17px;}
-.ion-refresh{color: #387ef5 !important;}
-.setngicn{color: #387ef5 !important;font-size: 34px !important;}
+.lgout{color: rgb(72, 221, 201);font-size: 27px !important;}
+.ion-refresh{color: rgb(72, 221, 201) !important;}
+.setngicn{color: rgb(72, 221, 201) !important;font-size: 34px !important;}
 .head-logo{position: relative;top: 5px;width: 22px;}
 .header span{}
 #skipbtn{position: fixed;bottom:0;left: 0;margin-bottom: 0;}
-.ion-help-circled{font-size: 16px;margin-left: 2px;position: relative;top: 2px;color:#387ef5;}
+.ion-help-circled{font-size: 18px;margin-left: 2px;position: relative;top: 3px;color:#387ef5;}
 .modal h1{color: #000000;font-size: 15px !important;text-align: left;}
 .ion-close-circled{font-size: 27px;color: #387ef5;position: absolute;
     right: 1px;}
+.modal h1{text-align: left !important;}
 .modal .scroll-content{padding: 10px;}
 .loction{position: absolute;right: 10px;border: 2px solid #999999;border-radius: 50%;
     padding: 3px 7px;font-size: 20px;margin-top: -15px;}

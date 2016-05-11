@@ -43,12 +43,10 @@ angular.module('eventsApp.controllers.eventsListCtrl', [])
 		$scope.tickets = true;
 		$scope.you = false;
 		$scope.discover = false;
-		$scope.all = true;
 		$('.tab1').css('border-bottom', 'solid 0px #387ef5');
 		$('.tab2').css('border-bottom', 'solid 4px #387ef5');
 		$('.tab3').css('border-bottom', 'solid 0px #387ef5');
 		$('.tab4').css('border-bottom', 'solid 0px #387ef5');
-		$('.tab8').css('color', '#387ef5');
 	}
 
 	$scope.showYou = function(){
@@ -102,33 +100,6 @@ angular.module('eventsApp.controllers.eventsListCtrl', [])
 		$('.tab5').css('color', '#000000');
 		$('.tab6').css('color', '#000000');
 		$('.tab7').css('color', '#387ef5');
-	}
-
-	$scope.showAll = function(){
-		$scope.all = true;
-		$scope.event = false;
-		$scope.activity = false;
-		$('.tab8').css('color', '#387ef5');
-		$('.tab9').css('color', ' #000000');
-		$('.tab10').css('color', '#000000');
-	}
-
-	$scope.showEvents = function(){
-		$scope.all = false;
-		$scope.event = true;
-		$scope.activity = false;
-		$('.tab8').css('color', '#000000');
-		$('.tab9').css('color', '#387ef5');
-		$('.tab10').css('color', '#000000');
-	}
-
-	$scope.showActivity = function(){
-		$scope.all = false;
-		$scope.event = false;
-		$scope.activity = true;
-		$('.tab8').css('color', '#000000');
-		$('.tab9').css('color', '#000000');
-		$('.tab10').css('color', ' #387ef5');
 	}
 
     eventsFactory.getEventsList().then(function (resp) {
