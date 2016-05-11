@@ -185,3 +185,9 @@ font-weight: 600;}
 .padright span{font-size: 16px;}
 #thirdpayment h5{text-align: center;margin-top: 0;margin-bottom: 12px;
     font-size: 20px;}
+#activity{margin-top: 44px;width: 100%;float: left;}
+#activity h4{text-align: center;margin: 10px 0;}
+#all{margin-top: 44px;width: 100%;float: left;}
+#event{margin-top: 44px;width: 100%;float: left;}
+#event h4{text-align: center;margin: 10px 0;}
+.top-0{margin-top: 0 !important;}
