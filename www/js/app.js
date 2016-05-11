@@ -1,19 +1,6 @@
 angular.module('eventsApp', ['ionic', 'ngCordovaOauth', 'eventsApp.controllers', 'eventsApp.config', 'eventsApp.factories', 'eventsApp.services'])
   .run(function($rootScope, $window, $state, $ionicPlatform) {
     
-    // Load the facebook SDK asynchronously
-    /*(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "http://connect.facebook.net/en_US/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-    
-    $rootScope.$on('fb.load', function() {
-      $window.dispatchEvent(new Event('fb.load'));
-    });*/
-    
     $ionicPlatform.ready(function() {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
