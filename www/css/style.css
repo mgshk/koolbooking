@@ -55,7 +55,7 @@ font-weight: 600;}
 .profile{background: #3c3f3e;padding: 20px 0;}
 .profile p{font-size: 20px;color: #fff;}
 .ion-person-stalker{font-size: 60px;}
-.pur{background: none;border: 0;border-bottom: 1px solid #3c3f3e;}
+.pur{background: none;border: 0;border-bottom: 1px solid #999999;}
 .bnone{background: none;}
 .venue span {font-size: 16px;color: #e43b62;}
 .detailscontent{margin-top: 44px;padding: 0px;}
@@ -172,7 +172,7 @@ font-weight: 600;}
 .modal h1{text-align: left !important;}
 .modal .scroll-content{padding: 10px;}
 .loction{position: absolute;right: 10px;border: 2px solid #999999;border-radius: 50%;
-    padding: 3px 7px;font-size: 20px;margin-top: -15px;}
+    padding: 3px 7px;font-size: 20px;margin-top: -15px;color: #555555;}
 .bkbtn{background: #387ef5;font-size: 14px;color: #fff !important;text-transform: uppercase;padding: 0px 6px;
     float: right;min-height: 26px;}
 .detailscontent img{border-bottom: 3px solid #999999;}
@@ -192,3 +192,4 @@ font-weight: 600;}
 #event h4{text-align: center;margin: 10px 0;}
 .top-0{margin-top: 0 !important;}
 .setng h4{text-align: center;margin: 10px 0;}
+.conte{color: #000000 !important;margin-top: 5px;display: inline-block;}
