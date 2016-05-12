@@ -24,11 +24,11 @@ angular.module('eventsApp.controllers.purchaseHistoryCtrl', [])
 
 	//$scope.showLoder();
 
-	// userFactory.getUserPurchaseHistory(window.localStorage.getItem('userID')).then(function (resp) {
-	// 	$scope.hideLoder();
-	// 	$scope.userHistories = resp.data;
-	// 	if($scope.userHistories == null){
-	// 		$scope.noRecords = true;
-	// 	}
-	// });
+	userFactory.getUserPurchaseHistory(window.localStorage.getItem('userID')).then(function (resp) {
+	 	$scope.hideLoder();
+	 	$scope.userHistories = resp.data;
+	 	if($scope.userHistories == null){
+	 		$scope.noRecords = true;
+	 	}
+	});
 }]);

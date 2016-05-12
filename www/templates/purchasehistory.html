@@ -28,46 +28,23 @@
 
         <div class="card phist">
             <div class="item item-divider">
-              Event Name
+              {{userHistory.post_title}}
             </div>
             <div class="item item-text-wrap">
               Purchase date : 21/1/2015
             </div>
             <div class="item item-text-wrap">
-              Event date : 26/1/2015
+              Event date : {{userHistory.event_date}}
             </div>
             <div class="item item-text-wrap">
-              Tickets : <span>Adult -</span> 2 <span>Child -</span> 2
-              <span>Infant -</span> 0
+              Tickets : <span>Adult - {{userHistory.adult_number}}</span> <span ng-if="userHistory.child_number">Child - {{userHistory.child_number}}</span>
+              <span ng-if="userHistory.infant_number">Infant - {{userHistory.infant_number}}</span>
             </div>
             <div class="item item-text-wrap">
-              Amount paid : $800
+              Amount paid : ${{userHistory.total_price}}
             </div>
             <div class="item item-divider">
               <button class="button button-small btneve">USE NOW</button>
             </div>
         </div>
-
-        <div class="card phist">
-            <div class="item item-divider">
-              Event Name
-            </div>
-            <div class="item item-text-wrap">
-              Purchase date : 21/1/2015
-            </div>
-            <div class="item item-text-wrap">
-              Event date : 26/1/2015
-            </div>
-            <div class="item item-text-wrap">
-              Tickets : <span>Adult -</span> 2 <span>Child -</span> 2
-              <span>Infant -</span> 0
-            </div>
-            <div class="item item-text-wrap">
-              Amount paid : $800
-            </div>
-            <div class="item item-divider">
-              <button class="button button-small btneve">USE NOW</button>
-            </div>
-        </div>
-
     </div>
