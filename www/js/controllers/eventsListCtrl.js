@@ -1,5 +1,5 @@
 angular.module('eventsApp.controllers.eventsListCtrl', [])
-	.controller('eventsListCtrl', ['$scope', '$state', 'eventsFactory', 'userFactory','$ionicHistory', function($scope, $state, eventsFactory, userFactory, $ionicHistory) {
+	.controller('eventsListCtrl', ['$scope', '$state', 'eventsFactory', 'userFactory','$ionicHistory', '$sce', function($scope, $state, eventsFactory, userFactory, $ionicHistory, $sce) {
 
 	$scope.showcase = true;
 	$scope.tickets = false;
@@ -11,6 +11,10 @@ angular.module('eventsApp.controllers.eventsListCtrl', [])
 	$('.tab2').css('border-bottom', 'solid 0px #387ef5');
 	$('.tab3').css('border-bottom', 'solid 0px #387ef5');
 	$('.tab4').css('border-bottom', 'solid 0px #387ef5');
+	
+	$scope.trustSrc = function(src) {
+		return $sce.trustAsResourceUrl(src);
+	}
 
 	$scope.logout = function(){
 		window.localStorage.removeItem('userID');

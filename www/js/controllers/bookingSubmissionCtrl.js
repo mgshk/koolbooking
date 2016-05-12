@@ -25,7 +25,7 @@ angular.module('eventsApp.controllers.bookingSubmissionCtrl', [])
 
 	$scope.showLoder = function() {
 	    $ionicLoading.show({
-	      template: '<ion-spinner icon="bubbles"></ion-spinner>'
+	      template: '<ion-spinner icon="bubbles"></ion-spinaQSW3ner>'
 	    });
 	 };
 	$scope.hideLoder = function(){
@@ -51,37 +51,30 @@ angular.module('eventsApp.controllers.bookingSubmissionCtrl', [])
 	} else {
 		$scope.infant = 0;
 	}
-
-	eventsFactory.getEventsList().then(function (resp) {
-
-		$scope.hideLoder();
-        $scope.eventsList = resp.data;
+	
+	eventsFactory.getEventDetails($stateParams.event_id).then(function (resp) {
+    	$scope.hideLoder();
 		
-		angular.forEach($scope.eventsList, function(value, key) {
-		
-			if(value.id === $stateParams.event_id) {
-				$scope.adult_price = value.adult_price;
+		$scope.adult_price = resp.data[0].adult_price;
 				
-				if (angular.isDefined(value.child_price))
-					$scope.child_price = value.child_price;
-				else
-					$scope.child_price = 0;
+		if (angular.isDefined(resp.data[0].child_price))
+			$scope.child_price = resp.data[0].child_price;
+		else
+			$scope.child_price = 0;
 
-				if (angular.isDefined(value.infant_price))
-					$scope.infant_price = value.infant_price;
-				else
-					$scope.infant_price = 0;
+		if (angular.isDefined(resp.data[0].infant_price))
+			$scope.infant_price = resp.data[0].infant_price;
+		else
+			$scope.infant_price = 0;
 
 
-				$scope.amount = ($scope.adult * $scope.adult_price) + ($scope.child * $scope.child_price) + 
-					($scope.infant * $scope.infant_price);
-
-				window.localStorage.setItem('eventID', $scope.id);
-				window.localStorage.setItem('adult', $scope.adult);
-				window.localStorage.setItem('child', $scope.child);
-				window.localStorage.setItem('infant', $scope.infant);
-				window.localStorage.setItem('amount', $scope.amount);
-			}
-		});
+		$scope.amount = ($scope.adult * $scope.adult_price) + ($scope.child * $scope.child_price) + 
+			($scope.infant * $scope.infant_price);
+		
+		window.localStorage.setItem('eventID', $scope.id);
+		window.localStorage.setItem('adult', $scope.adult);
+		window.localStorage.setItem('child', $scope.child);
+		window.localStorage.setItem('infant', $scope.infant);
+		window.localStorage.setItem('amount', $scope.amount);
     });
 }]);
