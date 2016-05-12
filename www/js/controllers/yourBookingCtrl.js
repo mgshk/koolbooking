@@ -34,5 +34,7 @@ angular.module('eventsApp.controllers.yourBookingCtrl', [])
     eventsFactory.getEventDetails($stateParams.event_id).then(function (resp) {
     	$scope.hideLoder();
         $scope.event = resp.data[0];
+		
+		console.log($scope.event);
     });
 }]);
