@@ -24,19 +24,11 @@
 <div id="tabcontent">
 
 <div id="showcase" ng-show="showcase" ng-controller="showcaseTabCtrl">
-  
-  <ion-slide-box does-continue="true" auto-play="true" show-pager="false">
-  <ion-slide>
-    <iframe width="100%" class="iframe" src="https://www.youtube.com/embed/mcixldqDIEQ" frameborder="0" allowfullscreen></iframe>
-  </ion-slide>
-  <ion-slide>
-    <iframe width="100%" class="iframe" src="https://www.youtube.com/embed/mcixldqDIEQ" frameborder="0" allowfullscreen></iframe>
-  </ion-slide>
-  <ion-slide>
-    <iframe width="100%" class="iframe" src="https://www.youtube.com/embed/mcixldqDIEQ" frameborder="0" allowfullscreen></iframe>
-  </ion-slide>
-</ion-slide-box>
-
+  <flex-slider animation="slide" direction="vertical" video="true" flex-slide="videoUrl in videoUrls">
+      <li>
+          <youtube-video player-width="'100%'" player-height="'500px'" player="bestPlayer" video-url="videoUrl"></youtube-video>
+      </li>
+  </flex-slider>
 </div>
 
 <div id="tickets" ng-show="tickets" ng-controller="ticketsTabCtrl">

@@ -1,4 +1,4 @@
-angular.module('eventsApp.controllers.eventsListCtrl', [])
+angular.module('eventsApp.controllers.eventsListCtrl', ['youtube-embed', 'angular-flexslider'])
 	.controller('eventsListCtrl', ['$scope', '$state', 'eventsFactory', 'userFactory','$ionicHistory', '$sce', function($scope, $state, eventsFactory, userFactory, $ionicHistory, $sce) {
 
 	$scope.showcase = true;
@@ -7,6 +7,7 @@ angular.module('eventsApp.controllers.eventsListCtrl', [])
 	$scope.discover = false;
 	$scope.trending = false;
 	$scope.comingsoon = false;
+	var bestPlayer = null;
 	$('.tab1').css('border-bottom', 'solid 4px #387ef5');
 	$('.tab2').css('border-bottom', 'solid 0px #387ef5');
 	$('.tab3').css('border-bottom', 'solid 0px #387ef5');
@@ -51,6 +52,9 @@ angular.module('eventsApp.controllers.eventsListCtrl', [])
 		$('.tab2').css('border-bottom', 'solid 4px #387ef5');
 		$('.tab3').css('border-bottom', 'solid 0px #387ef5');
 		$('.tab4').css('border-bottom', 'solid 0px #387ef5');
+
+		if(bestPlayer)
+			bestPlayer.stopVideo();
 	}
 
 	$scope.showYou = function(){
@@ -62,6 +66,9 @@ angular.module('eventsApp.controllers.eventsListCtrl', [])
 		$('.tab2').css('border-bottom', 'solid 0px #387ef5');
 		$('.tab3').css('border-bottom', 'solid 4px #387ef5');
 		$('.tab4').css('border-bottom', 'solid 0px #387ef5');
+
+		if(bestPlayer)
+			bestPlayer.stopVideo();
 	}
 
 	$scope.showDiscover = function(){
@@ -77,6 +84,9 @@ angular.module('eventsApp.controllers.eventsListCtrl', [])
 		$('.tab3').css('border-bottom', 'solid 0px #387ef5');
 		$('.tab4').css('border-bottom', 'solid 4px #387ef5');
 		$('.tab5').css('color', '#387ef5');
+
+		if(bestPlayer)
+			bestPlayer.stopVideo();
 	}
 
 	$scope.showRecommened = function(){
@@ -124,4 +134,11 @@ angular.module('eventsApp.controllers.eventsListCtrl', [])
 		});
     }
 
+    $scope.$on('youtube.player.playing', function ($event, player) {
+	    bestPlayer = player;
+	});
+
+	$scope.$on('youtube.player.ended', function ($event, player) {
+	    bestPlayer = '';
+	});
 }]);

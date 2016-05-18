@@ -20,7 +20,7 @@
       </div>
 
       <div class="list card eventslst thrd" ng-if="cardspayment">
-
+        <!--<form role="form" action="https://www.paypal.com/cgi-bin/webscr">
           <h4>Card Type</h4>
 
           <label><input type="radio"> Visa</label>
@@ -32,7 +32,27 @@
           <input type="text" placeholder="CVV" class="payinputcvv">
 
           <button class="button button-small btneve">COMPLETE PAYMENT</button>
+        </form>-->
+        <form method="post" action="https://www.paypal.com/webscr&cmd=_express-checkout&token=EC%2d7YR08786NX256704U">
+          <!--<input type="hidden" name="USER" value="managingdirector_api1.silverstarcaribbean.com">
+          <input type="hidden" name="PWD" value="WQ68FDQZ36XJXXE2">
+          <input type="hidden" name="SIGNATURE" value="AFcWxV21C7fd0v3bYYYRCpSSRl31A4Hy-WvSfelWIKiOnw8Iiift5GYt">
+          <input type="hidden" name="VERSION" value="109.0">
+          <input name="PAYMENTREQUEST_0_AMT" value="19.95">
+          <input type="hidden" name="RETURNURL" value="https://www.YourReturnURL.com">
+          <input type="hidden" name="CANCELURL" value="https://www.YourCancelURL.com">-->
+          <input type="hidden" name="METHOD" value="SetExpressCheckout">
+          <input type="hidden" name="METHOD" value="doExpressCheckoutPayment">-->
+          <label><input type="radio" name="CREDITCARDTYPE" value="Visa"> Visa</label>
+          <label><input type="radio" name="CREDITCARDTYPE" value="Master card"> Master card</label>
+          <label><input type="radio" name="CREDITCARDTYPE" value="Discover"> Discover</label>
 
+          <input type="text" name="ACCT" placeholder="Card number" class="payinput">
+          <input type="text" name="EXPDATE" placeholder="Name in card" class="payinput">
+          <input type="text" name="CVV2" placeholder="CVV" class="payinputcvv">
+
+          <input type="submit" name="submit" value="submit">
+        </form>
       </div>
 
       <div class="list card eventslst thrd" ng-if="paypalpayment">
