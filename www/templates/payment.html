@@ -1,7 +1,7 @@
     <div class="bar bar-header header">
       <h1 class="title text-left" ui-sref="bookingSubmission({event_id: id, adult: adult, child: child, infant: infant})"><span><i class="icon icon-left ion-chevron-left"></i>
         <img src="img/logo1.png" alt="Logo" class="head-logo">
-        <span>Review Order</span></span>
+        <span>Choose Payment</span></span>
       </h1>
     </div>
 
@@ -20,29 +20,8 @@
       </div>
 
       <div class="list card eventslst thrd" ng-if="cardspayment">
-        <!--<form role="form" action="https://www.paypal.com/cgi-bin/webscr">
-          <h4>Card Type</h4>
-
-          <label><input type="radio"> Visa</label>
-          <label><input type="radio"> Master card</label>
-          <label><input type="radio"> Discover</label>
-
-          <input type="text" placeholder="Card number" class="payinput">
-          <input type="text" placeholder="Name in card" class="payinput">
-          <input type="text" placeholder="CVV" class="payinputcvv">
-
-          <button class="button button-small btneve">COMPLETE PAYMENT</button>
-        </form>-->
-        <form method="post" action="https://www.paypal.com/webscr&cmd=_express-checkout&token=EC%2d7YR08786NX256704U">
-          <!--<input type="hidden" name="USER" value="managingdirector_api1.silverstarcaribbean.com">
-          <input type="hidden" name="PWD" value="WQ68FDQZ36XJXXE2">
-          <input type="hidden" name="SIGNATURE" value="AFcWxV21C7fd0v3bYYYRCpSSRl31A4Hy-WvSfelWIKiOnw8Iiift5GYt">
-          <input type="hidden" name="VERSION" value="109.0">
-          <input name="PAYMENTREQUEST_0_AMT" value="19.95">
-          <input type="hidden" name="RETURNURL" value="https://www.YourReturnURL.com">
-          <input type="hidden" name="CANCELURL" value="https://www.YourCancelURL.com">-->
-          <input type="hidden" name="METHOD" value="SetExpressCheckout">
-          <input type="hidden" name="METHOD" value="doExpressCheckoutPayment">-->
+        <form role="form" action="https://www.paypal.com/webscr">
+          <input type="hidden" name="cmd" value="_express-checkout">
           <label><input type="radio" name="CREDITCARDTYPE" value="Visa"> Visa</label>
           <label><input type="radio" name="CREDITCARDTYPE" value="Master card"> Master card</label>
           <label><input type="radio" name="CREDITCARDTYPE" value="Discover"> Discover</label>
@@ -51,7 +30,7 @@
           <input type="text" name="EXPDATE" placeholder="Name in card" class="payinput">
           <input type="text" name="CVV2" placeholder="CVV" class="payinputcvv">
 
-          <input type="submit" name="submit" value="submit">
+          <button type="submit" class="button button-small btneve">COMPLETE PAYMENT</button>
         </form>
       </div>
 
@@ -72,33 +51,33 @@
             <input type="hidden" name="amount" value="{{amount}}">
             <input type="hidden" name="currency_code" value="USD">
 
-            <input type="text" name="email" placeholder="Paypal emailaddress" class="payinput" autocomplete="off" required>
+            <input type="text" name="email" ng-model="email" placeholder="Email" class="payinput" autocomplete="off" required>
             <span style="color:red" ng-show="paymentForm.email.$dirty && paymentForm.email.$invalid">
                 <span ng-show="paymentForm.email.$invalid">Invalid email address.</span>
             </span>
-            <input type="text" name="first_name" placeholder="Name" class="payinput" autocomplete="off" required>
+            <input type="text" name="first_name" ng-model="first_name" placeholder="Name" class="payinput" autocomplete="off" required>
             <span style="color:red" ng-show="paymentForm.first_name.$dirty && paymentForm.first_name.$invalid">
-                <span ng-show="paymentForm.first_name.$invalid">Invalid email address.</span>
+                <span ng-show="paymentForm.first_name.$invalid">Name is required</span>
             </span>
-            <input type="text" name="address1" placeholder="Address" class="payinput" autocomplete="off" required>
+            <input type="text" name="address1" ng-model="address1" placeholder="Address" class="payinput" autocomplete="off" required>
             <span style="color:red" ng-show="paymentForm.address1.$dirty && paymentForm.address1.$invalid">
-                <span ng-show="paymentForm.address1.$invalid">Invalid email address.</span>
+                <span ng-show="paymentForm.address1.$invalid">Address is required</span>
             </span>
-            <input type="text" name="city" placeholder="City" class="payinput" autocomplete="off" required>
+            <input type="text" name="city" ng-model="city" placeholder="City" class="payinput" autocomplete="off" required>
             <span style="color:red" ng-show="paymentForm.city.$dirty && paymentForm.City.$invalid">
-                <span ng-show="paymentForm.city.$invalid">Invalid email address.</span>
+                <span ng-show="paymentForm.city.$invalid">City is required</span>
             </span>
-            <input type="text" name="state" placeholder="State" class="payinput" autocomplete="off" required>
+            <input type="text" name="state" ng-model="state" placeholder="State" class="payinput" autocomplete="off" required>
             <span style="color:red" ng-show="paymentForm.state.$dirty && paymentForm.state.$invalid">
-                <span ng-show="paymentForm.state.$invalid">Invalid email address.</span>
+                <span ng-show="paymentForm.state.$invalid">State is required</span>
             </span>
-            <input type="text" name="country" placeholder="Country" class="payinput" autocomplete="off" required>
+            <input type="text" name="country" ng-model="country" placeholder="Country" class="payinput" autocomplete="off" required>
             <span style="color:red" ng-show="paymentForm.country.$dirty && paymentForm.country.$invalid">
-                <span ng-show="paymentForm.country.$invalid">Invalid email address.</span>
+                <span ng-show="paymentForm.country.$invalid">Country is required.</span>
             </span>
-            <input type="text" name="zip" placeholder="Zipcode" class="payinput" autocomplete="off" required>
+            <input type="number" name="zip" ng-model="zip" placeholder="Zipcode" class="payinput" autocomplete="off" required>
             <span style="color:red" ng-show="paymentForm.zip.$dirty && paymentForm.zip.$invalid">
-                <span ng-show="paymentForm.zip.$invalid">Invalid email address.</span>
+                <span ng-show="paymentForm.zip.$invalid">Zip code is required</span>
             </span>
 
             <button type="submit" ng-disabled="!paymentForm.$valid" class="button button-small btneve">COMPLETE PAYMENT</button>
