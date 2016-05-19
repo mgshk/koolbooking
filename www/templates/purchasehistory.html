@@ -11,22 +11,18 @@
 
       <h4 ng-if="noRecords">No Records found</h4>
 
-        <!-- <div class="list list-inset phist" ng-repeat="userHistory in userHistories">
-            <div class="item">
-              <b>Event</b> : <span class="pull-right" ng-bind="userHistory.post_title"></span>
-            </div>
-            <div class="item">
-              <b>Event Date</b> : <span class="pull-right" ng-bind="userHistory.event_date"></span>
-            </div>
-            <div class="item">
-              <b>Event Venue</b> : <span class="pull-right" ng-bind="userHistory.address"></span>
-            </div>
-            <div class="item">
-              <b>Total</b> : <span class="pull-right">${{userHistory.total_price}}</span>
-            </div>
-        </div> -->
+      <div ng-if="!noRecords">
 
-        <div ng-if="!noRecords" class="card phist">
+        <div class="tabs tabs-icon-left tab18">
+            <a class="tab-item tab31" ng-click="showUsedTickets()">
+              Tickets Used
+            </a>
+            <a class="tab-item tab33" ng-click="showToUsedTickets()">
+              Tickets to be Used
+            </a>
+        </div>
+
+        <div class="card phist" ng-show="showUsedTickets1">
             <div class="item item-divider">
               {{userHistory.post_title}}
             </div>
@@ -47,4 +43,30 @@
               <button class="button button-small btneve">USE NOW</button>
             </div>
         </div>
+
+        <div class="card phist" ng-show="showToUsedTickets1">
+          to be used tickets tab
+            <div class="item item-divider">
+              {{userHistory.post_title}}
+            </div>
+            <div class="item item-text-wrap">
+              Purchase date : 21/1/2015
+            </div>
+            <div class="item item-text-wrap">
+              Event date : {{userHistory.event_date}}
+            </div>
+            <div class="item item-text-wrap">
+              Tickets : <span>Adult - {{userHistory.adult_number}}</span> <span ng-if="userHistory.child_number">Child - {{userHistory.child_number}}</span>
+              <span ng-if="userHistory.infant_number">Infant - {{userHistory.infant_number}}</span>
+            </div>
+            <div class="item item-text-wrap">
+              Amount paid : ${{userHistory.total_price}}
+            </div>
+            <div class="item item-divider">
+              <button class="button button-small btneve">USE NOW</button>
+            </div>
+        </div>
+
+      </div>
+
     </div>

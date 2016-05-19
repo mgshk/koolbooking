@@ -139,7 +139,7 @@ font-weight: 600;}
 .thrd button{height: 40px;}
 
 .phistory{margin-top: 60px;}
-.phistory h4{text-align: center;}
+.phistory h4{text-align: center;margin: -6px 0 15px 0;}
 .phist .item{padding: 10px;border-width: 1px;}
 .setem{float: right;font-size: 33px !important;position: relative;bottom: 6px;}
 .setlist .item{background: none;border-top: none;border-left: none;border-right: none;}
@@ -193,3 +193,11 @@ font-weight: 600;}
 .top-0{margin-top: 0 !important;}
 .setng h4{text-align: center;margin: 10px 0;}
 .conte{color: #000000 !important;margin-top: 5px;display: inline-block;}
+.tab18{position: relative;padding: 0;bottom: 5px;}
+.tab18 a {
+    color: #000;
+    font-size: 16px !important;
+    font-weight: 700;max-width: 100%;
+}
+.tab31{border-right: 1px solid #dddddd;border-bottom: 1px solid #dddddd;}
+.tab33{border-left: 1px solid #dddddd;border-bottom: 1px solid #dddddd;}

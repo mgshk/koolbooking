@@ -6,6 +6,10 @@ angular.module('eventsApp.controllers.purchaseHistoryCtrl', [])
     }
 
     $scope.noRecords = false;
+    $scope.showUsedTickets1 = true;
+	$scope.showToUsedTickets1 = false;
+	$('.tab31').css('color', '#387ef5');
+	$('.tab33').css('color', '#000000');
 
 	$scope.showLoder = function() {
 	    $ionicLoading.show({
@@ -22,7 +26,21 @@ angular.module('eventsApp.controllers.purchaseHistoryCtrl', [])
         $scope.isUserID = true;
     }
 
-	//$scope.showLoder();
+	$scope.showLoder();
+
+	$scope.showUsedTickets = function(){
+		$scope.showUsedTickets1 = true;
+		$scope.showToUsedTickets1 = false;
+		$('.tab31').css('color', '#387ef5');
+		$('.tab33').css('color', '#000000');
+	}
+
+	$scope.showToUsedTickets = function(){
+		$scope.showUsedTickets1 = false;
+		$scope.showToUsedTickets1 = true;
+		$('.tab31').css('color', '#000000');
+		$('.tab33').css('color', '#387ef5');
+	}
 
 	userFactory.getUserPurchaseHistory(window.localStorage.getItem('userID')).then(function (resp) {
 	 	$scope.hideLoder();
