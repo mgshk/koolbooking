@@ -27,7 +27,7 @@
               {{userHistory.post_title}}
             </div>
             <div class="item item-text-wrap">
-              Purchase date : 21/1/2015
+              Purchase date : {{userHistory.purchase_date | date: 'dd/MM/yyyy'}}
             </div>
             <div class="item item-text-wrap">
               Event date : {{userHistory.event_date}}
@@ -40,7 +40,7 @@
               Amount paid : ${{userHistory.total_price}}
             </div>
             <div class="item item-divider">
-              <button class="button button-small btneve">USE NOW</button>
+              <button class="button button-small btneve" ui-sref="eventDetails({event_id: userHistory.id})">USE NOW</button>
             </div>
         </div>
 
@@ -50,7 +50,7 @@
               {{userHistory.post_title}}
             </div>
             <div class="item item-text-wrap">
-              Purchase date : 21/1/2015
+              Purchase date : {{userHistory.purchase_date | date: 'dd/MM/yyyy'}}
             </div>
             <div class="item item-text-wrap">
               Event date : {{userHistory.event_date}}
@@ -63,7 +63,7 @@
               Amount paid : ${{userHistory.total_price}}
             </div>
             <div class="item item-divider">
-              <button class="button button-small btneve">USE NOW</button>
+              <button class="button button-small btneve" ui-sref="eventDetails({event_id: userHistory.id})">USE NOW</button>
             </div>
         </div>
 

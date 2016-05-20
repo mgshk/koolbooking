@@ -31,11 +31,6 @@ angular.module('eventsApp.config', ['ui.router']).config(function($stateProvider
       controller: 'eventDetailsCtrl',
       templateUrl: 'templates/eventDetails.html'
   })
-  .state('filterEvents', {
-      url: '/filterEvents',
-      controller: 'filterEventsCtrl',
-      templateUrl: 'templates/filterEvents.html'
-  })
   .state('bookingSubmission', {
       url: '/bookingSubmission/:event_id/:adult/:child/:infant',
       controller: 'bookingSubmissionCtrl',

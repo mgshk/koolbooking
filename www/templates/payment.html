@@ -1,14 +1,14 @@
     <div class="bar bar-header header">
       <h1 class="title text-left" ui-sref="bookingSubmission({event_id: id, adult: adult, child: child, infant: infant})"><span><i class="icon icon-left ion-chevron-left"></i>
         <img src="img/logo1.png" alt="Logo" class="head-logo">
-        <span>Choose Payment</span></span>
+        <span>Paypal Payment</span></span>
       </h1>
     </div>
 
     <div id="thirdpayment">
       <h5>Payment</h5>
 
-      <div class="list card eventslst thrd">
+      <!--<div class="list card eventslst thrd">
 
           <h4>Choose Payment Type</h4>
 
@@ -17,11 +17,19 @@
             <ion-checkbox ng-model="cardspayment" ng-click="checkCards()">CARD PAYMENT</ion-checkbox>
           </ion-list>
         
-      </div>
+      </div>-->
 
-      <div class="list card eventslst thrd" ng-if="cardspayment">
+      <!--<div class="list card eventslst thrd" ng-if="cardspayment">
         <form role="form" action="https://www.paypal.com/webscr">
-          <input type="hidden" name="cmd" value="_express-checkout">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="item_name" value="Event">
+          <input type="hidden" name="item_number" value="{{id}}">
+          <input type="hidden" name="no_adult" value="{{adult}}">
+          <input type="hidden" name="no_child" value="{{child}}">
+          <input type="hidden" name="no_infant" value="{{infant}}">
+          <input type="hidden" name="amount" value="{{amount}}">
+          <input type="hidden" name="currency_code" value="USD">
+
           <label><input type="radio" name="CREDITCARDTYPE" value="Visa"> Visa</label>
           <label><input type="radio" name="CREDITCARDTYPE" value="Master card"> Master card</label>
           <label><input type="radio" name="CREDITCARDTYPE" value="Discover"> Discover</label>
@@ -32,9 +40,9 @@
 
           <button type="submit" class="button button-small btneve">COMPLETE PAYMENT</button>
         </form>
-      </div>
+      </div>-->
 
-      <div class="list card eventslst thrd" ng-if="paypalpayment">
+      <div class="list card eventslst thrd">
 
           <h4>PAYPAL</h4>
           <form role="form" action="https://www.paypal.com/cgi-bin/webscr" name="paymentForm" novalidate>
@@ -80,7 +88,7 @@
                 <span ng-show="paymentForm.zip.$invalid">Zip code is required</span>
             </span>
 
-            <button type="submit" ng-disabled="!paymentForm.$valid" class="button button-small btneve">COMPLETE PAYMENT</button>
+            <button type="submit" ng-disabled="!paymentForm.$valid" ng-click="addBooking()" class="button button-small btneve">COMPLETE PAYMENT</button>
           </form>
 
       </div>

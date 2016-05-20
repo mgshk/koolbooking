@@ -50,9 +50,9 @@ angular.module('eventsApp.factory.eventsFactory', [])
         return deferred.promise;
 	}
 	
-	function getFilterEvents (address) {
+	function getFilterEvents (address, startDate, endDate) {
         var deferred = $q.defer();
-        eventsService.getFilterEvents(address).then(function (resp) {
+        eventsService.getFilterEvents(address, startDate, endDate).then(function (resp) {
             deferred.resolve(resp.data);
         }, function(error) {
             console.log(error);

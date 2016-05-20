@@ -3,7 +3,8 @@ angular.module('eventsApp.factory.userFactory', [])
 	
 	return {
 	    getUserPurchaseHistory: getUserPurchaseHistory,
-        getUserDetails: getUserDetails
+        getUserDetails: getUserDetails,
+        addBooking: addBooking
 	};
 	
 	function getUserPurchaseHistory (post_author) {
@@ -26,9 +27,9 @@ angular.module('eventsApp.factory.userFactory', [])
         return deferred.promise;
     }
 
-	function cardPayment (card_details) {
+	function addBooking (booking_info) {
         var deferred = $q.defer();
-        userService.cardPayment(card_details).then(function (resp) {
+        userService.addBooking(booking_info).then(function (resp) {
             deferred.resolve(resp.data);
         }, function(error) {
             console.log(error);

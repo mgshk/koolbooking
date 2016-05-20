@@ -25,8 +25,8 @@ angular.module('eventsApp.service.eventsService', [])
 	    });		
 	}
 	
-	this.getFilterEvents = function(address) {
-	    return $http.get('http://koolbooking.com/android_app/filter_events?address='+address).then(function (resp) {
+	this.getFilterEvents = function(address, startDate, endDate) {
+	    return $http.get('http://koolbooking.com/android_app/filter_events?address='+address+'&start_date='+startDate+'&end_date='+endDate).then(function (resp) {
 			return resp;
 	    });		
 	}

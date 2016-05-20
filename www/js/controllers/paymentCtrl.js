@@ -1,8 +1,10 @@
 angular.module('eventsApp.controllers.paymentCtrl', [])
-	.controller('paymentCtrl', ['$scope', '$stateParams', '$state', '$ionicHistory', function($scope, $stateParams, $state, $ionicHistory) {
+	.controller('paymentCtrl', ['$scope', '$stateParams', '$state', '$ionicLoading', '$ionicHistory', 'eventsFactory', 'userService',
+		function($scope, $stateParams, $state, $ionicLoading, $ionicHistory, eventsFactory, userService) {
 
 		if (!$stateParams.event_id === "") {
 	        $state.go('eventsList');
+	        return;
 	    }
 
 	    $scope.id = $stateParams.event_id;
@@ -53,6 +55,47 @@ angular.module('eventsApp.controllers.paymentCtrl', [])
 
 		$scope.checkCards = function(){
 			$scope.paypalpayment = false;
+		}
+
+		function showLoder() {
+		    $ionicLoading.show({
+		      template: '<ion-spinner icon="bubbles"></ion-spinner>'
+		    });
+		};
+
+		function hideLoder() {
+		    $ionicLoading.hide();
+		};
+
+		showLoder();
+
+		var event_details;
+
+		eventsFactory.getEventDetails($stateParams.event_id).then(function (resp) {
+	    	hideLoder();
+	        event_details = resp.data[0];
+	    });
+
+		$scope.addBooking = function() {
+			showLoder();
+
+			var booking_info = {
+				'item_id': $scope.id,
+				'adult_price': angular.isDefined(event_details.adult_price) ? ($scope.adult * event_details.adult_price) : 0,
+				'child_price': angular.isDefined(event_details.child_price) ? ($scope.child * event_details.child_price) : 0,
+				'infant_price': angular.isDefined(event_details.infant_price) ? ($scope.infant * event_details.infant_price) : 0,
+				'adult_number': $scope.adult,
+				'child_number': $scope.child,
+				'infant_number': $scope.infant,
+				'type_price': event_details.calendar_type_price,
+				'check_in': event_details.event_date,
+				'ori_price': $scope.amount,
+				'total_price': $scope.amount
+			};
+
+			userService.addBooking(booking_info).then(function (resp) {
+		    	hideLoder();
+		    });
 		}
 
 }]);

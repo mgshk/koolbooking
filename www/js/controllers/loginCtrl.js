@@ -7,12 +7,13 @@ angular.module('eventsApp.controllers.loginCtrl', [])
        $state.go('eventsList');
     }
 
-    $scope.showLoder = function() {
+    function showLoder() {
 	    $ionicLoading.show({
 	      template: '<ion-spinner icon="bubbles"></ion-spinner>'
 	    });
 	 };
-	$scope.hideLoder = function(){
+
+	function hideLoder(){
 	    $ionicLoading.hide();
 	};
 
@@ -27,9 +28,9 @@ angular.module('eventsApp.controllers.loginCtrl', [])
     };
     
     $scope.login = function() {	
-    	$scope.showLoder();
+    	showLoder();
 		loginFactory.userLogin ($scope.user_email, $scope.user_pass).then(function (resp) {
-			$scope.hideLoder();
+			hideLoder();
 		    if (resp.status === 0) {
 				errorMsg = resp.error;
 				$scope.showAlert();
@@ -96,27 +97,6 @@ angular.module('eventsApp.controllers.loginCtrl', [])
 			$state.go('eventsList');
 	    });
     }
-    
-    /*$scope.$on('event:google-plus-signin-success', function (event, authResult) {	
-		if (angular.isUndefined(authResult.hg.access_token)) {
-		    errorMsg = 'Please check your login credentials';
-		    $scope.showAlert();
-		    return;
-		}
-		
-		var access_token = authResult.hg.access_token;
-		loginFactory.googleUserInfo(access_token).then(function (resp) {
-		    $scope.user = {
-				'first_name': resp.given_name,
-				'last_name': resp.family_name,
-				'name': resp.name,
-				'link': resp.link,
-				'email': resp.email
-		    };
-
-		    googleLogin($scope.user);
-		});
-    });*/
     
     function googleLogin (user) {
 		loginFactory.googleLogin(user).then(function (resp) {
