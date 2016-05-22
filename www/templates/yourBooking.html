@@ -1,103 +1,97 @@
-    <div class="bar bar-header header">
-      <h1 class="title text-left" ui-sref="eventDetails({event_id: event.id})"><span><i class="icon icon-left ion-chevron-left"></i>
-        <img src="img/logo1.png" alt="Logo" class="head-logo">
-        <span>Your booking</span></span>
-      </h1>
-    </div>
+<div class="bar bar-header header">
+  <h1 class="title text-left" ui-sref="eventDetails({event_id: event.id})"><span><i class="icon icon-left ion-chevron-left"></i>
+    <img src="img/logo1.png" alt="Logo" class="head-logo">
+    <span>Your booking</span></span>
+  </h1>
+</div>
 
-    <div class="buy-ticket full-width">
-      	Buy Tickets
-    </div>
+<div class="buy-ticket full-width">
+  	Buy Tickets
+</div>
 
-    <div class="yourbookingcontent">
-    	<h1>SYNOPSIS</h1>
-    	<p ng-bind-html="event.post_content" class="yb"><p>
-    	<div class="event-date row yb1">
-      
-	      <div class="event-date-left">
-		      <p><span>Event Date : </span>{{event.event_date | date: 'dd-MM-yyyy'}}</p>
-		      <p><span>Activity Time : </span>{{event.event_time}}</p>	      
-		      <p><span>Maximum number of people : </span>{{event.max_people}}</p>      
-		      <p><span>Venue Facilities : </span>{{event.venue_facilities}}</p>	      
-		      <p><span>Adult Price : </span><strong>${{event.adult_price}}</strong></p>	
-	     	  <p ng-show="event.child_price != 0"><span>Child Price : </span><strong>${{event.child_price}}</strong></p>
-	     	  <p ng-show="event.infant_price != 0"><span>Infant Price : </span><strong>${{event.infant_price}}</strong></p>	
-	      </div>
-      
-	       <div class="event-date-right">
-	       
-	       <div class="date">
-	       
-	       <div class="date-inner">
-	       <p>{{event.event_date | date: 'MMMM' }}</p>
-	       </div>
-	       
-	       <h2>{{event.event_date | date: 'dd' }}</h2>
-	       <h3>{{event.event_date | date: 'EEEE' }}</h3>
-	       
-	       </div>
-	       
-	      </div>
-      
+<div class="yourbookingcontent">
+	<h1>SYNOPSIS</h1>
+	<p ng-bind-html="event.post_content" class="yb"><p>
+	<div class="event-date row yb1">
+  
+      <div class="event-date-left">
+	      <p><span>Event Date : </span>{{event.event_date | date: 'dd-MM-yyyy'}}</p>
+	      <p><span>Activity Time : </span>{{event.event_time}}</p>	      
+	      <p><span>Maximum number of people : </span>{{event.max_people}}</p>      
+	      <p><span>Venue Facilities : </span>{{event.venue_facilities}}</p>	      
+	      <p><span>Adult Price : </span><strong>${{event.adult_price}}</strong></p>	
+     	  <p ng-show="event.child_price != 0"><span>Child Price : </span><strong>${{event.child_price}}</strong></p>
+     	  <p ng-show="event.infant_price != 0"><span>Infant Price : </span><strong>${{event.infant_price}}</strong></p>	
       </div>
-
-		<div class="row full-width adlt">
-
-		  <div class="col col-50">
-		      Adult
-		    <select ng-model="no_adult">
-				<option value="0">0</option>
-				 <option value="1">1</option>
-				 <option value="2">2</option>
-				 <option value="3">3</option>
-				 <option value="4">4</option>
-				 <option value="5">5</option>
-				 <option value="6">6</option>
-				 <option value="7">7</option>
-				 <option value="8">8</option>
+  
+       <div class="event-date-right">
+       
+       <div class="date">
+       
+       <div class="date-inner">
+       <p>{{event.event_date | date: 'MMMM' }}</p>
+       </div>
+       
+       <h2>{{event.event_date | date: 'dd' }}</h2>
+       <h3>{{event.event_date | date: 'EEEE' }}</h3>
+       
+       </div>
+       
+      </div>
+  
+  </div>
+ <form name="myForm" role="form">
+	<div class="row full-width adlt">
+	  	<div class="col col-50">
+		    Adult
+		    <select name="no_adult" ng-model="no_adult" required>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
 		    </select>
-		  </div>
+	  	</div>
+	 
 
-		  <div class="col col-50" ng-show="event.child_price != 0">
-		      Child
-		    <select ng-model="no_child">
-			  <option value="0">0</option>
-		      <option value="1">1</option>
-		      <option value="2">2</option>
-		      <option value="3">3</option>
-		      <option value="4">4</option>
-		      <option value="5">5</option>
-		      <option value="6">6</option>
-		      <option value="7">7</option>
-		      <option value="8">8</option>
+	  	<div class="col col-50" ng-show="event.child_price != 0">
+	    	Child
+		    <select name="no_child" ng-model="no_child">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
 		    </select>
-		  </div>
+	  	</div>
+	</div>
 
-		</div>
+	<div class="row full-width adlt">
+		<div class="col col-50" ng-show="event.infant_price != 0">
+		    Infant
+		    <select ng-model="no_infant">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+		    </select>
+	    </div>
+	</div>
 
-		<div class="row full-width adlt">
-
-			<div class="col col-50" ng-show="event.infant_price != 0">
-			      Infant
-			    <select ng-model="no_infant">
-				  <option value="0">0</option>
-			      <option value="1">1</option>
-			      <option value="2">2</option>
-			      <option value="3">3</option>
-			      <option value="4">4</option>
-			      <option value="5">5</option>
-			      <option value="6">6</option>
-			      <option value="7">7</option>
-			      <option value="8">8</option>
-			    </select>
-		    </div>
-
-		</div>
-
-       	<p>
-          <button class="button button-block loginbtn lgbtn1" ui-sref="bookingSubmission({event_id: id, adult: no_adult, child: no_child, infant: no_infant})">
-            <span>Review Order</span>
-          </button>
-      	</p>
-
-    </div>
+   	<p>
+      <button class="button button-block loginbtn lgbtn1" ng-disabled="!myForm.$valid" ui-sref="bookingSubmission({event_id: id, adult: no_adult, child: no_child, infant: no_infant})">
+        <span>Review Order</span>
+      </button>
+  	</p>
+  	</form>
+</div>

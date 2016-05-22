@@ -1,5 +1,5 @@
 angular.module('eventsApp.controllers.yourBookingCtrl', [])
-	.controller('yourBookingCtrl', ['$scope', '$state', '$stateParams', 'eventsFactory','$ionicLoading','$ionicHistory', function($scope, $state, $stateParams, eventsFactory, $ionicLoading, $ionicHistory) {
+	.controller('yourBookingCtrl', ['$scope', '$state', '$stateParams', 'eventsFactory', '$ionicLoading', '$ionicHistory', function($scope, $state, $stateParams, eventsFactory, $ionicLoading, $ionicHistory) {
 	
 	if ($stateParams.event_id === "") {
         $state.go('home');
@@ -14,25 +14,29 @@ angular.module('eventsApp.controllers.yourBookingCtrl', [])
 
     if(window.localStorage.getItem('userID') == null){
         $scope.isUserID = false;
-    }else{
+    } else {
         $scope.isUserID = true;
     }
 
-    $scope.showLoder = function() {
+    $scope.no_infant = 0;
+    $scope.no_child = 0
+
+    function showLoader() {
 	    $ionicLoading.show({
 	      template: '<ion-spinner icon="bubbles"></ion-spinner>'
 	    });
-	 };
-	$scope.hideLoder = function(){
-	    $ionicLoading.hide();
-	};
+	}
 
-	$scope.showLoder();
+	function hideLoader(){
+	    $ionicLoading.hide();
+	}
+
+	showLoader();
 	
 	$scope.id = $stateParams.event_id;
     
     eventsFactory.getEventDetails($stateParams.event_id).then(function (resp) {
-    	$scope.hideLoder();
+    	hideLoader();
         $scope.event = resp.data[0];
     });
 }]);
