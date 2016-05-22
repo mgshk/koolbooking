@@ -6,39 +6,32 @@
 </div>
 
 <div id="event">
-
   <div class="buy-ticket full-width top-0">
         Events
   </div>
 
     <div class="searchheader item-input-inset">
-      <form role="form" name="searchForm" novalidate>
+      <form role="form" name="searchForm">
         <label class="item-input-wrapper fw">
           <i class="icon ion-ios-location placeholder-icon lc1"></i>
-          <input type="text" name="searchTxt" placeholder="Search by location" autocomplete="off" ng-model="searchTxt" class="searchinput1" required>
+          <input type="text" name="searchTxt" placeholder="Search by location" autocomplete="off" ng-model="searchTxt" class="searchinput1">
         </label>
-        <span style="color:red" ng-show="searchForm.searchTxt.$dirty && searchForm.searchTxt.$invalid">
-            <span ng-show="searchForm.searchTxt.$invalid">Enter the location</span>
-        </span>
         <label class="item-input-wrapper fw1">
           <i class="icon ion-calendar placeholder-icon lc1"></i>
-          <input type="date" name="start_date" placeholder="Start Date" ng-model="start_date" class="searchinput2" required>
+          <input type="date" name="start_date" placeholder="Start Date" ng-model="start_date" class="searchinput2">
         </label>
-        <span style="color:red" ng-show="searchForm.start_date.$dirty && searchForm.start_date.$invalid">
-            <span ng-show="searchForm.start_date.$invalid">Select start date</span>
-        </span>
         <label class="item-input-wrapper fw2">
           <i class="icon ion-calendar placeholder-icon lc1"></i>
           <input type="date" name="end_date" placeholder="End Date" ng-model="end_date" class="searchinput3">
         </label>
-        <button class="button button-small btneve btnevea" ng-disabled="!searchForm.$valid" 
-          ng-click="filterEvents(start_date, end_date, searchTxt);">
+        <button class="button button-small btneve btnevea" ng-click="filterEvents(start_date, end_date, searchTxt);">
           Search
         </button>
       </form>
     </div>
 
-    <div class="list card eventslst" ng-repeat="event in eventsList">
+    <h4 ng-if="noRecords">No Records found</h4>
+    <div class="list card eventslst" ng-if="!noRecords" ng-repeat="event in eventsList">
         <div class="item item-image">
           <img class="full-image" ng-src="{{event.image_url}}">
         </div>
@@ -52,5 +45,4 @@
           </div>
         </div>
     </div>
-
   </div>
