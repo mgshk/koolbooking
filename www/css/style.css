@@ -60,7 +60,7 @@ font-weight: 600;}
 .venue span {font-size: 16px;color: #e43b62;}
 .detailscontent{margin-top: 44px;padding: 0px;}
 .lgbtn1{background: #387ef5;font-size: 20px;color: #fff !important;text-transform: uppercase;margin-top: 10px !important;}
-.eventslst{margin: 10px 10px;background: #F4F3F6;}
+.eventslst{margin: 10px 10px;background: #F4F3F6;padding: 0 !important;}
 .eventslst h5{margin: 0;}
 .eventslst p{margin: 5px 0 0 0;}
 .btneve{width: 100%;font-size: 16px;background: #387ef5;color: #fff;}
@@ -158,8 +158,8 @@ font-weight: 600;}
 .checkpayment .list .item{background: #666666;color: #fff;}
 #tickets{padding-bottom: 30px;}
 .fw{width: 100%;float: left;}
-.fw1{width: 49%;float: left;margin-right: 2%;}
-.fw2{width: 49%;float: left;}
+.fw1{width: 49%;float: left;margin-right: 2%;margin-top: 15px;}
+.fw2{width: 49%;float: left;margin-top: 15px;}
 .searchheader{background: #3c3f3e;padding: 0 10px 10px 10px;}
 .searchinput1{height: 34px !important;width: 100%;}
 .searchinput2{height: 34px !important;width: 100%;padding-top: 0 !important;font-size: 14px !important;}
@@ -211,3 +211,4 @@ font-weight: 600;}
 .btnevea{margin-left: 0 !important;margin-top: 10px;}
 .placeholder-icon{color: #48DDC9 !important;}
 .profileimg{max-width: 90%;height: auto;display: table;margin: auto;}
+.sd{position: absolute;margin-top: -22px;color: #fff;}
