@@ -11,27 +11,27 @@
         Events
   </div>
 
-    <div class="bar bar-header item-input-inset">
+    <div class="searchheader item-input-inset">
       <form role="form" name="searchForm" novalidate>
-        <label class="item-input-wrapper">
+        <label class="item-input-wrapper fw">
           <i class="icon ion-ios-location placeholder-icon lc1"></i>
-          <input type="text" name="searchTxt" placeholder="Search by location" autocomplete="off" ng-model="searchTxt" class="searchinput" required>
+          <input type="text" name="searchTxt" placeholder="Search by location" autocomplete="off" ng-model="searchTxt" class="searchinput1" required>
         </label>
         <span style="color:red" ng-show="searchForm.searchTxt.$dirty && searchForm.searchTxt.$invalid">
             <span ng-show="searchForm.searchTxt.$invalid">Enter the location</span>
         </span>
-        <label class="item-input-wrapper">
-          <i class="icon ion-ios-location placeholder-icon lc1"></i>
-          <input type="date" name="start_date" placeholder="Start Date" ng-model="start_date" class="searchinput" required>
+        <label class="item-input-wrapper fw1">
+          <i class="icon ion-calendar placeholder-icon lc1"></i>
+          <input type="date" name="start_date" placeholder="Start Date" ng-model="start_date" class="searchinput2" required>
         </label>
         <span style="color:red" ng-show="searchForm.start_date.$dirty && searchForm.start_date.$invalid">
             <span ng-show="searchForm.start_date.$invalid">Select start date</span>
         </span>
-        <label class="item-input-wrapper">
-          <i class="icon ion-ios-location placeholder-icon lc1"></i>
-          <input type="date" name="end_date" placeholder="End Date" ng-model="end_date" class="searchinput">
+        <label class="item-input-wrapper fw2">
+          <i class="icon ion-calendar placeholder-icon lc1"></i>
+          <input type="date" name="end_date" placeholder="End Date" ng-model="end_date" class="searchinput3">
         </label>
-        <button class="button button-positive" ng-disabled="!searchForm.$valid" 
+        <button class="button button-small btneve btnevea" ng-disabled="!searchForm.$valid" 
           ng-click="filterEvents(start_date, end_date, searchTxt);">
           Search
         </button>

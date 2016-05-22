@@ -1,13 +1,14 @@
     <div class="bar bar-header header">
       <h1 class="title text-left" ui-sref="bookingSubmission({event_id: id, adult: adult, child: child, infant: infant})"><span><i class="icon icon-left ion-chevron-left"></i>
         <img src="img/logo1.png" alt="Logo" class="head-logo">
-        <span>Paypal Payment</span></span>
+        <span>Payment</span></span>
       </h1>
     </div>
 
     <div id="thirdpayment">
-      <h5>Payment</h5>
-
+      <div class="buy-ticket full-width">
+        Payment via PAYPAL or CARD
+      </div>
       <!--<div class="list card eventslst thrd">
 
           <h4>Choose Payment Type</h4>
@@ -44,7 +45,7 @@
 
       <div class="list card eventslst thrd">
 
-          <h4>PAYPAL</h4>
+          <!-- <h4>PAYPAL</h4> -->
           <form role="form" action="https://www.paypal.com/cgi-bin/webscr" name="paymentForm" novalidate>
             <input type="hidden" name="business" value="managingdirector@silverstarcaribbean.com">   
             <!-- Specify a Buy Now button. -->
@@ -88,7 +89,7 @@
                 <span ng-show="paymentForm.zip.$invalid">Zip code is required</span>
             </span>
 
-            <button type="submit" ng-disabled="!paymentForm.$valid" ng-click="addBooking()" class="button button-small btneve">COMPLETE PAYMENT</button>
+            <button type="submit" ng-disabled="!paymentForm.$valid" ng-click="addBooking()" class="button button-small btneve">MAKE PAYMENT</button>
           </form>
 
       </div>

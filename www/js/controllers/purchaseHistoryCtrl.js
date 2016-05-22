@@ -49,4 +49,5 @@ angular.module('eventsApp.controllers.purchaseHistoryCtrl', [])
 	 		$scope.noRecords = true;
 	 	}
 	});
+	
 }]);

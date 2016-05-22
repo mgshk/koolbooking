@@ -7,7 +7,9 @@
 
     <div class="phistory">
 
-      <h4>Purchase History</h4>
+      <div class="buy-ticket full-width">
+        Purchase History
+      </div>
 
       <h4 ng-if="noRecords">No Records found</h4>
 
@@ -45,7 +47,6 @@
         </div>
 
         <div class="card phist" ng-show="showToUsedTickets1">
-          to be used tickets tab
             <div class="item item-divider">
               {{userHistory.post_title}}
             </div>

@@ -23,7 +23,7 @@ h1{color: #fff;}
 .signup{padding: 2px 5px 5px;min-height: 24px;font-size: 20px;line-height: 10px;border-bottom: 1px solid #000;
 font-weight: 600;}
 .icon-left{color: #fff;font-size: 14px;}
-.login-container h6{color: #ababab;font-size: 24px;margin: 20px 0 20px 0px;text-transform: uppercase;}
+.login-container h6{color: #ababab;font-size: 24px;margin: 20px 0 10px 0px;text-transform: uppercase;}
 .ion-social-facebook{font-size: 24px;}
 .ion-social-googleplus{font-size: 24px;}
 .fb{position: relative;bottom: 2px;margin-left: 5px;}
@@ -121,14 +121,13 @@ font-weight: 600;}
 .tab14 a{color: #000;font-size: 13px !important;font-weight: 700;opacity: 0.3;border-bottom: 2px solid #b2b2b2;}
 .tab14 .icon{margin-bottom: 7px;}
 .adlt select{width: 100%;height: 26px;}
-#thirdpayment{margin-top: 50px;}
+#thirdpayment{margin-top: 44px;}
 .thrd{padding: 10px;}
 .thrd label{margin-right: 10px;}
 .payinput{    background: #efeef0 none repeat scroll 0 0;
     border: 1px solid #8c8a8a !important;
     border-radius: 3px;
     margin: 10px 0 10px 0;
-    text-indent: 11px;
     width: 100%;padding: 6px !important;}
     .payinputcvv{    background: #efeef0 none repeat scroll 0 0;
     border: 1px solid #8c8a8a !important;
@@ -138,7 +137,7 @@ font-weight: 600;}
     width: 50%;padding: 6px !important;}
 .thrd button{height: 40px;}
 
-.phistory{margin-top: 60px;}
+.phistory{margin-top: 44px;}
 .phistory h4{text-align: center;margin: -6px 0 15px 0;}
 .phist .item{padding: 10px;border-width: 1px;}
 .setem{float: right;font-size: 33px !important;position: relative;bottom: 6px;}
@@ -158,7 +157,13 @@ font-weight: 600;}
 }
 .checkpayment .list .item{background: #666666;color: #fff;}
 #tickets{padding-bottom: 30px;}
-.searchinput{height: 34px !important;}
+.fw{width: 100%;float: left;}
+.fw1{width: 49%;float: left;margin-right: 2%;}
+.fw2{width: 49%;float: left;}
+.searchheader{background: #3c3f3e;padding: 0 10px 10px 10px;}
+.searchinput1{height: 34px !important;width: 100%;}
+.searchinput2{height: 34px !important;width: 100%;padding-top: 0 !important;font-size: 14px !important;}
+.searchinput3{height: 34px !important;width: 100%;padding-top: 0 !important;font-size: 14px !important;}
 .lgout{color: rgb(72, 221, 201);font-size: 27px !important;}
 .ion-refresh{color: rgb(72, 221, 201) !important;}
 .setngicn{color: rgb(72, 221, 201) !important;font-size: 34px !important;}
@@ -171,12 +176,12 @@ font-weight: 600;}
     right: 1px;}
 .modal h1{text-align: left !important;}
 .modal .scroll-content{padding: 10px;}
-.loction{position: absolute;right: 10px;border: 2px solid #999999;border-radius: 50%;
+.loction{position: absolute;right: 10px;border: 2px solid #e5e5e5;border-radius: 50%;
     padding: 3px 7px;font-size: 20px;margin-top: -15px;color: #555555;}
 .bkbtn{background: #387ef5;font-size: 14px;color: #fff !important;text-transform: uppercase;padding: 0px 6px;
     float: right;min-height: 26px;}
-.detailscontent img{border-bottom: 3px solid #999999;}
-.detailscontent p{border-bottom: 1px solid #999999;padding:0 10px 10px 10px;}
+.detailscontent img{border-bottom: 3px solid #e5e5e5;}
+.detailscontent p{border-bottom: 1px solid #e5e5e5;padding:0 10px 10px 10px;}
 .pad-bot-20{padding-bottom: 18px !important;}
 .dte{position: relative;top: 3px;}
 .ion-android-share-alt{float: right;font-size: 24px;margin-top: 2px;}
@@ -201,3 +206,7 @@ font-weight: 600;}
 }
 .tab31{border-right: 1px solid #dddddd;border-bottom: 1px solid #dddddd;}
 .tab33{border-left: 1px solid #dddddd;border-bottom: 1px solid #dddddd;}
+.yb{border-bottom: 1px solid #e5e5e5;padding-bottom: 10px;}
+.yb1{border-bottom: 1px solid #e5e5e5;margin-bottom: 10px;}
+.btnevea{margin-left: 0 !important;margin-top: 10px;}
+.placeholder-icon{color: #48DDC9 !important;}
