@@ -71,7 +71,8 @@
   
   <div class="fullwidth text-center profile">
       <h1>
-        <i class="icon ion-person-stalker"></i>
+        <i ng-if="userInfo.image_url === ''" class="icon ion-person-stalker"></i>
+        <img ng-if="userInfo.image_url !== ''" ng-src="http://koolbooking.com/{{userInfo.image_url}}" alt="user image"/>
       </h1>
       <p ng-bind="userInfo.display_name"></p>
   </div>

@@ -3,8 +3,10 @@ angular.module('eventsApp.controllers.eventDetailsCtrl', [])
     
     if ($stateParams.event_id === "") {
         $state.go('home');
+        return;
     }
     
+    $scope.noRecords = false;
     $scope.logout = function(){
         window.localStorage.removeItem('userID');
         $ionicHistory.clearCache();
@@ -14,23 +16,29 @@ angular.module('eventsApp.controllers.eventDetailsCtrl', [])
 
     if(window.localStorage.getItem('userID') == null){
         $scope.isUserID = false;
-    }else{
+    } else {
         $scope.isUserID = true;
     }
 
-    $scope.showLoder = function() {
+    function showLoder() {
 	    $ionicLoading.show({
 	      template: '<ion-spinner icon="bubbles"></ion-spinner>'
 	    });
-	 };
-	$scope.hideLoder = function(){
-	    $ionicLoading.hide();
-	};
+	}
 
-	$scope.showLoder();
+	function hideLoder(){
+	    $ionicLoading.hide();
+	}
+
+	showLoder();
 
     eventsFactory.getEventDetails($stateParams.event_id).then(function (resp) {
-    	$scope.hideLoder();
-        $scope.event = resp.data[0];
+    	hideLoder();
+
+        if (resp.status === 0) {
+            $scope.noRecords = true;
+        } else {
+            $scope.event = resp.data[0];
+        }
     });
 }]);

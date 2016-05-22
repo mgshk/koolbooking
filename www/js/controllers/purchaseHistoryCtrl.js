@@ -1,11 +1,10 @@
 angular.module('eventsApp.controllers.purchaseHistoryCtrl', [])
 	.controller('purchaseHistoryCtrl', ['$scope', '$state', 'userFactory', '$ionicLoading', '$ionicHistory', function($scope, $state, userFactory, $ionicLoading, $ionicHistory) {
 	
-	if (!window.localStorage.getItem('userID')) {
-        $state.go('eventsList');
-    }
+	$scope.noRecords = false;
+    $scope.noCompleteRecords = false;
+    $scope.noPendingRecords = false;
 
-    $scope.noRecords = false;
     $scope.showUsedTickets1 = true;
 	$scope.showToUsedTickets1 = false;
 	$('.tab31').css('color', '#387ef5');
@@ -42,12 +41,34 @@ angular.module('eventsApp.controllers.purchaseHistoryCtrl', [])
 		$('.tab33').css('color', '#387ef5');
 	}
 
-	userFactory.getUserPurchaseHistory(window.localStorage.getItem('userID')).then(function (resp) {
-	 	$scope.hideLoder();
-	 	$scope.userHistories = resp.data;
-	 	if($scope.userHistories == null){
-	 		$scope.noRecords = true;
-	 	}
-	});
-	
+	if(window.localStorage.getItem('userID')) {
+		userFactory.getUserPurchaseHistory(window.localStorage.getItem('userID')).then(function (resp) {
+		 	$scope.hideLoder();
+		 	$scope.userPendingHistories = [];
+		 	$scope.userCompleteHistories = []; 
+		
+		 	if(resp.status === 0){
+		 		$scope.noRecords = true;
+		 	} else {
+		 		angular.forEach(resp.data, function (value) {
+		 			if(value.status === 'complete') {
+		 				$scope.userCompleteHistories.push(value);
+		 			} else {
+		 				$scope.userPendingHistories.push(value);
+		 			}
+		 		});
+
+		 		if ($scope.userCompleteHistories.length === 0) {
+		 			$scope.noCompleteRecords = true;
+		 		}
+
+		 		if ($scope.userPendingHistories.length === 0) {
+		 			$scope.noPendingRecords = true;
+		 		}
+		 	}
+		});
+	} else {
+		$scope.hideLoder();
+		$scope.noRecords = true;
+	}	
 }]);
