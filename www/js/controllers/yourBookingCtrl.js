@@ -19,7 +19,7 @@ angular.module('eventsApp.controllers.yourBookingCtrl', [])
     }
 
     $scope.no_infant = 0;
-    $scope.no_child = 0
+    $scope.no_child = 0;
 
     function showLoader() {
 	    $ionicLoading.show({
