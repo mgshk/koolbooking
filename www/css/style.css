@@ -53,9 +53,9 @@ font-weight: 600;}
 .lc1{font-size: 20px !important;}
 .profile-circle{width: 100%;float: left;}
 .profile{background: #3c3f3e;padding: 20px 0;}
-.profile p{font-size: 20px;color: #fff;}
+.profile p{font-size: 20px;color: #fff;margin-bottom: 0;}
 .ion-person-stalker{font-size: 60px;}
-.pur{background: none;border: 0;border-bottom: 1px solid #999999;}
+.pur{background: none;border: 0;border-bottom: 1px solid #e5e5e5;}
 .bnone{background: none;}
 .venue span {font-size: 16px;color: #e43b62;}
 .detailscontent{margin-top: 44px;padding: 0px;}
@@ -111,8 +111,8 @@ font-weight: 600;}
 .tab12 a{color: #000;font-size: 14px !important;font-weight: 700;}
 #comingsoon h4{text-align: center;}
 #booksub{margin-top: 55px;}
-#booksub h4{padding: 0 10px 10px 10px;border-bottom: 1px solid #999999;}
-#booksub p{padding: 0 10px 10px 10px;border-bottom: 1px solid #999999;}
+#booksub h4{padding: 0 10px 10px 10px;border-bottom: 1px solid #e5e5e5;}
+#booksub p{padding: 0 10px 10px 10px;border-bottom: 1px solid #e5e5e5;}
 .pull-right{float: right;}
 .tab13{position: relative;height: 60px;padding:0;bottom: 5px;}
 .tab13 a{color: #000;font-size: 13px !important;font-weight: 700;}
@@ -124,8 +124,8 @@ font-weight: 600;}
 #thirdpayment{margin-top: 44px;}
 .thrd{padding: 10px;}
 .thrd label{margin-right: 10px;}
-.payinput{    background: #efeef0 none repeat scroll 0 0;
-    border: 1px solid #8c8a8a !important;
+.payinput{background: #ffffff none repeat scroll 0 0;
+    border: 1px solid #e5e5e5 !important;
     border-radius: 3px;
     margin: 10px 0 10px 0;
     width: 100%;padding: 6px !important;}
@@ -138,11 +138,11 @@ font-weight: 600;}
 .thrd button{height: 40px;}
 
 .phistory{margin-top: 44px;}
-.phistory h4{text-align: center;margin: -6px 0 15px 0;}
+.phistory h4{text-align: center;margin: 10px 0 15px 0;}
 .phist .item{padding: 10px;border-width: 1px;}
 .setem{float: right;font-size: 33px !important;position: relative;bottom: 6px;}
 .setlist .item{background: none;border-top: none;border-left: none;border-right: none;}
-.setng{margin-top: 50px;}
+.setng{margin-top: 44px;}
 .pad-bot{padding-bottom: 0 !important;}
 .ion-gear-b{z-index: 1000;color: #fff;font-size: 26px;right: 10px;position: absolute;top: 8px;}
 .lodr{font-size: 40px;color: #fff;}
@@ -210,3 +210,4 @@ font-weight: 600;}
 .yb1{border-bottom: 1px solid #e5e5e5;margin-bottom: 10px;}
 .btnevea{margin-left: 0 !important;margin-top: 10px;}
 .placeholder-icon{color: #48DDC9 !important;}
+.profileimg{max-width: 90%;height: auto;display: table;margin: auto;}

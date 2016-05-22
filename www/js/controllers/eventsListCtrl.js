@@ -121,11 +121,35 @@ angular.module('eventsApp.controllers.eventsListCtrl', ['youtube-embed', 'angula
     });
     
     eventsFactory.getFeaturedEvents().then(function (resp) {
-        $scope.featuredEvents = resp.data;
+    	$scope.featuredEvents = [];
+    	if(resp.status === 0){
+    		$scope.noFeaturedEvents = true;
+    	}else{
+    		angular.forEach(resp.data,function(value){
+    			if(angular.isDefined(value.adult_price)){
+    				$scope.featuredEvents.push(value);
+    			}
+    		});
+    		if($scope.featuredEvents.length === 0){
+    			$scope.noFeaturedEvents = true;
+    		}
+    	}
     });
     
     eventsFactory.getTopDealsEvents().then(function (resp) {
-        $scope.topDealsEvents = resp.data; 
+        $scope.topDealsEvents = [];
+    	if(resp.status === 0){
+    		$scope.noTopDealsEvents = true;
+    	}else{
+    		angular.forEach(resp.data,function(value){
+    			if(angular.isDefined(value.adult_price)){
+    				$scope.topDealsEvents.push(value);
+    			}
+    		});
+    		if($scope.topDealsEvents.length === 0){
+    			$scope.noTopDealsEvents = true;
+    		}
+    	} 
     });
 	
 	if (window.localStorage.getItem('userID')) {

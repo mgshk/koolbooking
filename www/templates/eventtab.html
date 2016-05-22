@@ -6,6 +6,7 @@
 </div>
 
 <div id="event">
+
   <div class="buy-ticket full-width top-0">
         Events
   </div>
@@ -30,19 +31,25 @@
       </form>
     </div>
 
-    <h4 ng-if="noRecords">No Records found</h4>
+    <h4 ng-if="noRecords">No Records Found</h4>
+
     <div class="list card eventslst" ng-if="!noRecords" ng-repeat="event in eventsList">
-        <div class="item item-image">
-          <img class="full-image" ng-src="{{event.image_url}}">
-        </div>
-        <div class="row">
-          <div class="col col-75">
-            <h5 class="assertive" ng-bind="event.post_title"></h5>
-            <p>Events</p>
+       
+       <div ng-if="event.adult_price">
+          <div class="item item-image">
+            <img class="full-image" ng-src="{{event.image_url}}">
           </div>
-          <div class="col">
-            <button class="button button-small btneve" ui-sref="eventDetails({event_id: event.id})">Book</button>
+          <div class="row">
+            <div class="col col-75">
+              <h5 class="assertive" ng-bind="event.post_title"></h5>
+              <p>Events</p>
+            </div>
+            <div class="col">
+              <button class="button button-small btneve" ui-sref="eventDetails({event_id: event.id})">Book</button>
+            </div>
           </div>
         </div>
+
     </div>
+
   </div>

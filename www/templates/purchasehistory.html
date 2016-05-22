@@ -11,7 +11,7 @@
         Purchase History
       </div>
 
-      <h4 ng-if="noRecords">No Records found</h4>
+      <h4 ng-if="noRecords">No Records Found</h4>
 
       <div ng-if="!noRecords">
 
@@ -25,7 +25,7 @@
         </div>
 
         <div>
-          <h4 ng-if="noCompleteRecords">No Records found</h4>
+          <h4 ng-if="noCompleteRecords">No Records Found</h4>
 
           <div class="card phist" ng-if="!noCompleteRecords" ng-show="showUsedTickets1" 
             ng-repeat="userHistory in userCompleteHistories">
@@ -52,7 +52,7 @@
         </div>
 
         <div>
-          <h4 ng-if="noPendingRecords">No Records found</h4>
+          <h4 ng-if="noPendingRecords">No Records Found</h4>
 
           <div class="card phist" ng-if="!noPendingRecords" ng-show="showToUsedTickets1" 
             ng-repeat="userHistory in userPendingHistories">

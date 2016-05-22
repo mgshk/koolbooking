@@ -2,14 +2,14 @@
   <h1 class="title text-left" ui-sref="eventsList"><span><i class="icon icon-left ion-chevron-left"></i>
     <img src="img/logo1.png" alt="Logo" class="head-logo">
     <span ng-if="!noRecords">{{event.post_title}}</span>
-    <span ng-if="noRecords">No Records found</span></span>
+    <span ng-if="noRecords">No Records Found</span></span>
   </span>
     <i class="icon icon-right ion-android-share-alt"></i>
   </h1>     
 </div>
 
 <div class="detailscontent">
-    <h4 ng-if="noRecords">No Records found</h4>
+    <h4 ng-if="noRecords">No Records Found</h4>
 
     <div ng-if="!noRecords">
       <img class="full-image" ng-src="{{event.image_url}}">

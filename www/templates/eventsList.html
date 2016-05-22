@@ -72,7 +72,7 @@
   <div class="fullwidth text-center profile">
       <h1>
         <i ng-if="userInfo.image_url === ''" class="icon ion-person-stalker"></i>
-        <img ng-if="userInfo.image_url !== ''" ng-src="http://koolbooking.com/{{userInfo.image_url}}" alt="user image"/>
+        <img ng-if="userInfo.image_url !== ''" ng-src="http://koolbooking.com/{{userInfo.image_url}}" alt="user image" class="profileimg"/>
       </h1>
       <p ng-bind="userInfo.display_name"></p>
   </div>
@@ -107,7 +107,9 @@
 
   <div id="recommended" ng-show="recommended">
 
-    <div class="list card eventslst" ng-repeat="featuredEvent in featuredEvents">
+    <h4 ng-if="noFeaturedEvents" class="text-center">No Records Found</h4>
+
+    <div class="list card eventslst" ng-if="!noFeaturedEvents" ng-repeat="featuredEvent in featuredEvents">
       <div class="item item-image">
         <img class="full-image" ng-src="{{featuredEvent.image_url}}">
       </div>
@@ -126,7 +128,9 @@
 
   <div id="trending" ng-show="trending">
 
-    <div class="list card eventslst" ng-repeat="topDealsEvent in topDealsEvents">
+    <h4 ng-if="noTopDealsEvents" class="text-center">No Records Found</h4>
+
+    <div class="list card eventslst" ng-if="!noTopDealsEvents" ng-repeat="topDealsEvent in topDealsEvents">
       <div class="item item-image">
         <img class="full-image" ng-src="{{topDealsEvent.image_url}}">
       </div>
