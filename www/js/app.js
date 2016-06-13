@@ -35,7 +35,8 @@ angular.module('eventsApp.controllers', [
   'eventsApp.controllers.settingCtrl',
   'eventsApp.controllers.allCtrl',
   'eventsApp.controllers.eventTabCtrl',
-  'eventsApp.controllers.activityCtrl'
+  'eventsApp.controllers.activityCtrl',
+  'eventsApp.controllers.activityDetailsCtrl'
 ]);
 
 // Factories

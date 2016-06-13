@@ -1,0 +1,35 @@
+<div class="bar bar-header header">
+  <h1 class="title text-left" ui-sref="eventsList"><span><i class="icon icon-left ion-chevron-left"></i>
+    <img src="img/logo1.png" alt="Logo" class="head-logo">
+    <span ng-if="!noRecords">{{activity.post_title}}</span>
+    <span ng-if="noRecords">No Records Found</span></span>
+  </span>
+    <i class="icon icon-right ion-android-share-alt"></i>
+  </h1>     
+</div>
+
+<div class="detailscontent">
+    <h4 ng-if="noRecords">No Records Found</h4>
+
+    <div ng-if="!noRecords">
+      <img class="full-image" ng-src="{{activity.image_url}}">
+      <p class="padright">
+        <span><b>{{activity.post_title}}</b></span>, <br>
+        {{activity.address}}
+        <i class="icon ion-ios-location loction"></i>
+      </p>
+      <p class="pad-bot-20">
+        <span class="dte">
+          {{activity.event_date | date: 'dd' }} {{activity.event_date | date: 'MMMM' }} - {{activity.event_date | date: 'EEEE' }} {{activity.event_time}}
+        </span>
+        <button class="button button-small bkbtn" ui-sref="yourBooking({event_id: activity.id})">
+          <span>Book</span>
+        </button>
+      </p>
+      <div class="venue">
+          <p><span><b>SYNOPSIS</b></span><br>
+          <span ng-bind-html="activity.post_content" class="conte"></span>
+          </p>
+      </div>
+    </div>
+</div>

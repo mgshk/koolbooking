@@ -70,6 +70,11 @@ angular.module('eventsApp.config', ['ui.router']).config(function($stateProvider
       url: '/activity',
       controller: 'activityCtrl',
       templateUrl: 'templates/activity.html'
+  })
+  .state('activityDetails', {
+      url: '/activityDetails/:event_id',
+      controller: 'activityDetailsCtrl',
+      templateUrl: 'templates/activityDetails.html'
   });
 
   // if none of the above states are matched, use this as the fallback
