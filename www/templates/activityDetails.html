@@ -22,7 +22,7 @@
         <span class="dte">
           {{activity.event_date | date: 'dd' }} {{activity.event_date | date: 'MMMM' }} - {{activity.event_date | date: 'EEEE' }} {{activity.event_time}}
         </span>
-        <button class="button button-small bkbtn" ui-sref="yourBooking({event_id: activity.id})">
+        <button class="button button-small bkbtn" ui-sref="yourBooking({event_id: activity.id, type: 'activity'})">
           <span>Book</span>
         </button>
       </p>

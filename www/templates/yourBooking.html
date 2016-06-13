@@ -89,7 +89,7 @@
 	</div>
 
    	<p>
-      <button class="button button-block loginbtn lgbtn1" ng-disabled="!myForm.$valid" ui-sref="bookingSubmission({event_id: id, adult: no_adult, child: no_child, infant: no_infant})">
+      <button class="button button-block loginbtn lgbtn1" ng-disabled="!myForm.$valid" ui-sref="bookingSubmission({event_id: id, type: event.type, adult: no_adult, child: no_child, infant: no_infant})">
         <span>Review Order</span>
       </button>
   	</p>

@@ -35,9 +35,8 @@
 
     <h4 ng-if="noRecords">No Records Found</h4>
 
-    <div class="list card eventslst" ng-if="!noRecords" ng-repeat="event in eventsList">
-       
-       <div ng-if="event.adult_price">
+    <div ng-if="!noRecords" ng-repeat="event in eventsList">     
+       <div class="list card eventslst" ng-if="event.adult_price">
           <div class="item item-image">
             <img class="full-image" ng-src="{{event.image_url}}">
           </div>
