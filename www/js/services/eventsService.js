@@ -18,9 +18,21 @@ angular.module('eventsApp.service.eventsService', [])
 			return resp;
 	    });		
 	}
+
+	this.getFeaturedActivities = function() {
+	    return $http.get('http://koolbooking.com/android_app/activity_getfeaturedlist').then(function (resp) {
+			return resp;
+	    });		
+	}
 	
 	this.getTopDealsEvents = function() {
 	    return $http.get('http://koolbooking.com/android_app/gettopdealseventlist').then(function (resp) {
+			return resp;
+	    });		
+	}
+
+	this.getTopDealsActivities = function() {
+	    return $http.get('http://koolbooking.com/android_app/activity_gettopdealslist').then(function (resp) {
 			return resp;
 	    });		
 	}

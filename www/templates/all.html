@@ -1,7 +1,7 @@
 <div class="bar bar-header header">
     <h1 class="title text-left" ui-sref="eventsList"><span><i class="icon icon-left ion-chevron-left"></i>
         <img src="img/logo1.png" alt="Logo" class="head-logo">
-        <span>Koolbooking Events</span></span>
+        <span>Koolbooking Events & Activities</span></span>
     </h1>
 </div>
 
@@ -9,14 +9,14 @@
     <h4 ng-if="noRecords">No Records Found</h4>
 
      <div ng-if="!noRecords" ng-repeat="event in eventsList">    
-       <div class="list card eventslst" ng-if="event.adult_price">
+       <div class="list card eventslst">
           <div class="item item-image">
             <img class="full-image" ng-src="{{event.image_url}}">
           </div>
           <div class="row">
             <div class="col col-75">
               <h5 class="assertive" ng-bind="event.post_title"></h5>
-              <p>Events</p>
+              <p>Event</p>
             </div>
             <div class="col">
               <button class="button button-small btneve" ui-sref="eventDetails({event_id: event.id})">Book</button>
@@ -25,8 +25,8 @@
         </div>
     </div>
 
-    <div ng-if="activitiesList" ng-repeat="activity in activitiesList">
-      <div class="list card eventslst" ng-if="activity.adult_price">
+    <div ng-if="!noRecords" ng-repeat="activity in activitiesList">
+      <div class="list card eventslst">
         <div class="item item-image">
           <img class="full-image" ng-src="{{activity.image_url}}">
         </div>

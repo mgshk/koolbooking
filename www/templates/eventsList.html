@@ -104,47 +104,78 @@
 </div>
 
 <div id="discover" ng-show="discover">
-
   <div id="recommended" ng-show="recommended">
-
     <h4 ng-if="noFeaturedEvents" class="text-center">No Records Found</h4>
-
-    <div class="list card eventslst" ng-if="!noFeaturedEvents" ng-repeat="featuredEvent in featuredEvents">
-      <div class="item item-image">
-        <img class="full-image" ng-src="{{featuredEvent.image_url}}">
-      </div>
-      <div class="row">
-        <div class="col col-75">
-          <h5 class="assertive" ng-bind="featuredEvent.post_title"></h5>
-          <p>Events</p>
+    <div ng-if="!noFeaturedEvents" ng-repeat="featuredEvent in featuredEvents">
+      <div class="list card eventslst" ng-if="featuredEvent.adult_price">
+        <div class="item item-image">
+          <img class="full-image" ng-src="{{featuredEvent.image_url}}">
         </div>
-        <div class="col">
-          <button class="button button-small btneve" ui-sref="eventDetails({event_id: featuredEvent.id})">Book</button>
+        <div class="row">
+          <div class="col col-75">
+            <h5 class="assertive" ng-bind="featuredEvent.post_title"></h5>
+            <p>Event</p>
+          </div>
+          <div class="col">
+            <button class="button button-small btneve" ui-sref="eventDetails({event_id: featuredEvent.id})">Book</button>
+          </div>
         </div>
       </div>
     </div>
 
+    <div ng-if="!noFeaturedEvents" ng-repeat="featuredActivity in featuredActivities">
+      <div class="list card eventslst" ng-if="featuredActivity.adult_price">
+        <div class="item item-image">
+          <img class="full-image" ng-src="{{featuredActivity.image_url}}">
+        </div>
+        <div class="row">
+          <div class="col col-75">
+            <h5 class="assertive" ng-bind="v.post_title"></h5>
+            <p>Activity</p>
+          </div>
+          <div class="col">
+            <button class="button button-small btneve" ui-sref="activityDetails({event_id: featuredActivitys.id})">Book</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div id="trending" ng-show="trending">
-
     <h4 ng-if="noTopDealsEvents" class="text-center">No Records Found</h4>
-
-    <div class="list card eventslst" ng-if="!noTopDealsEvents" ng-repeat="topDealsEvent in topDealsEvents">
-      <div class="item item-image">
-        <img class="full-image" ng-src="{{topDealsEvent.image_url}}">
-      </div>
-      <div class="row">
-        <div class="col col-75">
-          <h5 class="assertive" ng-bind="topDealsEvent.post_title"></h5>
-          <p>Events</p>
+    <div  ng-if="!noTopDealsEvents" ng-repeat="topDealsEvent in topDealsEvents">
+      <div class="list card eventslst" ng-if="topDealsEvent.adult_price">
+        <div class="item item-image">
+          <img class="full-image" ng-src="{{topDealsEvent.image_url}}">
         </div>
-        <div class="col">
-          <button class="button button-small btneve" ui-sref="eventDetails({event_id: topDealsEvent.id})">Book</button>
+        <div class="row">
+          <div class="col col-75">
+            <h5 class="assertive" ng-bind="topDealsEvent.post_title"></h5>
+            <p>Event</p>
+          </div>
+          <div class="col">
+            <button class="button button-small btneve" ui-sref="eventDetails({event_id: topDealsEvent.id})">Book</button>
+          </div>
         </div>
       </div>
     </div>
-    
+
+    <div  ng-if="!noTopDealsEvents" ng-repeat="topDealsActivity in topDealsActivities">
+      <div class="list card eventslst" ng-if="topDealsActivity.adult_price">
+        <div class="item item-image">
+          <img class="full-image" ng-src="{{topDealsActivity.image_url}}">
+        </div>
+        <div class="row">
+          <div class="col col-75">
+            <h5 class="assertive" ng-bind="v.post_title"></h5>
+            <p>Activity</p>
+          </div>
+          <div class="col">
+            <button class="button button-small btneve" ui-sref="activityDetails({event_id: topDealsActivity.id})">Book</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div id="comingsoon" ng-show="comingsoon">

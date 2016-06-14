@@ -9,7 +9,9 @@ angular.module('eventsApp.factory.eventsFactory', [])
         getEventDetails: getEventDetails,
         getFilterEvents: getFilterEvents,
         getVideoUrl: getVideoUrl,
-        getActivityDetails: getActivityDetails
+        getActivityDetails: getActivityDetails,
+        getFeaturedActivities: getFeaturedActivities,
+        getTopDealsActivities: getTopDealsActivities
     };
     
     function getEventsList () {
@@ -41,10 +43,30 @@ angular.module('eventsApp.factory.eventsFactory', [])
         });
         return deferred.promise;
     }
+
+    function getFeaturedActivities () {
+        var deferred = $q.defer();
+        eventsService.getFeaturedActivities().then(function (resp) {
+            deferred.resolve(resp.data);
+        }, function(error) {
+            console.log(error);
+        });
+        return deferred.promise;
+    }
     
     function getTopDealsEvents () {
         var deferred = $q.defer();
         eventsService.getTopDealsEvents().then(function (resp) {
+            deferred.resolve(resp.data);
+        }, function(error) {
+            console.log(error);
+        });
+        return deferred.promise;
+    }
+
+    function getTopDealsActivities () {
+        var deferred = $q.defer();
+        eventsService.getTopDealsActivities().then(function (resp) {
             deferred.resolve(resp.data);
         }, function(error) {
             console.log(error);
