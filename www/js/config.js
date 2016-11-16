@@ -68,17 +68,17 @@ angular.module('eventsApp.config', ['ui.router']).config(function($stateProvider
       templateUrl: 'templates/eventDetails.html'
   })
   .state('bookingSubmission', {
-      url: '/bookingSubmission/:event_id/:adult/:child/:infant',
+      url: '/bookingSubmission/:event_id/:type/:adult/:child/:infant',
       controller: 'bookingSubmissionCtrl',
       templateUrl: 'templates/bookingSubmission.html'
   })
   .state('yourBooking', {
-      url: '/yourBooking/:event_id',
+      url: '/yourBooking/:event_id/:type',
       controller: 'yourBookingCtrl',
       templateUrl: 'templates/yourBooking.html'
   })
   .state('payment', {
-      url: '/payment/:event_id',
+      url: '/payment/:event_id/:type',
       controller: 'paymentCtrl',
       templateUrl: 'templates/payment.html'
   })
@@ -106,6 +106,11 @@ angular.module('eventsApp.config', ['ui.router']).config(function($stateProvider
       url: '/activity',
       controller: 'activityCtrl',
       templateUrl: 'templates/activity.html'
+  })
+  .state('activityDetails', {
+      url: '/activityDetails/:activity_id',
+      controller: 'activityDetailsCtrl',
+      templateUrl: 'templates/activityDetails.html'
   });
 
   // if none of the above states are matched, use this as the fallback

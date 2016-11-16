@@ -8,6 +8,7 @@ angular.module('eventsApp.controllers.paymentCtrl', [])
 	    }
 
 	    $scope.id = $stateParams.event_id;
+	    $scope.type = $stateParams.type;
 
 		if(window.localStorage.getItem('adult')) {
 			$scope.adult = window.localStorage.getItem('adult');
@@ -75,6 +76,18 @@ angular.module('eventsApp.controllers.paymentCtrl', [])
 	    	hideLoder();
 	        event_details = resp.data[0];
 	    });
+
+	    if ($stateParams.type === 'event') {
+			eventsFactory.getEventDetails($stateParams.event_id).then(function (resp) {
+		    	hideLoder();
+	        	event_details = resp.data[0];
+		    });
+		} else {
+			eventsFactory.getActivityDetails($stateParams.event_id).then(function (resp) {
+		    	hideLoder();
+	        	event_details = resp.data[0];
+		    });
+		}
 
 		$scope.addBooking = function() {
 			showLoder();
