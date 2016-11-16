@@ -9,7 +9,7 @@ angular.module('eventsApp.controllers.loginCtrl', [])
 
     function showLoder() {
 	    $ionicLoading.show({
-	      template: '<ion-spinner icon="bubbles"></ion-spinner>'
+	      template: '<ion-spinner icon="circles"></ion-spinner>'
 	    });
 	 };
 

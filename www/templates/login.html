@@ -1,65 +1,63 @@
-<div class="bar bar-header header">
-    <h1 class="title"><img src="img/logo1.png" alt="Logo" class="head-logo"> <span>Koolbooking</span></h1>
-</div>
+<ion-view>
+    <ion-content>
 
-<div class="login-container">
-	<!-- <p ng-if="errorMsg" ng-bind="errorMsg" class="ermsg"></p> -->
-	<form role="form" name="loginForm" novalidate>
-		<div class="list list-inset fullwidth">
-			<label class="item item-input">
-				<i class="icon ion-ios-email placeholder-icon"></i>
-			    <input type="email" name="user_email" placeholder="Email Address" ng-model="user_email" autocomplete="off" required>
-			</label>
-			<span style="color:red" ng-show="loginForm.user_email.$dirty && loginForm.user_email.$invalid">
-                <span ng-show="loginForm.user_email.$invalid">Invalid email address.</span>
-            </span>
-			<label class="item item-input">
-				<i class="icon ion-locked placeholder-icon"></i>
-			    <input type="password" name="user_pass" placeholder="Password" ng-model="user_pass" autocomplete="off" required>
-			</label>
-			<span style="color:red" ng-show="loginForm.user_pass.$dirty && loginForm.user_pass.$invalid">
-                <span ng-show="loginForm.user_pass.$error.required">Password is required.</span>
-            </span>
+    	<style type="text/css">
+    		.scroll{transform:none !important;}
+    	</style>
+
+    	<div class="bar bar-header header">
+		    <h1 class="title">
+		    	<img src="img/backbutton.png" alt="Logo" class="head-logo" ui-sref="home"> 
+		    	<span>login</span></h1>
 		</div>
 
-		<button class="button button-block loginbtn lgbtn" ng-disabled="!loginForm.$valid" ng-click="login();">
-		  <span>Sign in</span>
-		</button>
-	</form>
+		<div class="login-container">
+			<!-- <p ng-if="errorMsg" ng-bind="errorMsg" class="ermsg"></p> -->
+			<form role="form" name="loginForm" novalidate>
+				<div class="list loginForm">
+					<label class="item item-input loginitem1">
+					    <input type="email" name="user_email" placeholder="Email" ng-model="user_email" autocomplete="off" required class="inputemail">
+					</label>
+					<span class="errorstyle" ng-show="loginForm.user_email.$dirty && loginForm.user_email.$invalid">
+		                <span ng-show="loginForm.user_email.$invalid">Invalid email address.</span>
+		            </span>
+					<label class="item item-input loginitem2">
+					    <input type="password" name="user_pass" placeholder="Password" ng-model="user_pass" autocomplete="off" required class="inputpassword">
+					</label>
+					<span style="color:red" ng-show="loginForm.user_pass.$dirty && loginForm.user_pass.$invalid">
+		                <span ng-show="loginForm.user_pass.$error.required">Password is required.</span>
+		            </span>
+				</div>
 
-	<p align="center" ui-sref="forgotPassword" class="fw">Forgot Password?</p>
+				<button class="button button-block loginbtn lgbtn" ng-disabled="!loginForm.$valid" ng-click="login();">
+				  <span>Sign in</span>
+				</button>
+			</form>
 
-	<p align="center" class="fw">Don't have account? 
-		<span class="signup" ui-sref="signup">
-		  Sign up
-		</span>
-	</p>
+			<p align="center" ui-sref="forgotPassword" class="fw">Forgot Password?</p>
 
-	<h6 align="center">or</h6>
+			<p align="center" class="fw">Don't have account? 
+				<span class="signup" ui-sref="signup">
+				  Sign up
+				</span>
+			</p>
 
-</div>
+		</div>
 
-<button class="button button-block facebk" ng-click="fbLogin();">
-  <i class="ion-social-facebook"></i> <span class="fb">Sign in with Facebook</span>
-</button>
+		<p align="center" class="copyright" ng-click="openModal()">I agree to the Terms & Conditions & Privacy Policy<i class="icon ion-help-circled"></i></p>
 
-<button class="button button-block gogle" ng-click="googleLogin();">
-  <i class="ion-social-googleplus"></i> <span class="fb">Sign in with Google</span>
-</button>
+			<span class="skiplogin" ui-sref="eventsList">skip login</span>
 
-<p align="center" class="copyright" ng-click="openModal()">I agree to the Terms & Conditions & Privacy Policy<i class="icon ion-help-circled"></i></p>
+		<script id="terms.html" type="text/ng-template">
+		  <ion-modal-view>
+		    <ion-header-bar>
+		      <h1 class="title">Terms & Conditions & Privacy Policy <i class="icon ion-close-circled" ng-click="closeModal()"></i></h1>
+		    </ion-header-bar>
+		    <ion-content>
+		      <p>Hello! sample terms and conditions<p>
+		    </ion-content>
+		  </ion-modal-view>
+		</script>
 
-<button class="button button-block gogle" id="skipbtn" ui-sref="eventsList">
-	<span class="fb">Skip Login</span>
-</button>
-
-<script id="terms.html" type="text/ng-template">
-  <ion-modal-view>
-    <ion-header-bar>
-      <h1 class="title">Terms & Conditions & Privacy Policy <i class="icon ion-close-circled" ng-click="closeModal()"></i></h1>
-    </ion-header-bar>
-    <ion-content>
-      <p>Hello! sample terms and conditions<p>
-    </ion-content>
-  </ion-modal-view>
-</script>
+	</ion-content>
+</ion-view>

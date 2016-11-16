@@ -7522,7 +7522,7 @@ textarea {
     -moz-appearance: none;
     appearance: none;
     margin: 0;
-    padding-right: 24px;
+    padding-right: 0px;
     background-color: transparent; }
   .item-input .button .icon {
     -webkit-box-flex: 0;

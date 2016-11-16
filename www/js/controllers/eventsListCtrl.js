@@ -1,17 +1,5 @@
-angular.module('eventsApp.controllers.eventsListCtrl', ['youtube-embed', 'angular-flexslider'])
+angular.module('eventsApp.controllers.eventsListCtrl', [])
 	.controller('eventsListCtrl', ['$scope', '$state', 'eventsFactory', 'userFactory','$ionicHistory', '$sce', function($scope, $state, eventsFactory, userFactory, $ionicHistory, $sce) {
-
-	$scope.showcase = true;
-	$scope.tickets = false;
-	$scope.you = false;
-	$scope.discover = false;
-	$scope.trending = false;
-	$scope.comingsoon = false;
-	var bestPlayer = null;
-	$('.tab1').css('border-bottom', 'solid 4px #387ef5');
-	$('.tab2').css('border-bottom', 'solid 0px #387ef5');
-	$('.tab3').css('border-bottom', 'solid 0px #387ef5');
-	$('.tab4').css('border-bottom', 'solid 0px #387ef5');
 	
 	$scope.trustSrc = function(src) {
 		return $sce.trustAsResourceUrl(src);
@@ -31,126 +19,6 @@ angular.module('eventsApp.controllers.eventsListCtrl', ['youtube-embed', 'angula
         $scope.isUserID = true;
         $scope.isLogin = false;
     }
-
-	$scope.showCase = function(){
-		$scope.showcase = true;
-		$scope.tickets = false;
-		$scope.you = false;
-		$scope.discover = false;
-		$('.tab1').css('border-bottom', 'solid 4px #387ef5');
-		$('.tab2').css('border-bottom', 'solid 0px #387ef5');
-		$('.tab3').css('border-bottom', 'solid 0px #387ef5');
-		$('.tab4').css('border-bottom', 'solid 0px #387ef5');
-	}
-
-	$scope.showTickets = function(){
-		$scope.showcase = false;
-		$scope.tickets = true;
-		$scope.you = false;
-		$scope.discover = false;
-		$('.tab1').css('border-bottom', 'solid 0px #387ef5');
-		$('.tab2').css('border-bottom', 'solid 4px #387ef5');
-		$('.tab3').css('border-bottom', 'solid 0px #387ef5');
-		$('.tab4').css('border-bottom', 'solid 0px #387ef5');
-
-		if(bestPlayer)
-			bestPlayer.stopVideo();
-	}
-
-	$scope.showYou = function(){
-		$scope.showcase = false;
-		$scope.tickets = false;
-		$scope.you = true;
-		$scope.discover = false;
-		$('.tab1').css('border-bottom', 'solid 0px #387ef5');
-		$('.tab2').css('border-bottom', 'solid 0px #387ef5');
-		$('.tab3').css('border-bottom', 'solid 4px #387ef5');
-		$('.tab4').css('border-bottom', 'solid 0px #387ef5');
-
-		if(bestPlayer)
-			bestPlayer.stopVideo();
-	}
-
-	$scope.showDiscover = function(){
-		$scope.showcase = false;
-		$scope.tickets = false;
-		$scope.you = false;
-		$scope.discover = true;
-		$scope.recommended = true;
-		$scope.trending = false;
-		$scope.comingsoon = false;
-		$('.tab1').css('border-bottom', 'solid 0px #387ef5');
-		$('.tab2').css('border-bottom', 'solid 0px #387ef5');
-		$('.tab3').css('border-bottom', 'solid 0px #387ef5');
-		$('.tab4').css('border-bottom', 'solid 4px #387ef5');
-		$('.tab5').css('color', '#387ef5');
-
-		if(bestPlayer)
-			bestPlayer.stopVideo();
-	}
-
-	$scope.showRecommened = function(){
-		$scope.recommended = true;
-		$scope.trending = false;
-		$scope.comingsoon = false;
-		$('.tab5').css('color', '#387ef5');
-		$('.tab6').css('color', '#000000');
-		$('.tab7').css('color', '#000000');
-	}
-
-	$scope.showTrending = function(){
-		$scope.recommended = false;
-		$scope.trending = true;
-		$scope.comingsoon = false;
-		$('.tab5').css('color', '#000000');
-		$('.tab6').css('color', '#387ef5');
-		$('.tab7').css('color', '#000000');
-	}
-
-	$scope.showComingsoon = function(){
-		$scope.recommended = false;
-		$scope.trending = false;
-		$scope.comingsoon = true;
-		$('.tab5').css('color', '#000000');
-		$('.tab6').css('color', '#000000');
-		$('.tab7').css('color', '#387ef5');
-	}
-
-	eventsFactory.getVideoUrl().then(function (resp) {
-        $scope.videoUrls = resp.app_youtube_url;
-    });
-    
-    eventsFactory.getFeaturedEvents().then(function (resp) {
-    	$scope.featuredEvents = [];
-    	if(resp.status === 0){
-    		$scope.noFeaturedEvents = true;
-    	}else{
-    		angular.forEach(resp.data,function(value){
-    			if(angular.isDefined(value.adult_price)){
-    				$scope.featuredEvents.push(value);
-    			}
-    		});
-    		if($scope.featuredEvents.length === 0){
-    			$scope.noFeaturedEvents = true;
-    		}
-    	}
-    });
-    
-    eventsFactory.getTopDealsEvents().then(function (resp) {
-        $scope.topDealsEvents = [];
-    	if(resp.status === 0){
-    		$scope.noTopDealsEvents = true;
-    	}else{
-    		angular.forEach(resp.data,function(value){
-    			if(angular.isDefined(value.adult_price)){
-    				$scope.topDealsEvents.push(value);
-    			}
-    		});
-    		if($scope.topDealsEvents.length === 0){
-    			$scope.noTopDealsEvents = true;
-    		}
-    	} 
-    });
 	
 	if (window.localStorage.getItem('userID')) {
 		userFactory.getUserDetails(window.localStorage.getItem('userID')).then(function (resp) {
@@ -158,11 +26,4 @@ angular.module('eventsApp.controllers.eventsListCtrl', ['youtube-embed', 'angula
 		});
     }
 
-    $scope.$on('youtube.player.playing', function ($event, player) {
-	    bestPlayer = player;
-	});
-
-	$scope.$on('youtube.player.ended', function ($event, player) {
-	    bestPlayer = '';
-	});
 }]);

@@ -59,7 +59,7 @@ angular.module('eventsApp.controllers.paymentCtrl', [])
 
 		function showLoder() {
 		    $ionicLoading.show({
-		      template: '<ion-spinner icon="bubbles"></ion-spinner>'
+		      template: '<ion-spinner icon="circles"></ion-spinner>'
 		    });
 		};
 

@@ -1,63 +1,64 @@
-<div class="bar bar-header header">
-    <h1 class="title"><img src="img/logo1.png" alt="Logo" class="head-logo"> <span>Sign up</span></h1>
-</div>
+<ion-view>
+    <ion-content>
 
-<div class="signup-container">
-  <p ng-if="errorMsg" ng-bind="errorMsg" class="ermsg"></p>
-  <form role="form" name="signupForm" novalidate>
-    <div class="list">
-      <div class="row">
-        <div class="col col-50">
-          <label class="item item-input">
-            <i class="icon ion-person placeholder-icon"></i>
-            <input type="text" placeholder="First name" class="ipn" name="first_name" ng-model="user.first_name" autocomplete="off" required>
-          </label>
-          <span style="color:red" ng-show="signupForm.first_name.$dirty && signupForm.first_name.$invalid">
-              <span ng-show="signupForm.first_name.$invalid">First name is required.</span>
-          </span>
-        </div>
-        <div class="col col-50">
-          <label class="item item-input">
-            <input type="text" placeholder="Last name" name="last_name" ng-model="user.last_name" autocomplete="off" required>
-          </label>
-          <span style="color:red" ng-show="signupForm.last_name.$dirty && signupForm.last_name.$invalid">
-              <span ng-show="signupForm.last_name.$invalid">Last name is required.</span>
-          </span>
-        </div>
+      <div class="bar bar-header header">
+          <h1 class="title">
+          <img src="img/backbutton.png" alt="Logo" class="head-logo" ui-sref="login"> 
+          <span>sign up</span></h1>
       </div>
 
-      <label class="item item-input">
-        <i class="icon ion-ios-email placeholder-icon"></i>
-        <input type="email" placeholder="Email address" name="user_email" ng-model="user.user_email" autocomplete="off" required>
-      </label>
-      <span style="color:red" ng-show="signupForm.user_email.$dirty && signupForm.user_email.$invalid">
-          <span ng-show="signupForm.user_email.$invalid">Invalid email address.</span>
-      </span>
+      <div class="login-container">
+        <p ng-if="errorMsg" ng-bind="errorMsg" class="ermsg"></p>
+        <form role="form" name="signupForm" novalidate>
+          <div class="list loginForm">
+            
+                <label class="item item-input loginitem1">
+                  <input type="text" placeholder="First name" name="first_name" ng-model="user.first_name" autocomplete="off" required class="inputpassword">
+                </label>
+                <span class="errorstyle" ng-show="signupForm.first_name.$dirty && signupForm.first_name.$invalid">
+                    <span ng-show="signupForm.first_name.$invalid">First name is required.</span>
+                </span>
+              
+                <label class="item item-input loginitem2">
+                  <input type="text" placeholder="Last name" name="last_name" ng-model="user.last_name" autocomplete="off" required class="inputpassword">
+                </label>
+                <span class="errorstyle" ng-show="signupForm.last_name.$dirty && signupForm.last_name.$invalid">
+                    <span ng-show="signupForm.last_name.$invalid">Last name is required.</span>
+                </span>
+              
+                <label class="item item-input loginitem2">
+                  <input type="email" placeholder="Email" name="user_email" ng-model="user.user_email" autocomplete="off" required class="inputemail">
+                </label>
+                <span class="errorstyle" ng-show="signupForm.user_email.$dirty && signupForm.user_email.$invalid">
+                <span ng-show="signupForm.user_email.$invalid">Invalid email address.</span>
+                </span>
 
-      <label class="item item-input">
-        <i class="icon ion-locked placeholder-icon"></i>
-        <input type="password" placeholder="Alpha numeric password" name="user_pass" ng-model="user.user_pass" autocomplete="off" required>
-      </label>
-      <span style="color:red" ng-show="signupForm.user_pass.$dirty && signupForm.user_pass.$invalid">
-          <span ng-show="signupForm.user_pass.$invalid">Password is required.</span>
-      </span>
+                <label class="item item-input loginitem2">
+                  <input type="password" placeholder="Alpha numeric password" name="user_pass" ng-model="user.user_pass" autocomplete="off" required class="inputpassword">
+                </label>
+                <span class="errorstyle" ng-show="signupForm.user_pass.$dirty && signupForm.user_pass.$invalid">
+                <span ng-show="signupForm.user_pass.$invalid">Password is required.</span>
+                </span>
 
-      <label class="item item-input">
-        <i class="icon ion-ios-telephone placeholder-icon"></i>
-        <input type="text" placeholder="Phone number" name="st_phone" ng-model="user.st_phone" autocomplete="off" required>
-      </label>
-      <span style="color:red" ng-show="signupForm.st_phone.$dirty && signupForm.st_phone.$invalid">
-          <span ng-show="signupForm.st_phone.$invalid">Phone number is required.</span>
-      </span>
-    </div>
+                <label class="item item-input loginitem2">
+                  <input type="text" placeholder="Phone number" name="st_phone" ng-model="user.st_phone" autocomplete="off" required class="inputpassword">
+                </label>
+                <span class="errorstyle" ng-show="signupForm.st_phone.$dirty && signupForm.st_phone.$invalid">
+                <span ng-show="signupForm.st_phone.$invalid">Phone number is required.</span>
+                </span>
 
-    <button class="button button-block loginbtn lgbtn" ng-disabled="!signupForm.$valid" ng-click="signUp();">
-        <span>SIGN UP</span>
-    </button>
-  </form>
+          </div>
 
-  <button class="button button-block gogle" id="skipbtn" ui-sref="login">
-    <span class="fb"><< Back to Login Page</span>
-  </button>
+          <button class="button button-block loginbtn lgbtn" ng-disabled="!signupForm.$valid" ng-click="signUp();">
+              <span>sign up</span>
+          </button>
+        </form>
 
-</div>
+      </div>
+
+      <div class="backlogin">
+        <span class="backloginbtn" ui-sref="login">Back to Login</span>
+      </div>
+
+    </ion-content>
+</ion-view>

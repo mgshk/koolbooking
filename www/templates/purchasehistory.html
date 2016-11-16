@@ -1,15 +1,13 @@
+<ion-view>
+    <ion-content>
+
     <div class="bar bar-header header">
-      <h1 class="title text-left" ui-sref="eventsList"><span><i class="icon icon-left ion-chevron-left"></i>
-        <img src="img/logo1.png" alt="Logo" class="head-logo">
-        <span>Koolbooking Events</span></span>
-      </h1>
+        <h1 class="title">
+        <img src="img/backbutton.png" alt="Logo" class="head-logo" ui-sref="eventsList"> 
+        <span>Purchase History</span></h1>
     </div>
 
     <div class="phistory">
-
-      <div class="buy-ticket full-width">
-        Purchase History
-      </div>
 
       <h4 ng-if="noRecords">No Records Found</h4>
 
@@ -27,9 +25,9 @@
         <div>
           <h4 ng-if="noCompleteRecords">No Records Found</h4>
 
-          <div class="card phist" ng-if="!noCompleteRecords" ng-show="showUsedTickets1" 
+          <div class="purchaseitems" ng-if="!noCompleteRecords" ng-show="showUsedTickets1" 
             ng-repeat="userHistory in userCompleteHistories">
-              <div class="item item-divider">
+              <!-- <div class="item item-divider">
                 {{userHistory.post_title}}
               </div>
               <div class="item item-text-wrap">
@@ -47,7 +45,24 @@
               </div>
               <div class="item item-divider">
                 <button class="button button-small btneve" ui-sref="eventDetails({event_id: userHistory.id})">USE NOW</button>
+              </div> -->
+              <div class="row">
+                  <div class="col"><span>order</span></div>
+                  <div class="col col-75">{{userHistory.post_title}} {{userHistory.purchase_date | date: 'dd/MM/yyyy'}}</div>
               </div>
+              <div class="row">
+                  <div class="col"><span>date</span></div>
+                  <div class="col col-75">{{userHistory.event_date}}</div>
+              </div>
+              <div class="row">
+                  <div class="col"><span>venue</span></div>
+                  <div class="col col-75">{{}}</div>
+              </div>
+              <div class="row">
+                  <div class="col"><span>total</span></div>
+                  <div class="col col-75">${{userHistory.total_price}}</div>
+              </div>
+          
           </div>
         </div>
 
@@ -80,3 +95,6 @@
       </div>
 
     </div>
+
+    </ion-content>
+</ion-view>

@@ -1,170 +1,46 @@
-<div class="bar bar-header header">
-    <h1 class="title"><img src="img/logo1.png" alt="Logo" class="head-logo"> <span>Koolbooking</span></h1>
-</div>
+<ion-view>
+    <ion-content>
 
-<div class="tabs tabs-icon-left tab11">
-  <a class="tab-item tab1" ng-click="showCase()">
-    <img src="img/showcase.png" class="scase">
-    Showcase
-  </a>
-  <a class="tab-item tab2" ng-click="showTickets()">
-    <img src="img/tickets.png" class="tick">
-    Tickets
-  </a>
-  <a class="tab-item tab3" ng-click="showYou()">
-    <img src="img/man.png" class="yu">
-    You
-  </a>
-  <a class="tab-item tab4" ng-click="showDiscover()">
-    <img src="img/discover.png" class="dis">
-    Discover
-  </a>
-</div>
-
-<div id="tabcontent">
-
-<div id="showcase" ng-show="showcase" ng-controller="showcaseTabCtrl">
-  <flex-slider animation="slide" direction="vertical" video="true" flex-slide="videoUrl in videoUrls">
-      <li>
-          <youtube-video player-width="'100%'" player-height="'500px'" player="bestPlayer" video-url="videoUrl"></youtube-video>
-      </li>
-  </flex-slider>
-</div>
-
-<div id="tickets" ng-show="tickets" ng-controller="ticketsTabCtrl">
-  
-  <img src="img/addimg.jpg" alt="advertisement" class="add">
-
-  <div class="tabs tabs-icon-top tab13">
-    <a class="tab-item tab8" ng-click="showAll()" ui-sref="all">
-      <img src="img/all-icon.png" class="scase icon">
-      All
-    </a>
-    <a class="tab-item tab9" ng-click="showEvents()" ui-sref="eventTab">
-      <img src="img/event-icon.png" class="tick icon">
-      Events
-    </a>
-    <a class="tab-item tab10" ng-click="showActivity()" ui-sref="activity">
-      <img src="img/activity-icon.png" class="yu icon">
-      Activity
-    </a>
-  </div>
-
-  <div class="tabs tabs-icon-top tab14">
-    <a class="tab-item tab8" ng-click="showAll()" ng-disabled="disabled">
-      <img src="img/all-icon.png" class="scase icon">
-      Movies
-    </a>
-    <a class="tab-item tab9" ng-click="showEvents()" ng-disabled="disabled">
-      <img src="img/event-icon.png" class="tick icon">
-      Hotels
-    </a>
-    <a class="tab-item tab10" ng-click="showActivity()" ng-disabled="disabled">
-      <img src="img/activity-icon.png" class="yu icon">
-      Restaurants
-    </a>
-  </div>
-
-</div>
-
-<div id="you" ng-show="you" ng-controller="youTabCtrl">
-  
-  <div class="fullwidth text-center profile">
-      <h1>
-        <i ng-if="userInfo.image_url === ''" class="icon ion-person-stalker"></i>
-        <img ng-if="userInfo.image_url !== ''" ng-src="http://koolbooking.com/{{userInfo.image_url}}" alt="user image" class="profileimg"/>
-      </h1>
-      <p ng-bind="userInfo.display_name"></p>
-  </div>
-
-  <div class="list">
-
-  <a class="item item-icon-left pur" ui-sref="purchasehistory" ng-if="isUserID">
-    <i class="icon ion-refresh"></i>
-    Purhase history
-  </a>
-
-  <a class="item item-icon-left pur" ui-sref="setting">
-    <i class="icon ion-gear-b setngicn"></i>
-    Settings
-  </a>
-
-  <a class="item item-icon-left pur" href="mailto:info@koolbooking.com">
-    <i class="icon ion-ios-email setem"></i>
-    Email Us
-  </a>
-
-  <a class="item item-icon-left pur" ng-click="logout()" ng-if="isUserID">
-    <i class="icon ion-power lgout"></i>
-    Logout
-  </a>
-
-</div>
-
-</div>
-
-<div id="discover" ng-show="discover">
-
-  <div id="recommended" ng-show="recommended">
-
-    <h4 ng-if="noFeaturedEvents" class="text-center">No Records Found</h4>
-
-    <div class="list card eventslst" ng-if="!noFeaturedEvents" ng-repeat="featuredEvent in featuredEvents">
-      <div class="item item-image">
-        <img class="full-image" ng-src="{{featuredEvent.image_url}}">
+      <div class="bar bar-header header">
+          <h1 class="title">
+          <img src="img/backbutton.png" alt="Logo" class="head-logo" ui-sref="home"> 
+          <span>Koolbooking Events</span></h1>
       </div>
-      <div class="row">
-        <div class="col col-75">
-          <h5 class="assertive" ng-bind="featuredEvent.post_title"></h5>
-          <p>Events</p>
-        </div>
-        <div class="col">
-          <button class="button button-small btneve" ui-sref="eventDetails({event_id: featuredEvent.id})">Book</button>
-        </div>
-      </div>
+
+    <ion-tabs class="tabs-icon-top tabs-positive events-tab">
+
+        <ion-tab title="Showcase" href="#/eventsList/showcase">
+          <ion-nav-view name="eventslist-showcase"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="Tickets" href="#/eventsList/tickets">
+          <ion-nav-view name="eventslist-tickets"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="You" href="#/eventsList/you">
+          <ion-nav-view name="eventslist-you"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="Discover" href="#/eventsList/discover">
+          <ion-nav-view name="eventslist-discover"></ion-nav-view>
+        </ion-tab>
+
+    </ion-tabs>
+
+    <div id="tabcontent">
+
+      <ion-nav-view></ion-nav-view>
+
+    <!-- showcase content -->
+
+    <!-- tickets content -->
+
+    <!-- you content -->
+
+    <!-- discover content -->
+
     </div>
 
-  </div>
-
-  <div id="trending" ng-show="trending">
-
-    <h4 ng-if="noTopDealsEvents" class="text-center">No Records Found</h4>
-
-    <div class="list card eventslst" ng-if="!noTopDealsEvents" ng-repeat="topDealsEvent in topDealsEvents">
-      <div class="item item-image">
-        <img class="full-image" ng-src="{{topDealsEvent.image_url}}">
-      </div>
-      <div class="row">
-        <div class="col col-75">
-          <h5 class="assertive" ng-bind="topDealsEvent.post_title"></h5>
-          <p>Events</p>
-        </div>
-        <div class="col">
-          <button class="button button-small btneve" ui-sref="eventDetails({event_id: topDealsEvent.id})">Book</button>
-        </div>
-      </div>
-    </div>
+  </ion-content>
+</ion-view>
     
-  </div>
-
-  <div id="comingsoon" ng-show="comingsoon">
-
-    <h4>Coming soon...</h4>
-    
-  </div>
-
-    <div class="tabs tabs-icon-left tab12">
-      <a class="tab-item tab5" ng-click="showRecommened()">
-        Recommended
-      </a>
-      <a class="tab-item tab6" ng-click="showTrending()">
-        Trending
-      </a>
-      <a class="tab-item tab7" ng-click="showComingsoon()">
-        Coming soon
-      </a>
-    </div>
-
-</div>
-
-</div>

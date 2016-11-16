@@ -1,34 +1,36 @@
-<style type="text/css">
-	body{
-		width: 100%;
-		float: left;
-		background: #60ddcd;overflow: hidden;
-	}
-</style>
+<ion-view>
+    <ion-content>
 
-<div class="row">
-    <div class="logo">
-        <img src="img/logo.png" alt="Logo">  
-    </div>
-</div>
+    	<style type="text/css">
+    		.scroll{transform:none !important;}
+    	</style>
+    	
+		<div class="row">
+		    <div class="logo">
+		        <img src="img/logo.png" alt="Logo">  
 
-<div class="row">
-	<div class="powered-by">
-	    <h3>Powered By</h3>
-	    <div class="flow-logo">
-	    	<img src="img/zet.png" alt="Zettez">
-	    </div>
-	</div>
-</div>
+		        <div class="parties-home">
+		        	parties <span>|</span> sports <span>|</span> events
+		        </div>
+		    </div>
+		</div>
 
-<div class="row">
-	<button class="button button-block orange" ui-sref="login">
-	  <span>Login</span>
-	</button>
-</div>
-<div class="row">
-	<button class="button button-block orange" ui-sref="eventsList">
-	  <span>Skip Login</span>
-	</button>
-</div>
+		<div class="row home-bot">
+			<div class="powered-by">
+			    <h3>Powered By</h3>
+			    
+		    	<span ui-sref="login" class="home-login"><img src="img/login.png" alt="Click to login"></span>
 
+		    	<div class="social-login text-center">
+		    		<span class="home-fb" ng-click="fbLogin();"><img src="img/facebook.png" alt="Click to facebook login"></span>
+		    		<span class="home-o" ng-click="googleLogin();"><img src="img/o.png" alt="Click to o login"></span>
+		    		<span class="home-twit"><img src="img/twitter.png" alt="Click to twitter login"></span>
+		    	</div>
+
+		    	<span class="skiplogin" ui-sref="eventsList">skip login</span>
+			    
+			</div>
+		</div>
+
+	</ion-content>
+</ion-view>

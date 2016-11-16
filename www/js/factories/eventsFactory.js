@@ -25,7 +25,7 @@ angular.module('eventsApp.factory.eventsFactory', [])
         eventsService.getFeaturedEvents().then(function (resp) {
             deferred.resolve(resp.data);
         }, function(error) {
-            console.log(error);
+            //console.log(error);
         });
         return deferred.promise;
 	}

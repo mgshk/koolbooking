@@ -12,7 +12,7 @@ angular.module('eventsApp.controllers.purchaseHistoryCtrl', [])
 
 	$scope.showLoder = function() {
 	    $ionicLoading.show({
-	      template: '<ion-spinner icon="bubbles"></ion-spinner>'
+	      template: '<ion-spinner icon="circles"></ion-spinner>'
 	    });
 	 };
 	$scope.hideLoder = function(){

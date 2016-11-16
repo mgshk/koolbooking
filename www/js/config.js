@@ -1,5 +1,5 @@
 angular.module('eventsApp.config', ['ui.router']).config(function($stateProvider, $urlRouterProvider) {
-
+  //$locationProvider.html5Mode(true).hashPrefix('!');
   $stateProvider
   .state('home', {
       url: '/',
@@ -25,6 +25,42 @@ angular.module('eventsApp.config', ['ui.router']).config(function($stateProvider
       url: '/eventsList',
       controller: 'eventsListCtrl',
       templateUrl: 'templates/eventsList.html'
+  })
+  .state('eventsList.showcase', {
+      url: '/showcase',
+      views: {
+        'eventslist-showcase': {
+          templateUrl: "templates/showcase.html",
+          controller: 'showcaseCtrl'
+        }
+      }
+  })
+  .state('eventsList.tickets', {
+      url: '/tickets',
+      views: {
+        'eventslist-tickets': {
+          templateUrl: "templates/tickets.html",
+          controller: 'ticketsCtrl'
+        }
+      }
+  })
+  .state('eventsList.you', {
+      url: '/you',
+      views: {
+        'eventslist-you': {
+          templateUrl: "templates/you.html",
+          controller: 'youCtrl'
+        }
+      }
+  })
+  .state('eventsList.discover', {
+      url: '/discover',
+      views: {
+        'eventslist-discover': {
+          templateUrl: "templates/discover.html",
+          controller: 'discoverCtrl'
+        }
+      }
   })
   .state('eventDetails', {
       url: '/eventDetails/:event_id',

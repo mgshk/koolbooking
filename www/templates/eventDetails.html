@@ -1,35 +1,81 @@
-<div class="bar bar-header header">
-  <h1 class="title text-left" ui-sref="eventsList"><span><i class="icon icon-left ion-chevron-left"></i>
-    <img src="img/logo1.png" alt="Logo" class="head-logo">
-    <span ng-if="!noRecords">{{event.post_title}}</span>
-    <span ng-if="noRecords">No Records Found</span></span>
-  </span>
-    <i class="icon icon-right ion-android-share-alt"></i>
-  </h1>     
-</div>
+<ion-view>
+    <ion-content>
 
-<div class="detailscontent">
-    <h4 ng-if="noRecords">No Records Found</h4>
-
-    <div ng-if="!noRecords">
-      <img class="full-image" ng-src="{{event.image_url}}">
-      <p class="padright">
-        <span><b>{{event.post_title}}</b></span>, <br>
-        {{event.address}}
-        <i class="icon ion-ios-location loction"></i>
-      </p>
-      <p class="pad-bot-20">
-        <span class="dte">
-          {{event.event_date | date: 'dd' }} {{event.event_date | date: 'MMMM' }} - {{event.event_date | date: 'EEEE' }} {{event.event_time}}
-        </span>
-        <button class="button button-small bkbtn" ui-sref="yourBooking({event_id: event.id})">
-          <span>Book</span>
-        </button>
-      </p>
-      <div class="venue">
-          <p><span><b>SYNOPSIS</b></span><br>
-          <span ng-bind-html="event.post_content" class="conte"></span>
-          </p>
-      </div>
+    <div class="bar bar-header header">
+        <h1 class="title">
+        <img src="img/backbutton.png" alt="Logo" class="head-logo" ui-sref="eventsList"> 
+        <span>event details</span></h1>
     </div>
-</div>
+
+    <div class="detailscontent">
+        <h4 ng-if="noRecords">No Records Found</h4>
+
+        <div ng-if="!noRecords">
+          <img class="full-image" ng-src="{{event.image_url}}">
+
+          <div class="row">
+              <div class="col col-67">
+                <h5>{{event.post_title}}</h5>
+              </div>
+              <div class="col col-33">
+                <img src="img/book.png" alt="Book" ui-sref="yourBooking({event_id: event.id})" class="pull-right">
+              </div>
+          </div>
+
+          <div class="row">
+            <div class="col padding">
+              <h5><b>Synopsis</b></h5>
+              <p ng-bind-html="event.post_content"></p>
+            </div>
+          </div>
+
+          <div class="row padding">
+              <div class="col col-25">
+                 <span>tour</span>
+              </div>
+              <div class="col col-75">
+                  <p>{{event.event_date | date: 'MM/dd/yyyy' }}</p>
+              </div>
+          </div>
+
+          <div class="row padding">
+              <div class="col col-25">
+                 <span>time</span>
+              </div>
+              <div class="col col-75">
+                  <p>{{event.event_time}}</p>
+              </div>
+          </div>
+
+          <div class="row padding">
+              <div class="col col-25">
+                 <span>venue</span>
+              </div>
+              <div class="col col-75">
+                  <p>{{event.address}}</p>
+              </div>
+          </div>
+
+          <div class="row padding">
+              <div class="col col-25">
+                 <span>capacity</span>
+              </div>
+              <div class="col col-75">
+                  <p></p>
+              </div>
+          </div>
+
+          <div class="row padding">
+              <div class="col col-25">
+                 <span>facilities</span>
+              </div>
+              <div class="col col-75">
+                  <p></p>
+              </div>
+          </div>
+
+        </div>
+    </div>
+
+  </ion-content>
+</ion-view>
