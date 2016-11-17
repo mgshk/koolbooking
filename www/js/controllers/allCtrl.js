@@ -1,5 +1,5 @@
 angular.module('eventsApp.controllers.allCtrl', [])
-	.controller('allCtrl', ['$scope', '$q', '$ionicLoading', 'eventsFactory', function($scope, $q, $ionicLoading, eventsFactory) {
+	.controller('allCtrl', ['$scope', '$filter', '$q', '$ionicLoading', 'eventsFactory', function($scope, $filter, $q, $ionicLoading, eventsFactory) {
 
 	$scope.noRecords = false;
 
@@ -44,4 +44,33 @@ angular.module('eventsApp.controllers.allCtrl', [])
 			hideLoder();
 		}
 	});
+
+	$scope.filterEvents = function(start_date, end_date, address) {
+
+        var startDate = $filter('date')(start_date, "yyyy-MM-dd");
+        var endDate = null;
+
+        if(angular.isDefined(end_date))
+            endDate = $filter('date')(end_date, "yyyy-MM-dd");
+
+        if ((angular.isDefined(address) || address !== '') && angular.isDefined(start_date)) {
+    		eventsFactory.getFilterEvents(address, startDate, endDate).then(function (resp) {
+                if(resp.status === 0) {
+                    $scope.noRecords = true;
+                } else {
+                    $scope.noRecords = false;
+                    $scope.eventsList = resp.data;
+                } 
+		    });
+    	} else {
+    		eventsFactory.getEventsList().then(function (resp) {
+		        if(resp.status === 0) {
+                    $scope.noRecords = true;
+                } else {
+                    $scope.noRecords = false;
+                    $scope.eventsList = resp.data;
+                }
+		    });
+    	}   	
+    }
 }]);
