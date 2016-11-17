@@ -18,45 +18,45 @@
           </div>
 
     
-    <div class="searchheader item-input-inset">
-      <form role="form" name="searchForm">
-        <label class="item-input-wrapper fw">
-          <i class="icon ion-ios-location placeholder-icon lc1"></i>
-          <input type="text" name="searchTxt" placeholder="Search by location" autocomplete="off" ng-model="searchTxt" class="searchinput1">
-        </label>
-        <label class="item-input-wrapper fw1">
-          <i class="icon ion-calendar placeholder-icon lc1"></i>
-          <input type="date" name="start_date" placeholder="Start Date" ng-model="start_date" class="searchinput2">
-        </label>
-        <label class="item-input-wrapper fw2">
-          <i class="icon ion-calendar placeholder-icon lc1"></i>
-          <input type="date" name="end_date" placeholder="End Date" ng-model="end_date" class="searchinput3">
-        </label>
-        <button class="button button-small btneve btnevea" ng-click="filterActivities(start_date, end_date, searchTxt);">
-          Search
-        </button>
-      </form>
-    </div>
-
-    <h4 ng-if="noRecords">No Records Found</h4>
-    <div ng-if="!noRecords" ng-repeat="activity in activitiesList">
-      <div class="list card eventslst" ng-if="activity.adult_price">
-        <div class="item item-image">
-          <img class="full-image" ng-src="{{activity.image_url}}">
-        </div>
-        <div class="row">
-          <div class="col col-75">
-            <h5 class="assertive" ng-bind="activity.post_title"></h5>
-            <p>Activity</p>
+          <div class="searchheader item-input-inset">
+            <form role="form" name="searchForm">
+              <label class="item-input-wrapper fw">
+                <i class="icon ion-ios-location placeholder-icon lc1"></i>
+                <input type="text" name="searchTxt" placeholder="Search by location" autocomplete="off" ng-model="searchTxt" class="searchinput1">
+              </label>
+              <label class="item-input-wrapper fw1">
+                <i class="icon ion-calendar placeholder-icon lc1"></i>
+                <input type="date" name="start_date" placeholder="Start Date" ng-model="start_date" class="searchinput2">
+              </label>
+              <label class="item-input-wrapper fw2">
+                <i class="icon ion-calendar placeholder-icon lc1"></i>
+                <input type="date" name="end_date" placeholder="End Date" ng-model="end_date" class="searchinput3">
+              </label>
+              <button class="button button-small btneve btnevea" ng-click="filterActivities(start_date, end_date, searchTxt);">
+                Search
+              </button>
+            </form>
           </div>
-          <div class="col">
-            <button class="button button-small btneve" ui-sref="activityDetails({activity_id: activity.id})">Book</button>
+
+          <h4 ng-if="noRecords">No Records Found</h4>
+          <div ng-if="!noRecords" ng-repeat="activity in activitiesList">
+            <div class="list card eventslst" ng-if="activity.adult_price">
+              <div class="item item-image">
+                <img class="full-image" ng-src="{{activity.image_url}}">
+              </div>
+              <div class="row">
+                <div class="col col-75">
+                  <h5 class="assertive" ng-bind="activity.post_title"></h5>
+                  <p>Activity</p>
+                </div>
+                <div class="col">
+                  <button class="button button-small btneve" ui-sref="activityDetails({activity_id: activity.id})">Book</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-</ion-content>
+    </ion-content>
 </ion-view>
    
