@@ -36,21 +36,21 @@ angular.module('eventsApp.factory.eventsFactory', [])
     
     function getFeaturedEvents () {
         var deferred = $q.defer();
-        eventsService.getFeaturedEvents().then(function (resp) {
+        /*eventsService.getFeaturedEvents().then(function (resp) {
             deferred.resolve(resp.data);
         }, function(error) {
-            //console.log(error);
-        });
+            console.log(error);
+        });*/
         return deferred.promise;
     }
 
     function getFeaturedActivities () {
         var deferred = $q.defer();
-        eventsService.getFeaturedActivities().then(function (resp) {
+        /*eventsService.getFeaturedActivities().then(function (resp) {
             deferred.resolve(resp.data);
         }, function(error) {
             console.log(error);
-        });
+        });*/
         return deferred.promise;
     }
     

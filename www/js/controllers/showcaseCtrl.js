@@ -1,7 +1,8 @@
-
 angular.module('eventsApp.controllers.showcaseCtrl', ['youtube-embed', 'angular-flexslider'])
 	.controller('showcaseCtrl', ['$scope', 'eventsFactory', function($scope, eventsFactory) {
 
+	var bestPlayer;
+	
 	if (window.localStorage.getItem('userID') == null){
         $scope.isUserID = false;
         $scope.isLogin = true;
