@@ -16,13 +16,13 @@
 			<form role="form" name="loginForm" novalidate>
 				<div class="list loginForm">
 					<label class="item item-input loginitem1">
-					    <input type="email" name="user_email" placeholder="Email" ng-model="user_email" autocomplete="off" required class="inputemail">
+					    <input type="email" name="user_email" placeholder="Email" ng-model="login.user_email" autocomplete="off" required class="inputemail">
 					</label>
 					<span class="errorstyle" ng-show="loginForm.user_email.$dirty && loginForm.user_email.$invalid">
 		                <span ng-show="loginForm.user_email.$invalid">Invalid email address.</span>
 		            </span>
 					<label class="item item-input loginitem2">
-					    <input type="password" name="user_pass" placeholder="Password" ng-model="user_pass" autocomplete="off" required class="inputpassword">
+					    <input type="password" name="user_pass" placeholder="Password" ng-model="login.user_pass" autocomplete="off" required class="inputpassword">
 					</label>
 					<span style="color:red" ng-show="loginForm.user_pass.$dirty && loginForm.user_pass.$invalid">
 		                <span ng-show="loginForm.user_pass.$error.required">Password is required.</span>
