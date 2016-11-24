@@ -16,8 +16,8 @@
 			      <p><span>Maximum number of people : </span>{{event.max_people}}</p>      
 			      <p><span>Venue Facilities : </span>{{event.venue_facilities}}</p>	      
 			      <p><span>Adult Price : </span><strong>${{event.adult_price}}</strong></p>	
-		     	  <p ng-show="event.child_price != 0"><span>Child Price : </span><strong>${{event.child_price}}</strong></p>
-		     	  <p ng-show="event.infant_price != 0"><span>Infant Price : </span><strong>${{event.infant_price}}</strong></p>	
+		     	  <p ng-if="event.child_price"><span>Child Price : </span><strong>${{event.child_price}}</strong></p>
+		     	  <p ng-if="event.infant_price"><span>Infant Price : </span><strong>${{event.infant_price}}</strong></p>	
 		      </div>
 		  
 		       <div class="event-date-right">
@@ -53,7 +53,7 @@
 			  	</div>
 			 
 
-			  	<div class="col col-50" ng-show="event.child_price != 0">
+			  	<div class="col col-50" ng-if="event.child_price">
 			    	Child
 				    <select name="no_child" ng-model="no_child">
 						<option value="1">1</option>
@@ -69,7 +69,7 @@
 			</div>
 
 			<div class="row full-width adlt">
-				<div class="col col-50" ng-show="event.infant_price != 0">
+				<div class="col col-50" ng-if="event.infant_price">
 				    Infant
 				    <select ng-model="no_infant">
 						<option value="1">1</option>
