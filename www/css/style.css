@@ -1,6 +1,10 @@
-/*body{background-color: #F4F3F6;overflow: auto;}
-html{overflow: auto;}*/
-.header{background: #0b5d8d;background-size: cover;font-size: 18px;position: fixed;
+body{background: #02233a !important; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#02233a, #064974, #02233a) !important; /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#02233a, #064974, #02233a) !important; /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#02233a, #064974, #02233a) !important; /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#02233a, #064974, #02233a) !important; /* Standard syntax */overflow: auto;}
+html{overflow: auto;}
+.header{background: #0b5d8d;font-size: 18px;position: fixed;
     top: 0;
     left: 0;
     z-index: 100000;}
@@ -67,7 +71,7 @@ font-weight: 600;}
 .youlist{background: none;border: 0;border-bottom: 1px solid #0b5d8d;color: #84d4f5 !important;}
 .bnone{background: none;}
 .venue span {font-size: 16px;color: #e43b62;}
-.detailscontent{margin-top: 44px;padding: 0px;}
+.detailscontent{/*margin-top: 44px;*/padding: 0px;padding-top: 44px;}
 .lgbtn1{background: #387ef5;font-size: 20px;color: #fff !important;text-transform: uppercase;margin-top: 10px !important;}
 .eventslst{margin: 0;background: none;padding: 0 !important;}
 .eventslst h5{margin: 0;color: #84d4f5;font-size: 16px;}
@@ -195,7 +199,7 @@ color: #84d4f5;display: inline-block;margin: 0 5px;border-radius: 3px;}
 .bkbtn{background: #387ef5;font-size: 14px;color: #fff !important;text-transform: uppercase;padding: 0px 6px;
     float: right;min-height: 26px;}
 .detailscontent h5{font-size: 16px;color: #84d4f5;}
-.detailscontent p{font-size: 14px;color: #84d4f5;line-height: 24px;}
+.detailscontent p{font-size: 14px;color: #84d4f5;line-height: 24px;margin-bottom: 0;}
 .detailscontent span{width: 100%;padding: 2px 5px;font-size: 12px;
     background: #0b5d8d;color: #84d4f5;text-transform: uppercase;border-radius: 3px;display: flex;}
 .pad-bot-20{padding-bottom: 18px !important;}
@@ -299,20 +303,19 @@ color: #3f84a7;position: relative;}
   background: linear-gradient(#02233a, #064973) !important; /* Standard syntax */
 color: #84d4f5 !important;}
 
-.events-tab .tab-nav{position: relative !important;margin-top: 44px;background: none;
+.events-tab .tab-nav{position: relative !important;margin-top: 42px;background: none;
 border: 0;}
-.events-tab .tab-nav a span{border: 1px solid #0b5d8d;
+.events-tab .tab-nav a span{
     color: #84d4f5;
     text-transform: uppercase;
     font-size: 11px;
-    width: 70px;
     display: inline-block;
-    padding: 3px 0;
-    border-radius: 3px;margin-top: 11px;
+    margin-top: 11px;
 }
-.tab-item.tab-item-active, .tab-item.active, .tab-item.activated{background: none !important;}
-.tab-item.tab-item-active span, .tab-item.active span, .tab-item.activated span{background: #0b5d8d;}
-
+.tab-item.tab-item-active, .tab-item.active, .tab-item.activated{background: #0b5d8d !important;}
+.events-tab > .tabs .tab-item{border: 1px solid #84d4f5;border-left: 0;line-height: 15px;}
+.events-tab > .tabs .tab-item:last-child{border-right: 0;}
+.events-tab > .tabs{height: 44px !important;}
 #you{}
 #discover{}
 #trending{}
@@ -321,5 +324,19 @@ border: 0;}
 .youlistitems .item-icon-left .icon{font-size: 18px !important;left: -5px;}
 .youlistitems .item-icon-left {padding-left: 30px;}
 .padding-20{padding: 20px;}
-.setng .list .item{border-bottom: 1px solid #0b5d8d;
-    color: #84d4f5 !important;}
+.setng .list .item{border-bottom: 1px solid #0b5d8d;color: #84d4f5 !important;}
+.purchaseitems{padding: 10px 10px 0 10px !important;}
+.purchaseitems .row .col span{width: 100%;
+    padding: 2px 5px;
+    font-size: 12px;
+    background: #0b5d8d;
+    color: #84d4f5;
+    text-transform: uppercase;
+    border-radius: 3px;
+    display: flex;}
+    .purchaseitems .row .col{padding: 0;}
+.purchaseitems .row{border-bottom: 1px solid #0b5d8d;margin-bottom: 15px;
+    padding: 0 0 10px 0;}
+.purchaseitems .row:last-child{border-bottom: 10px solid #0b5d8d;margin-bottom: 0 !important;}
+.purcont{font-size: 14px;color: #84d4f5;line-height: 18px;padding-left: 10px !important;}
+.fullpage{width: 100%;height: 100%;}

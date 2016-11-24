@@ -23,7 +23,7 @@ angular.module('eventsApp.controllers.yourBookingCtrl', [])
 
     function showLoader() {
 	    $ionicLoading.show({
-	      template: '<ion-spinner icon="circles"></ion-spinner>'
+	      template: '<ion-spinner icon="bubbles"></ion-spinner>'
 	    });
 	}
 
@@ -32,20 +32,11 @@ angular.module('eventsApp.controllers.yourBookingCtrl', [])
 	}
 
 	showLoader();
-
-    $scope.id = $stateParams.event_id; 
-
-    if ($stateParams.type === 'event') {
-        eventsFactory.getEventDetails($stateParams.event_id).then(function (resp) {
-            hideLoader();
-            $scope.event = resp.data[0];
-            $scope.event.type = 'event';
-        });
-    } else {
-        eventsFactory.getActivityDetails($stateParams.event_id).then(function (resp) {
-            hideLoader();
-            $scope.event = resp.data[0];
-            $scope.event.type = 'activity';
-        });
-    }
+	
+	$scope.id = $stateParams.event_id;
+    
+    eventsFactory.getEventDetails($stateParams.event_id).then(function (resp) {
+    	hideLoader();
+        $scope.event = resp.data[0];
+    });
 }]);

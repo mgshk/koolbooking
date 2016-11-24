@@ -7,7 +7,6 @@ angular.module('eventsApp.controllers.bookingSubmissionCtrl', [])
     }
 
     $scope.id = $stateParams.event_id;
-    $scope.type = $stateParams.type;
 
     $scope.logout = function(){
         window.localStorage.removeItem('userID');
@@ -24,17 +23,16 @@ angular.module('eventsApp.controllers.bookingSubmissionCtrl', [])
 	
 	$scope.id = $stateParams.event_id;
 
-	function showLoder() {
+	$scope.showLoder = function() {
 	    $ionicLoading.show({
-	      template: '<ion-spinner icon="circles"></ion-spinaQSW3ner>'
+	      template: '<ion-spinner icon="bubbles"></ion-spinaQSW3ner>'
 	    });
-	}
-
-	function hideLoder() {
+	 };
+	$scope.hideLoder = function(){
 	    $ionicLoading.hide();
 	};
 
-	showLoder();
+	$scope.showLoder();
 	
 	if($stateParams.adult) {
 		$scope.adult = $stateParams.adult;
@@ -53,21 +51,12 @@ angular.module('eventsApp.controllers.bookingSubmissionCtrl', [])
 	} else {
 		$scope.infant = 0;
 	}
-
-	if ($stateParams.type === 'event') {
-		eventsFactory.getEventDetails($stateParams.event_id).then(function (resp) {
-	    	setLocalStorage(resp);
-	    });
-	} else {
-		eventsFactory.getActivityDetails($stateParams.event_id).then(function (resp) {
-	    	setLocalStorage(resp);
-	    });
-	}
-
-	function setLocalStorage (resp) {
-		hideLoder();
+	
+	eventsFactory.getEventDetails($stateParams.event_id).then(function (resp) {
+    	$scope.hideLoder();
+		
 		$scope.adult_price = resp.data[0].adult_price;
-					
+				
 		if (angular.isDefined(resp.data[0].child_price))
 			$scope.child_price = resp.data[0].child_price;
 		else
@@ -87,5 +76,5 @@ angular.module('eventsApp.controllers.bookingSubmissionCtrl', [])
 		window.localStorage.setItem('child', $scope.child);
 		window.localStorage.setItem('infant', $scope.infant);
 		window.localStorage.setItem('amount', $scope.amount);
-	}
+    });
 }]);

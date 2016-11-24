@@ -1,5 +1,3 @@
-<ion-view>
-    <ion-content>
 
     <div class="bar bar-header header">
         <h1 class="title">
@@ -13,88 +11,30 @@
 
       <div ng-if="!noRecords">
 
-        <div class="tabs tabs-icon-left tab18">
-            <a class="tab-item tab31" style="color: rgb(56, 126, 245);" ng-click="showUsedTickets()">
-              Tickets Used
-            </a>
-            <a class="tab-item tab33" ng-click="showToUsedTickets()">
-              Tickets to be Used
-            </a>
-        </div>
-
-        <div>
           <h4 ng-if="noCompleteRecords">No Records Found</h4>
 
-          <div class="purchaseitems" ng-if="!noCompleteRecords" ng-show="showUsedTickets1" 
+          <div class="purchaseitems padding" ng-if="!noCompleteRecords"
             ng-repeat="userHistory in userCompleteHistories">
-              <!-- <div class="item item-divider">
-                {{userHistory.post_title}}
-              </div>
-              <div class="item item-text-wrap">
-                Purchase date : {{userHistory.purchase_date | date: 'dd/MM/yyyy'}}
-              </div>
-              <div class="item item-text-wrap">
-                Event date : {{userHistory.event_date}}
-              </div>
-              <div class="item item-text-wrap">
-                Tickets : <span>Adult - {{userHistory.adult_number}}</span> <span ng-if="userHistory.child_number">Child - {{userHistory.child_number}}</span>
-                <span ng-if="userHistory.infant_number">Infant - {{userHistory.infant_number}}</span>
-              </div>
-              <div class="item item-text-wrap">
-                Amount paid : ${{userHistory.total_price}}
-              </div>
-              <div class="item item-divider">
-                <button class="button button-small btneve" ui-sref="eventDetails({event_id: userHistory.id})">USE NOW</button>
-              </div> -->
               <div class="row">
                   <div class="col"><span>order</span></div>
-                  <div class="col col-75">{{userHistory.post_title}} {{userHistory.purchase_date | date: 'dd/MM/yyyy'}}</div>
+                  <div class="col col-75 purcont">{{userHistory.post_title}} {{userHistory.purchase_date | date: 'dd/MM/yyyy'}}</div>
               </div>
               <div class="row">
                   <div class="col"><span>date</span></div>
-                  <div class="col col-75">{{userHistory.event_date}}</div>
+                  <div class="col col-75 purcont">{{userHistory.event_date}}</div>
               </div>
               <div class="row">
                   <div class="col"><span>venue</span></div>
-                  <div class="col col-75">{{}}</div>
+                  <div class="col col-75 purcont">{{}}</div>
               </div>
               <div class="row">
                   <div class="col"><span>total</span></div>
-                  <div class="col col-75">${{userHistory.total_price}}</div>
+                  <div class="col col-75 purcont">${{userHistory.total_price}}</div>
               </div>
           
           </div>
-        </div>
 
-        <div>
-          <h4 ng-if="noPendingRecords">No Records Found</h4>
 
-          <div class="card phist" ng-if="!noPendingRecords" ng-show="showToUsedTickets1" 
-            ng-repeat="userHistory in userPendingHistories">
-              <div class="item item-divider">
-                {{userHistory.post_title}}
-              </div>
-              <div class="item item-text-wrap">
-                Purchase date : {{userHistory.purchase_date | date: 'dd/MM/yyyy'}}
-              </div>
-              <div class="item item-text-wrap">
-                Event date : {{userHistory.event_date}}
-              </div>
-              <div class="item item-text-wrap">
-                Tickets : <span>Adult - {{userHistory.adult_number}}</span> <span ng-if="userHistory.child_number">Child - {{userHistory.child_number}}</span>
-                <span ng-if="userHistory.infant_number">Infant - {{userHistory.infant_number}}</span>
-              </div>
-              <div class="item item-text-wrap">
-                Amount paid : ${{userHistory.total_price}}
-              </div>
-              <div class="item item-divider">
-                <button class="button button-small btneve" ui-sref="eventDetails({event_id: userHistory.id})">USE NOW</button>
-              </div>
-          </div>
-        </div>
       </div>
 
     </div>
-
-    </ion-content>
-</ion-view>

@@ -2,7 +2,6 @@ angular.module('eventsApp.controllers.loginCtrl', [])
     .controller('loginCtrl', ['$scope', '$state', '$cordovaOauth', 'loginFactory', '$ionicLoading', '$ionicPopup', '$http', '$ionicModal' , function($scope, $state, $cordovaOauth, loginFactory, $ionicLoading, $ionicPopup, $http, $ionicModal) {
 
     var errorMsg;
-    $scope.login = {user_email: '', user_pass: ''};
 
     if (window.localStorage.getItem('userID')) {
        $state.go('eventsList');
@@ -10,7 +9,7 @@ angular.module('eventsApp.controllers.loginCtrl', [])
 
     function showLoder() {
 	    $ionicLoading.show({
-	      template: '<ion-spinner icon="circles"></ion-spinner>'
+	      template: '<ion-spinner icon="bubbles"></ion-spinner>'
 	    });
 	 };
 
@@ -30,7 +29,7 @@ angular.module('eventsApp.controllers.loginCtrl', [])
     
     $scope.login = function() {	
     	showLoder();
-		loginFactory.userLogin ($scope.login.user_email, $scope.login.user_pass).then(function (resp) {
+		loginFactory.userLogin ($scope.user_email, $scope.user_pass).then(function (resp) {
 			hideLoder();
 		    if (resp.status === 0) {
 				errorMsg = resp.error;

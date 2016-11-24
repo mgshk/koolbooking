@@ -1,47 +1,36 @@
 angular.module('eventsApp.controllers.allCtrl', [])
-	.controller('allCtrl', ['$scope', '$q', '$ionicLoading', 'eventsFactory', function($scope, $q, $ionicLoading, eventsFactory) {
+	.controller('allCtrl', ['$scope', '$filter', 'eventsFactory', function($scope, $filter, eventsFactory) {
 
-	$scope.noRecords = false;
+    $scope.noRecords = false;
 
-	function showLoder() {
-	    $ionicLoading.show({
-	      template: '<ion-spinner icon="bubbles"></ion-spinner>'
-	    });
-	}
+	eventsFactory.getEventsList().then(function (resp) {
+        $scope.eventsList = resp.data;
+    });
 
-	function hideLoder(){
-	    $ionicLoading.hide();
-	}
+    $scope.filterEvents = function(start_date, end_date, address) {
 
-	showLoder();
+        var startDate = $filter('date')(start_date, "yyyy-MM-dd");
+        var endDate = null;
 
-	$q.all({
-		events: eventsFactory.getEventsList(),
-		activities: eventsFactory.getActivitiesList()
-	}).then(function(resp) {
-		$scope.eventsList = [];
-		$scope.activitiesList = [];
+        if(angular.isDefined(end_date))
+            endDate = $filter('date')(end_date, "yyyy-MM-dd");
 
-		if (resp.events.status === 0 && resp.activities.status === 0) {
-			$scope.noRecords = true;
-		} else {
-			angular.forEach(resp.events.data, function(value) {
-				if(angular.isDefined(value.adult_price)) {
-					$scope.eventsList.push(value);
-				}
-			});
-
-			angular.forEach(resp.activities.data, function(value) {
-				if(angular.isDefined(value.adult_price)) {
-					$scope.activitiesList.push(value);
-				}
-			});
-
-			if($scope.eventsList.length === 0 && $scope.activitiesList.length === 0) {
-				$scope.noRecords = true;
-			}
-
-			hideLoder();
-		}
-	});
+        if (angular.isDefined(address) && angular.isDefined(start_date)) {
+            eventsFactory.getFilterEvents(address, startDate, endDate).then(function (resp) {
+                if(resp.status === 0) {
+                    $scope.noRecords = true;
+                } else {
+                    $scope.eventsList = resp.data;
+                } 
+            });
+        } else {
+            eventsFactory.getEventsList().then(function (resp) {
+                if(resp.status === 0) {
+                    $scope.noRecords = true;
+                } else {
+                    $scope.eventsList = resp.data;
+                }
+            });
+        }       
+    }
 }]);
