@@ -11,13 +11,13 @@
 			<div class="event-date row yb1">
 		  
 		      <div class="event-date-left">
-			      <p><span>Event Date : </span>{{event.event_date | date: 'dd-MM-yyyy'}}</p>
-			      <p><span>Activity Time : </span>{{event.event_time}}</p>	      
-			      <p><span>Maximum number of people : </span>{{event.max_people}}</p>      
-			      <p><span>Venue Facilities : </span>{{event.venue_facilities}}</p>	      
-			      <p><span>Adult Price : </span><strong>${{event.adult_price}}</strong></p>	
-		     	  <p ng-if="event.child_price"><span>Child Price : </span><strong>${{event.child_price}}</strong></p>
-		     	  <p ng-if="event.infant_price"><span>Infant Price : </span><strong>${{event.infant_price}}</strong></p>	
+			      <p><span>Event Date : </span>{{::event.event_date | date: 'dd-MM-yyyy'}}</p>
+			      <p><span>Activity Time : </span>{{::event.event_time}}</p>	      
+			      <p><span>Maximum number of people : </span>{{::event.max_people}}</p>      
+			      <p><span>Venue Facilities : </span>{{::event.venue_facilities}}</p>	      
+			      <p><span>Adult Price : </span><strong>${{::event.adult_price}}</strong></p>	
+		     	  <p ng-if="event.child_price"><span>Child Price : </span><strong>${{::event.child_price}}</strong></p>
+		     	  <p ng-if="event.infant_price"><span>Infant Price : </span><strong>${{::event.infant_price}}</strong></p>	
 		      </div>
 		  
 		       <div class="event-date-right">
@@ -25,11 +25,11 @@
 		       <div class="date">
 		       
 		       <div class="date-inner">
-		       <p>{{event.event_date | date: 'MMMM' }}</p>
+		       <p>{{::event.event_date | date: 'MMMM' }}</p>
 		       </div>
 		       
-		       <h2>{{event.event_date | date: 'dd' }}</h2>
-		       <h3>{{event.event_date | date: 'EEEE' }}</h3>
+		       <h2>{{::event.event_date | date: 'dd' }}</h2>
+		       <h3>{{::event.event_date | date: 'EEEE' }}</h3>
 		       
 		       </div>
 		       

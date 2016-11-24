@@ -13,7 +13,7 @@
 
           <div class="row">
               <div class="col col-67">
-                <h5>{{event.post_title}}</h5>
+                <h5>{{::event.post_title}}</h5>
               </div>
               <div class="col col-33">
                 <img src="img/book.png" alt="Book" ui-sref="yourBooking({event_id: event.id})" class="pull-right">
@@ -32,7 +32,7 @@
                  <span>tour</span>
               </div>
               <div class="col col-75">
-                  <p>{{event.event_date | date: 'MM/dd/yyyy' }}</p>
+                  <p>{{::event.event_date | date: 'MM/dd/yyyy' }}</p>
               </div>
           </div>
 
@@ -41,7 +41,7 @@
                  <span>time</span>
               </div>
               <div class="col col-75">
-                  <p>{{event.event_time}}</p>
+                  <p>{{::event.event_time}}</p>
               </div>
           </div>
 
@@ -50,7 +50,7 @@
                  <span>venue</span>
               </div>
               <div class="col col-75">
-                  <p>{{event.address}}</p>
+                  <p>{{::event.address}}</p>
               </div>
           </div>
 

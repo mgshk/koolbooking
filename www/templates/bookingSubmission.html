@@ -14,7 +14,7 @@
           <p ng-if="infant_price > 0">Infant price<span class="pull-right">${{infant * infant_price}}</span></p>
           
           <p><strong>Total</strong> 
-            <strong class="pull-right">${{amount}}</strong>
+            <strong class="pull-right">${{::amount}}</strong>
           </p>
 
               <button class="button button-block loginbtn lgbtn1" ui-sref="payment({event_id: id})">

@@ -17,19 +17,19 @@
             ng-repeat="userHistory in userCompleteHistories">
               <div class="row">
                   <div class="col"><span>order</span></div>
-                  <div class="col col-75 purcont">{{userHistory.post_title}} {{userHistory.purchase_date | date: 'dd/MM/yyyy'}}</div>
+                  <div class="col col-75 purcont">{{::userHistory.post_title}} {{::userHistory.purchase_date | date: 'dd/MM/yyyy'}}</div>
               </div>
               <div class="row">
                   <div class="col"><span>date</span></div>
-                  <div class="col col-75 purcont">{{userHistory.event_date}}</div>
+                  <div class="col col-75 purcont">{{::userHistory.event_date}}</div>
               </div>
               <div class="row">
                   <div class="col"><span>venue</span></div>
-                  <div class="col col-75 purcont">{{}}</div>
+                  <div class="col col-75 purcont">{{::userHistory.address}}</div>
               </div>
               <div class="row">
                   <div class="col"><span>total</span></div>
-                  <div class="col col-75 purcont">${{userHistory.total_price}}</div>
+                  <div class="col col-75 purcont">${{::userHistory.total_price}}</div>
               </div>
           
           </div>
