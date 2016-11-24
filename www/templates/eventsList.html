@@ -80,25 +80,25 @@
             <p ng-bind="userInfo.display_name"></p>
         </div>
 
-        <div class="list">
+        <div class="list padding-20">
 
-        <a class="item item-icon-left pur" ui-sref="purchasehistory" ng-if="isUserID">
-          <i class="icon ion-refresh"></i>
+        <a class="item pur" ui-sref="purchasehistory" ng-if="isUserID">
+          <i class="icon ion-record"></i>
           Purhase history
         </a>
 
-        <a class="item item-icon-left pur" ui-sref="setting">
-          <i class="icon ion-gear-b setngicn"></i>
+        <a class="item pur" ui-sref="setting">
+          <i class="icon ion-record"></i>
           Settings
         </a>
 
-        <a class="item item-icon-left pur" href="mailto:info@koolbooking.com">
-          <i class="icon ion-ios-email setem"></i>
+        <a class="item pur" href="mailto:info@koolbooking.com">
+          <i class="icon ion-record"></i>
           Email Us
         </a>
 
-        <a class="item item-icon-left pur" ng-click="logout()" ng-if="isUserID">
-          <i class="icon ion-power lgout"></i>
+        <a class="item pur" ng-click="logout()" ng-if="isUserID">
+          <i class="icon ion-record"></i>
           Logout
         </a>
 

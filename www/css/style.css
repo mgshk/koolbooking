@@ -31,7 +31,7 @@ min-height: 40px !important;line-height: 36px !important;}
     color: #63b5d9 !important;
     text-transform: capitalize;
     margin-top: 15px !important;}
-.login-container{margin-top: 64px;padding: 0 10px;display: table;width: 100%;}
+.login-container{margin-top: 54px;padding: 0 10px;display: table;width: 100%;}
 .signup{padding: 2px 5px 5px;min-height: 24px;font-size: 20px;line-height: 10px;border-bottom: 1px solid #08527c;
 font-weight: 600;}
 .icon-left{color: #fff;font-size: 14px;}
@@ -121,7 +121,7 @@ font-weight: 600;}
 .event-date-left {float: left;width: 56%;}
 .ermsg{color: #a94442;background-color: #f2dede;border-color: #ebccd1;font-size: 16px;padding: 10px;}
 
-.tab12{bottom: 60px;
+.tab12{bottom: 0px;
     padding: 0px;
     position: absolute;
     left: 0;
@@ -178,7 +178,7 @@ color: #84d4f5;display: inline-block;margin: 0 5px;border-radius: 3px;}
 .fw{width: 100%;float: left;}
 .fw1{width: 49%;float: left;margin-right: 2%;margin-top: 15px;}
 .fw2{width: 49%;float: left;margin-top: 15px;}
-.searchheader{background: #3c3f3e;padding: 0 10px 10px 10px;}
+.searchheader{padding: 0 10px 10px 10px;}
 .searchinput1{height: 34px !important;width: 100%;}
 .searchinput2{height: 34px !important;width: 100%;padding-top: 0 !important;font-size: 14px !important;}
 .searchinput3{height: 34px !important;width: 100%;padding-top: 0 !important;font-size: 14px !important;}
@@ -234,11 +234,7 @@ color: #84d4f5;display: inline-block;margin: 0 5px;border-radius: 3px;}
 .sd{position: absolute;margin-top: -22px;color: #fff;}
 
 /* new changes */
-.pane, .view{background: #02233a !important; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(#02233a, #064973) !important; /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#02233a, #064973) !important; /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#02233a, #064973) !important; /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#02233a, #064973) !important; /* Standard syntax */}
+
 .parties-home{text-transform: uppercase;color: #3f84a7;border-top:1px solid #064970;
 border-bottom:1px solid #064970;display: inline-block;padding: 5px 0;letter-spacing: 2px;margin-top: 10px;}
 .parties-home span{bottom: 2px;font-size: 12px;font-weight: normal;margin: 0 2px;
@@ -303,22 +299,6 @@ color: #3f84a7;position: relative;}
   background: linear-gradient(#02233a, #064973) !important; /* Standard syntax */
 color: #84d4f5 !important;}
 
-.events-tab .tab-nav{position: relative !important;margin-top: 42px;background: none;
-border: 0;}
-.events-tab .tab-nav a span{
-    color: #84d4f5;
-    text-transform: uppercase;
-    font-size: 11px;
-    display: inline-block;
-    margin-top: 11px;
-}
-.tab-item.tab-item-active, .tab-item.active, .tab-item.activated{background: #0b5d8d !important;}
-.events-tab > .tabs .tab-item{border: 1px solid #84d4f5;border-left: 0;line-height: 15px;}
-.events-tab > .tabs .tab-item:last-child{border-right: 0;}
-.events-tab > .tabs{height: 44px !important;}
-#you{}
-#discover{}
-#trending{}
 #trending h4{color: #84d4f5;text-align: center;}
 #comingsoon h4{color: #84d4f5;text-align: center;}
 .youlistitems .item-icon-left .icon{font-size: 18px !important;left: -5px;}
@@ -340,3 +320,6 @@ border: 0;}
 .purchaseitems .row:last-child{border-bottom: 10px solid #0b5d8d;margin-bottom: 0 !important;}
 .purcont{font-size: 14px;color: #84d4f5;line-height: 18px;padding-left: 10px !important;}
 .fullpage{width: 100%;height: 100%;}
+#you .item{background: none;border: 0;border-bottom: 1px solid #0b5d8d;color: #84d4f5;padding-left: 0px;}
+.padding-20{padding: 20px;}
+.ion-record{margin-right: 10px;position: relative;top: 1px;}
