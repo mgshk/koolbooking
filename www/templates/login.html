@@ -18,7 +18,7 @@
 					<label class="item item-input loginitem2">
 					    <input type="password" name="user_pass" placeholder="Password" ng-model="login.user_pass" autocomplete="off" required class="inputpassword">
 					</label>
-					<span style="color:red" ng-show="loginForm.user_pass.$dirty && loginForm.user_pass.$invalid">
+					<span class="errorstyle" ng-show="loginForm.user_pass.$dirty && loginForm.user_pass.$invalid">
 		                <span ng-show="loginForm.user_pass.$error.required">Password is required.</span>
 		            </span>
 				</div>
