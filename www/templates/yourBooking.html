@@ -15,7 +15,7 @@
 			      <p><span>Activity Time : </span>{{::event.event_time}}</p>	      
 			      <p><span>Maximum number of people : </span>{{::event.max_people}}</p>      
 			      <p><span>Venue Facilities : </span>{{::event.venue_facilities}}</p>	      
-			      <p><span>Adult Price : </span><strong>${{::event.adult_price}}</strong></p>	
+			      <p ng-if="event.adult_price"><span>Adult Price : </span><strong>${{::event.adult_price}}</strong></p>	
 		     	  <p ng-if="event.child_price"><span>Child Price : </span><strong>${{::event.child_price}}</strong></p>
 		     	  <p ng-if="event.infant_price"><span>Infant Price : </span><strong>${{::event.infant_price}}</strong></p>	
 		      </div>
@@ -36,7 +36,7 @@
 		      </div>
 		  
 		  </div>
-		 <form name="myForm" role="form">
+		 <form name="myForm" role="form" ng-if="event.adult_price">
 			<div class="row full-width adlt">
 			  	<div class="col col-50">
 				    Adult
