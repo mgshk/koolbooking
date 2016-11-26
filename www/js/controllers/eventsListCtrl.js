@@ -8,10 +8,10 @@ angular.module('eventsApp.controllers.eventsListCtrl', ['youtube-embed', 'angula
 	$scope.trending = false;
 	$scope.comingsoon = false;
 	var bestPlayer = null;
-	$('.tab1').css('border-bottom', 'solid 4px #387ef5');
-	$('.tab2').css('border-bottom', 'solid 0px #387ef5');
-	$('.tab3').css('border-bottom', 'solid 0px #387ef5');
-	$('.tab4').css('border-bottom', 'solid 0px #387ef5');
+	$('.tab1').css('border-bottom', 'solid 4px #84d4f5');
+	$('.tab2').css('border-bottom', 'solid 0px #84d4f5');
+	$('.tab3').css('border-bottom', 'solid 0px #84d4f5');
+	$('.tab4').css('border-bottom', 'solid 0px #84d4f5');
 	
 	$scope.trustSrc = function(src) {
 		return $sce.trustAsResourceUrl(src);
@@ -37,10 +37,10 @@ angular.module('eventsApp.controllers.eventsListCtrl', ['youtube-embed', 'angula
 		$scope.tickets = false;
 		$scope.you = false;
 		$scope.discover = false;
-		$('.tab1').css('border-bottom', 'solid 4px #387ef5');
-		$('.tab2').css('border-bottom', 'solid 0px #387ef5');
-		$('.tab3').css('border-bottom', 'solid 0px #387ef5');
-		$('.tab4').css('border-bottom', 'solid 0px #387ef5');
+		$('.tab1').css('border-bottom', 'solid 4px #84d4f5');
+		$('.tab2').css('border-bottom', 'solid 0px #84d4f5');
+		$('.tab3').css('border-bottom', 'solid 0px #84d4f5');
+		$('.tab4').css('border-bottom', 'solid 0px #84d4f5');
 	}
 
 	$scope.showTickets = function(){
@@ -48,10 +48,10 @@ angular.module('eventsApp.controllers.eventsListCtrl', ['youtube-embed', 'angula
 		$scope.tickets = true;
 		$scope.you = false;
 		$scope.discover = false;
-		$('.tab1').css('border-bottom', 'solid 0px #387ef5');
-		$('.tab2').css('border-bottom', 'solid 4px #387ef5');
-		$('.tab3').css('border-bottom', 'solid 0px #387ef5');
-		$('.tab4').css('border-bottom', 'solid 0px #387ef5');
+		$('.tab1').css('border-bottom', 'solid 0px #84d4f5');
+		$('.tab2').css('border-bottom', 'solid 4px #84d4f5');
+		$('.tab3').css('border-bottom', 'solid 0px #84d4f5');
+		$('.tab4').css('border-bottom', 'solid 0px #84d4f5');
 
 		if(bestPlayer)
 			bestPlayer.stopVideo();
@@ -62,10 +62,10 @@ angular.module('eventsApp.controllers.eventsListCtrl', ['youtube-embed', 'angula
 		$scope.tickets = false;
 		$scope.you = true;
 		$scope.discover = false;
-		$('.tab1').css('border-bottom', 'solid 0px #387ef5');
-		$('.tab2').css('border-bottom', 'solid 0px #387ef5');
-		$('.tab3').css('border-bottom', 'solid 4px #387ef5');
-		$('.tab4').css('border-bottom', 'solid 0px #387ef5');
+		$('.tab1').css('border-bottom', 'solid 0px #84d4f5');
+		$('.tab2').css('border-bottom', 'solid 0px #84d4f5');
+		$('.tab3').css('border-bottom', 'solid 4px #84d4f5');
+		$('.tab4').css('border-bottom', 'solid 0px #84d4f5');
 
 		if(bestPlayer)
 			bestPlayer.stopVideo();
@@ -79,10 +79,10 @@ angular.module('eventsApp.controllers.eventsListCtrl', ['youtube-embed', 'angula
 		$scope.recommended = true;
 		$scope.trending = false;
 		$scope.comingsoon = false;
-		$('.tab1').css('border-bottom', 'solid 0px #387ef5');
-		$('.tab2').css('border-bottom', 'solid 0px #387ef5');
-		$('.tab3').css('border-bottom', 'solid 0px #387ef5');
-		$('.tab4').css('border-bottom', 'solid 4px #387ef5');
+		$('.tab1').css('border-bottom', 'solid 0px #84d4f5');
+		$('.tab2').css('border-bottom', 'solid 0px #84d4f5');
+		$('.tab3').css('border-bottom', 'solid 0px #84d4f5');
+		$('.tab4').css('border-bottom', 'solid 4px #84d4f5');
 		$('.tab5').css('color', '#387ef5');
 
 		if(bestPlayer)

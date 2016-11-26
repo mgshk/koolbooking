@@ -1,24 +1,24 @@
 
-        <div class="bar bar-header header">
-          <h1 class="title">
-          <img src="img/backbutton.png" alt="Logo" class="head-logo" ui-sref="yourBooking({event_id: id})"> 
-          <span>Review Order</span></h1>
-        </div>
+<div class="bar bar-header header">
+    <h1 class="title">
+    <img src="img/backbutton.png" alt="Logo" class="head-logo" ui-sref="yourBooking({event_id: id})"> 
+    <span>Review Order</span></h1>
+</div>
 
-        <div id="booksub">
-          <h4>Order Details</h4>
-          
-          <p>Adult price <span class="pull-right">${{adult * adult_price}}</span></p>
-          
-          <p ng-if="child_price > 0">Child price<span class="pull-right">${{child * child_price}}</span></p>
-          <p ng-if="infant_price > 0">Infant price<span class="pull-right">${{infant * infant_price}}</span></p>
-          
-          <p><strong>Total</strong> 
-            <strong class="pull-right">${{::amount}}</strong>
-          </p>
+<div id="booksub" class="padding">
+    <h4>Order Details</h4>
+    
+    <p>Adult price <span class="pull-right">${{adult * adult_price}}</span></p>
+    
+    <p ng-if="child_price > 0">Child price<span class="pull-right">${{child * child_price}}</span></p>
+    <p ng-if="infant_price > 0">Infant price<span class="pull-right">${{infant * infant_price}}</span></p>
+    
+    <p><strong>Total</strong> 
+      <strong class="pull-right">${{::amount}}</strong>
+    </p>
 
-              <button class="button button-block loginbtn lgbtn1" ui-sref="payment({event_id: id})">
-                <span>Make payment</span>
-              </button>
+    <button class="button button-block pay_btn lgbtn" ui-sref="payment({event_id: id})">
+      <span>Make payment</span>
+    </button>
 
-        </div>
+</div>

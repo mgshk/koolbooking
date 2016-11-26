@@ -55,17 +55,15 @@ font-weight: 600;}
 .ipn{padding-right: 5px !important;padding-left: 8px !important;}
 
 /* events list tab*/
-.tab11{top: 44px !important;padding: 0px;border-bottom: 1px solid #387ef5 !important;}
-.tab11 a{color: #000;font-size: 12px !important;font-weight: 700;}
+.tab11{top: 44px !important;padding: 0px;background: none !important;}
+.tab11 a{color: #84d4f5;font-size: 12px !important;font-weight: 700;}
 .scase{width: 20px;height: 20px;position: relative;top: 4px;}
 .tick{width: 20px;height: 20px;position: relative;top: 4px;}
 .yu{width: 20px;height: 20px;position: relative;top: 4px;}
 .dis{width: 20px;height: 20px;position: relative;top: 4px;}
 #tabcontent{width: 100%;float: left;margin-top: 93px;}
-#showcase{}
 .lc1{font-size: 20px !important;}
 .profile-circle{width: 100%;float: left;}
-.profile{padding: 10px 0 0 0;}
 .profile p{font-size: 20px;color: #fff;margin-bottom: 0;}
 .ion-person-stalker{font-size: 60px;}
 .youlist{background: none;border: 0;border-bottom: 1px solid #0b5d8d;color: #84d4f5 !important;}
@@ -76,7 +74,7 @@ font-weight: 600;}
 .eventslst{margin: 0;background: none;padding: 0 !important;}
 .eventslst h5{margin: 0;color: #84d4f5;font-size: 16px;}
 .eventslst p{margin: 5px 0 0 0;color: #84d4f5;font-size: 16px;}
-.btneve{width: 100%;font-size: 20px;background: #0b5d8d;color: #84d4f5;line-height: 36px;}
+.btneve{width: 100%;font-size: 20px;background: #0b5d8d;color: #84d4f5;line-height: 20px;padding: 1px 6px 4px 6px !important;}
 .buy-ticket{background: #555353;padding: 12px 0;color: #fff;margin-top: 44px;text-align: center;font-size: 16px;}
 .item-image{border: 0 !important;}
 
@@ -87,7 +85,7 @@ font-weight: 600;}
     border: 2px solid #f23f69;
     border-radius: 4px;
     float: left;
-    margin: 30px 0 0;
+    margin: 0px 0 0;
     width: 100%;
 }
 .date-inner {
@@ -97,10 +95,7 @@ font-weight: 600;}
     text-align: center;
     width: 100%;
 }
-.date-inner p {
-    color: #fff;
-    font-size: 18px;
-}
+.date-inner p {color: #fff;font-size: 18px;margin-bottom: 5px;}
 .date h2 {
     color: #f23f69;
     float: left;
@@ -112,13 +107,14 @@ font-weight: 600;}
 .date h3 {
     color: #f23f69;
     float: left;
-    font-weight: normal;
     padding: 0 0 12px;
     text-align: center;
     width: 100%;margin: 0;font-size: 20px;
 }
-.event-date-right {float: right;width: 42%;margin-left: 2%;}
-.event-date-left {float: left;width: 56%;}
+.event-date-right {float: left;width: 100%;margin-bottom: 10px;}
+.event-date-left {float: left;width: 100%;}
+.event-date-left .row{padding: 0 !important;padding-bottom: 5px !important;}
+.event-date-left .row .col:first-child{padding-left: 0 !important;}
 .ermsg{color: #a94442;background-color: #f2dede;border-color: #ebccd1;font-size: 16px;padding: 10px;}
 
 .tab12{bottom: 0px;
@@ -129,25 +125,22 @@ font-weight: 600;}
     float: left;text-align: center;}
 .tab12 a{background-color: #0b5d8d;font-size: 12px;padding: 3px 0;min-width: 90px;
 color: #84d4f5;display: inline-block;margin: 0 5px;border-radius: 3px;}
-#booksub{margin-top: 55px;}
-#booksub h4{padding: 0 10px 10px 10px;border-bottom: 1px solid #e5e5e5;}
-#booksub p{padding: 0 10px 10px 10px;border-bottom: 1px solid #e5e5e5;}
+#booksub{margin-top: 35px;}
+#booksub h4{padding: 0 0px 10px 0px;border-bottom: 1px solid #074e77;color: #84d4f5;}
+#booksub p{padding: 0 0px 10px 0px;border-bottom: 1px solid #074e77;color: #84d4f5;}
 .pull-right{float: right;}
 .tab13{position: relative;height: 60px;padding:0;bottom: 5px;}
-.tab13 a{color: #000;font-size: 13px !important;font-weight: 700;}
+.tab13 a{color: #000;font-size: 13px !important;font-weight: 700;border-right: 2px solid #84d4f5;}
+.tab13 a:last-child{border-right: none;}
 .tab13 .icon{margin-bottom: 7px;}
 .tab14{position: relative;height: 60px;padding:0;bottom: 5px;}
 .tab14 a{color: #000;font-size: 13px !important;font-weight: 700;opacity: 0.3;border-bottom: 2px solid #b2b2b2;}
 .tab14 .icon{margin-bottom: 7px;}
 .adlt select{width: 100%;height: 26px;}
-#thirdpayment{margin-top: 44px;}
+#thirdpayment{margin-top: 44px;padding: 10px;width: 100%;float: left;}
 .thrd{padding: 10px;}
 .thrd label{margin-right: 10px;}
-.payinput{background: #ffffff none repeat scroll 0 0;
-    border: 1px solid #e5e5e5 !important;
-    border-radius: 3px;
-    margin: 10px 0 10px 0;
-    width: 100%;padding: 6px !important;}
+.paymentform label{width: 100%;float: left;}
     .payinputcvv{    background: #efeef0 none repeat scroll 0 0;
     border: 1px solid #8c8a8a !important;
     border-radius: 3px;
@@ -174,7 +167,6 @@ color: #84d4f5;display: inline-block;margin: 0 5px;border-radius: 3px;}
     top: 11px;
 }
 .checkpayment .list .item{background: #666666;color: #fff;}
-#tickets{}
 .fw{width: 100%;float: left;}
 .fw1{width: 49%;float: left;margin-right: 2%;margin-top: 15px;}
 .fw2{width: 49%;float: left;margin-top: 15px;}
@@ -226,8 +218,8 @@ color: #84d4f5;display: inline-block;margin: 0 5px;border-radius: 3px;}
 }
 .tab31{border-right: 1px solid #dddddd;border-bottom: 1px solid #dddddd;}
 .tab33{border-left: 1px solid #dddddd;border-bottom: 1px solid #dddddd;}
-.yb{border-bottom: 1px solid #e5e5e5;padding-bottom: 10px;}
-.yb1{border-bottom: 1px solid #e5e5e5;margin-bottom: 10px;}
+.yb{font-size: 14px;color: #84d4f5;margin-top: 20px !important;}
+.yb1{border-bottom: 1px solid #0b5d8d;margin-bottom: 10px;}
 .btnevea{margin-left: 0 !important;margin-top: 10px;}
 .placeholder-icon{color: #48DDC9 !important;}
 .profileimg{max-width: 90%;height: auto;display: table;margin: auto;}
@@ -321,5 +313,34 @@ color: #84d4f5 !important;}
 .purcont{font-size: 14px;color: #84d4f5;line-height: 18px;padding-left: 10px !important;}
 .fullpage{width: 100%;height: 100%;}
 #you .item{background: none;border: 0;border-bottom: 1px solid #0b5d8d;color: #84d4f5;padding-left: 0px;}
-.padding-20{padding: 20px;}
+.padding-20{padding: 0 20px 20px 20px;}
 .ion-record{margin-right: 10px;position: relative;top: 1px;}
+.flexslider{margin: 0 !important;border-radius: none !important;border: 0 !important;}
+.pay_btn{width: 160px !important;
+    display: table;
+    margin: auto;
+    height: 40px !important;
+    min-height: 40px !important;
+    line-height: 36px !important;padding: 0px 0px 5px !important;}
+.synops h5{margin-top: 0 !important;}
+.event-date-left span{width: 100%;
+    padding: 2px 5px;
+    font-size: 12px;
+    background: #0b5d8d;
+    color: #84d4f5;
+    text-transform: uppercase;
+    border-radius: 3px;
+    display: flex;}
+.event-date-left p {
+    font-size: 14px;
+    color: #84d4f5;
+    line-height: 24px;
+    margin-bottom: 0;
+}
+.review_btn{width: 150px !important;display: table;
+    margin: auto;
+    height: 40px !important;
+    min-height: 40px !important;
+    line-height: 36px !important;margin-top: 10px !important;}
+.adlt{color: #84d4f5;}
+.paybutton{width: 100%;float: left;}
