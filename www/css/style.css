@@ -1,8 +1,4 @@
-body{background: #02233a !important; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(#02233a, #064974, #02233a) !important; /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#02233a, #064974, #02233a) !important; /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#02233a, #064974, #02233a) !important; /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#02233a, #064974, #02233a) !important; /* Standard syntax */overflow: auto;}
+body{background-color:#064974;overflow: auto;}
 html{overflow: auto;}
 .header{background: #0b5d8d;font-size: 18px;position: fixed;
     top: 0;
@@ -122,9 +118,11 @@ font-weight: 600;}
     position: absolute;
     left: 0;
     width: 100%;
-    float: left;text-align: center;}
-.tab12 a{background-color: #0b5d8d;font-size: 12px;padding: 3px 0;min-width: 90px;
-color: #84d4f5;display: inline-block;margin: 0 5px;border-radius: 3px;}
+    float: left;text-align: center;background: #074a83;}
+.tab12 a{;min-width: 90px;
+color: #84d4f5;display: inline-block;}
+.tab12 a span{background-color: #0b5d8d;color: #84d4f5;font-size: 12px !important;padding: 2px 5px 3px 5px;
+    border-radius: 3px;width: 95px;display: inline-block;line-height: 20px;}
 #booksub{margin-top: 35px;}
 #booksub h4{padding: 0 0px 10px 0px;border-bottom: 1px solid #074e77;color: #84d4f5;}
 #booksub p{padding: 0 0px 10px 0px;border-bottom: 1px solid #074e77;color: #84d4f5;}
@@ -315,7 +313,8 @@ color: #84d4f5 !important;}
 #you .item{background: none;border: 0;border-bottom: 1px solid #0b5d8d;color: #84d4f5;padding-left: 0px;}
 .padding-20{padding: 0 20px 20px 20px;}
 .ion-record{margin-right: 10px;position: relative;top: 1px;}
-.flexslider{margin: 0 !important;border-radius: none !important;border: 0 !important;}
+.flexslider{margin: 0 !important;border-radius: 0 !important;border: 0 !important;
+background: none !important;}
 .pay_btn{width: 160px !important;
     display: table;
     margin: auto;

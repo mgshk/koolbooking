@@ -83,7 +83,7 @@ angular.module('eventsApp.controllers.eventsListCtrl', ['youtube-embed', 'angula
 		$('.tab2').css('border-bottom', 'solid 0px #84d4f5');
 		$('.tab3').css('border-bottom', 'solid 0px #84d4f5');
 		$('.tab4').css('border-bottom', 'solid 4px #84d4f5');
-		$('.tab5').css('color', '#387ef5');
+		$('.tab5 span').css({'color' : '#0b5d8d','background-color' : '#84d4f5'});
 
 		if(bestPlayer)
 			bestPlayer.stopVideo();
@@ -93,27 +93,27 @@ angular.module('eventsApp.controllers.eventsListCtrl', ['youtube-embed', 'angula
 		$scope.recommended = true;
 		$scope.trending = false;
 		$scope.comingsoon = false;
-		$('.tab5').css('color', '#387ef5');
-		$('.tab6').css('color', '#000000');
-		$('.tab7').css('color', '#000000');
+		$('.tab5 span').css({'color' : '#0b5d8d','background-color' : '#84d4f5'});
+		$('.tab6 span').css({'color' : '#84d4f5','background-color' : '#0b5d8d'});
+		$('.tab7 span').css({'color' : '#84d4f5','background-color' : '#0b5d8d'});
 	}
 
 	$scope.showTrending = function(){
 		$scope.recommended = false;
 		$scope.trending = true;
 		$scope.comingsoon = false;
-		$('.tab5').css('color', '#000000');
-		$('.tab6').css('color', '#387ef5');
-		$('.tab7').css('color', '#000000');
+		$('.tab5 span').css({'color' : '#84d4f5','background-color' : '#0b5d8d'});
+		$('.tab6 span').css({'color' : '#0b5d8d','background-color' : '#84d4f5'});
+		$('.tab7 span').css({'color' : '#84d4f5','background-color' : '#0b5d8d'});
 	}
 
 	$scope.showComingsoon = function(){
 		$scope.recommended = false;
 		$scope.trending = false;
 		$scope.comingsoon = true;
-		$('.tab5').css('color', '#000000');
-		$('.tab6').css('color', '#000000');
-		$('.tab7').css('color', '#387ef5');
+		$('.tab5 span').css({'color' : '#84d4f5','background-color' : '#0b5d8d'});
+		$('.tab6 span').css({'color' : '#84d4f5','background-color' : '#0b5d8d'});
+		$('.tab7 span').css({'color' : '#0b5d8d','background-color' : '#84d4f5'});
 	}
 
 	eventsFactory.getVideoUrl().then(function (resp) {
