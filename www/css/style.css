@@ -98,7 +98,7 @@ font-weight: 600;}
     font-size: 26px;
     font-weight: bold;
     text-align: center;
-    width: 100%;margin: 0;
+    width: 100%;margin: 5px 0 0 0px;
 }
 .date h3 {
     color: #f23f69;
@@ -343,3 +343,4 @@ background: none !important;}
     line-height: 36px !important;margin-top: 10px !important;}
 .adlt{color: #84d4f5;}
 .paybutton{width: 100%;float: left;}
+#recommended h4{color: #84d4f5;}

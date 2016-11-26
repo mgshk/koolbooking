@@ -25,7 +25,7 @@ angular.module('eventsApp.controllers.bookingSubmissionCtrl', [])
 
 	$scope.showLoder = function() {
 	    $ionicLoading.show({
-	      template: '<ion-spinner icon="circles"></ion-spinaQSW3ner>'
+	      template: '<ion-spinner icon="circles"></ion-spinner>'
 	    });
 	 };
 	$scope.hideLoder = function(){
