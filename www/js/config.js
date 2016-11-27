@@ -32,17 +32,17 @@ angular.module('eventsApp.config', ['ui.router']).config(function($stateProvider
       templateUrl: 'templates/eventDetails.html'
   })
   .state('bookingSubmission', {
-      url: '/bookingSubmission/:event_id/:adult/:child/:infant',
+      url: '/bookingSubmission/:adult/:child/:infant',
       controller: 'bookingSubmissionCtrl',
       templateUrl: 'templates/bookingSubmission.html'
   })
   .state('yourBooking', {
-      url: '/yourBooking/:event_id',
+      url: '/yourBooking',
       controller: 'yourBookingCtrl',
       templateUrl: 'templates/yourBooking.html'
   })
   .state('payment', {
-      url: '/payment/:event_id',
+      url: '/payment',
       controller: 'paymentCtrl',
       templateUrl: 'templates/payment.html'
   })

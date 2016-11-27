@@ -113,7 +113,7 @@
 	  	</div>
 	 
 
-	  	<div class="col col-33" ng-if="event.child_price !== '0'">
+	  	<div class="col col-33" ng-show="event.child_price !== '0'">
 	    	Child
 		    <select name="no_child" ng-model="no_child">
 				<option value="1">1</option>
@@ -127,7 +127,7 @@
 		    </select>
 	  	</div>
 
-	  	<div class="col col-33" ng-if="event.infant_price !== '0'">
+	  	<div class="col col-33" ng-show="event.infant_price !== '0'">
 		    Infant
 		    <select ng-model="no_infant">
 				<option value="1">1</option>
@@ -144,7 +144,7 @@
 	</div>
 
    	<p>
-      <button class="button button-block review_btn lgbtn" ng-disabled="!myForm.$valid" ui-sref="bookingSubmission({event_id: id, adult: no_adult, child: no_child, infant: no_infant})">
+      <button class="button button-block review_btn lgbtn" ng-disabled="!myForm.$valid" ui-sref="bookingSubmission({adult: no_adult, child: no_child, infant: no_infant})">
         <span>Review Order</span>
       </button>
   	</p>

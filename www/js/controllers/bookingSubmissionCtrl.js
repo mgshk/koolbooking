@@ -1,80 +1,37 @@
 angular.module('eventsApp.controllers.bookingSubmissionCtrl', [])
-	.controller('bookingSubmissionCtrl', ['$scope','$state', '$stateParams', 'eventsFactory','$ionicLoading','$ionicHistory', function($scope, $state, $stateParams, eventsFactory, $ionicLoading, $ionicHistory) {
+	.controller('bookingSubmissionCtrl', ['$scope','$state', '$stateParams', '$ionicLoading','$ionicHistory', function($scope, $state, $stateParams, $ionicLoading, $ionicHistory) {
 	
-	if ($stateParams.event_id === "") {
-        $state.go('home');
-        return;
-    }
-
-    $scope.id = $stateParams.event_id;
-
-    $scope.logout = function(){
-        window.localStorage.removeItem('userID');
-        $ionicHistory.clearCache();
-        $ionicHistory.clearHistory();
-        $state.go('login');
-    }
-
-    if(window.localStorage.getItem('userID') == null){
-        $scope.isUserID = false;
-    }else{
-        $scope.isUserID = true;
-    }
-	
-	$scope.id = $stateParams.event_id;
-
-	$scope.showLoder = function() {
+	function showLoader() {
 	    $ionicLoading.show({
 	      template: '<ion-spinner icon="circles"></ion-spinner>'
 	    });
-	 };
-	$scope.hideLoder = function(){
+	}
+
+	function hideLoader() {
 	    $ionicLoading.hide();
-	};
-
-	$scope.showLoder();
-	
-	if($stateParams.adult) {
-		$scope.adult = $stateParams.adult;
-	} else {
-		$scope.adult = 1;
-	}
-	
-	if($stateParams.child) {
-		$scope.child = $stateParams.child;
-	} else {
-		$scope.child = 0;
 	}
 
-	if($stateParams.infant) {
-		$scope.infant = $stateParams.infant;
-	} else {
-		$scope.infant = 0;
-	}
-	
-	eventsFactory.getEventDetails($stateParams.event_id).then(function (resp) {
-    	$scope.hideLoder();
-		
-		$scope.adult_price = resp.data[0].adult_price;
-				
-		if (angular.isDefined(resp.data[0].child_price))
-			$scope.child_price = resp.data[0].child_price;
-		else
-			$scope.child_price = 0;
+	showLoader();
 
-		if (angular.isDefined(resp.data[0].infant_price))
-			$scope.infant_price = resp.data[0].infant_price;
-		else
-			$scope.infant_price = 0;
+	$scope.adult = $stateParams.adult;
+	$scope.child = angular.isDefined($stateParams.child) ? $stateParams.child : 0;
+	$scope.infant = angular.isDefined($stateParams.infant) ? $stateParams.infant : 0;
 
+	if(window.localStorage.getItem('event_details')) {
+        hideLoader();
+        var event_details = JSON.parse(window.localStorage.getItem('event_details'));
 
-		$scope.amount = ($scope.adult * $scope.adult_price) + ($scope.child * $scope.child_price) + 
+        $scope.adult_price = event_details.adult_price;
+        $scope.child_price = angular.isDefined(event_details.child_price) ? event_details.child_price : 0;
+        $scope.infant_price = angular.isDefined(event_details.infant_price) ? event_details.infant_price : 0;
+
+        $scope.amount = ($scope.adult * $scope.adult_price) + ($scope.child * $scope.child_price) + 
 			($scope.infant * $scope.infant_price);
 		
-		window.localStorage.setItem('eventID', $scope.id);
+		window.localStorage.setItem('eventID', event_details.id);
 		window.localStorage.setItem('adult', $scope.adult);
 		window.localStorage.setItem('child', $scope.child);
 		window.localStorage.setItem('infant', $scope.infant);
 		window.localStorage.setItem('amount', $scope.amount);
-    });
+    }
 }]);

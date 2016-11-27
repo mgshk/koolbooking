@@ -2,89 +2,45 @@ angular.module('eventsApp.controllers.paymentCtrl', [])
 	.controller('paymentCtrl', ['$scope', '$stateParams', '$state', '$ionicLoading', '$ionicHistory', 'eventsFactory', 'userService',
 		function($scope, $stateParams, $state, $ionicLoading, $ionicHistory, eventsFactory, userService) {
 
-		if (!$stateParams.event_id === "") {
+		if (!window.localStorage.getItem('event_details')) {
 	        $state.go('eventsList');
 	        return;
 	    }
 
-	    $scope.id = $stateParams.event_id;
+	    $scope.amount = angular.isDefined(window.localStorage.getItem('amount')) ? window.localStorage.getItem('amount') : 0
 
-		if(window.localStorage.getItem('adult')) {
-			$scope.adult = window.localStorage.getItem('adult');
-		} else {
-			$scope.adult = 0;
-		}
-
-		if(window.localStorage.getItem('child')) {
-			$scope.child = window.localStorage.getItem('child');
-		} else {
-			$scope.child = 0;
-		}
-
-		if(window.localStorage.getItem('infant')) {
-			$scope.infant = window.localStorage.getItem('infant');
-		} else {
-			$scope.infant = 0;
-		}
-
-		if(window.localStorage.getItem('amount')) {
-			$scope.amount = window.localStorage.getItem('amount');
-		} else {
-			$scope.amount = 0;
-		}
-
-		$scope.logout = function(){
-	        window.localStorage.removeItem('userID');
-	        $ionicHistory.clearCache();
-	        $ionicHistory.clearHistory();
-	        $state.go('login');
-    	}
-
-    	if(window.localStorage.getItem('userID') == null){
-        	$scope.isUserID = false;
-	    }else{
-	        $scope.isUserID = true;
-	    }
-
-		$scope.paypalpayment = false;
-		$scope.cardspayment = false;
-
-		$scope.checkPaypal = function(){
-			$scope.cardspayment = false;
-		}
-
-		$scope.checkCards = function(){
-			$scope.paypalpayment = false;
-		}
-
-		function showLoder() {
+		function showLoader() {
 		    $ionicLoading.show({
 		      template: '<ion-spinner icon="circles"></ion-spinner>'
 		    });
 		};
 
-		function hideLoder() {
+		function hideLoader() {
 		    $ionicLoading.hide();
 		};
 
-		showLoder();
+		showLoader();
 
 		var event_details;
 
-		eventsFactory.getEventDetails($stateParams.event_id).then(function (resp) {
-	    	hideLoder();
-	        event_details = resp.data[0];
-	    });
+		if(window.localStorage.getItem('event_details')) {
+	        hideLoader();
+	        event_details = JSON.parse(window.localStorage.getItem('event_details'));
+	    }
+
+	    $scope.adult = window.localStorage.getItem('adult');
+	    $scope.child = angular.isDefined(window.localStorage.getItem('child')) ? window.localStorage.getItem('child') : 0;
+	    $scope.infant = angular.isDefined(window.localStorage.getItem('infant')) ? window.localStorage.getItem('infant') : 0;
 
 		$scope.addBooking = function() {
-			showLoder();
+			showLoader();
 
 			var booking_info = {
-				'item_id': $scope.id,
+				'item_id': event_details.id,
 				'adult_price': angular.isDefined(event_details.adult_price) ? ($scope.adult * event_details.adult_price) : 0,
 				'child_price': angular.isDefined(event_details.child_price) ? ($scope.child * event_details.child_price) : 0,
 				'infant_price': angular.isDefined(event_details.infant_price) ? ($scope.infant * event_details.infant_price) : 0,
-				'adult_number': $scope.adult,
+				'adult_number': window.localStorage.getItem('adult'),
 				'child_number': $scope.child,
 				'infant_number': $scope.infant,
 				'type_price': event_details.calendar_type_price,
@@ -94,8 +50,7 @@ angular.module('eventsApp.controllers.paymentCtrl', [])
 			};
 
 			userService.addBooking(booking_info).then(function (resp) {
-		    	hideLoder();
+		    	hideLoader();
 		    });
 		}
-
 }]);
