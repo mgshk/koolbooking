@@ -9,8 +9,8 @@
     <h4>Order Details</h4>
     
     <p>Adult price <span class="pull-right">${{adult * adult_price}}</span></p>
-    <p ng-if="child_price > 0">Child price<span class="pull-right">${{child * child_price}}</span></p>
-    <p ng-if="infant_price > 0">Infant price<span class="pull-right">${{infant * infant_price}}</span></p>
+    <p ng-if="child > 0">Child price<span class="pull-right">${{child * child_price}}</span></p>
+    <p ng-if="infant > 0">Infant price<span class="pull-right">${{infant * infant_price}}</span></p>
     
     <p><strong>Total</strong> 
       <strong class="pull-right">${{::amount}}</strong>
