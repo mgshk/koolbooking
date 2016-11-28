@@ -11,18 +11,20 @@
       <form role="form" name="searchForm">
         <label class="item-input-wrapper fw1">
           <span class="sd">Start Date</span>
+          <i class="icon ion-calendar placeholder-icon lc1"></i>
           <input type="date" name="start_date" placeholder="Start Date" ng-model="start_date" class="searchinput2">
         </label>
         <label class="item-input-wrapper fw2">
+          <i class="icon ion-calendar placeholder-icon lc1"></i>
           <span class="sd">End Date</span>
           <input type="date" name="end_date" placeholder="End Date" ng-model="end_date" class="searchinput3">
         </label>
         <div class="row">
-          <div class="col col-75">
+          <div class="col col-75 pl">
             <input type="text" name="searchTxt" placeholder="Search by location" autocomplete="off" ng-model="searchTxt" class="searchinput1">
           </div>
           <div class="col">
-            <button class="button button-small btneve btnevea" ng-click="filterEvents(start_date, end_date, searchTxt);">Search</button>
+            <button class="button button-small btneve" ng-click="filterEvents(start_date, end_date, searchTxt);">Search</button>
           </div>
         </div>
       </form>
