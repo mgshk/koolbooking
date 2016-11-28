@@ -16,8 +16,8 @@ line-height: 42px;height: 52px;}
 .orange span{position: relative;bottom: 1px;font-size: 24px;font-weight: 600;}
 h1{color: #fff;}
 .loginForm{width: 100%;margin: 0;}
-.loginForm .item{background: none !important;border: none !important;border-bottom: 1px solid #08527c !important;}
-.loginForm .loginitem1{border-top: 1px solid #08527c !important;padding-left: 0;
+.loginForm .item{background: none !important;border: none !important;border-bottom: 1px solid #0b5d8d !important;}
+.loginForm .loginitem1{border-top: 1px solid #0b5d8d !important;padding-left: 0;
     padding-right: 0;}
 .loginForm .loginitem2{padding-left: 0;padding-right: 0;}
 .loginbtn{width: 121px !important;display: table;margin: auto;height: 40px !important;
@@ -166,11 +166,15 @@ color: #84d4f5;display: inline-block;}
 }
 .checkpayment .list .item{background: #666666;color: #fff;}
 .fw{width: 100%;float: left;}
-.fw1{width: 49%;float: left;margin-right: 2%;margin-top: 22px;}
-.fw2{width: 49%;float: left;margin-top: 22px;}
+.fw1{width: 49%;float: left;margin-right: 2%;margin-top: 22px;background: none !important;
+    border-top: 1px solid #0b5d8d !important;
+    border-bottom: 1px solid #0b5d8d !important;border-radius: 0;}
+.fw2{width: 49%;float: left;margin-top: 22px;background: none !important;
+    border-top: 1px solid #0b5d8d !important;
+    border-bottom: 1px solid #0b5d8d !important;border-radius: 0;}
 .searchheader{padding: 0 10px 0px 10px;}
 .searchinput1{height: 34px !important;width: 100%;background: none !important;border-top: 1px solid #0b5d8d !important;
-border-bottom: 1px solid #0b5d8d !important;color: #84d4f5;}
+border-bottom: 1px solid #0b5d8d !important;color: #84d4f5 !important;}
 .searchinput2{height: 34px !important;width: 100%;padding-top: 0 !important;font-size: 14px !important;color: #84d4f5 !important;}
 .searchinput3{height: 34px !important;width: 100%;padding-top: 0 !important;font-size: 14px !important;color: #84d4f5 !important;}
 .lgout{color: rgb(72, 221, 201);font-size: 27px !important;}
@@ -257,22 +261,22 @@ color: #3f84a7;position: relative;}
    border-radius: 3px !important;
 }
 .inputpassword::-webkit-input-placeholder {
-   color: #08527c !important;border:1px solid #08527c !important;text-transform: uppercase;
+   color: #0b5d8d !important;border:1px solid #0b5d8d !important;text-transform: uppercase;
    padding: 2px 5px !important;display: inline-block !important;width: 100px !important;
    border-radius: 3px !important;
 }
 .inputpassword:-moz-placeholder { /* Firefox 18- */
-   color: #08527c !important;border:1px solid #08527c !important;text-transform: uppercase;
+   color: #0b5d8d !important;border:1px solid #0b5d8d !important;text-transform: uppercase;
    padding: 2px 5px !important;display: inline-block !important;width: 100px !important;
    border-radius: 3px !important;
 }
 .inputpassword::-moz-placeholder {  /* Firefox 19+ */
-   color: #08527c !important;border:1px solid #08527c !important;text-transform: uppercase;
+   color: #0b5d8d !important;border:1px solid #0b5d8d !important;text-transform: uppercase;
    padding: 2px 5px !important;display: inline-block !important;width: 100px !important;
    border-radius: 3px !important;
 }
 .inputpassword:-ms-input-placeholder {  
-   color: #08527c !important;border:1px solid #08527c !important;text-transform: uppercase;
+   color: #0b5d8d !important;border:1px solid #0b5d8d !important;text-transform: uppercase;
    padding: 2px 5px !important;display: inline-block !important;width: 100px !important;
    border-radius: 3px !important;
 }
@@ -359,3 +363,6 @@ background: none !important;}
 }
 .fw2 .placeholder-icon:first-child{padding-right: 0 !important;}
 #all h4{color: #84d4f5;}
+.pl1{padding-right: 0 !important;}
+.inputpassword{font-size: 14px !important;}
+.inputemail{font-size: 14px !important;}
