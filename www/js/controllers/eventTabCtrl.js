@@ -2,10 +2,10 @@ angular.module('eventsApp.controllers.eventTabCtrl', [])
 	.controller('eventTabCtrl', ['$scope', '$filter', 'eventsFactory', function($scope, $filter, eventsFactory) {
 
     $scope.noRecords = false;
-    $scope.eventsList = [];
-
+    
 	eventsFactory.getEventsList().then(function (resp) {
-
+        $scope.eventsList = [];
+        
         if(resp.status === 1) {
             angular.forEach(resp.data, function(value) {
                 if(angular.isDefined(value.adult_price)) {
@@ -36,6 +36,9 @@ angular.module('eventsApp.controllers.eventTabCtrl', [])
                             $scope.eventsList.push(value);
                         }
                     });
+                    
+                    if($scope.eventsList.length === 0)
+                        $scope.noRecords = true;
                 } 
             });
         } else {
@@ -48,12 +51,11 @@ angular.module('eventsApp.controllers.eventTabCtrl', [])
                             $scope.eventsList.push(value);
                         }
                     });
+
+                    if($scope.eventsList.length === 0)
+                        $scope.noRecords = true;
                 }
             });
-        }
-
-        if($scope.eventsList.length === 0) {
-            $scope.noRecords = true;
-        }
+        } 
     }
 }]);

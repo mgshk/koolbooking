@@ -10,12 +10,13 @@ angular.module('eventsApp.controllers.purchaseHistoryCtrl', [])
 	$('.tab31').css('color', '#387ef5');
 	$('.tab33').css('color', '#000000');
 
-	$scope.showLoder = function() {
+	function showLoader() {
 	    $ionicLoading.show({
 	      template: '<ion-spinner icon="circles"></ion-spinner>'
 	    });
-	 };
-	$scope.hideLoder = function(){
+	};
+
+	function hideLoader() {
 	    $ionicLoading.hide();
 	};
 
@@ -25,7 +26,7 @@ angular.module('eventsApp.controllers.purchaseHistoryCtrl', [])
         $scope.isUserID = true;
     }
 
-	$scope.showLoder();
+	showLoader();
 
 	$scope.showUsedTickets = function(){
 		$scope.showUsedTickets1 = true;
@@ -43,32 +44,23 @@ angular.module('eventsApp.controllers.purchaseHistoryCtrl', [])
 
 	if(window.localStorage.getItem('userID')) {
 		userFactory.getUserPurchaseHistory(window.localStorage.getItem('userID')).then(function (resp) {
-		 	$scope.hideLoder();
-		 	$scope.userPendingHistories = [];
-		 	$scope.userCompleteHistories = []; 
+		 	hideLoader();
+		 	$scope.userPurchanseHistories = []; 
 		
 		 	if(resp.status === 0){
 		 		$scope.noRecords = true;
 		 	} else {
 		 		angular.forEach(resp.data, function (value) {
-		 			if(value.status === 'complete') {
-		 				$scope.userCompleteHistories.push(value);
-		 			} else {
-		 				$scope.userPendingHistories.push(value);
-		 			}
+		 			$scope.userPurchanseHistories.push(value);
 		 		});
 
-		 		if ($scope.userCompleteHistories.length === 0) {
-		 			$scope.noCompleteRecords = true;
-		 		}
-
-		 		if ($scope.userPendingHistories.length === 0) {
-		 			$scope.noPendingRecords = true;
+		 		if ($scope.userPurchanseHistories.length === 0) {
+		 			$scope.noRecords = true;
 		 		}
 		 	}
 		});
 	} else {
-		$scope.hideLoder();
+		hideLoader();
 		$scope.noRecords = true;
 	}	
 }]);

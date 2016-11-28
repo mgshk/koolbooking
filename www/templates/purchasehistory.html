@@ -6,15 +6,10 @@
     </div>
 
     <div class="phistory">
-
-      <h4 ng-if="noRecords">No Records Found</h4>
-
-      <div ng-if="!noRecords">
-
-          <h4 ng-if="noCompleteRecords">No Records Found</h4>
-
-          <div class="purchaseitems padding" ng-if="!noCompleteRecords"
-            ng-repeat="userHistory in userCompleteHistories">
+      <div>
+          <h4 ng-if="noRecords">No Records Found</h4>
+          <div class="purchaseitems padding" ng-if="!noRecords"
+            ng-repeat="userHistory in userPurchanseHistories">
               <div class="row">
                   <div class="col"><span>order</span></div>
                   <div class="col col-75 purcont">{{::userHistory.post_title}} {{::userHistory.purchase_date | date: 'dd/MM/yyyy'}}</div>
@@ -31,7 +26,10 @@
                   <div class="col"><span>total</span></div>
                   <div class="col col-75 purcont">${{::userHistory.total_price}}</div>
               </div>
-          
+              <div class="row">
+                  <div class="col"><span>status</span></div>
+                  <div class="col col-75 purcont">{{::userHistory.status}}</div>
+              </div>
           </div>
 
 
