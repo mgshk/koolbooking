@@ -30,6 +30,7 @@ angular.module('eventsApp.controllers.eventDetailsCtrl', [])
 
             var event_details = {
                 id: resp.data[0].id,
+                name: resp.data[0].post_title,
                 post_content: resp.data[0].post_content,
                 event_date: resp.data[0].event_date,
                 event_time: resp.data[0].event_time,

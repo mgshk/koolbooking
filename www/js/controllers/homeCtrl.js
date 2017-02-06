@@ -1,7 +1,7 @@
 angular.module('eventsApp.controllers.homeCtrl', [])
 	.controller('homeCtrl', ['$scope', '$state', 'eventsFactory', 'userFactory', '$cordovaOauth', 'loginFactory', function($scope, $state, eventsFactory, userFactory, $cordovaOauth, loginFactory) {
 	
-	if(window.localStorage.getItem('userID')) {
+    if(window.localStorage.getItem('userID')) {
 		$scope.showYouTab = true;
 
 		userFactory.getUserDetails(window.localStorage.getItem('userID')).then(function (resp) {
@@ -69,7 +69,6 @@ angular.module('eventsApp.controllers.homeCtrl', [])
         loginFactory.fbLogin(user).then(function (resp) {
             if (resp.status === 0) {
                 errorMsg = resp.error;
-                $scope.showAlert();
                 return;
             }
             
@@ -82,7 +81,6 @@ angular.module('eventsApp.controllers.homeCtrl', [])
         loginFactory.googleLogin(user).then(function (resp) {
             if (resp.status === 0) {
                 errorMsg = resp.error;
-                $scope.showAlert();
                 return;
             }
             

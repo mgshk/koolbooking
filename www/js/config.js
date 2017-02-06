@@ -22,7 +22,7 @@ angular.module('eventsApp.config', ['ui.router']).config(function($stateProvider
       templateUrl: 'templates/forgotPassword.html'
   })    
   .state('eventsList', {
-      url: '/eventsList',
+      url: '/eventsList/:tab',
       controller: 'eventsListCtrl',
       templateUrl: 'templates/eventsList.html'
   })

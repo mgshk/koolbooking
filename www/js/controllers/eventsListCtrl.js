@@ -1,17 +1,7 @@
 angular.module('eventsApp.controllers.eventsListCtrl', ['youtube-embed', 'angular-flexslider'])
-	.controller('eventsListCtrl', ['$scope', '$state', 'eventsFactory', 'userFactory','$ionicHistory', '$sce', function($scope, $state, eventsFactory, userFactory, $ionicHistory, $sce) {
+	.controller('eventsListCtrl', ['$scope', '$state', 'eventsFactory', 'userFactory','$ionicHistory', '$sce', '$stateParams', function($scope, $state, eventsFactory, userFactory, $ionicHistory, $sce, $stateParams) {
 
-	$scope.showcase = true;
-	$scope.tickets = false;
-	$scope.you = false;
-	$scope.discover = false;
-	$scope.trending = false;
-	$scope.comingsoon = false;
 	var bestPlayer = null;
-	$('.tab1').css('border-bottom', 'solid 4px #84d4f5');
-	$('.tab2').css('border-bottom', 'solid 0px #84d4f5');
-	$('.tab3').css('border-bottom', 'solid 0px #84d4f5');
-	$('.tab4').css('border-bottom', 'solid 0px #84d4f5');
 	
 	$scope.trustSrc = function(src) {
 		return $sce.trustAsResourceUrl(src);
@@ -37,6 +27,9 @@ angular.module('eventsApp.controllers.eventsListCtrl', ['youtube-embed', 'angula
 		$scope.tickets = false;
 		$scope.you = false;
 		$scope.discover = false;
+		$scope.trending = false;
+		$scope.comingsoon = false;
+
 		$('.tab1').css('border-bottom', 'solid 4px #84d4f5');
 		$('.tab2').css('border-bottom', 'solid 0px #84d4f5');
 		$('.tab3').css('border-bottom', 'solid 0px #84d4f5');
@@ -114,6 +107,12 @@ angular.module('eventsApp.controllers.eventsListCtrl', ['youtube-embed', 'angula
 		$('.tab5 span').css({'color' : '#84d4f5','background-color' : '#0b5d8d'});
 		$('.tab6 span').css({'color' : '#84d4f5','background-color' : '#0b5d8d'});
 		$('.tab7 span').css({'color' : '#0b5d8d','background-color' : '#84d4f5'});
+	}
+
+	if ($stateParams.tab === 'tickets') {
+		$scope.showTickets();
+	} else {
+		$scope.showCase();
 	}
 
 	eventsFactory.getVideoUrl().then(function (resp) {

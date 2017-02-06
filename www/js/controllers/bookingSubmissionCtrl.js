@@ -21,6 +21,10 @@ angular.module('eventsApp.controllers.bookingSubmissionCtrl', [])
         hideLoader();
         var event_details = JSON.parse(window.localStorage.getItem('event_details'));
 
+        console.log(event_details);
+
+        $scope.event_name = event_details.name;
+        $scope.event_date = event_details.event_date;
         $scope.adult_price = event_details.adult_price;
         $scope.child_price = angular.isDefined(event_details.child_price) ? event_details.child_price : 0;
         $scope.infant_price = angular.isDefined(event_details.infant_price) ? event_details.infant_price : 0;
@@ -29,6 +33,7 @@ angular.module('eventsApp.controllers.bookingSubmissionCtrl', [])
 			($scope.infant * $scope.infant_price);
 		
 		window.localStorage.setItem('eventID', event_details.id);
+		window.localStorage.setItem('eventName', event_details.name);
 		window.localStorage.setItem('adult', $scope.adult);
 		window.localStorage.setItem('child', $scope.child);
 		window.localStorage.setItem('infant', $scope.infant);

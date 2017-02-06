@@ -1,35 +1,38 @@
 angular.module('eventsApp.controllers.signupCtrl', [])
 	.controller('signupCtrl', ['$scope', '$state', 'loginFactory', '$ionicLoading', '$ionicPopup', function($scope, $state, loginFactory, $ionicLoading, $ionicPopup) {
 
-	var errorMsg;
+	var regMsg;
 
-	$scope.showLoder = function() {
+	function showLoader() {
 	    $ionicLoading.show({
 	      template: '<ion-spinner icon="circles"></ion-spinner>'
 	    });
-	};
+	}
 
-	$scope.hideLoder = function(){
+	function hideLoader() {
 	    $ionicLoading.hide();
-	};
+	}
 
 	// An alert dialog
- 	$scope.showAlert = function() {
+ 	function showAlert() {
 	    $ionicPopup.alert({
 	      title: 'Signup',
-	      content: errorMsg
+	      content: regMsg
 	    }).then(function(res) {
 	      console.log('Login Failed');
 	    });
-    };
+    }
      
     $scope.signUp = function() {
-    	$scope.showLoder();
+    	showLoader();
+
         loginFactory.signUp($scope.user).then(function (resp) {
-        	$scope.hideLoder();
+        	hideLoader();
+
             if (resp.status === 0) {
-                errorMsg = resp.error;
-                $scope.showAlert();
+                regMsg = resp.error;
+                showAlert();
+
                 $scope.user = {};
 				$scope.signupForm.$setPristine();
 				$scope.signupForm.$setUntouched();
@@ -37,7 +40,7 @@ angular.module('eventsApp.controllers.signupCtrl', [])
             }
 
             window.localStorage.setItem('userID', resp.userID);
-	   		$state.go('eventsList');
+            $state.go('eventsList');
         });
 	}
 
