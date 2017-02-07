@@ -8,6 +8,7 @@ angular.module('eventsApp.factory.eventsFactory', [])
         getTopDealsEvents: getTopDealsEvents,
         getEventDetails: getEventDetails,
         getFilterEvents: getFilterEvents,
+        getFilterActivities: getFilterActivities,
         getVideoUrl: getVideoUrl,
         getActivityDetails: getActivityDetails,
         getFeaturedActivities: getFeaturedActivities,
@@ -106,7 +107,7 @@ angular.module('eventsApp.factory.eventsFactory', [])
 
     function getFilterActivities (address, startDate, endDate) {
         var deferred = $q.defer();
-        eventsService.getFilterEvents(address, startDate, endDate).then(function (resp) {
+        eventsService.getFilterActivities(address, startDate, endDate).then(function (resp) {
             deferred.resolve(resp.data);
         }, function(error) {
             console.log(error);

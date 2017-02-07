@@ -2,7 +2,7 @@
     <div class="bar bar-header header">
         <h1 class="title">
         <img src="img/backbutton.png" alt="Logo" class="head-logo" ui-sref="eventsList({tab: 'tickets'})"> 
-        <span>Koolbooking Events</span></h1>
+        <span>Koolbooking Events & Activities</span></h1>
     </div>
 
     <div id="all">
@@ -24,7 +24,7 @@
             <input type="text" name="searchTxt" placeholder="Search by location" autocomplete="off" ng-model="searchTxt" class="searchinput1">
           </div>
           <div class="col pl1">
-            <button class="button button-small btneve" ng-click="filterEvents(start_date, end_date, searchTxt);">Search</button>
+            <button class="button button-small btneve" ng-click="filterEventsActivities(start_date, end_date, searchTxt);">Search</button>
           </div>
         </div>
       </form>

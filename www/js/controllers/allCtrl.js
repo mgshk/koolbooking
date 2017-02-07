@@ -1,5 +1,5 @@
 angular.module('eventsApp.controllers.allCtrl', [])
-	.controller('allCtrl', ['$scope', '$filter', '$q', '$ionicLoading', 'eventsFactory', function($scope, $filter, $q, $ionicLoading, eventsFactory) {
+	.controller('allCtrl', ['$scope', '$filter', '$q', '$ionicLoading', 'eventsFactory', '$ionicPopup', function($scope, $filter, $q, $ionicLoading, eventsFactory, $ionicPopup) {
 
 	$scope.noRecords = false;
 
@@ -45,41 +45,65 @@ angular.module('eventsApp.controllers.allCtrl', [])
 		}
 	});
 
-	$scope.filterEvents = function(start_date, end_date, address) {
+	// An alert dialog
+ 	function showAlert(msg) {
+	    $ionicPopup.alert({
+	      title: 'Error',
+	      content: msg
+	    }).then(function(res) {
+	      console.log('Search Failed');
+	    });
+    };
 
-        var startDate = $filter('date')(start_date, "yyyy-MM-dd");
-        var endDate = null;
-        $scope.eventsList = [];
-        $scope.noRecords = false;
+	$scope.filterEventsActivities = function(start_date, end_date, address) {
+        var startDate = angular.isDefined(start_date) ? $filter('date')(start_date, "yyyy-MM-dd") : null;
+        var endDate = angular.isDefined(end_date) ? $filter('date')(end_date, "yyyy-MM-dd") : null;
+        
+		try {
+			if (startDate === null)
+				throw "Enter Start date";
 
-        if ((angular.isDefined(address) || address !== '') && angular.isDefined(start_date)) {
-    		eventsFactory.getFilterEvents(address, startDate, endDate).then(function (resp) {
-                if(resp.status === 0) {
-                    $scope.noRecords = true;
-                } else {
-                    angular.forEach(resp.data, function(value) {
+			if (!angular.isDefined(address))
+				throw "Enter location";
+
+			if (angular.isDefined(endDate) && endDate < startDate)
+				throw "End date should be greater than Start date";
+
+			showLoder();
+			$scope.noRecords = false;
+
+			$q.all({
+				events: eventsFactory.getFilterEvents(address, startDate, endDate),
+				activities: eventsFactory.getFilterActivities(address, startDate, endDate)
+			}).then(function(resp) {
+				$scope.eventsList = [];
+				$scope.activitiesList = [];
+
+				if (resp.events.status === 0 && resp.activities.status === 0) {
+					$scope.noRecords = true;
+				} else {
+					angular.forEach(resp.events.data, function(value) {
 						if(angular.isDefined(value.adult_price)) {
 							$scope.eventsList.push(value);
 						}
 					});
-                } 
-		    });
-    	} else {
-    		eventsFactory.getEventsList().then(function (resp) {
-		        if(resp.status === 0) {
-                    $scope.noRecords = true;
-                } else {
-                    angular.forEach(resp.data, function(value) {
+
+					angular.forEach(resp.activities.data, function(value) {
 						if(angular.isDefined(value.adult_price)) {
-							$scope.eventsList.push(value);
+							$scope.activitiesList.push(value);
 						}
 					});
-                }
-		    });
-    	}
 
-    	if($scope.eventsList.length === 0) {
-			$scope.noRecords = true;
+					if($scope.eventsList.length === 0 && $scope.activitiesList.length === 0) {
+						$scope.noRecords = true;
+					}
+
+					hideLoder();
+				}
+			});
+		} catch (e) {
+			showAlert(e);
+			return;
 		}
     }
 }]);
