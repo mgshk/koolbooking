@@ -14,6 +14,11 @@ angular.module('eventsApp', ['ionic', 'ngCordovaOauth', 'eventsApp.controllers',
         StatusBar.styleDefault();
       }
     });
+
+    $ionicPlatform.registerBackButtonAction(function (event) {
+        navigator.app.backHistory();
+    }, 100);
+
 });
 
 // Controllers
