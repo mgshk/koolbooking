@@ -18,11 +18,16 @@ angular.module('eventsApp.controllers.eventTabCtrl', [])
 	eventsFactory.getEventsList().then(function (resp) {
         hideLoder();
         $scope.eventsList = [];
+		$scope.address = [];
         
         if(resp.status === 1) {
             angular.forEach(resp.data, function(value) {
                 if(angular.isDefined(value.adult_price)) {
                     $scope.eventsList.push(value);
+
+					if ($scope.address.indexOf(value.address) == -1) {
+						$scope.address.push(value.address);
+					}
                 }
             });
         }
@@ -42,7 +47,11 @@ angular.module('eventsApp.controllers.eventTabCtrl', [])
 	    });
     };
 
-    $scope.filterEvents = function(start_date, end_date, address) {
+    $scope.filterEvents = function() {
+		var start_date = $scope.start_date;
+		var end_date = $scope.end_date;
+		var address = $scope.searchTxt;
+
         var startDate = angular.isDefined(start_date) ? $filter('date')(start_date, "yyyy-MM-dd") : null;
         var endDate = angular.isDefined(end_date) ? $filter('date')(end_date, "yyyy-MM-dd") : null;
         $scope.noRecords = false;

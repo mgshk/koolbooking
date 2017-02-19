@@ -21,10 +21,13 @@
                 </label>
                 <div class="row pl pl1">
                   <div class="col col-75 pl">
-                    <input type="text" name="searchTxt" placeholder="Search by location" autocomplete="off" ng-model="searchTxt" class="searchinput1">
+                    <select name="searchTxt" ng-model="searchTxt">
+                      <option value="0">Select Location</option>
+                      <option ng-repeat="location in address">{{::location}}</option>
+                    </select>
                   </div>
                   <div class="col pl1">
-                    <button class="button button-small btneve" ng-click="filterEvents(start_date, end_date, searchTxt);">Search</button>
+                    <button class="button button-small btneve" ng-click="filterEvents();">Search</button>
                   </div>
                 </div>
               </form>

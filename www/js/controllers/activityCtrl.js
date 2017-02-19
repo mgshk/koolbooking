@@ -19,12 +19,18 @@ angular.module('eventsApp.controllers.activityCtrl', [])
     	hideLoder();
 
         $scope.activitiesList = [];
+		$scope.address = [];
+
     	if(resp.status === 0){
     		$scope.noRecords = true;
     	} else {
     		angular.forEach(resp.data, function(value) {
 				if(angular.isDefined(value.adult_price)) {
 					$scope.activitiesList.push(value);
+
+					if ($scope.address.indexOf(value.address) == -1) {
+						$scope.address.push(value.address);
+					}
 				}
 			});
 
@@ -44,7 +50,11 @@ angular.module('eventsApp.controllers.activityCtrl', [])
 	    });
     };
 
-    $scope.filterActivities = function(start_date, end_date, address) {
+    $scope.filterActivities = function() {
+		var start_date = $scope.start_date;
+		var end_date = $scope.end_date;
+		var address = $scope.searchTxt;
+
         var startDate = angular.isDefined(start_date) ? $filter('date')(start_date, "yyyy-MM-dd") : null;
         var endDate = angular.isDefined(end_date) ? $filter('date')(end_date, "yyyy-MM-dd") : null;
 
