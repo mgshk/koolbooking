@@ -70,7 +70,14 @@ font-weight: 600;}
 .eventslst{margin: 0;background: none;padding: 0 !important;}
 .eventslst h5{margin: 0;color: #84d4f5;font-size: 16px;}
 .eventslst p{margin: 5px 0 0 0;color: #84d4f5;font-size: 16px;}
-.btneve{width: 100%;font-size: 18px;background: #0b5d8d;color: #84d4f5;line-height: 20px;padding:5px 6px 7px 6px !important;}
+.btneve{width: 71px;
+    font-size: 17px;
+    background: #0b5d8d;
+    color: #84d4f5;
+    line-height: 20px;
+    padding: 3px 6px 7px 6px !important;
+    height: 31px;
+    border-radius: 2px;}
 .buy-ticket{background: #555353;padding: 12px 0;color: #fff;margin-top: 44px;text-align: center;font-size: 16px;}
 .item-image{border: 0 !important;}
 
@@ -322,9 +329,12 @@ background: none !important;}
 .pay_btn{width: 160px !important;
     display: table;
     margin: auto;
-    height: 40px !important;
-    min-height: 40px !important;
-    line-height: 36px !important;padding: 0px 0px 5px !important;}
+    height: 31px !important;
+    min-height: 31px !important;
+    line-height: 20px !important;
+    padding: 0px 0px 5px 0px !important;
+    font-size: 17px;
+    border-radius: 2px;}
 .synops h5{margin-top: 0 !important;}
 .event-date-left span{width: 100%;
     padding: 2px 5px;
@@ -340,11 +350,15 @@ background: none !important;}
     line-height: 24px;
     margin-bottom: 0;
 }
-.review_btn{width: 150px !important;display: table;
+.review_btn{width: 150px !important;
+    display: table;
     margin: auto;
-    height: 40px !important;
-    min-height: 40px !important;
-    line-height: 36px !important;margin-top: 10px !important;}
+    height: 31px !important;
+    min-height: 31px !important;
+    line-height: 20px !important;
+    margin-top: 10px !important;
+    border-radius: 2px;
+    padding-bottom: 4px;font-size: 17px;}
 .adlt{color: #84d4f5;}
 .paybutton{width: 100%;float: left;}
 #recommended h4{color: #84d4f5;}
@@ -368,3 +382,6 @@ h4{color: #84d4f5;}
 .inputemail{font-size: 14px !important;}
 .home-o{margin-left: 5px;}
 .bar .title{margin: 0 6px !important;}
+
+.searchheader select{width: 100%;border: 1px solid #0b5d8d !important;background: none !important;
+height: 31px;}

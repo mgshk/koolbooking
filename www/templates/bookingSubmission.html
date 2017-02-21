@@ -9,9 +9,9 @@
     <h4>Order Details</h4>
     <p>Event Name <span class="pull-right">{{::event_name}}</span></p>
     <p>Event Date <span class="pull-right">{{::event_date | date: 'dd/MM/yyyy'}}</span></p>
-    <p>Adult <br> Price ${{::adult_price}}, No. of Person {{::adult}} <span class="pull-right">${{adult * adult_price}}</span></p>
-    <p ng-if="child > 0">Child <br> Price ${{::child_price}}, No. of Person {{::child}} <span class="pull-right">${{child * child_price}}</span></p>
-    <p ng-if="infant > 0">Infant <br> Price ${{::infant_price}}, No. of Person {{::infant}} <span class="pull-right">${{infant * infant_price}}</span></p>
+    <p>Adult <br> Price ${{::adult_price}}/person, No. of Person {{::adult}} <span class="pull-right">${{adult * adult_price}}</span></p>
+    <p ng-if="child > 0">Child <br> Price ${{::child_price}}/child, No. of Person {{::child}} <span class="pull-right">${{child * child_price}}</span></p>
+    <p ng-if="infant > 0">Infant <br> Price ${{::infant_price}}/person, No. of Person {{::infant}} <span class="pull-right">${{infant * infant_price}}</span></p>
     
     <p><strong>Total</strong> 
       <strong class="pull-right">${{::amount}}</strong>
