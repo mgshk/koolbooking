@@ -74,8 +74,8 @@ font-weight: 600;}
     font-size: 17px;
     background: #0b5d8d;
     color: #84d4f5;
-    line-height: 20px;
-    padding: 3px 6px 7px 6px !important;
+    line-height: 31px;
+    /*padding: 3px 6px 7px 6px !important;*/
     height: 31px;
     border-radius: 2px;}
 .buy-ticket{background: #555353;padding: 12px 0;color: #fff;margin-top: 44px;text-align: center;font-size: 16px;}
@@ -331,8 +331,8 @@ background: none !important;}
     margin: auto;
     height: 31px !important;
     min-height: 31px !important;
-    line-height: 20px !important;
-    padding: 0px 0px 5px 0px !important;
+    line-height: 31px !important;
+    /*padding: 0px 0px 5px 0px !important;*/
     font-size: 17px;
     border-radius: 2px;}
 .synops h5{margin-top: 0 !important;}
@@ -355,10 +355,9 @@ background: none !important;}
     margin: auto;
     height: 31px !important;
     min-height: 31px !important;
-    line-height: 20px !important;
+    line-height: 31px !important;
     margin-top: 10px !important;
-    border-radius: 2px;
-    padding-bottom: 4px;font-size: 17px;}
+    border-radius: 2px;font-size: 17px;}
 .adlt{color: #84d4f5;}
 .paybutton{width: 100%;float: left;}
 #recommended h4{color: #84d4f5;}

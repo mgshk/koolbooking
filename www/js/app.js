@@ -11,26 +11,13 @@ angular.module('eventsApp', ['ionic', 'ngCordovaOauth', 'eventsApp.controllers',
       
       if (window.StatusBar) {
         // org.apache.cordova.statusbar required
-        window.StatusBar.overlaysWebView(false);
-        window.StatusBar.styleHex('#064974');
+        StatusBar.styleDefault();
       }
     });
 
-    $ionicPlatform.registerBackButtonAction(function(event) {
-    if ($ionicHistory.backView() == null && $ionicHistory.currentView().url != window.localStorage["start_view"]) {
-      // Goto start view
-      $ionicHistory.currentView($ionicHistory.backView()); // to clean history.
-      $rootScope.$apply(function() {
-        $location.path(window.localStorage["start_view"]);
-      });
-    } else if ($ionicHistory.backView() == null && $ionicHistory.currentView().url == window.localStorage["start_view"]) {
-      // Exiting app
-      navigator.app.exitApp();
-    } else {
-      // Normal back
-      $ionicHistory.goBack();
-    }
-  }, 100);
+    $ionicPlatform.registerBackButtonAction(function (event) {
+        navigator.app.backHistory();
+    }, 100);
 
 });
 
