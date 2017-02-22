@@ -21,6 +21,49 @@
 		    	</div>
 
 		    	<span class="skiplogin" ui-sref="eventsList">skip login</span>
-			    
+			    <button id="buyNowBtn" onclick="buyNowBtn();"> Buy Now !</button>
 			</div>
 		</div>
+
+<script>
+function init() {
+	var clientIDs = {
+       "PayPalEnvironmentProduction": "FQ7VL6HSCJKY6",
+       "PayPalEnvironmentSandbox": "FQ7VL6HSCJKY6"
+     };
+     PayPalMobile.init(clientIDs, onPayPalMobileInit);
+}
+
+function onPayPalMobileInit() {
+     // must be called
+     // use PayPalEnvironmentNoNetwork mode to get look and feel of the flow
+     PayPalMobile.prepareToRender("PayPalEnvironmentSandbox", configuration());
+}
+
+function configuration() {
+     // for more options see `paypal-mobile-js-helper.js`
+     var config = new PayPalConfiguration({merchantName: "My test shop", merchantPrivacyPolicyURL: "https://mytestshop.com/policy", merchantUserAgreementURL: "https://mytestshop.com/agreement"});
+     return config;
+}
+
+function buyNowBtn(e) {
+	PayPalMobile.renderSinglePaymentUI(createPayment(), onSuccesfulPayment, onUserCanceled);
+}
+
+function createPayment () {
+     var paymentDetails = new PayPalPaymentDetails("50.00", "0.00", "0.00");
+     var payment = new PayPalPayment("50.00", "USD", "Awesome Sauce", "Sale", paymentDetails);
+     return payment;
+}
+
+function onSuccesfulPayment(payment) {
+	alert(JSON.stringify(payment, null, 4));
+}
+
+function onUserCanceled(result) {
+     alert(result);
+}
+
+init();
+			
+</script>
