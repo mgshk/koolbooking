@@ -21,8 +21,8 @@
         </label>
         <div class="row pl pl1">
           <div class="col col-75 pl">
-            <select name="searchTxt" ng-model="searchTxt">
-              <option value="0">Select Location</option>
+            <select name="searchTxt" ng-model="searchTxt" class="searchinput3">
+              <option value="0" selected>Select Location</option>
               <option ng-repeat="location in address">{{::location}}</option>
             </select>
           </div>

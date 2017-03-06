@@ -2,6 +2,7 @@ angular.module('eventsApp.controllers.eventTabCtrl', [])
 	.controller('eventTabCtrl', ['$scope', '$filter', 'eventsFactory', '$ionicLoading', '$ionicPopup', function($scope, $filter, eventsFactory, $ionicLoading, $ionicPopup) {
 
     $scope.noRecords = false;
+    $scope.searchTxt = '0';
 
     function showLoder() {
 	    $ionicLoading.show({

@@ -2,6 +2,7 @@ angular.module('eventsApp.controllers.allCtrl', [])
 	.controller('allCtrl', ['$scope', '$filter', '$q', '$ionicLoading', 'eventsFactory', '$ionicPopup', function($scope, $filter, $q, $ionicLoading, eventsFactory, $ionicPopup) {
 
 	$scope.noRecords = false;
+	$scope.searchTxt = '0';
 
 	function showLoder() {
 	    $ionicLoading.show({
