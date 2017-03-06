@@ -8,8 +8,9 @@ angular.module('eventsApp.controllers.yourBookingCtrl', [])
         $state.go('login');
     }
 
-    $scope.no_infant = 0;
-    $scope.no_child = 0;
+    $scope.no_adult = '0';
+    $scope.no_infant = '0';
+    $scope.no_child = '0';
 
     function showLoader() {
 	    $ionicLoading.show({

@@ -13,15 +13,13 @@ angular.module('eventsApp.controllers.bookingSubmissionCtrl', [])
 
 	showLoader();
 
-	$scope.adult = $stateParams.adult;
+	$scope.adult = angular.isDefined($stateParams.adult) ? $stateParams.adult : 1;
 	$scope.child = angular.isDefined($stateParams.child) ? $stateParams.child : 0;
 	$scope.infant = angular.isDefined($stateParams.infant) ? $stateParams.infant : 0;
 
 	if(window.localStorage.getItem('event_details')) {
         hideLoader();
         var event_details = JSON.parse(window.localStorage.getItem('event_details'));
-
-        console.log(event_details);
 
         $scope.event_name = event_details.name;
         $scope.event_date = event_details.event_date;
